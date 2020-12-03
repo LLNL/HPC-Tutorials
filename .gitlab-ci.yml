@@ -14,6 +14,7 @@ test:
   stage: test
   tags:
   - shell
+  - toss_3_x86_64
   script:
   - test -d $SITE_HOME
   - bundle exec jekyll build -d test
@@ -27,6 +28,7 @@ deploy:
   stage: deploy
   tags:
   - shell
+  - toss_3_x86_64
   script:
   - bundle exec jekyll build -d public
   - rsync -r --delete public/ $SITE_HOME/
