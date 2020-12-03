@@ -1,28 +1,27 @@
-image: ruby:2.3
-
 variables:
   JEKYLL_ENV: production
   LC_ALL: C.UTF-8
+  BUNDLE: /usr/global/tools/ruby/toss_3_x86_64_ib/bin/bundle
 
 before_script:
-  - bundle install
+  - $BUNDLE install
 
 test:
   stage: test
   script:
-  - bundle exec jekyll build -d test
+  - $BUNDLE exec jekyll build -d test
   artifacts:
     paths:
     - test
-  except:
-  - master
+  # except:
+  # - main
 
 pages:
   stage: deploy
   script:
-  - bundle exec jekyll build -d public
+  - $BUNDLE exec jekyll build -d public
   artifacts:
     paths:
     - public
   only:
-  - master
+  - main
