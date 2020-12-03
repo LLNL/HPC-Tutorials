@@ -1,7 +1,7 @@
 variables:
   JEKYLL_ENV: production
   LC_ALL: C.UTF-8
-  PATH: /usr/global/tools/ruby/toss_3_x86_64_ib/bin:$PATH
+  # PATH: /usr/global/tools/ruby/toss_3_x86_64_ib/bin:$PATH
   GEM_HOME: /usr/global/tools/ruby/toss_3_x86_64_ib/lib/ruby/gems
 
 before_script:
@@ -15,6 +15,8 @@ test:
   tags:
   - shell
   script:
+  - export PATH=/usr/global/tools/ruby/toss_3_x86_64_ib/bin:$PATH
+  - echo $PATH
   - bundle exec jekyll build -d test
   artifacts:
     paths:
