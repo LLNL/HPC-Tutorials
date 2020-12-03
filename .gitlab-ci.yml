@@ -4,9 +4,6 @@ variables:
   PATH: /usr/global/tools/ruby/toss_3_x86_64_ib/bin:$PATH
   GEM_HOME: /usr/global/tools/ruby/toss_3_x86_64_ib/lib/ruby/gems
 
-tags:
-  - shell
-
 before_script:
   - echo $PATH
   - echo $GEM_HOME
@@ -15,6 +12,8 @@ before_script:
 
 test:
   stage: test
+  tags:
+  - shell
   script:
   - bundle exec jekyll build -d test
   artifacts:
@@ -25,6 +24,8 @@ test:
 
 pages:
   stage: deploy
+  tags:
+  - shell
   script:
   - bundle exec jekyll build -d public
   artifacts:
