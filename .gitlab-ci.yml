@@ -2,6 +2,7 @@ variables:
   JEKYLL_ENV: production
   LC_ALL: C.UTF-8
   BUNDLE: /usr/global/tools/ruby/toss_3_x86_64_ib/bin/bundle
+  GEM_HOME: /usr/global/tools/ruby/toss_3_x86_64_ib/lib/ruby/gems
 
 before_script:
   - $BUNDLE install
