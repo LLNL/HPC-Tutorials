@@ -22,7 +22,7 @@ test:
   # except:
   # - main
 
-pages:
+deploy:
   stage: deploy
   tags:
   - shell
