@@ -7,7 +7,7 @@ variables:
 before_script:
   - echo $PATH
   - echo $GEM_HOME
-# NOTE: Jeff Long (jwlong) owns the /collab/usr/global ruby install and only he should install things
+# NOTE: Jeff Long (jwlong) owns the /collab/usr/global/tools/ruby install and only he should install things
 #   - bundle install
 
 test:
