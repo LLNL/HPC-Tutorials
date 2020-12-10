@@ -1,6 +1,6 @@
 ---
-#layout: post
-#title: "quick and dirty CSS in jekyll posts"
+layout: page
+title: "Greetings and Test"
 #date: 2016-04-08 13:04:00
 ---
 
