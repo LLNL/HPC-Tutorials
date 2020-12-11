@@ -1,7 +1,6 @@
 ---
 layout: page
-title: "Greetings and Test"
-#date: 2016-04-08 13:04:00
+title: "Getting Started with Jekyll and GitLab Pages"
 ---
 
 Greetings Doc Day Participants!
@@ -25,8 +24,10 @@ Tips:
 * [Markdown Syntax Review](https://www.markdownguide.org/basic-syntax/)
 * The top of your markdown (.md) files **must** have these lines in order to get rendered into html by Jekyll:
 	    *Must include "front-matter" lines at the top of the file:*
+```
 		---
 		layout: page
 		title: "Your Page Title"  (optional)
 		---
+```		
 *Have fun!*
