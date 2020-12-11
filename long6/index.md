@@ -23,7 +23,6 @@ Tips:
 -----
 * [Markdown Syntax Review](https://www.markdownguide.org/basic-syntax/)
 * The top of your markdown (.md) files **must** have these lines in order to get rendered into html by Jekyll:
-	    *Must include "front-matter" lines at the top of the file:*
 ```
 		---
 		layout: page
