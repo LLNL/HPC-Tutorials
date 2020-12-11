@@ -3,6 +3,11 @@ layout: page
 title: "Atlassian FAQ"
 ---
 
+## Bitbucket & Bamboo
+
+* **Can I access mybitbucket.llnl.gov from the CZ?**
+Yes, but only if you use git-over-ssh, which requires you to set up SSH keys. In particular, load your ssh public key (e.g., ~/.ssh/id_rsa.pub) into the LLNL Bitbucket (https://mybitbucket.llnl.gov/plugins/servlet/ssh/account/keys/add)
+
 * **Why are the LLNL and CZ BB's separated?**  
 The three Bitbucket instances (lc.llnl.gov/bitbucket (CZ), rzlc.llnl.gov/bitbucket (RZ), mybitbucket.llnl.gov (LLNL)) each serve different but overlapping user bases. For example, all LLNL employees have access to mybitbucket, but only LC users would have access to the LC Bitbucket instances. See [https://atlassian.llnl.gov](https://atlassian.llnl.gov) for a full overview of the security policies that apply to the various instances.
 
