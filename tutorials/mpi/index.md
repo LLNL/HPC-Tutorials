@@ -10,8 +10,8 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 1. [Abstract](abstract)
 2. [What is MPI?](what_is_mpi)
 3. [LLNL MPI Implementations and Compilers](implmentations)
-4. [Getting Started]
-5. Environment Management Routines
+4. [Getting Started](getting_started)
+5. [Environment Management Routines](environment_management_routines)
 6. [Exercise 1](exercise_1)
 7. [Point to Point Communication Routines](p2p_communication_routines)
     * General Concepts
