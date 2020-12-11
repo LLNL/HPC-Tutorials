@@ -1,4 +1,7 @@
-# Message Passing Interface (MPI)
+---
+layout: page
+title: "Message Passing Interface (MPI)"
+---
 
 *Author: Blaise Barney, Lawrence Livermore National Laboratory*
 
