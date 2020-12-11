@@ -1,13 +1,11 @@
 ---
 layout: page
 title: "Message Passing Interface (MPI)"
+release_number: UCRL-MI-133316
+author: Blaise Barney, Lawrence Livermore National Laboratory
 ---
 
-*Author: Blaise Barney, Lawrence Livermore National Laboratory*
-
-*UCRL-MI-133316*
-
-**Table of Contents**
+### Table of Contents
 
 1. [Abstract](pages/MPI_abstract.md)
 2. What is MPI?
