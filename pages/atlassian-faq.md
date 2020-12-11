@@ -5,6 +5,9 @@ title: "Atlassian FAQ"
 
 ## All
 
+* **What kinds of sensitive information can I put into the various Atlassian instances?**
+See https://atlassian.llnl.gov for a full overview of the security policies that apply to the various instances. In short, CZ Atlassian tools are approved for OUO and Export Controlled, but not UCNI or NNPI. RZ is approved for OUO, Export Controlled, UCNI, and NNPI. Only the SCF instance on the classified network is approved for classified information (up to the SRD level).
+
 * **Someone is trying to add me to the permissions for a Confluence Space, Jira Project, or Bitbucket Repo, but I don't show up. What gives?**  
 You must first login to the web application before you are known by the system. E.g., [https://lc.llnl.gov/confluence/](https://lc.llnl.gov/confluence/) Having done that, you can be added to access lists and permissions. The information is managed per application, so you need to visit each application separately.
 
