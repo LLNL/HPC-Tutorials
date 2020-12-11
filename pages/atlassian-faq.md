@@ -3,6 +3,11 @@ layout: page
 title: "Atlassian FAQ"
 ---
 
+## All
+
+* **Someone is trying to add me to the permissions for a Confluence Space, Jira Project, or Bitbucket Repo, but I don't show up. What gives?**
+You must first login to the web application before you can be added to an access list. E.g., [https://lc.llnl.gov/confluence/](https://lc.llnl.gov/confluence/) When you login, a license is attached to your name, and you become known to the system. You need to login to each tool separately.
+
 ## Bitbucket & Bamboo
 
 * **Can I access mybitbucket.llnl.gov from the CZ?**
