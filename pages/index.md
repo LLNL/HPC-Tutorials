@@ -3,8 +3,7 @@ layout: page
 title: "A Sample Doc"
 ---
 
-How to do blah blah blah
-===============================
+## How to do blah blah blah
 
 Here's some good info.
 
