@@ -6,23 +6,23 @@
 
 **Table of Contents**
 
-* [Abstract](MPI_abstract.md)
-* What is MPI?
-* LLNL MPI Implementations and Compilers
-* Getting Started
-* Environment Management Routines
-* Exercise 1
-* Point to Point Communication Routines
-* General Concepts
-* MPI Message Passing Routine Arguments
-* Blocking Message Passing Routines
-* Non-blocking Message Passing Routines
-* Exercise 2
-* Collective Communication Routines
-* Derived Data Types
-* Group and Communicator Management Routines
-* Virtual Topologies
-* A Brief Word on MPI-2 and MPI-3
-* Exercise 3
-* References and More Information
-* Appendix A: MPI-1 Routine Index
+1. [Abstract](MPI_abstract.md)
+2. What is MPI?
+3. LLNL MPI Implementations and Compilers
+4. Getting Started
+5. Environment Management Routines
+6. Exercise 1
+7. Point to Point Communication Routines
+    * General Concepts
+    * MPI Message Passing Routine Arguments
+    * Blocking Message Passing Routines
+    * Non-blocking Message Passing Routines
+8. Exercise 2
+9. Collective Communication Routines
+10. Derived Data Types
+11. Group and Communicator Management Routines
+12. Virtual Topologies
+13. A Brief Word on MPI-2 and MPI-3
+14. Exercise 3
+15. References and More Information
+16. Appendix A: MPI-1 Routine Index
