@@ -10,7 +10,7 @@ To get started:
 ---------------
 
 0. Add ssh key to czgitlab - [https://lc.llnl.gov/gitlab/profile/keys](https://lc.llnl.gov/gitlab/profile/keys)
-1. Check out the repo:
+1. Check out the repo:  
 `git clone ssh://git@czgitlab.llnl.gov:7999/lc/documentation/tutorials.git`
 2. Edit content, or add new files 
     - *your-favorite-editor* newfile.**md**  (see tip below for required lines in .md files)
