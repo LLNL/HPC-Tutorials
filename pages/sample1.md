@@ -12,4 +12,4 @@ More good info.
 
 You get the idea.
 
-*Markdown* is your friend.
+[*Markdown*](https://www.markdownguide.org/basic-syntax/) is your friend.
