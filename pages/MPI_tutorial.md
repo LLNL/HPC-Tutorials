@@ -9,7 +9,7 @@ title: "Message Passing Interface (MPI)"
 
 **Table of Contents**
 
-1. [Abstract](MPI_abstract.md)
+1. [Abstract](pages/MPI_abstract.md)
 2. What is MPI?
 3. LLNL MPI Implementations and Compilers
 4. Getting Started
