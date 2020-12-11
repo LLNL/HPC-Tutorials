@@ -33,7 +33,7 @@ deploy:
   - bundle exec jekyll build -d public
   - rsync -r --delete public/ $SITE_HOME/
   after_script:
-  - chmod -R g+rwX $SITE_HOME/ 2>/dev/null
+  - chmod -R g+rwX,o+rX $SITE_HOME/ 2>/dev/null
   artifacts:
     paths:
     - public
