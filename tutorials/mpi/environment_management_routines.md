@@ -96,3 +96,72 @@ Terminates the MPI execution environment. This function should be the last MPI r
 MPI_Finalize ()
 MPI_FINALIZE (ierr)
 ```
+
+### Examples
+
+#### C Language - Environment Management Routines
+
+```
+// required MPI include file  
+#include "mpi.h"
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+int  numtasks, rank, len, rc; 
+char hostname[MPI_MAX_PROCESSOR_NAME];
+
+// initialize MPI  
+MPI_Init(&argc,&argv);
+
+// get number of tasks 
+MPI_Comm_size(MPI_COMM_WORLD,&numtasks);
+
+// get my rank  
+MPI_Comm_rank(MPI_COMM_WORLD,&rank);
+
+// this one is obvious  
+MPI_Get_processor_name(hostname, &len);
+printf ("Number of tasks= %d My rank= %d Running on %s\n", numtasks,rank,hostname);
+
+
+    // do some work with message passing 
+
+
+// done with MPI  
+MPI_Finalize();
+}
+```
+
+#### Fortran - Environment Management Routines
+
+```
+program simple
+
+! required MPI include file
+include 'mpif.h'
+
+integer numtasks, rank, len, ierr  
+character(MPI_MAX_PROCESSOR_NAME) hostname
+
+! initialize MPI
+call MPI_INIT(ierr)
+
+! get number of tasks
+call MPI_COMM_SIZE(MPI_COMM_WORLD, numtasks, ierr)
+
+! get my rank
+call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierr)
+
+! this one is obvious
+call MPI_GET_PROCESSOR_NAME(hostname, len, ierr)
+print *, 'Number of tasks=',numtasks,' My rank=',rank,' Running on=',hostname
+
+
+    ! do some work with message passing 
+
+
+! done with MPI
+call MPI_FINALIZE(ierr)
+
+end
+```
