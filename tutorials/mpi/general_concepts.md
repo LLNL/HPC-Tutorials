@@ -177,6 +177,14 @@ for (i=1; i<ntasks; i++) {
 </pre>
 </td>
 </tr>
+<tr>
+<td style="text-align:center">
+Safe. Why?
+</td>
+<td style="text-align:center">
+Unsafe. Why?
+</td>
+</tr>
 </table>
 
 ### Order and Fairness:
