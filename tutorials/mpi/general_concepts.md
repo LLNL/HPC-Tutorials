@@ -153,7 +153,7 @@ myvar = 0;
 
 for (i=1; i<ntasks; i++) {
    task = i;
-   MPI_Send (&myvar ... ... task ...);
+   <b>MPI_Send (&myvar ... ... task ...);</b>
    myvar = myvar + 2
 
    /* do some work */
@@ -162,21 +162,19 @@ for (i=1; i<ntasks; i++) {
 </pre>
 </td>
 <td>
-
-```json
+<pre>
 myvar = 0;
 
 for (i=1; i<ntasks; i++) {
    task = i;
-   MPI_Isend (&myvar ... ... task ...);
+   <b>MPI_Isend (&myvar ... ... task ...);</b>
    myvar = myvar + 2;
 
    /* do some work */
 
-   MPI_Wait (...);
+   <b>MPI_Wait (...);</b>
    }
-```
-
+</pre>
 </td>
 </tr>
 </table>
