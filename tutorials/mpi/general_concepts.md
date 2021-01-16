@@ -141,7 +141,41 @@ It is unsafe to modify the application buffer (your variable space) until you kn
 
 Non-blocking communications are primarily used to overlap computation with communication and exploit possible performance gains.
 
-# TABLE INSERT HERE
+<table>
+<tr>
+<th>Blocking Send</th>
+<th>Non-blocking Send</th>
+</tr>
+<tr>
+<td>
+<pre>
+myvar = 0;
+
+for (i=1; i<ntasks; i++) {
+   task = i;
+   MPI_Send (&myvar ... ... task ...);
+   myvar = myvar + 2
+
+   /* do some work */
+
+   }
+</pre>
+</td>
+<td>
+myvar = 0;
+
+for (i=1; i<ntasks; i++) {
+   task = i;
+   MPI_Isend (&myvar ... ... task ...);
+   myvar = myvar + 2;
+
+   /* do some work */
+
+   MPI_Wait (...);
+   }
+</td>
+</tr>
+</table>
 
 ### Order and Fairness:
 
