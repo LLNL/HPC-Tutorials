@@ -9,16 +9,19 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 The value of PI can be calculated in various ways. Consider the Monte Carlo method of approximating PI:
 
-* Inscribe a circle with radius r in a square with side length of 2r
-* The area of the circle is <MATH>Πr^2</MATH> and the area of the square is <MATH>4r^2</MATH>
+* Inscribe a circle with radius <var>r</var> in a square with side length of <var>2r</var>
+* The area of the circle is <var>Πr<sup>2</sup></var> and the area of the square is 4<var>r<sup>2</sup></var>
 * The ratio of the area of the circle to the area of the square is: 
-<MATH>Πr^2 / 4r^2 = Π / 4</MATH>
-* If you randomly generate $N$ points inside the square, approximately 
-$N * Π / 4$ of those points ($M$) should fall inside the circle.
+<var><sup>Πr<sup>2</sup></sup> &frasl; <sub>4r<sup>2</sup></sub> = <sup>Π</sup> &frasl; <sub>4</sub></var>
+* If you randomly generate <var>N</var> points inside the square, approximately 
+<var><sup>N * Π</sup> &frasl; <sb>4</sub></var> of those points (<var>M</var>) should fall inside the circle.
 * Π is then approximated as: 
-$N * Π / 4 = M$
-$Π / 4 = M / N$
-$Π = 4 * M / N$
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <var><sup>N * Π</sup> &frasl; <sub>4</sub> = M</var>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <var><sup>Π</sup> &frasl; <sub>4</sub> = <sup>M</sup> &frasl; <sub>N</sub></var>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <var>Π = <sup>4 * M</sup> &frasl; <sub>N</sub></var>
 
 Note that increasing the number of points generated improves the approximation.
 
