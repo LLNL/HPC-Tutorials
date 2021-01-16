@@ -13,11 +13,11 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 4. [Getting Started](getting_started)
 5. [Environment Management Routines](environment_management_routines)
 6. [Exercise 1](exercise_1)
-7. [Point to Point Communication Routines](p2p_communication_routines)
-    * General Concepts
-    * MPI Message Passing Routine Arguments
-    * Blocking Message Passing Routines
-    * Non-blocking Message Passing Routines
+7. Point to Point Communication Routines
+    * [General Concepts](general_concepts)
+    * [MPI Message Passing Routine Arguments](routine_args)
+    * [Blocking Message Passing Routines](blocking)
+    * [Non-blocking Message Passing Routines](non_blocking)
 8. [Exercise 2](exercise_2)
 9. [Collective Communication Routines](collective_communication_routines)
 10. [Derived Data Types](derived_data_types)
