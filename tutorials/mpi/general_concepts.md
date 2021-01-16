@@ -121,7 +121,7 @@ User managed address space (i.e. your program variables) is called the **applica
 
 Most of the MPI point-to-point routines can be used in either blocking or non-blocking mode.
 
-#### Blocking:
+**Blocking:**
 
 A blocking send routine will only "return" after it is safe to modify the application buffer (your send data) for reuse. Safe means that modifications will not affect the data intended for the receive task. Safe does not imply that the data was actually received - it may very well be sitting in a system buffer.
 
@@ -131,7 +131,7 @@ A blocking send can be asynchronous if a system buffer is used to hold the data 
 
 A blocking receive only "returns" after the data has arrived and is ready for use by the program.
 
-#### Non-blocking:
+**Non-blocking:**
 
 Non-blocking send and receive routines behave similarly - they will return almost immediately. They do not wait for any communication events to complete, such as message copying from user memory to system buffer space or the actual arrival of message.
 
@@ -189,7 +189,7 @@ for (i=1; i<ntasks; i++) {
 
 ### Order and Fairness:
 
-#### Order:
+**Order:**
 
 MPI guarantees that messages will not overtake each other.
 
@@ -199,7 +199,7 @@ If a receiver posts two receives (Receive 1 and Receive 2), in succession, and b
 
 Order rules do not apply if there are multiple threads participating in the communication operations.
 
-#### Fairness:
+**Fairness:**
 
 MPI does not guarantee fairness - it's up to the programmer to prevent "operation starvation".
 
