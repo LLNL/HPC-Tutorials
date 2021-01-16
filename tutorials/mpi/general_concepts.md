@@ -179,10 +179,10 @@ for (i=1; i<ntasks; i++) {
 </tr>
 <tr>
 <td style="text-align:center">
-Safe. Why?
+<b>Safe. Why?</b>
 </td>
 <td style="text-align:center">
-Unsafe. Why?
+<b>Unsafe. Why?</b>
 </td>
 </tr>
 </table>
