@@ -162,6 +162,8 @@ for (i=1; i<ntasks; i++) {
 </pre>
 </td>
 <td>
+
+```json
 myvar = 0;
 
 for (i=1; i<ntasks; i++) {
@@ -173,6 +175,8 @@ for (i=1; i<ntasks; i++) {
 
    MPI_Wait (...);
    }
+```
+
 </td>
 </tr>
 </table>
