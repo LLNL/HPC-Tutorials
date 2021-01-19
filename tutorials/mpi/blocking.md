@@ -45,7 +45,7 @@ MPI_SENDRECV (sendbuf,sendcount,sendtype,dest,sendtag,
 
 MPI_Wait blocks until a specified non-blocking send or receive operation has completed. For multiple non-blocking operations, the programmer can specify any, all or some completions.
 
-````
+```
 MPI_Wait (&request,&status) 
 MPI_Waitany (count,&array_of_requests,&index,&status) 
 MPI_Waitall (count,&array_of_requests,&array_of_statuses) 
