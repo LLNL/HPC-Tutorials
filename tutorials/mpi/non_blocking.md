@@ -10,20 +10,29 @@ The more commonly used MPI non-blocking message passing routines are described b
 #### [MPI_Isend](non_blocking/MPI_Isend.txt)
 
 Identifies an area in memory to serve as a send buffer. Processing continues immediately without waiting for the message to be copied out from the application buffer. A communication request handle is returned for handling the pending message status. The program should not modify the application buffer until subsequent calls to MPI_Wait or MPI_Test indicate that the non-blocking send has completed.
+
+```
 MPI_Isend (&buf,count,datatype,dest,tag,comm,&request) 
 MPI_ISEND (buf,count,datatype,dest,tag,comm,request,ierr)
+```
 
 #### [MPI_Irecv](non_blocking/MPI_Irecv.txt)
 
 Identifies an area in memory to serve as a receive buffer. Processing continues immediately without actually waiting for the message to be received and copied into the the application buffer. A communication request handle is returned for handling the pending message status. The program must use calls to MPI_Wait or MPI_Test to determine when the non-blocking receive operation completes and the requested message is available in the application buffer.
+
+```
 MPI_Irecv (&buf,count,datatype,source,tag,comm,&request) 
 MPI_IRECV (buf,count,datatype,source,tag,comm,request,ierr)
+```
 
 #### [MPI_Issend](non_blocking/MPI_Issend.txt)
 
 Non-blocking synchronous send. Similar to MPI_Isend(), except MPI_Wait() or MPI_Test() indicates when the destination process has received the message.
+
+```
 MPI_Issend (&buf,count,datatype,dest,tag,comm,&request) 
 MPI_ISSEND (buf,count,datatype,dest,tag,comm,request,ierr)
+```
 
 #### [MPI_Test](non_blocking/MPI_Test.txt)
 #### [MPI_Testany](non_blocking/MPI_Testany.txt) 
