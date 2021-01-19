@@ -62,3 +62,92 @@ Performs a non-blocking test for a message. The "wildcards" MPI_ANY_SOURCE and M
 MPI_Iprobe (source,tag,comm,&flag,&status)
 MPI_IPROBE (source,tag,comm,flag,status,ierr)
 ```
+
+### Examples: Non-blocking Message Passing Routines
+
+Nearest neighbor exchange in a ring topology
+
+![ringtopo](images/ringtopo.gif)
+
+#### C Language - Non-blocking Message Passing Example
+```
+#include "mpi.h"
+#include <stdio.h>
+
+main(int argc, char *argv[])  {
+int numtasks, rank, next, prev, buf[2], tag1=1, tag2=2;
+MPI_Request reqs[4];   // required variable for non-blocking calls
+MPI_Status stats[4];   // required variable for Waitall routine
+
+MPI_Init(&argc,&argv);
+MPI_Comm_size(MPI_COMM_WORLD, &numtasks);
+MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+
+// determine left and right neighbors
+prev = rank-1;
+next = rank+1;
+if (rank == 0)  prev = numtasks - 1;
+if (rank == (numtasks - 1))  next = 0;
+
+// post non-blocking receives and sends for neighbors
+MPI_Irecv(&buf[0], 1, MPI_INT, prev, tag1, MPI_COMM_WORLD, &reqs[0]);
+MPI_Irecv(&buf[1], 1, MPI_INT, next, tag2, MPI_COMM_WORLD, &reqs[1]);
+
+MPI_Isend(&rank, 1, MPI_INT, prev, tag2, MPI_COMM_WORLD, &reqs[2]);
+MPI_Isend(&rank, 1, MPI_INT, next, tag1, MPI_COMM_WORLD, &reqs[3]);
+
+    // do some work while sends/receives progress in background
+
+// wait for all non-blocking operations to complete
+MPI_Waitall(4, reqs, stats);
+
+    // continue - do more work
+
+MPI_Finalize();
+}
+```
+
+#### Fortran - Non-blocking Message Passing Example
+
+```
+program ringtopo
+include 'mpif.h'
+
+integer numtasks, rank, next, prev, buf(2), tag1, tag2, ierr
+integer reqs(4)   ! required variable for non-blocking calls 
+integer stats(MPI_STATUS_SIZE,4)   ! required variable for WAITALL routine 
+tag1 = 1
+tag2 = 2
+
+call MPI_INIT(ierr)
+call MPI_COMM_RANK(MPI_COMM_WORLD, rank, ierr)
+call MPI_COMM_SIZE(MPI_COMM_WORLD, numtasks, ierr)
+
+! determine left and right neighbors 
+prev = rank - 1
+next = rank + 1
+if (rank .eq. 0) then
+    prev = numtasks - 1
+endif
+if (rank .eq. numtasks - 1) then
+    next = 0
+endif
+
+! post non-blocking receives and sends for neighbors 
+call MPI_IRECV(buf(1), 1, MPI_INTEGER, prev, tag1, MPI_COMM_WORLD, reqs(1), ierr)
+call MPI_IRECV(buf(2), 1, MPI_INTEGER, next, tag2, MPI_COMM_WORLD, reqs(2), ierr)
+
+call MPI_ISEND(rank, 1, MPI_INTEGER, prev, tag2, MPI_COMM_WORLD, reqs(3), ierr)
+call MPI_ISEND(rank, 1, MPI_INTEGER, next, tag1, MPI_COMM_WORLD, reqs(4), ierr)
+
+    ! do some work while sends/receives progress in background
+
+! wait for all non-blocking operations to complete 
+call MPI_WAITALL(4, reqs, stats, ierr);
+
+    ! continue - do more work
+
+call MPI_FINALIZE(ierr)
+
+end
+```
