@@ -33,6 +33,42 @@ MPI-2 extended most collective operations to allow data movement between interco
 
 With MPI-3, collective operations can be blocking or non-blocking. Only blocking operations are covered in this tutorial.
 
+### Collective Communication Routines
+
+[**MPI_Barrier**](collective_comms/MPI_Barrier.txt)
+
+Synchronization operation. Creates a barrier synchronization in a group. Each task, when reaching the MPI_Barrier call, blocks until all tasks in the group reach the same MPI_Barrier call. Then all tasks are free to proceed.
+
+```
+MPI_Barrier (comm)
+MPI_BARRIER (comm,ierr)
+```
+
+[**MPI_Bcast**](collective_comms/MPI_Bcast.txt)
+
+Data movement operation. Broadcasts (sends) a message from the process with rank "root" to all other processes in the group. 
+
+```
+MPI_Bcast (&buffer,count,datatype,root,comm) 
+MPI_BCAST (buffer,count,datatype,root,comm,ierr)
+```
+
+[**MPI_Scatter**](collective_comms/MPI_Scatter.txt)
+
+[**MPI_Gather**](collective_comms/MPI_Gather.txt)
+
+[**MPI_Allgather**](collective_comms/MPI_Allgather.txt)
+
+[**MPI_Reduce**](collective_comms/MPI_Reduce.txt)
+
+[**MPI_Allreduce**](collective_comms/MPI_Allreduce.txt)
+
+[**MPI_Reduce_scatter**](collective_comms/MPI_Reduce_scatter.txt)
+
+[**MPI_Alltoall**](collective_comms/MPI_Alltoall.txt)
+
+[**MPI_Scan**](collective_comms/MPI_Scan.txt)
+
 ### Examples
 
 #### C Language - Collective Communications Example
