@@ -46,7 +46,7 @@ MPI_BARRIER (comm,ierr)
 
 [**MPI_Bcast**](collective_comms/MPI_Bcast.txt)
 
-Data movement operation. Broadcasts (sends) a message from the process with rank "root" to all other processes in the group. 
+Data movement operation. Broadcasts (sends) a message from the process with rank "root" to all other processes in the group. [Diagram here](collective_comms/images/MPI_Bcast.gif)
 
 ```
 MPI_Bcast (&buffer,count,datatype,root,comm) 
@@ -55,19 +55,53 @@ MPI_BCAST (buffer,count,datatype,root,comm,ierr)
 
 [**MPI_Scatter**](collective_comms/MPI_Scatter.txt)
 
+Data movement operation. Distributes distinct messages from a single source task to each task in the group. [Diagram here](collective_comms/MPI_Scatter.gif)
+
+```
+MPI_Scatter (&sendbuf,sendcnt,sendtype,&recvbuf,recvcnt,recvtype,root,comm) 
+MPI_SCATTER (sendbuf,sendcnt,sendtype,recvbuf,recvcnt,recvtype,root,comm,ierr)
+```
+
 [**MPI_Gather**](collective_comms/MPI_Gather.txt)
+
+Data movement operation. Gathers distinct messages from each task in the group to a single destination task. This routine is the reverse operation of MPI_Scatter. [Diagram here](collective_comms/MPI_Gather.gif)
+
+```
+MPI_Gather (&sendbuf,sendcnt,sendtype,&recvbuf,recvcount,recvtype,root,comm) 
+MPI_GATHER (sendbuf,sendcnt,sendtype,recvbuf,recvcount,recvtype,root,comm,ierr)
+```
 
 [**MPI_Allgather**](collective_comms/MPI_Allgather.txt)
 
+Data movement operation. Concatenation of data to all tasks in a group. Each task in the group, in effect, performs a one-to-all broadcasting operation within the group. [Diagram here](collective_comms/MPI_Allgather.gif)
+
+```
+MPI_Allgather (&sendbuf,sendcount,sendtype,&recvbuf,recvcount,recvtype,comm) 
+MPI_ALLGATHER (sendbuf,sendcount,sendtype,recvbuf,recvcount,recvtype,comm,info)
+```
+
 [**MPI_Reduce**](collective_comms/MPI_Reduce.txt)
 
+Collective computation operation. Applies a reduction operation on all tasks in the group and places the result in one task. [Diagram here](collective_comms/MPI_Reduce.gif)
+
+```
+MPI_Reduce (&sendbuf,&recvbuf,count,datatype,op,root,comm) 
+MPI_REDUCE (sendbuf,recvbuf,count,datatype,op,root,comm,ierr)
+```
+
+The predefined MPI reduction operations appear below. Users can also define their own reduction functions by using the [MPI_Op_create](collective_comms/MPI_Op_create.txt) routine.
+
 [**MPI_Allreduce**](collective_comms/MPI_Allreduce.txt)
+[Diagram here](collective_comms/MPI_Allreduce.gif)
 
 [**MPI_Reduce_scatter**](collective_comms/MPI_Reduce_scatter.txt)
+[Diagram here](collective_comms/MPI_Reduce_scatter.gif)
 
 [**MPI_Alltoall**](collective_comms/MPI_Alltoall.txt)
+[Diagram here](collective_comms/MPI_Alltoall.gif)
 
 [**MPI_Scan**](collective_comms/MPI_Scan.txt)
+[Diagram here](collective_comms/MPI_Scan.gif)
 
 ### Examples
 
