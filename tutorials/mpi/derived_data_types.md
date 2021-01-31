@@ -89,3 +89,11 @@ Deallocates the specified datatype object. Use of this routine is especially imp
 MPI_Type_free (&datatype)
 MPI_TYPE_FREE (datatype,ierr)
 ```
+
+### Examples
+
+#### Examples: Contiguous Derived Data Type
+
+Create a data type representing a row of an array and distribute a different row to all processes. 
+
+![Diagram here](derived_data_types/images/MPI_Type_contiguous.gif)
