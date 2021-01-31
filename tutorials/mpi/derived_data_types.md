@@ -18,3 +18,74 @@ MPI provides several methods for constructing derived data types:
 * Vector
 * Indexed
 * Struct
+
+### Derived Data Type Routines
+
+[**MPI_Type_contiguous**](derived_data_types/MPI_Type_contiguous.txt)
+
+The simplest constructor. Produces a new data type by making count copies of an existing data type.
+
+```
+MPI_Type_contiguous (count,oldtype,&newtype) 
+MPI_TYPE_CONTIGUOUS (count,oldtype,newtype,ierr)
+```
+
+[**MPI_Type_vector**](derived_data_types/MPI_Type_vector.txt)
+[**MPI_Type_hvector**](derived_data_types/MPI_Type_hvector.txt)
+
+Similar to contiguous, but allows for regular gaps (stride) in the displacements. MPI_Type_hvector is identical to MPI_Type_vector except that stride is specified in bytes.
+
+```
+MPI_Type_vector (count,blocklength,stride,oldtype,&newtype)
+MPI_TYPE_VECTOR (count,blocklength,stride,oldtype,newtype,ierr)
+```
+
+[**MPI_Type_indexed**](derived_data_types/MPI_Type_indexed.txt) 
+[**MPI_Type_hindexed**](derived_data_types/MPI_Type_hindexed.txt) 
+
+An array of displacements of the input data type is provided as the map for the new data type. MPI_Type_hindexed is identical to MPI_Type_indexed except that offsets are specified in bytes.
+
+```
+MPI_Type_indexed (count,blocklens[],offsets[],old_type,&newtype)
+MPI_TYPE_INDEXED (count,blocklens(),offsets(),old_type,newtype,ierr)
+```
+
+[**MPI_Type_struct**](derived_data_types/MPI_Type_struct.txt)
+
+The new data type is formed according to completely defined map of the component data types. 
+
+**NOTE**: This function is deprecated in MPI-2.0 and replaced by MPI_Type_create_struct in MPI-3.0
+
+```
+MPI_Type_struct (count,blocklens[],offsets[],old_types,&newtype)
+MPI_TYPE_STRUCT (count,blocklens(),offsets(),old_types,newtype,ierr)
+```
+
+[**MPI_Type_extent**](derived_data_types/MPI_Type_extent.txt)
+
+Returns the size in bytes of the specified data type. Useful for the MPI subroutines that require specification of offsets in bytes. 
+
+**NOTE**: This function is deprecated in MPI-2.0 and replaced by MPI_Type_get_extent in MPI-3.0
+
+```
+MPI_Type_extent (datatype,&extent)
+MPI_TYPE_EXTENT (datatype,extent,ierr)
+```
+
+[**MPI_Type_commit**](derived_data_types/MPI_Type_commit.txt)
+
+Commits new datatype to the system. Required for all user constructed (derived) datatypes.
+
+```
+MPI_Type_commit (&datatype)
+MPI_TYPE_COMMIT (datatype,ierr)
+```
+
+[**MPI_Type_free**](derived_data_types/MPI_Type_free.txt)
+
+Deallocates the specified datatype object. Use of this routine is especially important to prevent memory exhaustion if many datatype objects are created, as in a loop.
+
+```
+MPI_Type_free (&datatype)
+MPI_TYPE_FREE (datatype,ierr)
+```
