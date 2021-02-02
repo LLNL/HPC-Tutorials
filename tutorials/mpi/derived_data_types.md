@@ -98,7 +98,7 @@ Create a data type representing a row of an array and distribute a different row
 
 ![image](derived_data_types/images/MPI_Type_contiguous.gif)
 
-C and Fortran code examples [here](derived_data_types/contiguous_examples).
+C and Fortran code examples [here](derived_data_type_files/contiguous_examples).
 
 #### Examples: Vector Derived Data Type
 
@@ -106,7 +106,7 @@ Create a data type representing a column of an array and distribute different co
 
 ![image](derived_data_types/images/MPI_Type_vector.gif)
 
-C and Fortran code examples [here](derived_data_types/vector_examples).
+C and Fortran code examples [here](derived_data_type_files/vector_examples).
 
 #### Examples: Indexed Derived Data Type
 
@@ -114,7 +114,7 @@ Create a datatype by extracting variable portions of an array and distribute to 
 
 ![image](derived_data_types/images/MPI_Type_indexed.gif)
 
-C and Fortran code examples [here](derived_data_types/indexed_examples).
+C and Fortran code examples [here](derived_data_type_files/indexed_examples).
 
 #### Examples: Struct Derived Data Type
 
@@ -122,4 +122,4 @@ Create a data type that represents a particle and distribute an array of such pa
 
 ![image](derived_data_types/images/MPI_Type_struct.gif)
 
-C and Fortran code examples [here](derived_data_types/struct_examples).
+C and Fortran code examples [here](derived_data_type_files/struct_examples).
