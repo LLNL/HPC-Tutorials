@@ -96,4 +96,30 @@ MPI_TYPE_FREE (datatype,ierr)
 
 Create a data type representing a row of an array and distribute a different row to all processes. 
 
-![Diagram here](derived_data_types/images/MPI_Type_contiguous.gif)
+<img src="derived_data_types/images/MPI_Type_contiguous.gif" width="300" height="300">
+
+Code examples [here]().
+
+#### Examples: Vector Derived Data Type
+
+Create a data type representing a column of an array and distribute different columns to all processes. 
+
+<img src="derived_data_types/images/MPI_Type_vector.gif" width="300" height="300">
+
+Code examples [here]().
+
+#### Examples: Indexed Derived Data Type
+
+Create a datatype by extracting variable portions of an array and distribute to all tasks. 
+
+<img src="derived_data_types/images/MPI_Type_indexed.gif" width="300" height="300">
+
+Code examples [here]().
+
+#### Examples: Struct Derived Data Type
+
+Create a data type that represents a particle and distribute an array of such particles to all processes. 
+
+<img src="derived_data_types/images/MPI_Type_struct.gif" width="300" height="300">
+
+Code examples [here]().
