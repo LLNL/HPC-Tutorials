@@ -112,9 +112,11 @@ C and Fortran code examples [here](derived_data_types/vector_examples).
 
 Create a datatype by extracting variable portions of an array and distribute to all tasks. 
 
+![image](derived_data_types/images/MPI_Type_indexed.gif)
+
 <img src="derived_data_types/images/MPI_Type_indexed.gif" width="300" height="300">
 
-C and Fortran code examples [here](derived_data_types/indexed_examples).
+C and Fortran code examples [here](derived_data_types/indexed_examples.md).
 
 #### Examples: Struct Derived Data Type
 
