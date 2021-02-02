@@ -31,6 +31,7 @@ MPI_TYPE_CONTIGUOUS (count,oldtype,newtype,ierr)
 ```
 
 [**MPI_Type_vector**](derived_data_types/MPI_Type_vector.txt)
+
 [**MPI_Type_hvector**](derived_data_types/MPI_Type_hvector.txt)
 
 Similar to contiguous, but allows for regular gaps (stride) in the displacements. MPI_Type_hvector is identical to MPI_Type_vector except that stride is specified in bytes.
@@ -41,6 +42,7 @@ MPI_TYPE_VECTOR (count,blocklength,stride,oldtype,newtype,ierr)
 ```
 
 [**MPI_Type_indexed**](derived_data_types/MPI_Type_indexed.txt) 
+
 [**MPI_Type_hindexed**](derived_data_types/MPI_Type_hindexed.txt) 
 
 An array of displacements of the input data type is provided as the map for the new data type. MPI_Type_hindexed is identical to MPI_Type_indexed except that offsets are specified in bytes.
