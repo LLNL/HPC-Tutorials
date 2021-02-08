@@ -27,3 +27,5 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 14. [Exercise 3](exercise_3)
 15. [References and More Information](references)
 16. [Appendix A: MPI-1 Routine Index](appendix_a)
+
+Once you have finished the tutorial, please complete our [evaluation form](https://hpc.llnl.gov/training/tutorials/evaluation-form)!
