@@ -27,5 +27,34 @@ As with Exercises 1 & 2, use the compiler command of your choice to compile the 
 
 Use the appropriate serial compiler command for the serial version. For example:
 
-<table style="border-collapse:collapse;border-spacing:0" class="tg"><thead><tr><th style="background-color:#cbcefb;border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;position:-webkit-sticky;position:sticky;text-align:left;top:-1px;vertical-align:top;will-change:transform;word-break:normal">C:</th><th style="background-color:#ffffff;border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;position:-webkit-sticky;position:sticky;text-align:left;top:-1px;vertical-align:top;will-change:transform;word-break:normal"><span style="font-weight:bold">icc ser_array.c  -o ser_array</span><br><br><span style="font-weight:bold">mpicc mpi_array.c  -o mpi_array </span></th></tr></thead><tbody><tr><td style="background-color:#cbcefb;border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">Fortran:</td><td style="background-color:#ffffff;border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:bold;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal"><span style="font-weight:bold">ifort ser_array.f -o ser_array</span><br><br><span style="font-weight:bold">mpif77 mpi_array.f -o mpi_array</span></td></tr></tbody></table>
+`C`:
 
+```
+icc ser_array.c  -o ser_array
+```
+```
+mpicc mpi_array.c  -o mpi_array
+```
+
+`Fortran`:
+```
+ifort ser_array.f -o ser_array
+```
+```
+mpif77 mpi_array.f -o mpi_array
+```
+
+#### 4. Run the executables interactively
+
+For the MPI executable, use the special workshop pool and 8 tasks. For example:
+
+`Serial`:	
+```
+ser_array
+```
+`MPI:`
+```	
+srun -n8 -ppReserved mpi_array
+```
+
+**Note**: The `srun` command is covered in detail in the "Starting Jobs" section of the Linux Clusters Overview tutorial, located at: computing.llnl.gov/tutorials/linux_clusters/index.html#Starting. There is also a man page.
