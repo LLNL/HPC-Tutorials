@@ -147,4 +147,4 @@ The buggy behavior will differ for each example. Some hints are provided below.
 
 </details>
 
-If you're just finishing the tutorial and haven't filled out our [evaluation form](https://hpc.llnl.gov/training/tutorials/evaluation-form) yet, please do!
+*If you're just finishing the tutorial and haven't filled out our [evaluation form](https://hpc.llnl.gov/training/tutorials/evaluation-form) yet, please do!*
