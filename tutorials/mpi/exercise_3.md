@@ -90,3 +90,53 @@ Most of the executables only need 4 MPI tasks or less. Some exceptions and notes
     * Experiment with compiler flags (see respective man pages).
     * Vary the number of tasks and nodes used.
 
+#### 7. Compare per task and aggregate communications bandwidths
+- Compile the `mpi_bandwidth` code if you haven't already.
+- Run the code interactively with 2 tasks on two different nodes:
+```
+srun -N2 -n2 -ppReserved mpi_bandwidth
+```
+- Note the overall average bandwidth for the largest message size of 1,000,000 bytes.
+- Now run the code interactively with 4, 8, 16, 32 and 64 tasks on two different nodes:
+
+```
+srun -N2 -n4 -ppReserved mpi_bandwidth
+srun -N2 -n8 -ppReserved mpi_bandwidth
+srun -N2 -n16 -ppReserved mpi_bandwidth
+srun -N2 -n32 -ppReserved mpi_bandwidth
+srun -N2 -n64 -ppReserved mpi_bandwidth
+```
+
+- Note the average bandwidths as before.
+- What are your observations? Why?  
+<details>
+  <summary> Explanation (Click to expand!)</summary>
+
+As the number of tasks increase, the per task bandwidth decreases because they must compete for use of the network adapter. Aggregate bandwidth will increase until it plateaus.
+
+</details>
+
+#### 8. Compare blocking send/receive with non-blocking send/receive
+- Copy your `mpi_bandwidth` source file to another file called `mpi_bandwidthNB`. Modify your new file so that it performs non-blocking sends/receives instead of blocking. An example `mpi_bandwidth_nonblock` file has been provided in case you need it.
+- After you're satisfied with your new non-blocking version of the bandwidth code, compile both.
+- Run each code using two tasks on two different nodes in the special workshop pool:
+```
+srun -N2 -ppReserved mpi_bandwidth
+srun -N2 -ppReserved mpi_bandwidthNB
+```
+- Compare the results. Which one performs best? 
+
+<details>
+  <summary> Explanation (Click to expand!)</summary>
+  
+Non-blocking send/receive operations are often significantly faster than blocking send/receive operations.
+
+</details>
+
+#### 9. When things go wrong...
+There are many things that can go wrong when developing MPI programs. The mpi_bug series of programs demonstrate just a few. See if you can figure out what the problem is with each case and then fix it.
+
+Compile with the compile command(s) of your choice and run interactively using 4 tasks in the special workshop pool.
+
+The buggy behavior will differ for each example. Some hints are provided below.
+
