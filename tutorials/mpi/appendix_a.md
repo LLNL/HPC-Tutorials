@@ -23,7 +23,9 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 ## HTML table with various types of links
 
+{% raw %}
 <table style="border-collapse:collapse;border-spacing:0" class="tg"><thead><tr><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;position:-webkit-sticky;position:sticky;text-align:left;top:-1px;vertical-align:top;will-change:transform;word-break:normal"><a href="https://www.google.com"><span style="color:#905">[Google](https://www.google.com)</span></a></th></tr></thead><tbody><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal"><a href="MPI_appendix/MPI_Keyval_create.txt"><span style="color:#905">[MPI keyval](MPI_appendix/MPI_Keyval_create.txt)</span></a></td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">&lt;a href='MPI_appendix/MPI_Keyval_create.txt'&gt;MPI_Keyval_create*&lt;/a&gt;</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">&lt;a href="MPI_appendix/MPI_Keyval_create.txt"&gt;MPI_Keyval_create*&lt;/a&gt;</td></tr><tr><td style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;text-align:left;vertical-align:top;word-break:normal">&lt;a href="https://www.google.com"&gt;Google&lt;/a&gt;</td></tr></tbody></table>
+{% endraw %}
 
 # ATTEMPTS
 
