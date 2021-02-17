@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 title: "Getting Started with Jekyll and GitLab Pages"
 ---
 
@@ -10,7 +10,7 @@ To get started:
 ---------------
 
 0. Add ssh key to czgitlab - [https://lc.llnl.gov/gitlab/profile/keys](https://lc.llnl.gov/gitlab/profile/keys)
-1. Check out the repo:  
+1. Check out the repo:
 `git clone ssh://git@czgitlab.llnl.gov:7999/lc/documentation/tutorials.git`
 2. Edit content, or add new files
     - `cd tutorials/pages/`
@@ -26,8 +26,8 @@ Tips:
 * The top of your markdown (.md) files **must** have these lines in order to get rendered into html by Jekyll:
 ```
 ---
-layout: page
+layout: default
 title: "Your Page Title"  (optional)
 ---
-```		
+```
 *Have fun!*

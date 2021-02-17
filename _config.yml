@@ -1,26 +1,49 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+author: "Livermore Computing <lc-hotline@llnl.gov>"
+title: LLNL HPC Tutorials
+description: "Lawrence Livermore National Laboratory Software Portal"
+remote_theme: LLNL/Jekyll-LLNL-Theme
 
-# Site settings
-title: LC Documentation Day
-email: lc-hotline@llnl.gov
-description: > # this means to ignore newlines until "baseurl:"
-  LC documentation experimental area! You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "/docs" # the subpath of your site, e.g. /blog
-url: "/" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
-gitlab_username:  pages
+url: "https://hpc-tutorials.llnl.gov"
+repo_url: "https://github.com/LLNL/hpc-tutorials"
 
-# Outputting
-permalink: /:categories/:year/:month/:day/:title
+# LLNL Piwik Analytics https://analytics.llnl.gov
+# piwik_id: 250
 
-# Build settings
-markdown: kramdown
-exclude: ["README.md"]
+# Google Analytics ID
+# google_analytics:
+#   tracking_id: UA-75179431-1
+
+# Twitter username (used by jekyll-seo-tag)
+twitter:
+  username: llnl_opensource  # llnl_computing ?
+
+# GitHub Metadata -- https://github.com/jekyll/github-metadata
+repository: llnl/hpc-tutorials
+plugins:
+  - jekyll-github-metadata
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-remote-theme
+
+kramdown:
+  auto_ids: true
+
+# defaults:
+#   -
+#     scope:
+#       path: ""
+#       type: "posts"
+#     values:
+#       layout: "post"
+#       permalink: "/news/:year/:month/:day/:title/"
+
+permalink: pretty
+
+exclude:
+    - CNAME
+    - Gemfile
+    - Gemfile.lock
+    - README.md
+    - Makefile
+    - build

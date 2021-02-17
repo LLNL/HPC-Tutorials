@@ -1,23 +1,67 @@
 ---
-layout: default
+layout: homepage
 ---
 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+<div class="col-sm-8">
+  <div class="field field-name-title field-type-ds field-label-hidden"><div class="field-items"><div class="field-item even" property="dc:title"><h1 class="title">Tutorials</h1></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even" property="content:encoded"><h2><a name="training_materials" id="training_materials"></a>Training Materials</h2>
+  <p>Most training materials are kept online. They cover a range of topics related to parallel programming and using LC's HPC systems.&nbsp;For HPC related training materials beyond LC, see "Other HPC Training Resources" on the <a href="https://hpc.llnl.gov/training/workshop-schedule" target="_blank">Training Events</a> page.</p>
+  <table class="table-bordered table-striped" summary="Current tutorials available online"><tbody><tr><th>
+  <h3>Tutorial</h3>
+  </th>
+  <th>
+  <h3>LTRAIN#</h3>
+  </th>
+  <th>
+  <h3>Date</h3>
+  </th>
+  </tr><tr><td><a href="/training/tutorials/introduction-parallel-computing-tutorial" target="_blank">Introduction To Parallel Computing</a></td>
+  <td>EC3500</td>
+  <td>current</td>
+  </tr><tr><td><a href="/training/tutorials/livermore-computing-resources-and-environment" target="_blank">Livermore Computing Resources and Environment</a></td>
+  <td>EC3501</td>
+  <td>current</td>
+  </tr><tr><td><a href="/training/tutorials/slurm-and-moab" target="_blank">Slurm and Moab Tutorial</a></td>
+  <td>EC4045</td>
+  <td>current</td>
+  </tr><tr><td><a href="/training/tutorials/using-lcs-sierra-system" target="_blank">Using LC's Sierra Systems</a></td>
+  <td>&nbsp;</td>
+  <td>current</td>
+  </tr><tr><td><a href="http://computing.llnl.gov/tutorials/mpi/" target="_blank">Message Passing Interface (MPI)</a></td>
+  <td>EC3505</td>
+  <td>current</td>
+  </tr><tr><td><a href="http://computing.llnl.gov/tutorials/openMP/" target="_blank">OpenMP Tutorial</a></td>
+  <td>EC3507</td>
+  <td>current</td>
+  </tr><tr><td>
+  <p><a href="/training/tutorials/totalview">TotalView Debugger Tutorial Part One</a><br><a href="/training/tutorials/totalview-part-2-common-functions">TotalView Debugger Tutorial Part Two</a><br><a href="/training/tutorials/totalview-part-3-debugging-parallel-programs">TotalView Debugger Tutorial Part Three</a></p>
+  </td>
+  <td>EC3508</td>
+  <td>current</td>
+  </tr><tr><td><a href="http://hpc.llnl.gov/sites/default/files/2019.08.21.TAU_.pdf" target="_blank">Parallel Performance Evaluation Using TAU</a></td>
+  <td>&nbsp;</td>
+  <td>08/21/2019</td>
+  </tr><tr><td><a href="/training/tutorials/livermore-computing-linux-clusters-overview-part-one" target="_blank">Linux Clusters Part One</a><br><a href="/training/tutorials/livermore-computing-linux-clusters-overview-part-two">Linux Clusters Part Two</a></td>
+  <td>EC3516</td>
+  <td>01/18/2019</td>
+  </tr><tr><td><a href="https://spack.readthedocs.io/en/latest/tutorial.html" target="_blank">Spack 101 Tutorial</a></td>
+  <td>&nbsp;</td>
+  <td>current</td>
+  </tr><tr><td><a href="https://computing.llnl.gov/tutorials/pthreads/" target="_blank">POSIX Threads Programming</a></td>
+  <td>EC3506</td>
+  <td>03/07/2017</td>
+  </tr><tr><td><a href="/sites/default/files/2018.10.24.TotalViewCORALupdate.pdf" target="_blank">TotalView CORAL Update</a></td>
+  <td>&nbsp;</td>
+  <td>10/24/2018</td>
+  </tr><tr><td><a href="https://computing.llnl.gov/tutorials/CORAL-EA/" target="_blank">CORAL Early Access Systems Getting Started Workshop</a></td>
+  <td>&nbsp;</td>
+  <td>04/19/2017</td>
+  </tr><tr><td><strong>Updates and User Training for the MPI tools Vampir and MUST</strong><br><a href="/sites/default/files/Slides_Vampir_01.pdf" target="_blank">Vampir &amp; Score-P</a> |&nbsp;&nbsp;<a href="/sites/default/files/Slides_2019-07_TriLabs-MUST-Archer.pdf" target="_blank">MUST &amp; Archer</a> | <a href="/sites/default/files/Slides_Vampir_03_Hands-On.pdf" target="_blank">Vampir Hands-on</a> | <a href="/sites/default/files/Slides_Tools-Cheatsheet.pdf" target="_blank">Cheatsheet</a></td>
+  <td>&nbsp;</td>
+  <td>07/25/2019</td>
+  </tr><tr><td><a href="/sites/default/files/2014.09.15-16.NVIDIA-OpenACC_0.pdf" target="_blank">NVIDIA OpenACC Workshop Slides</a><br>Exercises installed under /usr/global/docs/training/nvidia/openACC on CZ systems</td>
+  <td>&nbsp;</td>
+  <td>09/25/2014</td>
+  </tr><tr><td><a href="/sites/default/files/DavidCronkSlides.pdf" target="_blank">Advanced MPI Tutorial</a></td>
+  <td>&nbsp;</td>
+  <td>09/13/2007</td>
+  </tr></tbody></table></div></div></div><div class="field field-name-field-im-release-number field-type-text field-label-hidden"><div class="field-items"><div class="field-item even">UCRL-MI-133316</div></div></div></div>
