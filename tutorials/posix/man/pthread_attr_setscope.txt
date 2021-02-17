@@ -1,0 +1,80 @@
+PTHREAD_ATTR_GETSCOPE(P)   POSIX Programmer's Manual  PTHREAD_ATTR_GETSCOPE(P)
+
+
+
+NAME
+       pthread_attr_getscope,  pthread_attr_setscope  -  get  and set the con-
+       tentionscope attribute (REALTIME THREADS)
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_attr_getscope(const pthread_attr_t *restrict attr,
+              int *restrict contentionscope);
+       int pthread_attr_setscope(pthread_attr_t *attr, int contentionscope);
+
+
+DESCRIPTION
+       The  pthread_attr_getscope()  and  pthread_attr_setscope()   functions,
+       respectively,  shall  get  and set the contentionscope attribute in the
+       attr object.
+
+       The contentionscope attribute may have the values PTHREAD_SCOPE_SYSTEM,
+       signifying  system  scheduling  contention scope, or PTHREAD_SCOPE_PRO-
+       CESS, signifying process  scheduling  contention  scope.   The  symbols
+       PTHREAD_SCOPE_SYSTEM  and  PTHREAD_SCOPE_PROCESS  are  defined  in  the
+       <pthread.h> header.
+
+RETURN VALUE
+       If successful, the pthread_attr_getscope() and  pthread_attr_setscope()
+       functions  shall  return  zero;  otherwise,  an  error  number shall be
+       returned to indicate the error.
+
+ERRORS
+       The pthread_attr_setscope() function may fail if:
+
+       EINVAL The value of contentionscope is not valid.
+
+       ENOTSUP
+              An attempt was made to  set  the  attribute  to  an  unsupported
+              value.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       After  these attributes have been set, a thread can be created with the
+       specified attributes using pthread_create(). Using these routines  does
+       not affect the current running thread.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_attr_destroy()      ,      pthread_attr_getinheritsched()     ,
+       pthread_attr_getschedpolicy()    ,    pthread_attr_getschedparam()    ,
+       pthread_create() , the Base Definitions volume of IEEE Std 1003.1-2001,
+       <pthread.h>, <sched.h>
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003             PTHREAD_ATTR_GETSCOPE(P)

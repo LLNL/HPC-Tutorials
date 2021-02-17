@@ -1,0 +1,106 @@
+PTHREAD_RWLOCK_TRYWRLOCK(P)POSIX Programmer's ManuaPTHREAD_RWLOCK_TRYWRLOCK(P)
+
+
+
+NAME
+       pthread_rwlock_trywrlock,  pthread_rwlock_wrlock  -  lock  a read-write
+       lock object for writing
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_rwlock_trywrlock(pthread_rwlock_t *rwlock);
+       int pthread_rwlock_wrlock(pthread_rwlock_t *rwlock);
+
+
+DESCRIPTION
+       The pthread_rwlock_trywrlock() function shall apply a write  lock  like
+       the pthread_rwlock_wrlock() function, with the exception that the func-
+       tion shall fail if any thread currently holds rwlock  (for  reading  or
+       writing).
+
+       The  pthread_rwlock_wrlock()  function  shall apply a write lock to the
+       read-write lock referenced by rwlock. The calling thread  acquires  the
+       write  lock  if no other thread (reader or writer) holds the read-write
+       lock rwlock. Otherwise, the thread shall block until it can acquire the
+       lock.  The  calling thread may deadlock if at the time the call is made
+       it holds the read-write lock (whether a read or write lock).
+
+       Implementations may favor writers over readers to avoid writer  starva-
+       tion.
+
+       Results  are  undefined  if  any  of these functions are called with an
+       uninitialized read-write lock.
+
+       If a signal is delivered to a thread waiting for a read-write lock  for
+       writing, upon return from the signal handler the thread resumes waiting
+       for the read-write lock for writing as if it was not interrupted.
+
+RETURN VALUE
+       The pthread_rwlock_trywrlock() function shall return zero if  the  lock
+       for  writing  on  the  read-write  lock  object referenced by rwlock is
+       acquired. Otherwise, an error number shall be returned to indicate  the
+       error.
+
+       If  successful, the pthread_rwlock_wrlock() function shall return zero;
+       otherwise, an error number shall be returned to indicate the error.
+
+ERRORS
+       The pthread_rwlock_trywrlock() function shall fail if:
+
+       EBUSY  The read-write lock could not be acquired for writing because it
+              was already locked for reading or writing.
+
+
+       The  pthread_rwlock_trywrlock()  and  pthread_rwlock_wrlock() functions
+       may fail if:
+
+       EINVAL The value specified by rwlock does not refer to  an  initialized
+              read-write lock object.
+
+
+       The pthread_rwlock_wrlock() function may fail if:
+
+       EDEADLK
+              The  current thread already owns the read-write lock for writing
+              or reading.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       Applications using these functions may be subject  to  priority  inver-
+       sion,    as    discussed    in   the   Base   Definitions   volume   of
+       IEEE Std 1003.1-2001, Section 3.285, Priority Inversion.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_rwlock_destroy()       ,       pthread_rwlock_rdlock()        ,
+       pthread_rwlock_timedrdlock()     ,    pthread_rwlock_timedwrlock()    ,
+       pthread_rwlock_tryrdlock() , pthread_rwlock_unlock() , the Base Defini-
+       tions volume of IEEE Std 1003.1-2001, <pthread.h>
+
+COPYRIGHT
+       Portions  of  this text are reprinted and reproduced in electronic form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       --  Portable  Operating  System  Interface (POSIX), The Open Group Base
+       Specifications Issue 6, Copyright (C) 2001-2003  by  the  Institute  of
+       Electrical  and  Electronics  Engineers, Inc and The Open Group. In the
+       event of any discrepancy between this version and the original IEEE and
+       The  Open Group Standard, the original IEEE and The Open Group Standard
+       is the referee document. The original Standard can be  obtained  online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003          PTHREAD_RWLOCK_TRYWRLOCK(P)

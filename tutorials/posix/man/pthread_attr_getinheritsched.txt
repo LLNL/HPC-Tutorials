@@ -1,0 +1,99 @@
+PTHREAD_ATTR_GETINHERITSCHEPOSIX Programmer's MPTHREAD_ATTR_GETINHERITSCHED(P)
+
+
+
+NAME
+       pthread_attr_getinheritsched,  pthread_attr_setinheritsched  -  get and
+       set the inheritsched attribute (REALTIME THREADS)
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_attr_getinheritsched(const pthread_attr_t *restrict attr,
+              int *restrict inheritsched);
+       int pthread_attr_setinheritsched(pthread_attr_t *attr,
+              int inheritsched);
+
+
+DESCRIPTION
+       The pthread_attr_getinheritsched(), and  pthread_attr_setinheritsched()
+       functions,  respectively,  shall get and set the inheritsched attribute
+       in the attr argument.
+
+       When the attributes objects are used by  pthread_create(),  the  inher-
+       itsched attribute determines how the other scheduling attributes of the
+       created thread shall be set.
+
+       PTHREAD_INHERIT_SCHED
+
+              Specifies that the thread scheduling attributes shall be  inher-
+              ited  from the creating thread, and the scheduling attributes in
+              this attr argument shall be ignored.
+
+       PTHREAD_EXPLICIT_SCHED
+
+              Specifies that the thread scheduling attributes shall be set  to
+              the corresponding values from this attributes object.
+
+
+       The   symbols   PTHREAD_INHERIT_SCHED  and  PTHREAD_EXPLICIT_SCHED  are
+       defined in the <pthread.h> header.
+
+       The    following    thread    scheduling    attributes    defined    by
+       IEEE Std 1003.1-2001   are  affected  by  the  inheritsched  attribute:
+       scheduling policy ( schedpolicy), scheduling parameters (  schedparam),
+       and scheduling contention scope ( contentionscope).
+
+RETURN VALUE
+       If successful, the pthread_attr_getinheritsched() and pthread_attr_set-
+       inheritsched() functions shall return zero; otherwise, an error  number
+       shall be returned to indicate the error.
+
+ERRORS
+       The pthread_attr_setinheritsched() function may fail if:
+
+       EINVAL The value of inheritsched is not valid.
+
+       ENOTSUP
+              An  attempt  was  made  to  set  the attribute to an unsupported
+              value.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       After these attributes have been set, a thread can be created with  the
+       specified  attributes using pthread_create(). Using these routines does
+       not affect the current running thread.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_attr_destroy()        ,        pthread_attr_getscope()        ,
+       pthread_attr_getschedpolicy()    ,    pthread_attr_getschedparam()    ,
+       pthread_create() , the Base Definitions volume of IEEE Std 1003.1-2001,
+       <pthread.h>, <sched.h>
+
+COPYRIGHT
+       Portions  of  this text are reprinted and reproduced in electronic form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       --  Portable  Operating  System  Interface (POSIX), The Open Group Base
+       Specifications Issue 6, Copyright (C) 2001-2003  by  the  Institute  of
+       Electrical  and  Electronics  Engineers, Inc and The Open Group. In the
+       event of any discrepancy between this version and the original IEEE and
+       The  Open Group Standard, the original IEEE and The Open Group Standard
+       is the referee document. The original Standard can be  obtained  online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003      PTHREAD_ATTR_GETINHERITSCHED(P)

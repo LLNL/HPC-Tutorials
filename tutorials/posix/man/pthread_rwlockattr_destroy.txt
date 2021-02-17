@@ -1,0 +1,87 @@
+PTHREAD_RWLOCKATTR_DESTROY(POSIX Programmer's ManPTHREAD_RWLOCKATTR_DESTROY(P)
+
+
+
+NAME
+       pthread_rwlockattr_destroy,  pthread_rwlockattr_init - destroy and ini-
+       tialize the read-write lock attributes object
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_rwlockattr_destroy(pthread_rwlockattr_t *attr);
+       int pthread_rwlockattr_init(pthread_rwlockattr_t *attr);
+
+
+DESCRIPTION
+       The pthread_rwlockattr_destroy() function shall  destroy  a  read-write
+       lock  attributes  object.  A  destroyed  attr  attributes object can be
+       reinitialized using pthread_rwlockattr_init(); the results of otherwise
+       referencing  the  object  after it has been destroyed are undefined. An
+       implementation may cause pthread_rwlockattr_destroy() to set the object
+       referenced by attr to an invalid value.
+
+       The  pthread_rwlockattr_init()  function  shall initialize a read-write
+       lock attributes object attr with the  default  value  for  all  of  the
+       attributes defined by the implementation.
+
+       Results are undefined if pthread_rwlockattr_init() is called specifying
+       an already initialized attr attributes object.
+
+       After a read-write lock attributes object has been used  to  initialize
+       one  or  more  read-write  locks, any function affecting the attributes
+       object (including destruction) shall not affect any previously initial-
+       ized read-write locks.
+
+RETURN VALUE
+       If  successful,  the  pthread_rwlockattr_destroy()  and pthread_rwlock-
+       attr_init() functions shall return zero;  otherwise,  an  error  number
+       shall be returned to indicate the error.
+
+ERRORS
+       The pthread_rwlockattr_destroy() function may fail if:
+
+       EINVAL The value specified by attr is invalid.
+
+
+       The pthread_rwlockattr_init() function shall fail if:
+
+       ENOMEM Insufficient  memory  exists  to  initialize the read-write lock
+              attributes object.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_rwlock_destroy()    ,     pthread_rwlockattr_getpshared()     ,
+       pthread_rwlockattr_setpshared()   ,  the  Base  Definitions  volume  of
+       IEEE Std 1003.1-2001, <pthread.h>
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003        PTHREAD_RWLOCKATTR_DESTROY(P)

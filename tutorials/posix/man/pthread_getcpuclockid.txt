@@ -1,0 +1,64 @@
+PTHREAD_GETCPUCLOCKID(P)   POSIX Programmer's Manual  PTHREAD_GETCPUCLOCKID(P)
+
+
+
+NAME
+       pthread_getcpuclockid  - access a thread CPU-time clock (ADVANCED REAL-
+       TIME THREADS)
+
+SYNOPSIS
+       #include <pthread.h>
+       #include <time.h>
+
+       int pthread_getcpuclockid(pthread_t thread_id, clockid_t *clock_id);
+
+
+DESCRIPTION
+       The pthread_getcpuclockid() function shall return in clock_id the clock
+       ID  of  the CPU-time clock of the thread specified by thread_id, if the
+       thread specified by thread_id exists.
+
+RETURN VALUE
+       Upon successful completion, pthread_getcpuclockid() shall return  zero;
+       otherwise, an error number shall be returned to indicate the error.
+
+ERRORS
+       The pthread_getcpuclockid() function may fail if:
+
+       ESRCH  The  value  specified by thread_id does not refer to an existing
+              thread.
+
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       The pthread_getcpuclockid() function is part  of  the  Thread  CPU-Time
+       Clocks option and need not be provided on all implementations.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       clock_getcpuclockid() , clock_getres() , timer_create() , the Base Def-
+       initions volume of IEEE Std 1003.1-2001, <pthread.h>, <time.h>
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003             PTHREAD_GETCPUCLOCKID(P)

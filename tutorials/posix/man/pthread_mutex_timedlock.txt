@@ -1,0 +1,117 @@
+PTHREAD_MUTEX_TIMEDLOCK(P) POSIX Programmer's ManualPTHREAD_MUTEX_TIMEDLOCK(P)
+
+
+
+NAME
+       pthread_mutex_timedlock - lock a mutex (ADVANCED REALTIME)
+
+SYNOPSIS
+       #include <pthread.h>
+       #include <time.h>
+
+       int pthread_mutex_timedlock(pthread_mutex_t *restrict mutex,
+              const struct timespec *restrict abs_timeout);
+
+
+DESCRIPTION
+       The pthread_mutex_timedlock() function shall lock the mutex object ref-
+       erenced by mutex. If the mutex is already locked,  the  calling  thread
+       shall   block   until   the   mutex   becomes   available   as  in  the
+       pthread_mutex_lock() function. If the mutex cannot  be  locked  without
+       waiting for another thread to unlock the mutex, this wait shall be ter-
+       minated when the specified timeout expires.
+
+       The timeout shall expire when the absolute time specified by  abs_time-
+       out  passes, as measured by the clock on which timeouts are based (that
+       is, when the value of that clock equals or exceeds abs_timeout), or  if
+       the  absolute  time specified by abs_timeout has already been passed at
+       the time of the call.
+
+       If the Timers option is supported, the timeout shall be  based  on  the
+       CLOCK_REALTIME  clock; if the Timers option is not supported, the time-
+       out shall be based on the system clock as returned by the time()  func-
+       tion.
+
+       The  resolution  of the timeout shall be the resolution of the clock on
+       which it is based. The timespec data type is defined  in  the  <time.h>
+       header.
+
+       Under  no  circumstance  shall  the function fail with a timeout if the
+       mutex can be locked immediately. The validity of the abs_timeout param-
+       eter need not be checked if the mutex can be locked immediately.
+
+       As  a  consequence  of the priority inheritance rules (for mutexes ini-
+       tialized with the PRIO_INHERIT protocol), if a timed mutex wait is ter-
+       minated  because  its timeout expires, the priority of the owner of the
+       mutex shall be adjusted as necessary to  reflect  the  fact  that  this
+       thread is no longer among the threads waiting for the mutex.
+
+RETURN VALUE
+       If  successful,  the  pthread_mutex_timedlock()  function  shall return
+       zero; otherwise, an error number shall  be  returned  to  indicate  the
+       error.
+
+ERRORS
+       The pthread_mutex_timedlock() function shall fail if:
+
+       EINVAL The  mutex  was  created  with the protocol attribute having the
+              value PTHREAD_PRIO_PROTECT and the calling thread's priority  is
+              higher than the mutex' current priority ceiling.
+
+       EINVAL The  process  or  thread would have blocked, and the abs_timeout
+              parameter specified a nanoseconds field value less than zero  or
+              greater than or equal to 1000 million.
+
+       ETIMEDOUT
+              The  mutex  could  not  be  locked  before the specified timeout
+              expired.
+
+
+       The pthread_mutex_timedlock() function may fail if:
+
+       EINVAL The value specified by mutex does not refer  to  an  initialized
+              mutex object.
+
+       EAGAIN The  mutex  could  not be acquired because the maximum number of
+              recursive locks for mutex has been exceeded.
+
+       EDEADLK
+              The current thread already owns the mutex.
+
+
+       This function shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       The pthread_mutex_timedlock() function is part of the Threads and Time-
+       outs options and need not be provided on all implementations.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_mutex_destroy()  ,  pthread_mutex_lock()  ,  pthread_mutex_try-
+       lock() , time() , the Base Definitions volume of  IEEE Std 1003.1-2001,
+       <pthread.h>, <time.h>
+
+COPYRIGHT
+       Portions  of  this text are reprinted and reproduced in electronic form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       --  Portable  Operating  System  Interface (POSIX), The Open Group Base
+       Specifications Issue 6, Copyright (C) 2001-2003  by  the  Institute  of
+       Electrical  and  Electronics  Engineers, Inc and The Open Group. In the
+       event of any discrepancy between this version and the original IEEE and
+       The  Open Group Standard, the original IEEE and The Open Group Standard
+       is the referee document. The original Standard can be  obtained  online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003           PTHREAD_MUTEX_TIMEDLOCK(P)

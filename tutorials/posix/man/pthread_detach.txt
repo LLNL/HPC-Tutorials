@@ -1,0 +1,90 @@
+PTHREAD_DETACH(P)          POSIX Programmer's Manual         PTHREAD_DETACH(P)
+
+
+
+NAME
+       pthread_detach - detach a thread
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_detach(pthread_t thread);
+
+
+DESCRIPTION
+       The pthread_detach() function shall indicate to the implementation that
+       storage for the thread thread can be reclaimed when that thread  termi-
+       nates.  If  thread has not terminated, pthread_detach() shall not cause
+       it to terminate. The effect of multiple pthread_detach() calls  on  the
+       same target thread is unspecified.
+
+RETURN VALUE
+       If  the  call  succeeds, pthread_detach() shall return 0; otherwise, an
+       error number shall be returned to indicate the error.
+
+ERRORS
+       The pthread_detach() function shall fail if:
+
+       EINVAL The implementation has detected  that  the  value  specified  by
+              thread does not refer to a joinable thread.
+
+       ESRCH  No  thread could be found corresponding to that specified by the
+              given thread ID.
+
+
+       The pthread_detach()  function  shall  not  return  an  error  code  of
+       [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       The  pthread_join()  or pthread_detach() functions should eventually be
+       called for every thread that is created so that storage associated with
+       the thread may be reclaimed.
+
+       It  has  been  suggested that a "detach" function is not necessary; the
+       detachstate thread creation attribute is  sufficient,  since  a  thread
+       need  never  be  dynamically detached. However, need arises in at least
+       two cases:
+
+        1. In a cancellation handler for a pthread_join() it is nearly  essen-
+           tial  to  have  a  pthread_detach() function in order to detach the
+           thread on which pthread_join() was waiting. Without it, it would be
+           necessary  to have the handler do another pthread_join() to attempt
+           to detach the thread, which would both delay the cancellation  pro-
+           cessing  for  an  unbounded  period  and  introduce  a  new call to
+           pthread_join(), which might itself need a cancellation  handler.  A
+           dynamic detach is nearly essential in this case.
+
+
+        2. In  order  to  detach  the "initial thread" (as may be desirable in
+           processes that set up server threads).
+
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_join() , the Base Definitions volume  of  IEEE Std 1003.1-2001,
+       <pthread.h>
+
+COPYRIGHT
+       Portions  of  this text are reprinted and reproduced in electronic form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       --  Portable  Operating  System  Interface (POSIX), The Open Group Base
+       Specifications Issue 6, Copyright (C) 2001-2003  by  the  Institute  of
+       Electrical  and  Electronics  Engineers, Inc and The Open Group. In the
+       event of any discrepancy between this version and the original IEEE and
+       The  Open Group Standard, the original IEEE and The Open Group Standard
+       is the referee document. The original Standard can be  obtained  online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003                    PTHREAD_DETACH(P)

@@ -1,0 +1,98 @@
+PTHREAD_RWLOCKATTR_GETPSHARPOSIX Programmer's PTHREAD_RWLOCKATTR_GETPSHARED(P)
+
+
+
+NAME
+       pthread_rwlockattr_getpshared,  pthread_rwlockattr_setpshared - get and
+       set the process-shared attribute  of  the  read-write  lock  attributes
+       object
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_rwlockattr_getpshared(const pthread_rwlockattr_t *
+              restrict attr, int *restrict pshared);
+       int pthread_rwlockattr_setpshared(pthread_rwlockattr_t *attr,
+              int pshared);
+
+
+DESCRIPTION
+       The  pthread_rwlockattr_getpshared() function shall obtain the value of
+       the process-shared attribute from  the  initialized  attributes  object
+       referenced  by attr. The pthread_rwlockattr_setpshared() function shall
+       set the process-shared attribute in an  initialized  attributes  object
+       referenced by attr.
+
+       The  process-shared attribute shall be set to PTHREAD_PROCESS_SHARED to
+       permit a read-write lock to be operated upon by  any  thread  that  has
+       access  to  the  memory where the read-write lock is allocated, even if
+       the read-write lock is allocated in memory that is shared  by  multiple
+       processes.  If the process-shared attribute is PTHREAD_PROCESS_PRIVATE,
+       the read-write lock shall only be  operated  upon  by  threads  created
+       within  the  same process as the thread that initialized the read-write
+       lock; if threads of differing processes attempt to operate  on  such  a
+       read-write  lock,  the  behavior is undefined. The default value of the
+       process-shared attribute shall be PTHREAD_PROCESS_PRIVATE.
+
+       Additional attributes, their default values, and the names of the asso-
+       ciated  functions to get and set those attribute values are implementa-
+       tion-defined.
+
+RETURN VALUE
+       Upon successful completion, the  pthread_rwlockattr_getpshared()  func-
+       tion  shall  return  zero  and  store  the  value of the process-shared
+       attribute of attr into the object referenced by the pshared  parameter.
+       Otherwise, an error number shall be returned to indicate the error.
+
+       If   successful,  the  pthread_rwlockattr_setpshared()  function  shall
+       return zero; otherwise, an error number shall be returned  to  indicate
+       the error.
+
+ERRORS
+       The pthread_rwlockattr_getpshared() and pthread_rwlockattr_setpshared()
+       functions may fail if:
+
+       EINVAL The value specified by attr is invalid.
+
+
+       The pthread_rwlockattr_setpshared() function may fail if:
+
+       EINVAL The new value specified for the attribute is outside  the  range
+              of legal values for that attribute.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_rwlock_destroy()      ,      pthread_rwlockattr_destroy()     ,
+       pthread_rwlockattr_init()   ,   the   Base   Definitions   volume    of
+       IEEE Std 1003.1-2001, <pthread.h>
+
+COPYRIGHT
+       Portions  of  this text are reprinted and reproduced in electronic form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       --  Portable  Operating  System  Interface (POSIX), The Open Group Base
+       Specifications Issue 6, Copyright (C) 2001-2003  by  the  Institute  of
+       Electrical  and  Electronics  Engineers, Inc and The Open Group. In the
+       event of any discrepancy between this version and the original IEEE and
+       The  Open Group Standard, the original IEEE and The Open Group Standard
+       is the referee document. The original Standard can be  obtained  online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003     PTHREAD_RWLOCKATTR_GETPSHARED(P)

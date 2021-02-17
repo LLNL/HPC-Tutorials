@@ -1,0 +1,76 @@
+PTHREAD_KILL(P)            POSIX Programmer's Manual           PTHREAD_KILL(P)
+
+
+
+NAME
+       pthread_kill - send a signal to a thread
+
+SYNOPSIS
+       #include <signal.h>
+
+       int pthread_kill(pthread_t thread, int sig);
+
+
+DESCRIPTION
+       The pthread_kill() function shall request that a signal be delivered to
+       the specified thread.
+
+       As in kill(), if sig is zero, error checking shall be performed but  no
+       signal shall actually be sent.
+
+RETURN VALUE
+       Upon  successful completion, the function shall return a value of zero.
+       Otherwise,  the  function  shall  return  an  error  number.   If   the
+       pthread_kill() function fails, no signal shall be sent.
+
+ERRORS
+       The pthread_kill() function shall fail if:
+
+       ESRCH  No  thread could be found corresponding to that specified by the
+              given thread ID.
+
+       EINVAL The value of the sig argument is an invalid or unsupported  sig-
+              nal number.
+
+
+       The  pthread_kill() function shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       The pthread_kill() function provides  a  mechanism  for  asynchronously
+       directing  a  signal  at a thread in the calling process. This could be
+       used, for example, by one thread to affect broadcast delivery of a sig-
+       nal to a set of threads.
+
+       Note  that  pthread_kill()  only causes the signal to be handled in the
+       context of the given thread; the signal action  (termination  or  stop-
+       ping) affects the process as a whole.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       kill()  ,  pthread_self()  ,  raise()  , the Base Definitions volume of
+       IEEE Std 1003.1-2001, <signal.h>
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003                      PTHREAD_KILL(P)

@@ -1,0 +1,126 @@
+PTHREAD_ONCE(P)            POSIX Programmer's Manual           PTHREAD_ONCE(P)
+
+
+
+NAME
+       pthread_once - dynamic package initialization
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_once(pthread_once_t *once_control,
+              void (*init_routine)(void));
+       pthread_once_t once_control = PTHREAD_ONCE_INIT;
+
+
+DESCRIPTION
+       The  first  call  to  pthread_once() by any thread in a process, with a
+       given once_control, shall call the init_routine with no arguments. Sub-
+       sequent  calls  of  pthread_once() with the same once_control shall not
+       call the init_routine.  On  return  from  pthread_once(),  init_routine
+       shall  have  completed.  The  once_control  parameter  shall  determine
+       whether the associated initialization routine has been called.
+
+       The pthread_once() function is not a cancellation  point.  However,  if
+       init_routine  is  a  cancellation  point and is canceled, the effect on
+       once_control shall be as if pthread_once() was never called.
+
+       The constant PTHREAD_ONCE_INIT is defined in the <pthread.h> header.
+
+       The behavior of pthread_once() is undefined if once_control  has  auto-
+       matic storage duration or is not initialized by PTHREAD_ONCE_INIT.
+
+RETURN VALUE
+       Upon  successful  completion,  pthread_once() shall return zero; other-
+       wise, an error number shall be returned to indicate the error.
+
+ERRORS
+       The pthread_once() function may fail if:
+
+       EINVAL If either once_control or init_routine is invalid.
+
+
+       The pthread_once() function shall not return an error code of  [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       Some  C libraries are designed for dynamic initialization. That is, the
+       global initialization for the library is performed when the first  pro-
+       cedure  in the library is called. In a single-threaded program, this is
+       normally implemented using a static variable whose value is checked  on
+       entry to a routine, as follows:
+
+
+              static int random_is_initialized = 0;
+              extern int initialize_random();
+
+
+              int random_function()
+              {
+                  if (random_is_initialized == 0) {
+                      initialize_random();
+                      random_is_initialized = 1;
+                  }
+                  ... /* Operations performed after initialization. */
+              }
+
+       To keep the same structure in a multi-threaded program, a new primitive
+       is needed. Otherwise, library initialization has to be accomplished  by
+       an explicit call to a library-exported initialization function prior to
+       any use of the library.
+
+       For dynamic library initialization in a multi-threaded process, a  sim-
+       ple  initialization  flag  is not sufficient; the flag needs to be pro-
+       tected against modification by multiple threads simultaneously  calling
+       into the library. Protecting the flag requires the use of a mutex; how-
+       ever, mutexes have to be initialized before  they  are  used.  Ensuring
+       that  the  mutex is only initialized once requires a recursive solution
+       to this problem.
+
+       The use of pthread_once() not only supplies  an  implementation-guaran-
+       teed  means  of dynamic initialization, it provides an aid to the reli-
+       able construction of multi-threaded and realtime systems.  The  preced-
+       ing example then becomes:
+
+
+              #include <pthread.h>
+              static pthread_once_t random_is_initialized = PTHREAD_ONCE_INIT;
+              extern int initialize_random();
+
+
+              int random_function()
+              {
+                  (void) pthread_once(&random_is_initialized, initialize_random);
+                  ... /* Operations performed after initialization. */
+              }
+
+       Note that a pthread_once_t cannot be an array because some compilers do
+       not accept the construct &<array_name>.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       The Base Definitions volume of IEEE Std 1003.1-2001, <pthread.h>
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003                      PTHREAD_ONCE(P)

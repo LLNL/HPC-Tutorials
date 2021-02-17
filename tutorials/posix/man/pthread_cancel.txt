@@ -1,0 +1,103 @@
+PTHREAD_CANCEL(P)          POSIX Programmer's Manual         PTHREAD_CANCEL(P)
+
+
+
+NAME
+       pthread_cancel - cancel execution of a thread
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_cancel(pthread_t thread);
+
+
+DESCRIPTION
+       The  pthread_cancel()  function  shall request that thread be canceled.
+       The target thread's cancelability state and type  determines  when  the
+       cancellation  takes effect. When the cancellation is acted on, the can-
+       cellation cleanup handlers for thread shall be called.  When  the  last
+       cancellation cleanup handler returns, the thread-specific data destruc-
+       tor functions shall be called for  thread.  When  the  last  destructor
+       function returns, thread shall be terminated.
+
+       The  cancellation  processing  in  the  target  thread  shall run asyn-
+       chronously  with  respect  to  the  calling   thread   returning   from
+       pthread_cancel().
+
+RETURN VALUE
+       If  successful, the pthread_cancel() function shall return zero; other-
+       wise, an error number shall be returned to indicate the error.
+
+ERRORS
+       The pthread_cancel() function may fail if:
+
+       ESRCH  No thread could be found corresponding to that specified by  the
+              given thread ID.
+
+
+       The  pthread_cancel()  function  shall  not  return  an  error  code of
+       [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       Two alternative functions were considered for sending the  cancellation
+       notification to a thread. One would be to define a new SIGCANCEL signal
+       that had the cancellation semantics when delivered; the  other  was  to
+       define  the new pthread_cancel() function, which would trigger the can-
+       cellation semantics.
+
+       The advantage of a new signal was that so much of the delivery criteria
+       were identical to that used when trying to deliver a signal that making
+       cancellation notification a signal was seen as consistent. Indeed, many
+       implementations  implement  cancellation using a special signal. On the
+       other hand, there would be no signal functions that could be used  with
+       this  signal  except  pthread_kill(), and the behavior of the delivered
+       cancellation signal would be unlike  any  previously  existing  defined
+       signal.
+
+       The  benefits  of  a special function include the recognition that this
+       signal would be defined because of the similar  delivery  criteria  and
+       that  this  is  the only common behavior between a cancellation request
+       and a signal. In addition, the cancellation delivery mechanism does not
+       have  to  be  implemented  as  a  signal. There are also strong, if not
+       stronger, parallels with language exception mechanisms than  with  sig-
+       nals that are potentially obscured if the delivery mechanism is visibly
+       closer to signals.
+
+       In the end, it was considered that as there were so many exceptions  to
+       the  use  of the new signal with existing signals functions it would be
+       misleading. A special function has resolved this problem.   This  func-
+       tion was carefully defined so that an implementation wishing to provide
+       the cancellation functions on top of signals could do so.  The  special
+       function  also  means that implementations are not obliged to implement
+       cancellation with signals.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_exit()   ,   pthread_cond_timedwait()   ,   pthread_join()    ,
+       pthread_setcancelstate()    ,    the   Base   Definitions   volume   of
+       IEEE Std 1003.1-2001, <pthread.h>
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003                    PTHREAD_CANCEL(P)

@@ -1,0 +1,87 @@
+PTHREAD_BARRIERATTR_DESTROYPOSIX Programmer's MaPTHREAD_BARRIERATTR_DESTROY(P)
+
+
+
+NAME
+       pthread_barrierattr_destroy,  pthread_barrierattr_init  -  destroy  and
+       initialize the barrier attributes object (ADVANCED REALTIME THREADS)
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_barrierattr_destroy(pthread_barrierattr_t *attr);
+       int pthread_barrierattr_init(pthread_barrierattr_t *attr);
+
+
+DESCRIPTION
+       The pthread_barrierattr_destroy()  function  shall  destroy  a  barrier
+       attributes object. A destroyed attr attributes object can be reinitial-
+       ized using pthread_barrierattr_init(); the results of otherwise  refer-
+       encing  the object after it has been destroyed are undefined. An imple-
+       mentation may cause pthread_barrierattr_destroy()  to  set  the  object
+       referenced by attr to an invalid value.
+
+       The  pthread_barrierattr_init()  function  shall  initialize  a barrier
+       attributes object attr with the default value for all of the attributes
+       defined by the implementation.
+
+       Results  are undefined if pthread_barrierattr_init() is called specify-
+       ing an already initialized attr attributes object.
+
+       After a barrier attributes object has been used to  initialize  one  or
+       more  barriers, any function affecting the attributes object (including
+       destruction) shall not affect any previously initialized barrier.
+
+RETURN VALUE
+       If successful, the pthread_barrierattr_destroy()  and  pthread_barrier-
+       attr_init()  functions  shall  return  zero; otherwise, an error number
+       shall be returned to indicate the error.
+
+ERRORS
+       The pthread_barrierattr_destroy() function may fail if:
+
+       EINVAL The value specified by attr is invalid.
+
+
+       The pthread_barrierattr_init() function shall fail if:
+
+       ENOMEM Insufficient memory exists to initialize the barrier  attributes
+              object.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       The  pthread_barrierattr_destroy() and pthread_barrierattr_init() func-
+       tions are part of the Barriers option and need not be provided  on  all
+       implementations.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_barrierattr_getpshared()  ,  pthread_barrierattr_setpshared() ,
+       the Base Definitions volume of IEEE Std 1003.1-2001, <pthread.h>.
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003       PTHREAD_BARRIERATTR_DESTROY(P)

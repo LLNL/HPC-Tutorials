@@ -1,0 +1,89 @@
+PTHREAD_ATTR_GETSTACKADDR(PPOSIX Programmer's ManuPTHREAD_ATTR_GETSTACKADDR(P)
+
+
+
+NAME
+       pthread_attr_getstackaddr,  pthread_attr_setstackaddr - get and set the
+       stackaddr attribute
+
+SYNOPSIS
+       #include <pthread.h>
+
+
+
+       int pthread_attr_getstackaddr(const pthread_attr_t *restrict attr,
+              void **restrict stackaddr);
+       int pthread_attr_setstackaddr(pthread_attr_t *attr, void *stackaddr);
+
+
+DESCRIPTION
+       The pthread_attr_getstackaddr() and  pthread_attr_setstackaddr()  func-
+       tions,  respectively,  shall  get and set the thread creation stackaddr
+       attribute in the attr object.
+
+       The stackaddr attribute specifies the location of storage  to  be  used
+       for  the  created  thread's  stack. The size of the storage shall be at
+       least {PTHREAD_STACK_MIN}.
+
+RETURN VALUE
+       Upon    successful    completion,    pthread_attr_getstackaddr()    and
+       pthread_attr_setstackaddr()  shall  return  a value of 0; otherwise, an
+       error number shall be returned to indicate the error.
+
+       The pthread_attr_getstackaddr() function stores the stackaddr attribute
+       value in stackaddr if successful.
+
+ERRORS
+       No errors are defined.
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       The  specification of the stackaddr attribute presents several ambigui-
+       ties that  make  portable  use  of  these  interfaces  impossible.  The
+       description of the single address parameter as a "stack" does not spec-
+       ify a particular relationship  between  the  address  and  the  "stack"
+       implied  by  that address. For example, the address may be taken as the
+       low memory address of a buffer intended for use as a stack, or  it  may
+       be  taken as the address to be used as the initial stack pointer regis-
+       ter value for the new thread. These two are not the same except  for  a
+       machine  on  which the stack grows "up" from low memory to high, and on
+       which a "push" operation first stores the  value  in  memory  and  then
+       increments  the stack pointer register. Further, on a machine where the
+       stack grows "down" from high  memory  to  low,  interpretation  of  the
+       address  as  the  "low  memory" address requires a determination of the
+       intended size of the stack. IEEE Std 1003.1-2001 has introduced the new
+       interfaces   pthread_attr_setstack()   and  pthread_attr_getstack()  to
+       resolve these ambiguities.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_attr_destroy()      ,      pthread_attr_getdetachstate()      ,
+       pthread_attr_getstack()       ,      pthread_attr_getstacksize()      ,
+       pthread_attr_setstack() , pthread_create() , the Base Definitions  vol-
+       ume of IEEE Std 1003.1-2001, <limits.h>, <pthread.h>
+
+COPYRIGHT
+       Portions  of  this text are reprinted and reproduced in electronic form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       --  Portable  Operating  System  Interface (POSIX), The Open Group Base
+       Specifications Issue 6, Copyright (C) 2001-2003  by  the  Institute  of
+       Electrical  and  Electronics  Engineers, Inc and The Open Group. In the
+       event of any discrepancy between this version and the original IEEE and
+       The  Open Group Standard, the original IEEE and The Open Group Standard
+       is the referee document. The original Standard can be  obtained  online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003         PTHREAD_ATTR_GETSTACKADDR(P)

@@ -1,0 +1,93 @@
+PTHREAD_RWLOCK_UNLOCK(P)   POSIX Programmer's Manual  PTHREAD_RWLOCK_UNLOCK(P)
+
+
+
+NAME
+       pthread_rwlock_unlock - unlock a read-write lock object
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_rwlock_unlock(pthread_rwlock_t *rwlock);
+
+
+DESCRIPTION
+       The  pthread_rwlock_unlock()  function shall release a lock held on the
+       read-write lock object referenced by rwlock.  Results are undefined  if
+       the read-write lock rwlock is not held by the calling thread.
+
+       If  this  function is called to release a read lock from the read-write
+       lock object and there are other read locks currently held on this read-
+       write  lock  object,  the  read-write  lock  object remains in the read
+       locked state. If this function releases the last  read  lock  for  this
+       read-write  lock object, the read-write lock object shall be put in the
+       unlocked state with no owners.
+
+       If this function is called to release a write lock for this  read-write
+       lock  object,  the  read-write lock object shall be put in the unlocked
+       state.
+
+       If there are threads blocked on the lock when it becomes available, the
+       scheduling  policy  shall  determine  which thread(s) shall acquire the
+       lock.    If the Thread Execution Scheduling option is  supported,  when
+       threads executing with the scheduling policies SCHED_FIFO, SCHED_RR, or
+       SCHED_SPORADIC are waiting on the lock, they shall acquire the lock  in
+       priority  order  when  the  lock  becomes available. For equal priority
+       threads, write locks shall take precedence over  read  locks.   If  the
+       Thread  Execution Scheduling option is not supported, it is implementa-
+       tion-defined whether write locks take precedence over read locks.
+
+       Results are undefined if any of these  functions  are  called  with  an
+       uninitialized read-write lock.
+
+RETURN VALUE
+       If  successful, the pthread_rwlock_unlock() function shall return zero;
+       otherwise, an error number shall be returned to indicate the error.
+
+ERRORS
+       The pthread_rwlock_unlock() function may fail if:
+
+       EINVAL The value specified by rwlock does not refer to  an  initialized
+              read-write lock object.
+
+       EPERM  The  current thread does not hold a lock on the read-write lock.
+
+
+       The pthread_rwlock_unlock() function shall not return an error code  of
+       [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_rwlock_destroy()        ,       pthread_rwlock_rdlock()       ,
+       pthread_rwlock_timedrdlock()    ,    pthread_rwlock_timedwrlock()     ,
+       pthread_rwlock_tryrdlock()      ,      pthread_rwlock_trywrlock()     ,
+       pthread_rwlock_wrlock()   ,   the   Base    Definitions    volume    of
+       IEEE Std 1003.1-2001, <pthread.h>
+
+COPYRIGHT
+       Portions  of  this text are reprinted and reproduced in electronic form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       --  Portable  Operating  System  Interface (POSIX), The Open Group Base
+       Specifications Issue 6, Copyright (C) 2001-2003  by  the  Institute  of
+       Electrical  and  Electronics  Engineers, Inc and The Open Group. In the
+       event of any discrepancy between this version and the original IEEE and
+       The  Open Group Standard, the original IEEE and The Open Group Standard
+       is the referee document. The original Standard can be  obtained  online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003             PTHREAD_RWLOCK_UNLOCK(P)

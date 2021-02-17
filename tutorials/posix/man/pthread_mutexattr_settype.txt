@@ -1,0 +1,125 @@
+PTHREAD_MUTEXATTR_GETTYPE(PPOSIX Programmer's ManuPTHREAD_MUTEXATTR_GETTYPE(P)
+
+
+
+NAME
+       pthread_mutexattr_gettype,  pthread_mutexattr_settype - get and set the
+       mutex type attribute
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_mutexattr_gettype(const pthread_mutexattr_t *restrict attr,
+              int *restrict type);
+       int pthread_mutexattr_settype(pthread_mutexattr_t *attr, int type);
+
+
+DESCRIPTION
+       The  pthread_mutexattr_gettype()  and pthread_mutexattr_settype() func-
+       tions, respectively, shall get and set the mutex type  attribute.  This
+       attribute  is set in the type parameter to these functions. The default
+       value of the type attribute is PTHREAD_MUTEX_DEFAULT.
+
+       The type of mutex is contained in  the  type  attribute  of  the  mutex
+       attributes. Valid mutex types include:
+
+       PTHREAD_MUTEX_NORMAL
+
+              This type of mutex does not detect deadlock. A thread attempting
+              to relock this mutex without first unlocking it shall  deadlock.
+              Attempting  to  unlock  a  mutex  locked  by  a different thread
+              results in undefined behavior. Attempting to unlock an  unlocked
+              mutex results in undefined behavior.
+
+       PTHREAD_MUTEX_ERRORCHECK
+
+              This  type of mutex provides error checking. A thread attempting
+              to relock this mutex without first  unlocking  it  shall  return
+              with  an  error.  A  thread  attempting  to unlock a mutex which
+              another thread has locked shall return with an error.  A  thread
+              attempting  to  unlock  an  unlocked  mutex shall return with an
+              error.
+
+       PTHREAD_MUTEX_RECURSIVE
+
+              A thread attempting to relock this mutex without first unlocking
+              it  shall  succeed  in locking the mutex. The relocking deadlock
+              which can occur with mutexes of type PTHREAD_MUTEX_NORMAL cannot
+              occur  with  this  type  of  mutex. Multiple locks of this mutex
+              shall require the same number of unlocks to  release  the  mutex
+              before another thread can acquire the mutex. A thread attempting
+              to unlock a mutex which another thread has locked  shall  return
+              with  an error.  A thread attempting to unlock an unlocked mutex
+              shall return with an error.
+
+       PTHREAD_MUTEX_DEFAULT
+
+              Attempting to recursively lock a mutex of this type  results  in
+              undefined  behavior.  Attempting  to unlock a mutex of this type
+              which was not locked by the calling thread results in  undefined
+              behavior.   Attempting  to  unlock a mutex of this type which is
+              not locked results in undefined behavior. An implementation  may
+              map this mutex to one of the other mutex types.
+
+
+RETURN VALUE
+       Upon  successful  completion,  the pthread_mutexattr_gettype() function
+       shall return zero and store the value of the  type  attribute  of  attr
+       into  the  object referenced by the type parameter. Otherwise, an error
+       shall be returned to indicate the error.
+
+       If successful, the pthread_mutexattr_settype()  function  shall  return
+       zero;  otherwise,  an  error  number  shall be returned to indicate the
+       error.
+
+ERRORS
+       The pthread_mutexattr_settype() function shall fail if:
+
+       EINVAL The value type is invalid.
+
+
+       The pthread_mutexattr_gettype() and  pthread_mutexattr_settype()  func-
+       tions may fail if:
+
+       EINVAL The value specified by attr is invalid.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       It is advised that an application should not use a PTHREAD_MUTEX_RECUR-
+       SIVE mutex with condition variables because the  implicit  unlock  per-
+       formed  for  a  pthread_cond_timedwait() or pthread_cond_wait() may not
+       actually release the mutex (if it had been locked multiple  times).  If
+       this  happens,  no other thread can satisfy the condition of the predi-
+       cate.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_cond_timedwait()   ,   the   Base   Definitions    volume    of
+       IEEE Std 1003.1-2001, <pthread.h>
+
+COPYRIGHT
+       Portions  of  this text are reprinted and reproduced in electronic form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       --  Portable  Operating  System  Interface (POSIX), The Open Group Base
+       Specifications Issue 6, Copyright (C) 2001-2003  by  the  Institute  of
+       Electrical  and  Electronics  Engineers, Inc and The Open Group. In the
+       event of any discrepancy between this version and the original IEEE and
+       The  Open Group Standard, the original IEEE and The Open Group Standard
+       is the referee document. The original Standard can be  obtained  online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003         PTHREAD_MUTEXATTR_GETTYPE(P)

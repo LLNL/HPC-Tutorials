@@ -1,0 +1,79 @@
+PTHREAD_ATTR_GETSCHEDPOLICYPOSIX Programmer's MaPTHREAD_ATTR_GETSCHEDPOLICY(P)
+
+
+
+NAME
+       pthread_attr_getschedpolicy,  pthread_attr_setschedpolicy - get and set
+       the schedpolicy attribute (REALTIME THREADS)
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_attr_getschedpolicy(const pthread_attr_t *restrict attr,
+              int *restrict policy);
+       int pthread_attr_setschedpolicy(pthread_attr_t *attr, int policy);
+
+
+DESCRIPTION
+       The  pthread_attr_getschedpolicy()  and   pthread_attr_setschedpolicy()
+       functions, respectively, shall get and set the schedpolicy attribute in
+       the attr argument.
+
+       The supported values of policy shall include SCHED_FIFO, SCHED_RR,  and
+       SCHED_OTHER,  which  are defined in the <sched.h> header.  When threads
+       executing  with  the  scheduling  policy  SCHED_FIFO,  SCHED_RR,     or
+       SCHED_SPORADIC  are waiting on a mutex, they shall acquire the mutex in
+       priority order when the mutex is unlocked.
+
+RETURN VALUE
+       If     successful,      the      pthread_attr_getschedpolicy()      and
+       pthread_attr_setschedpolicy()  functions  shall return zero; otherwise,
+       an error number shall be returned to indicate the error.
+
+ERRORS
+       The pthread_attr_setschedpolicy() function may fail if:
+
+       EINVAL The value of policy is not valid.
+
+       ENOTSUP
+              An attempt was made to  set  the  attribute  to  an  unsupported
+              value.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       After  these attributes have been set, a thread can be created with the
+       specified attributes using pthread_create(). Using these routines  does
+       not affect the current running thread.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_attr_destroy()  ,  pthread_attr_getscope()  , pthread_attr_get-
+       inheritsched() , pthread_attr_getschedparam() , pthread_create() ,  the
+       Base Definitions volume of IEEE Std 1003.1-2001, <pthread.h>, <sched.h>
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003       PTHREAD_ATTR_GETSCHEDPOLICY(P)

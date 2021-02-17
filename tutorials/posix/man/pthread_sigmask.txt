@@ -1,0 +1,128 @@
+PTHREAD_SIGMASK(P)         POSIX Programmer's Manual        PTHREAD_SIGMASK(P)
+
+
+
+NAME
+       pthread_sigmask, sigprocmask - examine and change blocked signals
+
+SYNOPSIS
+       #include <signal.h>
+
+
+
+       int pthread_sigmask(int how, const sigset_t *restrict set,
+              sigset_t *restrict oset);
+
+
+       int sigprocmask(int how, const sigset_t *restrict set,
+              sigset_t *restrict oset);
+
+
+DESCRIPTION
+       The  pthread_sigmask()  function  shall examine or change (or both) the
+       calling thread's signal mask, regardless of the number  of  threads  in
+       the process. The function shall be equivalent to sigprocmask(), without
+       the restriction that the call be made in a single-threaded process.
+
+       In a single-threaded process, the sigprocmask() function shall  examine
+       or change (or both) the signal mask of the calling thread.
+
+       If  the  argument set is not a null pointer, it points to a set of sig-
+       nals to be used to change the currently blocked set.
+
+       The argument how indicates the way in which the set is changed, and the
+       application shall ensure it consists of one of the following values:
+
+       SIG_BLOCK
+              The  resulting set shall be the union of the current set and the
+              signal set pointed to by set.
+
+       SIG_SETMASK
+              The resulting set shall be the signal set pointed to by set.
+
+       SIG_UNBLOCK
+              The resulting set shall be the intersection of the  current  set
+              and the complement of the signal set pointed to by set.
+
+
+       If  the argument oset is not a null pointer, the previous mask shall be
+       stored in the location pointed to by oset.  If set is a  null  pointer,
+       the  value of the argument how is not significant and the process' sig-
+       nal mask shall be unchanged; thus the call can be used to enquire about
+       currently blocked signals.
+
+       If  there  are any pending unblocked signals after the call to sigproc-
+       mask(), at least one of those signals shall  be  delivered  before  the
+       call to sigprocmask() returns.
+
+       It  is  not  possible  to  block those signals which cannot be ignored.
+       This shall be enforced by the system without causing  an  error  to  be
+       indicated.
+
+       If  any of the SIGFPE, SIGILL, SIGSEGV, or SIGBUS signals are generated
+       while they are blocked, the result is undefined, unless the signal  was
+       generated  by  the  kill()  function,  the  sigqueue() function, or the
+       raise() function.
+
+       If sigprocmask() fails, the thread's signal mask shall not be  changed.
+
+       The  use  of  the  sigprocmask()  function  is  unspecified in a multi-
+       threaded process.
+
+RETURN VALUE
+       Upon successful completion pthread_sigmask() shall return 0; otherwise,
+       it shall return the corresponding error number.
+
+       Upon successful completion, sigprocmask() shall return 0; otherwise, -1
+       shall be returned, errno shall be set to indicate the  error,  and  the
+       process' signal mask shall be unchanged.
+
+ERRORS
+       The pthread_sigmask()  and sigprocmask() functions shall fail if:
+
+       EINVAL The value of the how argument is not equal to one of the defined
+              values.
+
+
+       The pthread_sigmask() function  shall  not  return  an  error  code  of
+       [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       When  a  process'  signal mask is changed in a signal-catching function
+       that is installed by sigaction(), the restoration of the signal mask on
+       return  from  the  signal-catching  function overrides that change (see
+       sigaction()). If the signal-catching function was installed  with  sig-
+       nal(), it is unspecified whether this occurs.
+
+       See  kill() for a discussion of the requirement on delivery of signals.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       sigaction() , sigaddset() , sigdelset() , sigemptyset() ,  sigfillset()
+       ,  sigismember()  , sigpending() , sigqueue() , sigsuspend() , the Base
+       Definitions volume of IEEE Std 1003.1-2001, <signal.h>
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003                   PTHREAD_SIGMASK(P)

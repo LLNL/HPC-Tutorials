@@ -1,0 +1,104 @@
+PTHREAD_GETCONCURRENCY(P)  POSIX Programmer's Manual PTHREAD_GETCONCURRENCY(P)
+
+
+
+NAME
+       pthread_getconcurrency,  pthread_setconcurrency - get and set the level
+       of concurrency
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_getconcurrency(void);
+       int pthread_setconcurrency(int new_level);
+
+
+DESCRIPTION
+       Unbound threads in a process may or may not be required to be  simulta-
+       neously  active.  By default, the threads implementation ensures that a
+       sufficient number of threads are active so that the  process  can  con-
+       tinue  to  make progress. While this conserves system resources, it may
+       not produce the most effective level of concurrency.
+
+       The pthread_setconcurrency() function allows an application  to  inform
+       the threads implementation of its desired concurrency level, new_level.
+       The actual level of concurrency provided by  the  implementation  as  a
+       result of this function call is unspecified.
+
+       If new_level is zero, it causes the implementation to maintain the con-
+       currency level at its discretion  as  if  pthread_setconcurrency()  had
+       never been called.
+
+       The  pthread_getconcurrency()  function shall return the value set by a
+       previous  call  to  the  pthread_setconcurrency()  function.   If   the
+       pthread_setconcurrency() function was not previously called, this func-
+       tion shall return zero to indicate that the implementation is maintain-
+       ing the concurrency level.
+
+       A  call  to pthread_setconcurrency() shall inform the implementation of
+       its desired concurrency level. The implementation shall use this  as  a
+       hint, not a requirement.
+
+       If  an  implementation does not support multiplexing of user threads on
+       top of several kernel-scheduled entities, the  pthread_setconcurrency()
+       and  pthread_getconcurrency()  functions  are  provided for source code
+       compatibility but they shall have no effect when  called.  To  maintain
+       the   function   semantics,  the  new_level  parameter  is  saved  when
+       pthread_setconcurrency()  is  called  so  that  a  subsequent  call  to
+       pthread_getconcurrency() shall return the same value.
+
+RETURN VALUE
+       If successful, the pthread_setconcurrency() function shall return zero;
+       otherwise, an error number shall be returned to indicate the error.
+
+       The pthread_getconcurrency() function shall always return  the  concur-
+       rency  level set by a previous call to pthread_setconcurrency(). If the
+       pthread_setconcurrency() function has never been  called,  pthread_get-
+       concurrency() shall return zero.
+
+ERRORS
+       The pthread_setconcurrency() function shall fail if:
+
+       EINVAL The value specified by new_level is negative.
+
+       EAGAIN The value specific by new_level would cause a system resource to
+              be exceeded.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       Use of these functions changes the state of the underlying  concurrency
+       upon  which  the application depends. Library developers are advised to
+       not use the pthread_getconcurrency() and pthread_setconcurrency() func-
+       tions  since  their  use may conflict with an applications use of these
+       functions.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       The Base Definitions volume of IEEE Std 1003.1-2001, <pthread.h>
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003            PTHREAD_GETCONCURRENCY(P)

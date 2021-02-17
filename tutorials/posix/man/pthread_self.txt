@@ -1,0 +1,59 @@
+PTHREAD_SELF(P)            POSIX Programmer's Manual           PTHREAD_SELF(P)
+
+
+
+NAME
+       pthread_self - get the calling thread ID
+
+SYNOPSIS
+       #include <pthread.h>
+
+       pthread_t pthread_self(void);
+
+
+DESCRIPTION
+       The  pthread_self()  function shall return the thread ID of the calling
+       thread.
+
+RETURN VALUE
+       Refer to the DESCRIPTION.
+
+ERRORS
+       No errors are defined.
+
+       The pthread_self() function shall not return an error code of  [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       The  pthread_self()  function provides a capability similar to the get-
+       pid() function for processes and the rationale is the  same:  the  cre-
+       ation call does not provide the thread ID to the created thread.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_create()  ,  pthread_equal()  ,  the Base Definitions volume of
+       IEEE Std 1003.1-2001, <pthread.h>
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003                      PTHREAD_SELF(P)

@@ -1,0 +1,132 @@
+PTHREAD_GETSCHEDPARAM(P)   POSIX Programmer's Manual  PTHREAD_GETSCHEDPARAM(P)
+
+
+
+NAME
+       pthread_getschedparam,  pthread_setschedparam - dynamic thread schedul-
+       ing parameters access (REALTIME THREADS)
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_getschedparam(pthread_t thread, int *restrict policy,
+              struct sched_param *restrict param);
+       int pthread_setschedparam(pthread_t thread, int policy,
+              const struct sched_param *param);
+
+
+DESCRIPTION
+       The  pthread_getschedparam()  and   pthread_setschedparam()   functions
+       shall,  respectively,  get and set the scheduling policy and parameters
+       of individual threads within a multi-threaded process to  be  retrieved
+       and  set.  For SCHED_FIFO and SCHED_RR, the only required member of the
+       sched_param structure is the priority sched_priority. For  SCHED_OTHER,
+       the affected scheduling parameters are implementation-defined.
+
+       The pthread_getschedparam() function shall retrieve the scheduling pol-
+       icy and scheduling parameters for the thread whose thread ID  is  given
+       by  thread  and  shall  store those values in policy and param, respec-
+       tively. The priority value returned from pthread_getschedparam()  shall
+       be  the  value  specified  by  the most recent pthread_setschedparam(),
+       pthread_setschedprio(), or pthread_create() call affecting  the  target
+       thread.  It shall not reflect any temporary adjustments to its priority
+       as a result of any  priority  inheritance  or  ceiling  functions.  The
+       pthread_setschedparam()  function  shall  set the scheduling policy and
+       associated scheduling parameters for the  thread  whose  thread  ID  is
+       given  by  thread  to  the policy and associated parameters provided in
+       policy and param, respectively.
+
+       The policy parameter may have the  value  SCHED_OTHER,  SCHED_FIFO,  or
+       SCHED_RR.  The  scheduling  parameters  for  the SCHED_OTHER policy are
+       implementation-defined. The SCHED_FIFO and SCHED_RR policies shall have
+       a single scheduling parameter, priority.
+
+       If  _POSIX_THREAD_SPORADIC_SERVER  is defined, then the policy argument
+       may  have  the  value  SCHED_SPORADIC,  with  the  exception  for   the
+       pthread_setschedparam()  function that if the scheduling policy was not
+       SCHED_SPORADIC at the time of the call,  it  is  implementation-defined
+       whether  the  function is supported; in other words, the implementation
+       need not allow the application to  dynamically  change  the  scheduling
+       policy to SCHED_SPORADIC. The sporadic server scheduling policy has the
+       associated  parameters   sched_ss_low_priority,   sched_ss_repl_period,
+       sched_ss_init_budget, sched_priority, and sched_ss_max_repl. The speci-
+       fied sched_ss_repl_period shall be greater than or equal to the  speci-
+       fied  sched_ss_init_budget  for  the function to succeed; if it is not,
+       then the function shall fail. The value of sched_ss_max_repl  shall  be
+       within  the inclusive range [1, {SS_REPL_MAX}] for the function to suc-
+       ceed; if not, the function shall fail.
+
+       If the pthread_setschedparam() function fails, the  scheduling  parame-
+       ters shall not be changed for the target thread.
+
+RETURN VALUE
+       If  successful, the pthread_getschedparam() and pthread_setschedparam()
+       functions shall return  zero;  otherwise,  an  error  number  shall  be
+       returned to indicate the error.
+
+ERRORS
+       The pthread_getschedparam() function may fail if:
+
+       ESRCH  The  value  specified  by  thread  does not refer to an existing
+              thread.
+
+
+       The pthread_setschedparam() function may fail if:
+
+       EINVAL The value specified by policy or one of the  scheduling  parame-
+              ters associated with the scheduling policy policy is invalid.
+
+       ENOTSUP
+              An  attempt  was made to set the policy or scheduling parameters
+              to an unsupported value.
+
+       ENOTSUP
+              An attempt was made to dynamically change the scheduling  policy
+              to  SCHED_SPORADIC, and the implementation does not support this
+              change.
+
+       EPERM  The caller does not  have  the  appropriate  permission  to  set
+              either the scheduling parameters or the scheduling policy of the
+              specified thread.
+
+       EPERM  The implementation does not allow the application to modify  one
+              of the parameters to the value specified.
+
+       ESRCH  The  value  specified  by  thread  does  not refer to a existing
+              thread.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_setschedprio() , sched_getparam() , sched_getscheduler() ,  the
+       Base Definitions volume of IEEE Std 1003.1-2001, <pthread.h>, <sched.h>
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003             PTHREAD_GETSCHEDPARAM(P)

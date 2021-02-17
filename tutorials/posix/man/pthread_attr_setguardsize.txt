@@ -1,0 +1,112 @@
+PTHREAD_ATTR_GETGUARDSIZE(PPOSIX Programmer's ManuPTHREAD_ATTR_GETGUARDSIZE(P)
+
+
+
+NAME
+       pthread_attr_getguardsize,  pthread_attr_setguardsize - get and set the
+       thread guardsize attribute
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_attr_getguardsize(const pthread_attr_t *restrict attr,
+              size_t *restrict guardsize);
+       int pthread_attr_setguardsize(pthread_attr_t *attr,
+              size_t guardsize);
+
+
+DESCRIPTION
+       The  pthread_attr_getguardsize()  function  shall  get  the   guardsize
+       attribute  in  the attr object. This attribute shall be returned in the
+       guardsize parameter.
+
+       The  pthread_attr_setguardsize()  function  shall  set  the   guardsize
+       attribute  in the attr object. The new value of this attribute shall be
+       obtained from the guardsize parameter. If guardsize is  zero,  a  guard
+       area  shall not be provided for threads created with attr. If guardsize
+       is greater than zero, a guard area of at  least  size  guardsize  bytes
+       shall be provided for each thread created with attr.
+
+       The  guardsize  attribute  controls  the size of the guard area for the
+       created thread's stack. The  guardsize  attribute  provides  protection
+       against  overflow of the stack pointer.  If a thread's stack is created
+       with guard protection, the implementation allocates extra memory at the
+       overflow  end  of  the  stack as a buffer against stack overflow of the
+       stack pointer. If an application overflows into this  buffer  an  error
+       shall  result  (possibly  in  a  SIGSEGV  signal being delivered to the
+       thread).
+
+       A conforming implementation may round up the value contained in  guard-
+       size  to a multiple of the configurable system variable {PAGESIZE} (see
+       <sys/mman.h>). If an implementation rounds up the value of guardsize to
+       a  multiple of {PAGESIZE}, a call to pthread_attr_getguardsize() speci-
+       fying attr shall store in the guardsize parameter the guard size speci-
+       fied by the previous pthread_attr_setguardsize() function call.
+
+       The  default value of the guardsize attribute is {PAGESIZE} bytes.  The
+       actual value of {PAGESIZE} is implementation-defined.
+
+       If the stackaddr or stack attribute has been set (that is,  the  caller
+       is  allocating  and  managing  its  own  thread  stacks), the guardsize
+       attribute shall be ignored and no protection shall be provided  by  the
+       implementation.  It  is the responsibility of the application to manage
+       stack overflow along with stack allocation and management in this case.
+
+RETURN VALUE
+       If  successful,  the  pthread_attr_getguardsize() and pthread_attr_set-
+       guardsize() functions shall return zero;  otherwise,  an  error  number
+       shall be returned to indicate the error.
+
+ERRORS
+       The  pthread_attr_getguardsize()  and pthread_attr_setguardsize() func-
+       tions shall fail if:
+
+       EINVAL The attribute attr is invalid.
+
+       EINVAL The parameter guardsize is invalid.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       The guardsize attribute is provided to the application for two reasons:
+
+        1. Overflow   protection  can  potentially  result  in  wasted  system
+           resources.  An application that creates a large number of  threads,
+           and  which  knows  its threads never overflow their stack, can save
+           system resources by turning off guard areas.
+
+
+        2. When threads allocate large data structures  on  the  stack,  large
+           guard areas may be needed to detect stack overflow.
+
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       The  Base  Definitions  volume  of  IEEE Std 1003.1-2001,  <pthread.h>,
+       <sys/mman.h>
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003         PTHREAD_ATTR_GETGUARDSIZE(P)

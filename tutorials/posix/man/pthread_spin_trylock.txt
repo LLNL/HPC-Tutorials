@@ -1,0 +1,90 @@
+PTHREAD_SPIN_LOCK(P)       POSIX Programmer's Manual      PTHREAD_SPIN_LOCK(P)
+
+
+
+NAME
+       pthread_spin_lock,  pthread_spin_trylock  -  lock  a  spin  lock object
+       (ADVANCED REALTIME THREADS)
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_spin_lock(pthread_spinlock_t *lock);
+       int pthread_spin_trylock(pthread_spinlock_t *lock);
+
+
+DESCRIPTION
+       The pthread_spin_lock() function shall lock the spin lock referenced by
+       lock.  The  calling  thread shall acquire the lock if it is not held by
+       another thread. Otherwise, the thread shall spin (that  is,  shall  not
+       return from the pthread_spin_lock() call) until the lock becomes avail-
+       able.  The results are undefined if the calling thread holds  the  lock
+       at the time the call is made. The pthread_spin_trylock() function shall
+       lock the spin lock referenced by lock if it is not held by any  thread.
+       Otherwise, the function shall fail.
+
+       The  results  are undefined if any of these functions is called with an
+       uninitialized spin lock.
+
+RETURN VALUE
+       Upon successful completion, these functions shall return  zero;  other-
+       wise, an error number shall be returned to indicate the error.
+
+ERRORS
+       These functions may fail if:
+
+       EINVAL The  value  specified  by  lock does not refer to an initialized
+              spin lock object.
+
+
+       The pthread_spin_lock() function may fail if:
+
+       EDEADLK
+              The calling thread already holds the lock.
+
+
+       The pthread_spin_trylock() function shall fail if:
+
+       EBUSY  A thread currently holds the lock.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       Applications using this function may be subject to priority  inversion,
+       as  discussed  in  the Base Definitions volume of IEEE Std 1003.1-2001,
+       Section 3.285, Priority Inversion.
+
+       The pthread_spin_lock() and pthread_spin_trylock() functions  are  part
+       of  the  Spin  Locks option and need not be provided on all implementa-
+       tions.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_spin_destroy() , pthread_spin_unlock() , the  Base  Definitions
+       volume of IEEE Std 1003.1-2001, <pthread.h>
+
+COPYRIGHT
+       Portions  of  this text are reprinted and reproduced in electronic form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       --  Portable  Operating  System  Interface (POSIX), The Open Group Base
+       Specifications Issue 6, Copyright (C) 2001-2003  by  the  Institute  of
+       Electrical  and  Electronics  Engineers, Inc and The Open Group. In the
+       event of any discrepancy between this version and the original IEEE and
+       The  Open Group Standard, the original IEEE and The Open Group Standard
+       is the referee document. The original Standard can be  obtained  online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003                 PTHREAD_SPIN_LOCK(P)

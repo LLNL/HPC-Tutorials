@@ -1,0 +1,64 @@
+PTHREAD_EQUAL(P)           POSIX Programmer's Manual          PTHREAD_EQUAL(P)
+
+
+
+NAME
+       pthread_equal - compare thread IDs
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_equal(pthread_t t1, pthread_t t2);
+
+
+DESCRIPTION
+       This function shall compare the thread IDs t1 and t2.
+
+RETURN VALUE
+       The pthread_equal() function shall return a non-zero value if t1 and t2
+       are equal; otherwise, zero shall be returned.
+
+       If either t1 or t2 are not valid thread IDs, the behavior is undefined.
+
+ERRORS
+       No errors are defined.
+
+       The pthread_equal() function shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       Implementations may choose to define a thread ID as a  structure.  This
+       allows  additional  flexibility  and  robustness over using an int. For
+       example, a thread ID could include a sequence number that allows detec-
+       tion  of "dangling IDs" (copies of a thread ID that has been detached).
+       Since the C language does not support comparison  on  structure  types,
+       the pthread_equal() function is provided to compare thread IDs.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_create()  ,  pthread_self()  ,  the  Base Definitions volume of
+       IEEE Std 1003.1-2001, <pthread.h>
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003                     PTHREAD_EQUAL(P)

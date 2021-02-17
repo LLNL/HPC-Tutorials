@@ -1,0 +1,74 @@
+PTHREAD_ATTR_GETSTACKSIZE(PPOSIX Programmer's ManuPTHREAD_ATTR_GETSTACKSIZE(P)
+
+
+
+NAME
+       pthread_attr_getstacksize,  pthread_attr_setstacksize - get and set the
+       stacksize attribute
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_attr_getstacksize(const pthread_attr_t *restrict attr,
+              size_t *restrict stacksize);
+       int pthread_attr_setstacksize(pthread_attr_t *attr, size_t stacksize);
+
+
+DESCRIPTION
+       The pthread_attr_getstacksize() and  pthread_attr_setstacksize()  func-
+       tions,  respectively,  shall  get and set the thread creation stacksize
+       attribute in the attr object.
+
+       The stacksize attribute shall define the minimum stack size (in  bytes)
+       allocated for the created threads stack.
+
+RETURN VALUE
+       Upon    successful    completion,    pthread_attr_getstacksize()    and
+       pthread_attr_setstacksize() shall return a value of  0;  otherwise,  an
+       error number shall be returned to indicate the error.
+
+       The pthread_attr_getstacksize() function stores the stacksize attribute
+       value in stacksize if successful.
+
+ERRORS
+       The pthread_attr_setstacksize() function shall fail if:
+
+       EINVAL The value of  stacksize  is  less  than  {PTHREAD_STACK_MIN}  or
+              exceeds a system-imposed limit.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_attr_destroy()       ,       pthread_attr_getstackaddr()      ,
+       pthread_attr_getdetachstate() , pthread_create() , the Base Definitions
+       volume of IEEE Std 1003.1-2001, <limits.h>, <pthread.h>
+
+COPYRIGHT
+       Portions  of  this text are reprinted and reproduced in electronic form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       --  Portable  Operating  System  Interface (POSIX), The Open Group Base
+       Specifications Issue 6, Copyright (C) 2001-2003  by  the  Institute  of
+       Electrical  and  Electronics  Engineers, Inc and The Open Group. In the
+       event of any discrepancy between this version and the original IEEE and
+       The  Open Group Standard, the original IEEE and The Open Group Standard
+       is the referee document. The original Standard can be  obtained  online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003         PTHREAD_ATTR_GETSTACKSIZE(P)

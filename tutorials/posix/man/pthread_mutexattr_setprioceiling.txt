@@ -1,0 +1,84 @@
+PTHREAD_MUTEXATTR_GETPRIOCEPOSIX(ProgrammerPTHREAD_MUTEXATTR_GETPRIOCEILING(P)
+
+
+
+NAME
+       pthread_mutexattr_getprioceiling,   pthread_mutexattr_setprioceiling  -
+       get and set the prioceiling attribute of the  mutex  attributes  object
+       (REALTIME THREADS)
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_mutexattr_getprioceiling(const pthread_mutexattr_t *
+              restrict attr, int *restrict prioceiling);
+       int pthread_mutexattr_setprioceiling(pthread_mutexattr_t *attr,
+              int prioceiling);
+
+
+DESCRIPTION
+       The  pthread_mutexattr_getprioceiling()  and pthread_mutexattr_setprio-
+       ceiling() functions, respectively, shall get and set the priority ceil-
+       ing attribute of a mutex attributes object pointed to by attr which was
+       previously created by the function pthread_mutexattr_init().
+
+       The prioceiling attribute contains the priority ceiling of  initialized
+       mutexes. The values of prioceiling are within the maximum range of pri-
+       orities defined by SCHED_FIFO.
+
+       The prioceiling attribute defines the priority ceiling  of  initialized
+       mutexes, which is the minimum priority level at which the critical sec-
+       tion guarded by the mutex is  executed.  In  order  to  avoid  priority
+       inversion, the priority ceiling of the mutex shall be set to a priority
+       higher than or equal to the highest priority of all  the  threads  that
+       may  lock  that mutex. The values of prioceiling are within the maximum
+       range of priorities defined under the SCHED_FIFO scheduling policy.
+
+RETURN VALUE
+       Upon successful completion, the pthread_mutexattr_getprioceiling()  and
+       pthread_mutexattr_setprioceiling()  functions shall return zero; other-
+       wise, an error number shall be returned to indicate the error.
+
+ERRORS
+       The pthread_mutexattr_getprioceiling()  and  pthread_mutexattr_setprio-
+       ceiling() functions may fail if:
+
+       EINVAL The value specified by attr or prioceiling is invalid.
+
+       EPERM  The caller does not have the privilege to perform the operation.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_cond_destroy() , pthread_create() ,  pthread_mutex_destroy()  ,
+       the Base Definitions volume of IEEE Std 1003.1-2001, <pthread.h>
+
+COPYRIGHT
+       Portions  of  this text are reprinted and reproduced in electronic form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       --  Portable  Operating  System  Interface (POSIX), The Open Group Base
+       Specifications Issue 6, Copyright (C) 2001-2003  by  the  Institute  of
+       Electrical  and  Electronics  Engineers, Inc and The Open Group. In the
+       event of any discrepancy between this version and the original IEEE and
+       The  Open Group Standard, the original IEEE and The Open Group Standard
+       is the referee document. The original Standard can be  obtained  online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003  PTHREAD_MUTEXATTR_GETPRIOCEILING(P)

@@ -1,0 +1,98 @@
+PTHREAD_CONDATTR_DESTROY(P)POSIX Programmer's ManuaPTHREAD_CONDATTR_DESTROY(P)
+
+
+
+NAME
+       pthread_condattr_destroy,  pthread_condattr_init - destroy and initial-
+       ize the condition variable attributes object
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_condattr_destroy(pthread_condattr_t *attr);
+       int pthread_condattr_init(pthread_condattr_t *attr);
+
+
+DESCRIPTION
+       The pthread_condattr_destroy() function shall destroy a condition vari-
+       able  attributes  object; the object becomes, in effect, uninitialized.
+       An implementation  may  cause  pthread_condattr_destroy()  to  set  the
+       object  referenced  by  attr  to  an  invalid  value.  A destroyed attr
+       attributes object can be reinitialized  using  pthread_condattr_init();
+       the  results  of  otherwise  referencing  the  object after it has been
+       destroyed are undefined.
+
+       The pthread_condattr_init() function shall initialize a condition vari-
+       able  attributes  object  attr  with  the  default value for all of the
+       attributes defined by the implementation.
+
+       Results are undefined if pthread_condattr_init() is  called  specifying
+       an already initialized attr attributes object.
+
+       After  a condition variable attributes object has been used to initial-
+       ize one  or  more  condition  variables,  any  function  affecting  the
+       attributes  object  (including destruction) shall not affect any previ-
+       ously initialized condition variables.
+
+       This volume of IEEE Std 1003.1-2001 requires two attributes, the  clock
+       attribute and the process-shared attribute.
+
+       Additional attributes, their default values, and the names of the asso-
+       ciated functions to get and set those attribute values are  implementa-
+       tion-defined.
+
+RETURN VALUE
+       If   successful,   the   pthread_condattr_destroy()   and  pthread_con-
+       dattr_init() functions shall return zero; otherwise,  an  error  number
+       shall be returned to indicate the error.
+
+ERRORS
+       The pthread_condattr_destroy() function may fail if:
+
+       EINVAL The value specified by attr is invalid.
+
+
+       The pthread_condattr_init() function shall fail if:
+
+       ENOMEM Insufficient  memory exists to initialize the condition variable
+              attributes object.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       See pthread_attr_init() and pthread_mutex_init() .
+
+       A process-shared attribute has been defined for condition variables for
+       the same reason it has been defined for mutexes.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_attr_destroy()    ,   pthread_cond_destroy()   ,   pthread_con-
+       dattr_getpshared() , pthread_create() , pthread_mutex_destroy()  ,  the
+       Base Definitions volume of IEEE Std 1003.1-2001, <pthread.h>
+
+COPYRIGHT
+       Portions  of  this text are reprinted and reproduced in electronic form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       --  Portable  Operating  System  Interface (POSIX), The Open Group Base
+       Specifications Issue 6, Copyright (C) 2001-2003  by  the  Institute  of
+       Electrical  and  Electronics  Engineers, Inc and The Open Group. In the
+       event of any discrepancy between this version and the original IEEE and
+       The  Open Group Standard, the original IEEE and The Open Group Standard
+       is the referee document. The original Standard can be  obtained  online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003          PTHREAD_CONDATTR_DESTROY(P)

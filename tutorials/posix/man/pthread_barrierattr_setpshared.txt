@@ -1,0 +1,101 @@
+PTHREAD_BARRIERATTR_GETPSHAPOSIX)Programmer'sPTHREAD_BARRIERATTR_GETPSHARED(P)
+
+
+
+NAME
+       pthread_barrierattr_getpshared,  pthread_barrierattr_setpshared  -  get
+       and set the process-shared attribute of the barrier  attributes  object
+       (ADVANCED REALTIME THREADS)
+
+SYNOPSIS
+       #include <pthread.h>
+
+
+
+       int pthread_barrierattr_getpshared(const pthread_barrierattr_t *
+              restrict attr, int *restrict pshared);
+       int pthread_barrierattr_setpshared(pthread_barrierattr_t *attr,
+              int pshared);
+
+
+DESCRIPTION
+       The pthread_barrierattr_getpshared() function shall obtain the value of
+       the process-shared attribute from the attributes object  referenced  by
+       attr.  The pthread_barrierattr_setpshared() function shall set the pro-
+       cess-shared attribute in an initialized attributes object referenced by
+       attr.
+
+       The process-shared attribute is set to PTHREAD_PROCESS_SHARED to permit
+       a barrier to be operated upon by any thread that has access to the mem-
+       ory  where the barrier is allocated. If the process-shared attribute is
+       PTHREAD_PROCESS_PRIVATE, the barrier shall only  be  operated  upon  by
+       threads  created within the same process as the thread that initialized
+       the barrier; if threads of different processes attempt  to  operate  on
+       such  a  barrier,  the  behavior is undefined. The default value of the
+       attribute shall be PTHREAD_PROCESS_PRIVATE. Both constants PTHREAD_PRO-
+       CESS_SHARED and PTHREAD_PROCESS_PRIVATE are defined in <pthread.h>.
+
+       Additional attributes, their default values, and the names of the asso-
+       ciated functions to get and set those attribute values are  implementa-
+       tion-defined.
+
+RETURN VALUE
+       If  successful,  the  pthread_barrierattr_getpshared()  function  shall
+       return zero and store the value of the process-shared attribute of attr
+       into  the  object  referenced  by  the pshared parameter. Otherwise, an
+       error number shall be returned to indicate the error.
+
+       If  successful,  the  pthread_barrierattr_setpshared()  function  shall
+       return  zero;  otherwise, an error number shall be returned to indicate
+       the error.
+
+ERRORS
+       These functions may fail if:
+
+       EINVAL The value specified by attr is invalid.
+
+
+       The pthread_barrierattr_setpshared() function may fail if:
+
+       EINVAL The new value specified for the process-shared attribute is  not
+              one  of  the legal values PTHREAD_PROCESS_SHARED or PTHREAD_PRO-
+              CESS_PRIVATE.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       The  pthread_barrierattr_getpshared()   and   pthread_barrierattr_setp-
+       shared() functions are part of the Barriers option and need not be pro-
+       vided on all implementations.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_barrier_destroy()     ,     pthread_barrierattr_destroy()     ,
+       pthread_barrierattr_init()   ,   the   Base   Definitions   volume   of
+       IEEE Std 1003.1-2001, <pthread.h>
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003    PTHREAD_BARRIERATTR_GETPSHARED(P)

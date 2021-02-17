@@ -1,0 +1,136 @@
+PTHREAD_MUTEXATTR_GETPROTOCPOSIX Programmer's PTHREAD_MUTEXATTR_GETPROTOCOL(P)
+
+
+
+NAME
+       pthread_mutexattr_getprotocol,  pthread_mutexattr_setprotocol - get and
+       set the protocol attribute of the  mutex  attributes  object  (REALTIME
+       THREADS)
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_mutexattr_getprotocol(const pthread_mutexattr_t *
+              restrict attr, int *restrict protocol);
+       int pthread_mutexattr_setprotocol(pthread_mutexattr_t *attr,
+              int protocol);
+
+
+
+
+
+DESCRIPTION
+       The pthread_mutexattr_getprotocol() and pthread_mutexattr_setprotocol()
+       functions, respectively, shall get and set the protocol attribute of  a
+       mutex attributes object pointed to by attr which was previously created
+       by the function pthread_mutexattr_init().
+
+       The protocol attribute defines the protocol to be followed in utilizing
+       mutexes. The value of protocol may be one of:
+
+
+       PTHREAD_PRIO_NONE
+
+       PTHREAD_PRIO_INHERIT
+
+
+       PTHREAD_PRIO_PROTECT
+
+
+       which are defined in the <pthread.h> header.
+
+       When  a  thread  owns  a  mutex  with  the  PTHREAD_PRIO_NONE  protocol
+       attribute, its priority and scheduling shall not  be  affected  by  its
+       mutex ownership.
+
+       When a thread is blocking higher priority threads because of owning one
+       or more mutexes with the PTHREAD_PRIO_INHERIT  protocol  attribute,  it
+       shall  execute  at  the  higher  of its priority or the priority of the
+       highest priority thread waiting on any of the  mutexes  owned  by  this
+       thread and initialized with this protocol.
+
+       When   a   thread  owns  one  or  more  mutexes  initialized  with  the
+       PTHREAD_PRIO_PROTECT protocol, it shall execute at the  higher  of  its
+       priority  or  the  highest  of the priority ceilings of all the mutexes
+       owned by this thread and initialized with this attribute, regardless of
+       whether other threads are blocked on any of these mutexes or not.
+
+       While  a  thread is holding a mutex which has been initialized with the
+       PTHREAD_PRIO_INHERIT or PTHREAD_PRIO_PROTECT  protocol  attributes,  it
+       shall not be subject to being moved to the tail of the scheduling queue
+       at its priority in the event that its  original  priority  is  changed,
+       such as by a call to sched_setparam().  Likewise, when a thread unlocks
+       a mutex that has been  initialized  with  the  PTHREAD_PRIO_INHERIT  or
+       PTHREAD_PRIO_PROTECT  protocol  attributes,  it shall not be subject to
+       being moved to the tail of the scheduling queue at its priority in  the
+       event that its original priority is changed.
+
+       If  a  thread simultaneously owns several mutexes initialized with dif-
+       ferent protocols, it shall execute at the  highest  of  the  priorities
+       that it would have obtained by each of these protocols.
+
+       When  a thread makes a call to pthread_mutex_lock(), the mutex was ini-
+       tialized   with   the   protocol    attribute    having    the    value
+       PTHREAD_PRIO_INHERIT,  when  the  calling thread is blocked because the
+       mutex is owned by another thread, that owner thread shall  inherit  the
+       priority level of the calling thread as long as it continues to own the
+       mutex. The implementation shall update its execution  priority  to  the
+       maximum of its assigned priority and all its inherited priorities. Fur-
+       thermore, if this owner thread itself becomes blocked on another mutex,
+       the  same priority inheritance effect shall be propagated to this other
+       owner thread, in a recursive manner.
+
+RETURN VALUE
+       Upon successful  completion,  the  pthread_mutexattr_getprotocol()  and
+       pthread_mutexattr_setprotocol() functions shall return zero; otherwise,
+       an error number shall be returned to indicate the error.
+
+ERRORS
+       The pthread_mutexattr_setprotocol() function shall fail if:
+
+       ENOTSUP
+              The value specified by protocol is an unsupported value.
+
+
+       The pthread_mutexattr_getprotocol() and pthread_mutexattr_setprotocol()
+       functions may fail if:
+
+       EINVAL The value specified by attr or protocol is invalid.
+
+       EPERM  The caller does not have the privilege to perform the operation.
+
+
+       These functions shall not return an error code of [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       None.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       pthread_cond_destroy() , pthread_create() ,  pthread_mutex_destroy()  ,
+       the Base Definitions volume of IEEE Std 1003.1-2001, <pthread.h>
+
+COPYRIGHT
+       Portions  of  this text are reprinted and reproduced in electronic form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       --  Portable  Operating  System  Interface (POSIX), The Open Group Base
+       Specifications Issue 6, Copyright (C) 2001-2003  by  the  Institute  of
+       Electrical  and  Electronics  Engineers, Inc and The Open Group. In the
+       event of any discrepancy between this version and the original IEEE and
+       The  Open Group Standard, the original IEEE and The Open Group Standard
+       is the referee document. The original Standard can be  obtained  online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003     PTHREAD_MUTEXATTR_GETPROTOCOL(P)

@@ -1,0 +1,140 @@
+PTHREAD_ATFORK(P)          POSIX Programmer's Manual         PTHREAD_ATFORK(P)
+
+
+
+NAME
+       pthread_atfork - register fork handlers
+
+SYNOPSIS
+       #include <pthread.h>
+
+       int pthread_atfork(void (*prepare)(void), void (*parent)(void),
+              void (*child)(void));
+
+
+DESCRIPTION
+       The  pthread_atfork() function shall declare fork handlers to be called
+       before and after fork(), in the  context  of  the  thread  that  called
+       fork(). The prepare fork handler shall be called before fork() process-
+       ing commences. The parent fork handle shall be called after fork() pro-
+       cessing  completes  in the parent process. The child fork handler shall
+       be called after fork() processing completes in the child  process.   If
+       no handling is desired at one or more of these three points, the corre-
+       sponding fork handler address(es) may be set to NULL.
+
+       The order of calls to pthread_atfork() is significant. The  parent  and
+       child  fork  handlers  shall  be called in the order in which they were
+       established by calls to pthread_atfork().  The  prepare  fork  handlers
+       shall be called in the opposite order.
+
+RETURN VALUE
+       Upon  successful  completion,  pthread_atfork() shall return a value of
+       zero; otherwise, an error number shall  be  returned  to  indicate  the
+       error.
+
+ERRORS
+       The pthread_atfork() function shall fail if:
+
+       ENOMEM Insufficient  table  space  exists  to  record  the fork handler
+              addresses.
+
+
+       The pthread_atfork()  function  shall  not  return  an  error  code  of
+       [EINTR].
+
+       The following sections are informative.
+
+EXAMPLES
+       None.
+
+APPLICATION USAGE
+       None.
+
+RATIONALE
+       There are at least two serious problems with the semantics of fork() in
+       a multi-threaded program. One problem has to do with state  (for  exam-
+       ple, memory) covered by mutexes. Consider the case where one thread has
+       a mutex locked and the state covered  by  that  mutex  is  inconsistent
+       while  another  thread  calls fork(). In the child, the mutex is in the
+       locked state (locked by a nonexistent thread  and  thus  can  never  be
+       unlocked).  Having  the child simply reinitialize the mutex is unsatis-
+       factory since this approach does not resolve the question about how  to
+       correct or otherwise deal with the inconsistent state in the child.
+
+       It  is  suggested  that  programs that use fork() call an exec function
+       very soon afterwards in the child process, thus resetting  all  states.
+       In  the  meantime,  only  a  short  list  of  async-signal-safe library
+       routines are promised to be available.
+
+       Unfortunately, this solution does  not  address  the  needs  of  multi-
+       threaded libraries. Application programs may not be aware that a multi-
+       threaded library is in use, and they feel free to call  any  number  of
+       library routines between the fork() and exec calls, just as they always
+       have.  Indeed, they may be extant single-threaded programs and  cannot,
+       therefore,  be expected to obey new restrictions imposed by the threads
+       library.
+
+       On the other hand, the multi-threaded library needs a  way  to  protect
+       its  internal state during fork() in case it is re-entered later in the
+       child process. The problem  arises  especially  in  multi-threaded  I/O
+       libraries,  which  are almost sure to be invoked between the fork() and
+       exec calls to effect I/O redirection. The solution may require  locking
+       mutex  variables  during  fork(), or it may entail simply resetting the
+       state in the child after the fork() processing completes.
+
+       The pthread_atfork() function provides multi-threaded libraries with  a
+       means  to  protect  themselves  from innocent application programs that
+       call fork(), and it provides multi-threaded application programs with a
+       standard  mechanism  for  protecting  themselves from fork() calls in a
+       library routine or the application itself.
+
+       The expected usage is that the prepare handler acquires all mutex locks
+       and the other two fork handlers release them.
+
+       For  example, an application can supply a prepare routine that acquires
+       the necessary mutexes the library maintains and supply child and parent
+       routines  that release those mutexes, thus ensuring that the child gets
+       a consistent snapshot of the state of the library (and that no  mutexes
+       are  left  stranded).   Alternatively,  some libraries might be able to
+       supply just a child routine  that  reinitializes  the  mutexes  in  the
+       library  and  all  associated  states to some known value (for example,
+       what it was when the image was originally executed).
+
+       When fork() is called, only the calling thread  is  duplicated  in  the
+       child  process.   Synchronization variables remain in the same state in
+       the child as they were in the parent at the  time  fork()  was  called.
+       Thus,  for  example,  mutex locks may be held by threads that no longer
+       exist in the child process, and any associated states may be  inconsis-
+       tent.  The parent process may avoid this by explicit code that acquires
+       and releases locks critical to  the  child  via  pthread_atfork().   In
+       addition,  any  critical threads need to be recreated and reinitialized
+       to the proper state in the child (also via pthread_atfork()).
+
+       A higher-level package may acquire locks on  its  own  data  structures
+       before  invoking  lower-level  packages. Under this scenario, the order
+       specified for fork handler calls allows a simple rule of initialization
+       for  avoiding  package  deadlock: a package initializes all packages on
+       which it depends before it  calls  the  pthread_atfork()  function  for
+       itself.
+
+FUTURE DIRECTIONS
+       None.
+
+SEE ALSO
+       atexit()    ,    fork()    ,    the    Base   Definitions   volume   of
+       IEEE Std 1003.1-2001, <sys/types.h>
+
+COPYRIGHT
+       Portions of this text are reprinted and reproduced in  electronic  form
+       from IEEE Std 1003.1, 2003 Edition, Standard for Information Technology
+       -- Portable Operating System Interface (POSIX),  The  Open  Group  Base
+       Specifications  Issue  6,  Copyright  (C) 2001-2003 by the Institute of
+       Electrical and Electronics Engineers, Inc and The Open  Group.  In  the
+       event of any discrepancy between this version and the original IEEE and
+       The Open Group Standard, the original IEEE and The Open Group  Standard
+       is  the  referee document. The original Standard can be obtained online
+       at http://www.opengroup.org/unix/online.html .
+
+
+
+IEEE/The Open Group                  2003                    PTHREAD_ATFORK(P)
