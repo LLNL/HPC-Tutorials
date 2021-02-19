@@ -1,7 +1,7 @@
 author: "Livermore Computing <lc-hotline@llnl.gov>"
 title: LLNL HPC Tutorials
 description: "Lawrence Livermore National Laboratory Software Portal"
-remote_theme: LLNL/Jekyll-LLNL-Theme
+remote_theme: LLNL/Jekyll-LLNL-Theme@main
 
 url: "https://hpc-tutorials.llnl.gov"
 repo_url: "https://github.com/LLNL/hpc-tutorials"
