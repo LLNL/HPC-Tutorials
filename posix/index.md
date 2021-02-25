@@ -34,5 +34,5 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 10. [LLNL Specific Information and Recommendations]()
 11. [Topics Not Covered]()
 12. [Exercise 2]()
-13. [References and More Information]()
+13. [References and More Information](references)
 14. [Appendix A: Pthread Library Routines Reference](AppendixA)
