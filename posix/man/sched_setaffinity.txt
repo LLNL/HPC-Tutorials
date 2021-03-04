@@ -1,0 +1,115 @@
+SCHED_SETAFFINITY(2)       Linux Programmer's Manual      SCHED_SETAFFINITY(2)
+
+
+
+NAME
+       sched_setaffinity,   sched_getaffinity,  CPU_CLR,  CPU_ISSET,  CPU_SET,
+       CPU_ZERO - set and get a process's CPU affinity mask
+
+SYNOPSIS
+       #include <sched.h>
+
+       int sched_setaffinity(pid_t pid, unsigned int cpusetsize,
+                             cpu_set_t *mask);
+
+       int sched_getaffinity(pid_t pid, unsigned int cpusetsize,
+                             cpu_set_t *mask);
+
+       void CPU_CLR(int cpu, cpu_set_t *set);
+       int CPU_ISSET(int cpu, cpu_set_t *set);
+       void CPU_SET(int cpu, cpu_set_t *set);
+       void CPU_ZERO(cpu_set_t *set);
+
+DESCRIPTION
+       A process's CPU affinity mask determines the set of CPUs on which it is
+       eligible  to run.  On a multiprocessor system, setting the CPU affinity
+       mask can be used to obtain performance benefits.  For example, by dedi-
+       cating one CPU to a particular process (i.e., setting the affinity mask
+       of that process to specify a single CPU, and setting the affinity  mask
+       of  all  other processes to exclude that CPU), it is possible to ensure
+       maximum execution speed for that process.  Restricting a process to run
+       on  a single CPU also prevents the performance cost caused by the cache
+       invalidation that occurs when a process ceases to execute  on  one  CPU
+       and then recommences execution on a different CPU.
+
+       A  CPU  affinity mask is represented by the cpu_set_t structure, a "CPU
+       set", pointed to by mask.  Four macros are provided to  manipulate  CPU
+       sets.   CPU_ZERO()  clears a set.  CPU_SET() and CPU_CLR() respectively
+       add and remove a given CPU from a set.  CPU_ISSET() tests to see  if  a
+       CPU  is  part  of  the  set;  this  is useful after sched_getaffinity()
+       returns.  The first available CPU on the system corresponds  to  a  cpu
+       value  of  0,  the next CPU corresponds to a cpu value of 1, and so on.
+       The constant CPU_SETSIZE (1024) specifies a value one greater than  the
+       maximum CPU number that can be stored in a CPU set.
+
+       sched_setaffinity()  sets the CPU affinity mask of the process whose ID
+       is pid to the value specified by mask.  If pid is zero, then the  call-
+       ing  process is used.  The argument cpusetsize is the length (in bytes)
+       of the data pointed to by mask.  Normally this argument would be speci-
+       fied as sizeof(cpu_set_t).
+
+       If  the process specified by pid is not currently running on one of the
+       CPUs specified in mask, then that process is migrated  to  one  of  the
+       CPUs specified in mask.
+
+       sched_getaffinity() writes the affinity mask of the process whose ID is
+       pid into the cpu_set_t structure pointed to by  mask.   The  cpusetsize
+       argument  specifies  the size (in bytes) of mask.  If pid is zero, then
+       the mask of the calling process is returned.
+
+RETURN VALUE
+       On success, sched_setaffinity() and sched_getaffinity() return  0.   On
+       error, -1 is returned, and errno is set appropriately.
+
+ERRORS
+       EFAULT A supplied memory address was invalid.
+
+       EINVAL The affinity bitmask mask contains no processors that are physi-
+              cally on the system, or cpusetsize is smaller than the  size  of
+              the affinity mask used by the kernel.
+
+       EPERM  The  calling  process does not have appropriate privileges.  The
+              process calling sched_setaffinity() needs an effective  user  ID
+              equal to the user ID or effective user ID of the process identi-
+              fied by pid, or it must possess the CAP_SYS_NICE capability.
+
+       ESRCH  The process whose ID is pid could not be found.
+
+CONFORMING TO
+       These system calls are Linux specific.
+
+NOTES
+       The affinity mask is  actually  a  per-thread  attribute  that  can  be
+       adjusted  independently for each of the threads in a thread group.  The
+       value returned from a call to gettid(2) can be passed in  the  argument
+       pid.
+
+       A  child  created  via fork(2) inherits its parent's CPU affinity mask.
+       The affinity mask is preserved across an execve(2).
+
+       This manual page describes the glibc interface  for  the  CPU  affinity
+       calls.   The  actual  system call interface is slightly different, with
+       the mask being typed as unsigned long *, reflecting that the fact  that
+       the underlying implementation of CPU sets is a simple bitmask.  On suc-
+       cess, the raw sched_getaffinity() system  call  returns  the  size  (in
+       bytes) of the cpumask_t data type that is used internally by the kernel
+       to represent the CPU set bitmask.
+
+HISTORY
+       The CPU affinity system calls were introduced in  Linux  kernel  2.5.8.
+       The  library  interfaces  were introduced in glibc 2.3.  Initially, the
+       glibc interfaces included a cpusetsize argument.  In glibc  2.3.2,  the
+       cpusetsize  argument  was  removed,  but  this argument was restored in
+       glibc 2.3.4.
+
+SEE ALSO
+       clone(2),   getpriority(2),   gettid(2),   nice(2),    sched_get_prior-
+       ity_max(2),      sched_get_priority_min(2),      sched_getscheduler(2),
+       sched_setscheduler(2), setpriority(2), capabilities(7)
+
+       sched_setscheduler(2) has a description of the Linux scheduling scheme.
+
+
+
+Linux                             2006-02-03              SCHED_SETAFFINITY(2)
+
