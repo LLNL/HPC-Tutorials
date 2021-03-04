@@ -32,7 +32,53 @@ The maximum number of threads that may be created by a process is implementation
 
 Querying and setting your implementation's thread limit - Linux example shown. Demonstrates querying the default (soft) limits and then setting the maximum number of processes (including threads) to the hard limit. Then verifying that the limit has been overridden.
 
-# ADD TABLE
+<details>
+    <summary> bash / ksh / sh example (click to expand) </summary>
+    <p>
+```
+$ ulimit -a
+core file size          (blocks, -c) 16
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 255956
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 1024
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+
+$ ulimit -Hu
+7168
+
+$ ulimit -u 7168
+
+$ ulimit -a
+core file size          (blocks, -c) 16
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 255956
+max locked memory       (kbytes, -l) 64
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) unlimited
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 7168
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+\```
+    </p>
+</details>
 
 Once created, threads are peers, and may create other threads. There is no implied hierarchy or dependency between threads.
 
