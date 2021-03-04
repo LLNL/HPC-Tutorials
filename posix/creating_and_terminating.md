@@ -7,23 +7,66 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 ### Routines:
 
+<a href='man/pthread_create.txt'>pthread_create</a>(thread,attr,start_routine,arg)
 
-[pthread_create] (thread,attr,start_routine,arg)
+<a href='man/pthread_exit.txt'>pthread_exit</a>(status)
 
-pthread_exit (status)
+<a href='man/pthread_cancel.txt'>pthread_cancel</a>(thread)
 
-pthread_cancel (thread)
+<a href='man/pthread_attr_init.txt'>pthread_attr_init</a>(attr)
 
-pthread_attr_init (attr)
-
-pthread_attr_destroy (attr)
+<a href='man/pthread_attr_destroy.txt'>pthread_attr_destroy</a>(attr)
 
 ### Creating Threads:
 
+Initially, your `main()` program comprises a single, default thread. All other threads must be explicitly created by the programmer.
+`pthread_create` creates a new thread and makes it executable. This routine can be called any number of times from anywhere within your code.
+
+`pthread_create` arguments:
+* **thread**: An opaque, unique identifier for the new thread returned by the subroutine.
+* **attr**: An opaque attribute object that may be used to set thread attributes. You can specify a thread attributes object, or NULL for the default values.
+* **start_routine**: the C routine that the thread will execute once it is created.
+* **arg**: A single argument that may be passed to start_routine. It must be passed by reference as a pointer cast of type void. NULL may be used if no argument is to be passed.
+
+The maximum number of threads that may be created by a process is implementation dependent. Programs that attempt to exceed the limit can fail or produce wrong results.
+
+Querying and setting your implementation's thread limit - Linux example shown. Demonstrates querying the default (soft) limits and then setting the maximum number of processes (including threads) to the hard limit. Then verifying that the limit has been overridden.
+
+# ADD TABLE
+
+Once created, threads are peers, and may create other threads. There is no implied hierarchy or dependency between threads.
+
+![peer_threads](images/peerThreads.gif)
+
 ### Thread Attributes:
 
+By default, a thread is created with certain attributes. Some of these attributes can be changed by the programmer via the thread attribute object.
+
+`pthread_attr_init` and `pthread_attr_destroy` are used to initialize/destroy the thread attribute object.
+
+Other routines are then used to query/set specific attributes in the thread attribute object. Attributes include:
+* Detached or joinable state
+* Scheduling inheritance
+* Scheduling policy
+* Scheduling parameters
+* Scheduling contention scope
+* Stack size
+* Stack address
+* Stack guard (overflow) size
+* Some of these attributes will be discussed later.
 
 ### Thread Binding and Scheduling:
+
+Question: After a thread has been created, how do you know a)when it will be scheduled to run by the operating system, and b)which processor/core it will run on? 
+
+
+The Pthreads API provides several routines that may be used to specify how threads are scheduled for execution. For example, threads can be scheduled to run FIFO (first-in first-out), RR (round-robin) or OTHER (operating system determines). It also provides the ability to set a thread's scheduling priority value.
+
+These topics are not covered here, however a good overview of "how things work" under Linux can be found in the sched_setscheduler man page.
+
+The Pthreads API does not provide routines for binding threads to specific cpus/cores. However, local implementations may include this functionality - such as providing the non-standard pthread_setaffinity_np routine. Note that "_np" in the name stands for "non-portable".
+
+Also, the local operating system may provide a way to do this. For example, Linux provides the sched_setaffinity routine.
 
 ### Terminating Threads & `pthread_exit()`
 
