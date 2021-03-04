@@ -34,6 +34,28 @@ for(t=0; t<NUM_THREADS; t++)
    ...
 }
 ```
+See the [source code](example_code/hello_arg1.c).
+
+Output:
+
+```
+Creating thread 0
+Creating thread 1
+Creating thread 2
+Creating thread 3
+Creating thread 4
+Creating thread 5
+Creating thread 6
+Creating thread 7
+Thread 0: English: Hello World!
+Thread 1: French: Bonjour, le monde!
+Thread 2: Spanish: Hola al mundo
+Thread 3: Klingon: Nuq neH!
+Thread 4: German: Guten Tag, Welt!
+Thread 5: Russian: Zdravstvytye, mir!
+Thread 6: Japan: Sekai e konnichiwa!
+Thread 7: Latin: Orbis, te saluto!
+```
 
 ####  Example 2 - Thread Argument Passing
 
@@ -71,6 +93,29 @@ int main (int argc, char *argv[])
 }
 ```
 
+See the [source code](example_code/hello_arg2.c).
+
+Output:
+
+```
+Creating thread 0
+Creating thread 1
+Creating thread 2
+Creating thread 3
+Creating thread 4
+Creating thread 5
+Creating thread 6
+Creating thread 7
+Thread 0: English: Hello World!  Sum=0
+Thread 1: French: Bonjour, le monde!  Sum=1
+Thread 2: Spanish: Hola al mundo  Sum=3
+Thread 3: Klingon: Nuq neH!  Sum=6
+Thread 4: German: Guten Tag, Welt!  Sum=10
+Thread 5: Russian: Zdravstvytye, mir!  Sum=15
+Thread 6: Japan: Sekai e konnichiwa!  Sum=21
+Thread 7: Latin: Orbis, te saluto!  Sum=28
+```
+
 #### Example 3 - Thread Argument Passing (Incorrect)
 
 This example performs argument passing incorrectly. It passes the address of variable `t`, which is shared memory space and visible to all threads. As the loop iterates, the value of this memory location changes, possibly before the created threads can access it.
@@ -85,4 +130,27 @@ for(t=0; t<NUM_THREADS; t++)
    rc = pthread_create(&threads[t], NULL, PrintHello, (void *) &t);
    ...
 }
+```
+
+See the [source code](example_code/hello_arg3.c).
+
+Output:
+
+```
+Creating thread 0
+Creating thread 1
+Creating thread 2
+Creating thread 3
+Creating thread 4
+Creating thread 5
+Creating thread 6
+Creating thread 7
+Hello from thread 140737488348392
+Hello from thread 140737488348392
+Hello from thread 140737488348392
+Hello from thread 140737488348392
+Hello from thread 140737488348392
+Hello from thread 140737488348392
+Hello from thread 140737488348392
+Hello from thread 140737488348392
 ```
