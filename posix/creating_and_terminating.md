@@ -32,9 +32,7 @@ The maximum number of threads that may be created by a process is implementation
 
 Querying and setting your implementation's thread limit - Linux example shown. Demonstrates querying the default (soft) limits and then setting the maximum number of processes (including threads) to the hard limit. Then verifying that the limit has been overridden.
 
-<details>
-    <summary> bash / ksh / sh example (click to expand) </summary>
-    <p>
+#### bash / ksh / sh example
 ```
 $ ulimit -a
 core file size          (blocks, -c) 16
@@ -76,9 +74,37 @@ cpu time               (seconds, -t) unlimited
 max user processes              (-u) 7168
 virtual memory          (kbytes, -v) unlimited
 file locks                      (-x) unlimited
-\```
-    </p>
-</details>
+```
+
+#### tcsh/csh example
+
+```
+% limit 
+cputime      unlimited
+filesize     unlimited
+datasize     unlimited
+stacksize    unlimited
+coredumpsize 16 kbytes
+memoryuse    unlimited
+vmemoryuse   unlimited
+descriptors  1024 
+memorylocked 64 kbytes
+maxproc      1024
+
+% limit maxproc unlimited
+
+% limit
+cputime      unlimited
+filesize     unlimited
+datasize     unlimited
+stacksize    unlimited
+coredumpsize 16 kbytes
+memoryuse    unlimited
+vmemoryuse   unlimited
+descriptors  1024 
+memorylocked 64 kbytes
+maxproc      7168
+```
 
 Once created, threads are peers, and may create other threads. There is no implied hierarchy or dependency between threads.
 
