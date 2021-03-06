@@ -4,6 +4,7 @@ title: "Compiling Threaded Programs"
 release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
 ---
+## Compiling Threaded Programs
 
 Several examples of compile commands used for pthreads codes are listed in the table below.
 
