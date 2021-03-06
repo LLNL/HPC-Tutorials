@@ -5,6 +5,8 @@ release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
 ---
 
+## Pthreads Overview: What is a Thread?
+
 Technically, a thread is defined as an independent stream of instructions that can be scheduled to run as such by the operating system. But what does this mean?
 
 To the software developer, the concept of a "procedure" that runs independently from its main program may best describe a thread.
