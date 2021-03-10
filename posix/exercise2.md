@@ -70,21 +70,12 @@ Suggestion: simply making and running this series of codes is
 
 4.  Run each of the codes and observe their output:
 
-+--------------------------------------+--------------------------------------+
-| Execution command                    | Description                          |
-+======================================+======================================+
-|     mpithreads_serial                | Serial version - no threads or MPI   |
-+--------------------------------------+--------------------------------------+
-|     mpithreads_threads               | Threads only version of the code     |
-|                                      | using 8 threads                      |
-+--------------------------------------+--------------------------------------+
-|     srun -n8 -ppReserved mpithreads_ | MPI only version with 8 tasks        |
-| mpi                                  | running on a single node in the      |
-|                                      | special workshop pool                |
-+--------------------------------------+--------------------------------------+
-|     srun -N4 -ppReserved mpithreads_ | MPI with threads using 4 tasks       |
-| both                                 | running on 4 different nodes, each   |
-|                                      | of which spawns 8 threads, running   |
-|                                      | in special workshop pool             |
-+--------------------------------------+--------------------------------------+
-
+<table><tbody><tr valign="top"><th>Execution command</th><th>Description</th></tr><tr valign="top"><td>
+            <pre><b>mpithreads_serial</b></pre>
+        </td><td>Serial version - no threads or MPI</td></tr><tr valign="top"><td>
+            <pre><b>mpithreads_threads</b></pre>
+        </td><td>Threads only version of the code using 8 threads</td></tr><tr valign="top"><td>
+            <pre><b>srun -n8 -ppReserved mpithreads_mpi</b></pre>
+        </td><td>MPI only version with 8 tasks running on a single node in the special workshop pool</td></tr><tr valign="top"><td>
+            <pre><b>srun -N4 -ppReserved mpithreads_both</b></pre>
+        </td><td>MPI with threads using 4 tasks running on 4 different nodes, each of which spawns 8 threads, running in special workshop pool</td></tr></tbody></table></li></ol></li></ol>
