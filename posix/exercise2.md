@@ -7,7 +7,7 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 ## 1. Mutexes
 
-1. Review, compile and run the [dotprod\_serial.c] (https://hpc-tutorials.llnl.gov/samples/dotprod_serial.c) program. As its
+1. Review, compile and run the [dotprod\_serial.c] (samples/dotprod_serial.c) program. As its
         name implies, it is serial - no threads are created.
 2. Now review, compile and run the [dotprod\_mutex.c] (https://hpc-tutorials.llnl.gov/samples/dotprod\_mutex.c) program. This
         version of the dotprod program uses threads and requires a mutex
@@ -69,7 +69,7 @@ Suggestion: simply making and running this series of codes is
         make -f mpithreads.makefile
 
 4.  Run each of the codes and observe their output:
-
+<center>
 <table><tbody><tr><th>Execution command</th><th>Description</th></tr><tr><td>
             <pre><b>mpithreads_serial</b></pre>
         </td><td>Serial version - no threads or MPI</td></tr><tr><td>
@@ -79,3 +79,4 @@ Suggestion: simply making and running this series of codes is
         </td><td>MPI only version with 8 tasks running on a single node in the special workshop pool</td></tr><tr><td>
             <pre><b>srun -N4 -ppReserved mpithreads_both</b></pre>
         </td><td>MPI with threads using 4 tasks running on 4 different nodes, each of which spawns 8 threads, running in special workshop pool</td></tr></tbody></table>
+        </center
