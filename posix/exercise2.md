@@ -9,7 +9,7 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 1. Review, compile and run the [dotprod_serial.c](/posix/samples/dotprod_serial.c) program. As its
         name implies, it is serial - no threads are created.
-2. Now review, compile and run the [dotprod_mutex.c](../samples/dotprod\_mutex.c) program. This
+2. Now review, compile and run the [dotprod_mutex.c](../samples/dotprod_mutex.c) program. This
         version of the dotprod program uses threads and requires a mutex
         to protect the global sum as each thread updates it with their
         partial sums.
@@ -29,12 +29,12 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 1. Review, compile and run the [condvar.c](/posix/samples/condvar.c) program. This example is
         essentially the same as the shown in the tutorial. Observe the
         output of the three threads.
-2. Now, review, compile and run the [bug1.c] (https://hpc-tutorials.llnl.gov/samples/bug1.c) program. Observe the
+2. Now, review, compile and run the [bug1.c](/posix/samples/bug1.c) program. Observe the
         output of the five threads. What happens? See if you can
         determine why and fix the problem. The explanation is provided
         in the bug examples table above, and an example solution is
         provided by the bug1fix.c program.
-3. The [bug4.c] (https://hpc-tutorials.llnl.gov/samples/bug4.c) program is yet another example of what can go wrong
+3. The [bug4.c](/posix/samples/bug4.c) program is yet another example of what can go wrong
         when using condition variables. Review, compile (for gcc include
         the -lm flag) and run the code. Observe the output and then see
         if you can fix the problem. The explanation is provided in the
@@ -44,11 +44,11 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 ## 3.  Hybrid MPI with Pthreads
 1. Your pthreads directory should contain the following 5 codes:
 
-- [mpithreads\_serial.c \] (https://hpc-tutorials.llnl.gov/samples/mpithreads_serial.c)
-- [mpithreads\_threads.c \] (https://hpc-tutorials.llnl.gov/samples/mpithreads_threads.c)
-- [mpithreads\_mpi.c \] (https://hpc-tutorials.llnl.gov/samples/
-- [mpithreads\_both.c \] (https://hpc-tutorials.llnl.gov/samples/
-- [mpithreads.makefile] (https://hpc-tutorials.llnl.gov/samples/
+- [mpithreads_serial.c](/posix/samples/mpithreads_serial.c)
+- [mpithreads_threads.c](/posix/samples/mpithreads_threads.c)
+- [mpithreads_mpi.c](/posix/samples/mpithreads_mpi.c)
+- [mpithreads_both.c](/posix/samples/mpithreads_both.c)
+- [mpithreads.makefile](/posix/samples/mpithreads.makefile)
 
 These codes implement a dot product calculation and are designed
         to show the progression of developing a hybrid MPI / Pthreads
