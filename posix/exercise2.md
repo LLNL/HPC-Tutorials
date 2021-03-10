@@ -7,7 +7,7 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 ## 1. Mutexes
 
-1. Review, compile and run the [dotprod\_serial.c] (samples/dotprod_serial.c) program. As its
+1. Review, compile and run the [dotprod_serial.c] (samples/dotprod_serial.c) program. As its
         name implies, it is serial - no threads are created.
 2. Now review, compile and run the [dotprod\_mutex.c] (https://hpc-tutorials.llnl.gov/samples/dotprod\_mutex.c) program. This
         version of the dotprod program uses threads and requires a mutex
