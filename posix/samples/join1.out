@@ -1,0 +1,9 @@
+Creating thread 0
+Creating thread 1
+Creating thread 2
+Thread result = 1.073937e+15
+Thread result = 1.073861e+15
+Thread result = 1.073767e+15
+Completed join with thread 0 status= 0
+Completed join with thread 1 status= 0
+Completed join with thread 2 status= 0

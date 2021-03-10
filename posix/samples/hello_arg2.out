@@ -1,0 +1,16 @@
+Creating thread 0
+Creating thread 1
+Creating thread 2
+Creating thread 3
+Creating thread 4
+Creating thread 5
+Creating thread 6
+Creating thread 7
+Thread 0: English: Hello World!  Sum=0
+Thread 1: French: Bonjour, le monde!  Sum=1
+Thread 2: Spanish: Hola al mundo  Sum=3
+Thread 3: Klingon: Nuq neH!  Sum=6
+Thread 4: German: Guten Tag, Welt!  Sum=10
+Thread 5: Russian: Zdravstvytye, mir!  Sum=15
+Thread 6: Japan: Sekai e konnichiwa!  Sum=21
+Thread 7: Latin: Orbis, te saluto!  Sum=28

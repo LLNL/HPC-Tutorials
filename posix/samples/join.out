@@ -1,0 +1,17 @@
+Main: creating thread 0
+Main: creating thread 1
+Thread 0 starting...
+Main: creating thread 2
+Thread 1 starting...
+Main: creating thread 3
+Thread 2 starting...
+Thread 3 starting...
+Thread 1 done. Result = -3.153838e+06
+Thread 0 done. Result = -3.153838e+06
+Main: completed join with thread 0 having a status of 0
+Main: completed join with thread 1 having a status of 1
+Thread 3 done. Result = -3.153838e+06
+Thread 2 done. Result = -3.153838e+06
+Main: completed join with thread 2 having a status of 2
+Main: completed join with thread 3 having a status of 3
+Main: program completed. Exiting.

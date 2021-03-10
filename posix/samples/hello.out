@@ -1,0 +1,11 @@
+In main: creating thread 0
+In main: creating thread 1
+Hello World! It's me, thread #0!
+In main: creating thread 2
+Hello World! It's me, thread #1!
+Hello World! It's me, thread #2!
+In main: creating thread 3
+In main: creating thread 4
+Hello World! It's me, thread #3!
+Hello World! It's me, thread #4!
+

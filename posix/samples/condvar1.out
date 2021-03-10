@@ -1,0 +1,25 @@
+inc_count(): thread 0, count = 1, unlocking mutex
+Starting watch_count(): thread 2
+inc_count(): thread 1, count = 2, unlocking mutex
+inc_count(): thread 0, count = 3, unlocking mutex
+inc_count(): thread 1, count = 4, unlocking mutex
+inc_count(): thread 0, count = 5, unlocking mutex
+inc_count(): thread 0, count = 6, unlocking mutex
+inc_count(): thread 1, count = 7, unlocking mutex
+inc_count(): thread 0, count = 8, unlocking mutex
+inc_count(): thread 1, count = 9, unlocking mutex
+inc_count(): thread 0, count = 10, unlocking mutex
+inc_count(): thread 1, count = 11, unlocking mutex
+inc_count(): thread 0, count = 12  Threshold reached.
+inc_count(): thread 0, count = 12, unlocking mutex
+watch_count(): thread 2 Condition signal received.
+inc_count(): thread 1, count = 13, unlocking mutex
+inc_count(): thread 0, count = 14, unlocking mutex
+inc_count(): thread 1, count = 15, unlocking mutex
+inc_count(): thread 0, count = 16, unlocking mutex
+inc_count(): thread 1, count = 17, unlocking mutex
+inc_count(): thread 0, count = 18, unlocking mutex
+inc_count(): thread 1, count = 19, unlocking mutex
+inc_count(): thread 1, count = 20, unlocking mutex
+Main(): Waited on 3  threads. Done.
+

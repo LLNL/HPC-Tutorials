@@ -1,0 +1,26 @@
+Starting watch_count(): thread 1
+inc_count(): thread 2, count = 1, unlocking mutex
+inc_count(): thread 3, count = 2, unlocking mutex
+watch_count(): thread 1 going into wait...
+inc_count(): thread 3, count = 3, unlocking mutex
+inc_count(): thread 2, count = 4, unlocking mutex
+inc_count(): thread 3, count = 5, unlocking mutex
+inc_count(): thread 2, count = 6, unlocking mutex
+inc_count(): thread 3, count = 7, unlocking mutex
+inc_count(): thread 2, count = 8, unlocking mutex
+inc_count(): thread 3, count = 9, unlocking mutex
+inc_count(): thread 2, count = 10, unlocking mutex
+inc_count(): thread 3, count = 11, unlocking mutex
+inc_count(): thread 2, count = 12  Threshold reached. Just sent signal.
+inc_count(): thread 2, count = 12, unlocking mutex
+watch_count(): thread 1 Condition signal received.
+watch_count(): thread 1 count now = 137.
+inc_count(): thread 3, count = 138, unlocking mutex
+inc_count(): thread 2, count = 139, unlocking mutex
+inc_count(): thread 3, count = 140, unlocking mutex
+inc_count(): thread 2, count = 141, unlocking mutex
+inc_count(): thread 3, count = 142, unlocking mutex
+inc_count(): thread 2, count = 143, unlocking mutex
+inc_count(): thread 3, count = 144, unlocking mutex
+inc_count(): thread 2, count = 145, unlocking mutex
+Main(): Waited on 3 threads. Final value of count = 145. Done.
