@@ -9,24 +9,24 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 1. Review, compile and run the [dotprod_serial.c](/posix/samples/dotprod_serial.c) program. As its
         name implies, it is serial - no threads are created.
-2. Now review, compile and run the [dotprod\_mutex.c](../samples/dotprod\_mutex.c) program. This
+2. Now review, compile and run the [dotprod_mutex.c](../samples/dotprod\_mutex.c) program. This
         version of the dotprod program uses threads and requires a mutex
         to protect the global sum as each thread updates it with their
         partial sums.
 3. Execute the dotprod\_mutex program several times and notice that
         the order in which threads update the global sum varies.
-4. Review, compile and run the [bug6.c] (https://hpc-tutorials.llnl.gov/samples/bug6.c) program.
+4. Review, compile and run the [bug6.c](/posix/samples/bug6.c) program.
 5. Run it several times and notice what the global sum is each
         time? See if you can figure out why and fix it. The explanation
         is provided in the bug examples table above, and an example
         solution is provided by the bug6fix.c program.
-6. The [arrayloops.c] (https://hpc-tutorials.llnl.gov/samples/arrayloops.c) program is another example of using a mutex to
+6. The [arrayloops.c](/posix/samples/arrayloops.c) program is another example of using a mutex to
         protect updates to a global sum. Feel free to review, compile
         and run this example code as well.
 
 ## 2.  Condition Variables
 
-1. Review, compile and run the [condvar.c] (https://hpc-tutorials.llnl.gov/samples/condvar.c) program. This example is
+1. Review, compile and run the [condvar.c](/posix/samples/condvar.c) program. This example is
         essentially the same as the shown in the tutorial. Observe the
         output of the three threads.
 2. Now, review, compile and run the [bug1.c] (https://hpc-tutorials.llnl.gov/samples/bug1.c) program. Observe the
