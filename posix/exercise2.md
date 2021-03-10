@@ -78,5 +78,5 @@ Suggestion: simply making and running this series of codes is
             <pre><b>srun -n8 -ppReserved mpithreads_mpi</b></pre>
         </td><td>MPI only version with 8 tasks running on a single node in the special workshop pool</td></tr><tr><td>
             <pre><b>srun -N4 -ppReserved mpithreads_both</b></pre>
-        </td><td>MPI with threads using 4 tasks running on 4 different nodes, each of which spawns 8 threads, running in special workshop pool</td></tr></tbody></table>
-        </center
+        </td><td>MPI with threads using 4 tasks running on 4 different nodes, <br/>each of which spawns 8 threads, running in special workshop pool</td></tr></tbody></table>
+        </center>
