@@ -1,8 +1,9 @@
 ---
-layout: default
+layout: tutorial_homepage
 title: "Message Passing Interface (MPI)"
 release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
+tutorial: "Message Passing Interface (MPI)"
 ---
 
 ### Table of Contents
