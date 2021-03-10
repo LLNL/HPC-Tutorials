@@ -7,9 +7,9 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 ## 1. Mutexes
 
-1. Review, compile and run the [dotprod_serial.c] (/posix/samples/dotprod_serial.c) program. As its
+1. Review, compile and run the [dotprod_serial.c](/posix/samples/dotprod_serial.c) program. As its
         name implies, it is serial - no threads are created.
-2. Now review, compile and run the [dotprod\_mutex.c] (https://hpc-tutorials.llnl.gov/samples/dotprod\_mutex.c) program. This
+2. Now review, compile and run the [dotprod\_mutex.c](../samples/dotprod\_mutex.c) program. This
         version of the dotprod program uses threads and requires a mutex
         to protect the global sum as each thread updates it with their
         partial sums.
