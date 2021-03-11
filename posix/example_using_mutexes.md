@@ -156,4 +156,4 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 Serial version: [source](samples/dotprod_serial.c)
 
-Parallel version:[source](samples/dotprod_mutex.c)
+Parallel version: [source](samples/dotprod_mutex.c)
