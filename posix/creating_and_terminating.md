@@ -8,15 +8,15 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 ### Routines:
 
-<a href='man/pthread_create.txt'>pthread_create</a>(thread,attr,start_routine,arg)
+<a href='/posix/man/pthread_create.txt'>pthread_create</a>(thread,attr,start_routine,arg)
 
-<a href='man/pthread_exit.txt'>pthread_exit</a>(status)
+<a href='/posix/man/pthread_exit.txt'>pthread_exit</a>(status)
 
-<a href='man/pthread_cancel.txt'>pthread_cancel</a>(thread)
+<a href='/posix/man/pthread_cancel.txt'>pthread_cancel</a>(thread)
 
-<a href='man/pthread_attr_init.txt'>pthread_attr_init</a>(attr)
+<a href='/posix/man/pthread_attr_init.txt'>pthread_attr_init</a>(attr)
 
-<a href='man/pthread_attr_destroy.txt'>pthread_attr_destroy</a>(attr)
+<a href='/posix/man/pthread_attr_destroy.txt'>pthread_attr_destroy</a>(attr)
 
 ### Creating Threads:
 
