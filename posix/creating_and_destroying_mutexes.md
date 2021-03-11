@@ -19,10 +19,10 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 Mutex variables must be declared with type `pthread_mutex_t`, and must be initialized before they can be used. There are two ways to initialize a mutex variable:
 
-    1. Statically, when it is declared. For example: 
+  1. Statically, when it is declared. For example: 
         `pthread_mutex_t mymutex = PTHREAD_MUTEX_INITIALIZER;`
         
-    2. Dynamically, with the `pthread_mutex_init()` routine. This method permits setting mutex object attributes, *attr*.
+  2. Dynamically, with the `pthread_mutex_init()` routine. This method permits setting mutex object attributes, *attr*.
     
 The mutex is initially unlocked.
 
