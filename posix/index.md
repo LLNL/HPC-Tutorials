@@ -26,6 +26,7 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
     * [Mutex Variables Overview](mutex_variables)
     * [Creating and Destroying Mutexes](creating_and_destroying_mutexes)
     * [Locking and Unlocking Mutexes](locking_and_unlocking_mutexes)
+    * [Example: Using Mutexes](example_using_mutexes)
 8. Condition Variables
     * [Condition Variables Overview](condition_variables)
     * [Creating and Destroying Condition Variables](creating_and_destroying_condition_vars)
