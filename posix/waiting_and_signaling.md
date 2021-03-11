@@ -32,8 +32,8 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 - Two of the threads perform work and update a "count" variable.
 - The third thread waits until the count variable reaches a specified value.
 
-<PRE>
- #include <pthread.h>
+```
+#include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -133,4 +133,4 @@ int main(int argc, char *argv[])
   pthread_exit (NULL);
 
 }
-</PRE>
+```
