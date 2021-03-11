@@ -25,9 +25,14 @@ The `pthread_mutex_lock()` routine is used by a thread to acquire a lock on the 
 
 There is nothing "magical" about mutexes...in fact they are akin to a "gentlemen's agreement" between participating threads. It is up to the code writer to insure that the necessary threads all make the the mutex lock and unlock calls correctly. The following scenario demonstrates a logical error:
 
+<br></br>
+
 <table style="border-collapse:collapse;border-spacing:0" class="tg"><thead><tr><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;position:-webkit-sticky;position:sticky;text-align:left;top:-1px;vertical-align:top;will-change:transform;word-break:normal">Thread 1<br><span style="font-weight:bold;font-style:normal;text-decoration:none">Lock</span><br><span style="font-weight:bold;font-style:normal;text-decoration:none">A = 2</span><br><span style="font-weight:bold;font-style:normal;text-decoration:none">Unlock</span></th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;position:-webkit-sticky;position:sticky;text-align:left;top:-1px;vertical-align:top;will-change:transform;word-break:normal">Thread 2<br><span style="font-weight:bold;font-style:normal;text-decoration:none">Lock</span><br><span style="font-weight:bold;font-style:normal;text-decoration:none">A = A+1</span><br><span style="font-weight:bold;font-style:normal;text-decoration:none">Unlock       </span><br></th><th style="border-color:inherit;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;position:-webkit-sticky;position:sticky;text-align:left;top:-1px;vertical-align:top;will-change:transform;word-break:normal">Thread 3<br><span style="font-weight:bold;font-style:normal;text-decoration:none">        </span><br><span style="font-weight:bold;font-style:normal;text-decoration:none">A = A*B</span><br></th></tr></thead></table>
 
+<br></br>
+
 **Question**: When more than one thread is waiting for a locked mutex, which thread will be granted the lock first after it is released?
+<br></br>
 <details>
   <summary>Click for answer.</summary>
 Unless thread priority scheduling (not covered) is used, the assignment will be left to the native system scheduler and may appear to be more or less random.
