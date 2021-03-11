@@ -31,6 +31,7 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
     * [Condition Variables Overview](condition_variables)
     * [Creating and Destroying Condition Variables](creating_and_destroying_condition_vars)
     * [Waiting and Signaling on Condition Variables](waiting_and_signaling)
+    * [Example: Using Condition Variables](example_using_cond_vars)
 9. [Monitoring, Debugging and Performance Analysis for Pthreads](debugging_and_performance_analysis)
 10. [LLNL Specific Information and Recommendations](LLNL_info)
 11. [Topics Not Covered](topics_not_covered)
