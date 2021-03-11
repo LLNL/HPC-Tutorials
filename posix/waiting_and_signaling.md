@@ -20,12 +20,12 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
   - If the thread received the signal in error due to a program bug
   - The Pthreads library is permitted to issue spurious wake ups to a waiting thread without violating the standard.
 
-- The `pthread_cond_signal()` routine is used to signal (or wake up) another thread which is waiting on the condition variable. It should be called after mutex is locked, and must unlock mutex in order for pthread_cond_wait() routine to complete.
+- The `pthread_cond_signal()` routine is used to signal (or wake up) another thread which is waiting on the condition variable. It should be called after mutex is locked, and must unlock mutex in order for `pthread_cond_wait()` routine to complete.
 - The `pthread_cond_broadcast()` routine should be used instead of `pthread_cond_signal()` if more than one thread is in a blocking wait state.
 - It is a logical error to call `pthread_cond_signal()` before calling `pthread_cond_wait()`.
 - Proper locking and unlocking of the associated mutex variable is essential when using these routines. For example:
   - Failing to lock the mutex before calling `pthread_cond_wait()` may cause it NOT to block.
-  - Failing to unlock the mutex after calling `pthread_cond_signal()` may not allow a matching pthread_cond_wait() routine to complete (it will remain blocked).
+  - Failing to unlock the mutex after calling `pthread_cond_signal()` may not allow a matching `pthread_cond_wait()` routine to complete (it will remain blocked).
 
 ## Example: Using Condition Variables
 - This simple example code demonstrates the use of several Pthread condition variable routines.
@@ -135,3 +135,6 @@ int main(int argc, char *argv[])
 
 }
 ```
+
+[Source](samples/condvar.c)
+[Output](samples/condvar.out)
