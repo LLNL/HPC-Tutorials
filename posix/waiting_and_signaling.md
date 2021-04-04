@@ -5,11 +5,11 @@ release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
 ---
 ## Routines:
-    [pthread_cond_wait](man/pthread_cond_wait.txt) (condition,mutex)
+[pthread_cond_wait](man/pthread_cond_wait.txt) (condition,mutex)
     
-    [pthread_cond_signal](man/pthread_cond_signal.txt) (condition)
+[pthread_cond_signal](man/pthread_cond_signal.txt) (condition)
     
-    [pthread_cond_broadcast](man/pthread_cond_broadcast.txt) (condition)
+[pthread_cond_broadcast](man/pthread_cond_broadcast.txt) (condition)
 
 ## Usage:
 
