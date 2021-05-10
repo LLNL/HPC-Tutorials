@@ -21,7 +21,7 @@ For example, just a few considerations of many:
 
 MPI library implementations on LC systems vary, as do the compilers they are built for. These are summarized in the table below:
 
-<table border="1" cellpadding="5" cellspacing="0">
+<table class="table table-bordered table-striped">
 <tbody>
 <tr valign="top">
     <th>MPI Library</th>
