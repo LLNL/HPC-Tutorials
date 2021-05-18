@@ -23,8 +23,6 @@ author: Ryan Day, Lawrence Livermore National Laboratory
 <br> -- [Exercise 5](exercise5) --
 - [Section 6: Creating basic jobs with the Python API](section6)
 <br> -- [Exercise 6](exercise6) --
-- [Section 7: Creating more complex workflows with the Python API](section7)
-<br> -- [Exercise 7](exercise7) --
 
 ##### Appendices
 1. [Appendix 1: Getting Flux](appendix1)
