@@ -1,14 +1,14 @@
 ---
-layout: default
+layout: tutorial_page
 title: "Hierarchical job submission"
 release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
 ## Section 5: Hierarchical job submission
-One of the key innovations of Flux is the ability to easily start flux instances within a parent Flux instances. This allows users to create separate allocations on different subsets of their allocated resources and assign different portions of their workflow to those resources. The basic command line interface for Flux has two commands that create new Flux instances, and you've already been using one of them. The `flux mini batch` command described in [section 3](section3) is actually creating a flux instance that the `flux mini run` commands are running in. Similarly, `flux mini alloc` can be used to create a new instance, but blocks until its work is complete.
+One of the key innovations of Flux is the ability to easily start flux instances within a parent Flux instances. This allows users to create separate allocations on different subsets of their allocated resources and assign different portions of their workflow to those resources. The basic command line interface for Flux has two commands that create new Flux instances, and you've already been using one of them. The `flux mini batch` command described in [section 3](/flux/section3) is actually creating a flux instance that the `flux mini run` commands are running in. Similarly, `flux mini alloc` can be used to create a new instance, but blocks until its work is complete.
 ### Creating allocations inside of an allocation
-We can use the `flux hwloc info` and `flux jobs` commands discussed in [section 1](section1) and [section 2](section2) to demonstrate the differences between running in an allocation (`flux mini run` or `flux mini submit`) and creating a new allocation (`flux mini batch` or `flux mini alloc`). We will start with a two node allocation:
+We can use the `flux hwloc info` and `flux jobs` commands discussed in [section 1](/flux/section1) and [section 2](/flux/section2) to demonstrate the differences between running in an allocation (`flux mini run` or `flux mini submit`) and creating a new allocation (`flux mini batch` or `flux mini alloc`). We will start with a two node allocation:
 ```
 sh-4.2$ flux hwloc info
 2 Machines, 40 Cores, 40 PUs
@@ -86,7 +86,7 @@ sh-4.2$ flux jobs
    f4M6c3TKd day36    sleep       R      1      1   18.46s rzalastor6
 sh-4.2$
 ```
-In order to get information about the work submitted in `script1.sh` and `script2.sh` we must attach to those jobs (recall the `flux job attach` command from [section 2](section2)) or look at their log files. For the allocation created by `script1.sh`, we can see that flux knows about 8 cores on two nodes and that the `mpi_hellosleep` tasks are running across both nodes:
+In order to get information about the work submitted in `script1.sh` and `script2.sh` we must attach to those jobs (recall the `flux job attach` command from [section 2](/flux/section2)) or look at their log files. For the allocation created by `script1.sh`, we can see that flux knows about 8 cores on two nodes and that the `mpi_hellosleep` tasks are running across both nodes:
 ```
 sh-4.2$ cat flux-f4SLQ6Hbu.out
 Mon Mar 29 15:55:33 PDT 2021

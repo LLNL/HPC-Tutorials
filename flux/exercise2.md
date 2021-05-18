@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial_page
 title: "Exercise 2"
 release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory

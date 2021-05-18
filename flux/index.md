@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial_homepage
 title: "Introduction to Flux"
 release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory

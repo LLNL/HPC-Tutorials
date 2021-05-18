@@ -1,12 +1,12 @@
 ---
-layout: default
+layout: tutorial_page
 title: "Batch jobs"
 release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
 ## Section 3: Batch jobs
-The reality of computing on shared resources is that nodes are rarely available when you're in front of the keyboard and you need to put your work into a script that can be run by the scheduler when resources become available. Your batch script may mix basic shell commands and functions that will be run serially on the first compute node in your allocation with parallel programs that are run as job steps as described in the [previous section](section2).
+The reality of computing on shared resources is that nodes are rarely available when you're in front of the keyboard and you need to put your work into a script that can be run by the scheduler when resources become available. Your batch script may mix basic shell commands and functions that will be run serially on the first compute node in your allocation with parallel programs that are run as job steps as described in the [previous section](/flux/section2).
 ### Submitting a basic job script with `flux mini batch`
 The `flux mini batch` command allows you to submit batch scripts to a queue for later execution once resources are available. In the `simplescript.sh` example below, we mix shell commands to log when the job starts and that it has completed with a `flux mini run` command to launch an MPI program.
 ```
@@ -53,7 +53,7 @@ flux mini batch \
     date
     flux mini run -n4 ./mpi_hellosleep
     echo 'job complete'
-    
+
 END_OF_SCRIPT
 sh-4.2$ ./simplescript.sh
 f3YDA4qqR

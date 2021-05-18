@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial_page
 title: "Usage and job priority"
 release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory

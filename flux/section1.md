@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial_page
 title: "Starting Flux and getting an allocation"
 release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory
@@ -30,7 +30,7 @@ libflux-core:		0.18.0
 build-options:		+hwloc==1.11.0
 [day36@fluke108:~]$
 ```
-If you are not on an LC cluster, and flux is not already installed, or if you're just into that sort of thing, you can also install Flux using `spack` or build it from source. See [Appendix I](appendixI) for more details on those options.
+If you are not on an LC cluster, and flux is not already installed, or if you're just into that sort of thing, you can also install Flux using `spack` or build it from source. See [Appendix I](/flux/appendixI) for more details on those options.
 ### Starting Flux
 Even if you are on a cluster that is running another resource manager, such as Slurm or LSF, you can still use Flux to run your workload. You will need to get an allocation, then start Flux on all of the nodes in that allocation with the `flux start` command. This will start `flux-broker` processes on all of the nodes that will gather information about the hardware resources available and communicate between each other to assign your workload to those resources. On a cluster running Slurm, this will look like:
 ```

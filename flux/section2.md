@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial_page
 title: "Launching and tracking job steps"
 release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory
