@@ -11,7 +11,7 @@ The primary source for more general Flux documentation is the Flux [readthedocs]
 
 Finally, the Flux developers are very active in the HPC community and have made slides from various tutorials that they have given available on [GitHub](https://github.com/flux-framework/Tutorials).
 
-If you reference Flux in a published paper, please use:
+If you reference Flux in a published paper, please use:  
 Dong H. Ahn, Ned Bass, Albert Chu, Jim Garlick, Mark Grondona, Stephen Herbein, Joseph Koning, Tapasya Patki, Thomas R. W. Scogland, Becky Springmeyer, and Michela Taufer. 2018. Flux: Overcoming Scheduling Challenges for Exascale Workflows. In 2018 IEEE/ACM Workflows in Support of Large-Scale Science (WORKS). IEEE, Dallas, TX, USA, 10--19.
 
 ---
