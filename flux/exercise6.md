@@ -1,11 +1,10 @@
 ---
 layout: tutorial_page
-title: "Exercise 6"
+title: "Exercise 6: Flux Python API basics"
 release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
-## Exercise 6: Using the Flux Python API
 1. Clone the workflow examples from the [flux github](https://github.com/flux-framework/flux-workflow-examples.git):
 ```
 $ git clone https://github.com/flux-framework/flux-workflow-examples.git

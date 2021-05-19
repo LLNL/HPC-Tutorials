@@ -1,11 +1,10 @@
 ---
 layout: tutorial_page
-title: "Exercise 2"
+title: "Exercise 2: Launching and tracking job steps"
 release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
-## Exercise 2: Launching and tracking job steps
 1. Ensure that you have a flux instance running in an allocation and determine the number of cores available to you in that allocation.
 2. Download the attached `mpi_hellosleep.c` file and build the application with `mpicc -o mpi_hellosleep mpi_hellosleep.c`.
 3. Run `mpi_hellosleep` as a blocking job step with enough mpi tasks to fill all of the cores available in your flux instance.

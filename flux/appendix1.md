@@ -5,7 +5,6 @@ release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
-## Appendix 1: Getting Flux
 If you are running on a non-LC cluster or system and Flux is not already installed, there are a couple of ways to easily install a local copy that you can use to launch work in an allocation from whatever resource management software is running on your system. These are described in detail on the [Flux readthedocs page](https://flux-framework.readthedocs.io/en/latest/quickstart.html#building-the-code). Briefly, they are:
 1. [Spack](https://github.com/spack/spack): Flux is available as a Spack package. Once Spack is installed on your system, you can run `spack install flux-sched` to install a local copy of Flux.
 2. Docker: For single-node deployments of Flux, you can download and run a flux-sched Docker image from [DockerHub](https://hub.docker.com/u/fluxrm) with `docker run -ti fluxrm/flux-sched:latest`.

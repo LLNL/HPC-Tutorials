@@ -1,11 +1,10 @@
 ---
 layout: tutorial_page
-title: "Exercise 1"
+title: "Exercise 1: Starting Flux and getting an allocation"
 release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
-## Exercise 1: getting an allocation and starting Flux
 1. Run `flux resource list` to determine if Flux is already running on your system.
 2. If flux is running on the system, use `flux mini alloc` to get a two node allocation. If flux is not running on the system, use allocation commands appropriate to that system to get a two node allocation and start Flux with `flux start`.
 3. Use `flux resource list` to query the state of the resources in your allocation.

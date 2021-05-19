@@ -1,11 +1,10 @@
 ---
 layout: tutorial_page
-title: "Workflow managers"
+title: "Workflow management software"
 release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
-## Appendix 3: Workflow management software
 The Flux Python bindings provide tools for managing complex workflows, but using them requires software development skills that domain scientists and other end users may not possess. There are several projects that leverage these bindings to build general, user-friendly workflow managers.
 
 [Maestro](https://github.com/LLNL/maestrowf) is a workflow manager developed at LLNL that uses Flux to orchestrate complex or simple workloads based on straightforward workflow descriptions. Most notably, it has enabled the Gordon Bell finalist and SC19 Best Paper [MuMMI project](https://dl.acm.org/doi/10.1145/3295500.3356197).

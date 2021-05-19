@@ -1,11 +1,10 @@
 ---
 layout: tutorial_page
-title: "Exercise 5"
+title: "Exercise 5: Hierarchical job submission"
 release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
-## Exercise 5: Hierarchical job submission
 1. Clone the workflow examples from the [flux github](https://github.com/flux-framework/flux-workflow-examples.git):
 ```
 $ git clone https://github.com/flux-framework/flux-workflow-examples.git

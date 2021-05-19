@@ -1,11 +1,10 @@
 ---
 layout: tutorial_page
-title: "Python API Basics"
+title: "Flux Python API Basics"
 release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
-## Section 6: Basic job submission with the Flux Python API
 Flux's command line interface allows users to quickly and easily schedule relatively simple workloads. Users with more complex workflows will most likely find that Flux's Python API provides a better, more powerful interface. This section will introduce the Flux Python API and demonstrate simple job submission via Python. The [exercises](/flux/exercise6) will explore some more interesting examples on the [Flux readthedocs](https://flux-framework.readthedocs.io/projects/flux-workflow-examples/en/latest/index.html).
 ### Importing Flux and the Flux Jobspec
 In order to access the Flux API from your python scripts, you'll need to import the `flux` module and the Flux Jobspec class. The `flux` module will allow you to get a handle for the current Flux instance and functions to submit and interact with jobs in that instance. The Jobspec class will generate jobs that you can submit. You can import Flux and the Flux Jobspec as:

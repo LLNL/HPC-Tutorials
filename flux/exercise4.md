@@ -1,11 +1,10 @@
 ---
 layout: tutorial_page
-title: "Exercise 4"
+title: "Exercise 4: Usage and job priority"
 release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
-## Exercise 4: Usage and job priority
 Coming soon.
 
 ---

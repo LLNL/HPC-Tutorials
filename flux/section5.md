@@ -5,7 +5,6 @@ release_number:
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
-## Section 5: Hierarchical job submission
 One of the key innovations of Flux is the ability to easily start flux instances within a parent Flux instances. This allows users to create separate allocations on different subsets of their allocated resources and assign different portions of their workflow to those resources. The basic command line interface for Flux has two commands that create new Flux instances, and you've already been using one of them. The `flux mini batch` command described in [section 3](/flux/section3) is actually creating a flux instance that the `flux mini run` commands are running in. Similarly, `flux mini alloc` can be used to create a new instance, but blocks until its work is complete.
 ### Creating allocations inside of an allocation
 We can use the `flux hwloc info` and `flux jobs` commands discussed in [section 1](/flux/section1) and [section 2](/flux/section2) to demonstrate the differences between running in an allocation (`flux mini run` or `flux mini submit`) and creating a new allocation (`flux mini batch` or `flux mini alloc`). We will start with a two node allocation:
