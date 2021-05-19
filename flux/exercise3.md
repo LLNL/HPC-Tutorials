@@ -11,3 +11,7 @@ author: Ryan Day, Lawrence Livermore National Laboratory
 ### Notes / Solutions
 1. See [Exercise 1](/flux/exercise1).
 2. See 'Making your job script submission self documenting' in [Section 3](/flux/section3).
+
+---
+[Section 2](/flux/section2) | [Section 3](section3) | Exercise 3 | [Section 4](/flux/section4)
+Back to [index](/flux/index)

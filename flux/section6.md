@@ -46,3 +46,7 @@ with FluxExecutor() as executor:
       )
 ```
 As you'll see in the [exercises](/flux/exercise6) the `FluxExecutor` would generally be used to submit many jobs and store their futures in a list for `concurrent.futures` methods to manage.
+
+---
+[Section 5](/flux/section5) | Section 6 | [Exercise 6](/flux/exercise6) | [Appendix 1](/flux/appendix1)
+Back to [index](/flux/index)

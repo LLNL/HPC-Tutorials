@@ -16,3 +16,7 @@ $ cd flux-workflow-examples/job-submit-api
 ### Notes / Solutions
 2. Most of the examples explicitly include instructions for getting a Slurm allocation and starting flux. See [Section 1](/flux/section1) for general instructions on getting an allocation in flux or starting flux under Slurm.
 3. See note 2.
+
+---
+[Section 5](/flux/section5) | [Section 6](/flux/section6) | Exercise 6 | [Appendix 1](/flux/appendix1)
+Back to [index](/flux/index)

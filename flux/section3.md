@@ -74,3 +74,7 @@ sh-4.2$
 ```
 ### More user facing batch options
 There are a bunch of things like job dependencies, queues, qos, modifying jobs, holding jobs, etc that aren't in flux yet, but will be described here once they are.
+
+---
+[Section 2](/flux/section2) | Section 3 | [Exercise 3](/flux/exercise3) | [Section 4](/flux/section4)
+Back to [index](/flux/index)

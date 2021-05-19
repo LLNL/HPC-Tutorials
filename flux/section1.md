@@ -65,3 +65,7 @@ sh-4.2$
 ```
 ### Getting help
 Most Flux commands will give you a brief summary of their options if you add a `--help` flag. For more detailed help, you can easily access the man page for a given command with `flux help COMMAND` or `man flux-COMMAND`.
+
+---
+[Introduction](/flux/intro) | Section 1 | [Exercise 1](/flux/exercise1) | [Section 2](/flux/section2)
+Back to [index](/flux/index)
