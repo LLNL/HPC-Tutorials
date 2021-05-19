@@ -13,5 +13,5 @@ The first part of this tutorial will introduce you to the basic commands that wi
 The second part of this tutorial will give you the tools to run more complex workflows in your Flux jobs. You will dig deeper into Flux's hierarchical nature and create allocations within your allocation. You will also get an introduction to Flux's Python bindings so that you can write job scripts with all of the power and flexibility of Python.
 
 ---
-Introduction | [Section 1](/flux/section1)
+Introduction | [Section 1](/flux/section1)  
 Back to [index](/flux/index)

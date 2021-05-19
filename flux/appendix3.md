@@ -15,5 +15,5 @@ The Flux Python bindings provide tools for managing complex workflows, but using
 [UQPipeline](https://lc.llnl.gov/uqp/docs/index.html) is an LLNL internal tool used for [uncertainty quantification](https://wci.llnl.gov/simulation/computer-codes/uncertainty-quantification) studies. Its [Themis](https://lc.llnl.gov/uqp/docs/themis/index.html) component can use Flux to launch large ensembles of jobs quickly.
 
 ---
-[Appendix 2](/flux/appendix2) | Appendix 3
+[Appendix 2](/flux/appendix2) | Appendix 3  
 Back to [index](/flux/index)

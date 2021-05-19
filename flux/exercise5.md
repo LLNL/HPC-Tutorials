@@ -16,5 +16,5 @@ $ cd flux-workflow-examples/hierarchical-launching
 2. This workflow example explicitly includes instructions for getting a Slurm allocation and starting flux. See [Section 1](/flux/section1) for general instructions on getting an allocation in flux or starting flux under Slurm.
 
 ---
-[Section 4](/flux/section4) | [Section 5](/flux/section5) | Exercise 5 | [Section 6](/flux/section6)
+[Section 4](/flux/section4) | [Section 5](/flux/section5) | Exercise 5 | [Section 6](/flux/section6)  
 Back to [index](/flux/index)

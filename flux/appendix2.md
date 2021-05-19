@@ -16,5 +16,5 @@ If you reference Flux in a published paper, please use:
 Dong H. Ahn, Ned Bass, Albert Chu, Jim Garlick, Mark Grondona, Stephen Herbein, Joseph Koning, Tapasya Patki, Thomas R. W. Scogland, Becky Springmeyer, and Michela Taufer. 2018. Flux: Overcoming Scheduling Challenges for Exascale Workflows. In 2018 IEEE/ACM Workflows in Support of Large-Scale Science (WORKS). IEEE, Dallas, TX, USA, 10--19.
 
 ---
-[Appendix 1](/flux/appendix1) | Appendix 2 | [Appendix 3](/flux/appendix3)
+[Appendix 1](/flux/appendix1) | Appendix 2 | [Appendix 3](/flux/appendix3)  
 Back to [index](/flux/index)

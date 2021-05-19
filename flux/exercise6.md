@@ -18,5 +18,5 @@ $ cd flux-workflow-examples/job-submit-api
 3. See note 2.
 
 ---
-[Section 5](/flux/section5) | [Section 6](/flux/section6) | Exercise 6 | [Appendix 1](/flux/appendix1)
+[Section 5](/flux/section5) | [Section 6](/flux/section6) | Exercise 6 | [Appendix 1](/flux/appendix1)  
 Back to [index](/flux/index)

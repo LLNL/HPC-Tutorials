@@ -20,5 +20,5 @@ author: Ryan Day, Lawrence Livermore National Laboratory
 5. See 'Managing job steps' in [Section2](/flux/section2).
 
 ---
-[Section 1](/flux/section1) | [Section 2](/flux/section2) | Exercise 2 | [Section 3](/flux/section3)
+[Section 1](/flux/section1) | [Section 2](/flux/section2) | Exercise 2 | [Section 3](/flux/section3)  
 Back to [index](/flux/index)
