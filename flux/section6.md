@@ -19,7 +19,7 @@ f = flux.Flux()
 ### Using the Flux API to submit a simple job
 Once you've imported Flux and the Jobspec and created a Flux handle, you can construct a job request using the Jobspec class and submit it using the `flux.job.submit` function. For example, to submit a `sleep 60` command:
 ```
-sleep_jobreq = JobspecV1.fromcommand(
+sleep_jobreq = JobspecV1.from_command(
   ["sleep","60"], num_tasks=1, cores_per_task=1
   )
 sleep_jobid = flux.job.submit(
@@ -36,13 +36,13 @@ from flux.job import JobspecV1, FluxExecutor
 Once you have all of that, you can build a job as before, but when you submit it with `FluxExecutor.submit()`, the return value with be a `futures` object that can be managed with `concurrent.futures` methods rather than a jobid. In the simple example below, the `concurrent.futures.wait()` method is used to wait for a `sleep` task to complete:
 ```
 with FluxExecutor() as executor:
-  sleep_jobreq = JobspecV1.fromcommand(
+  sleep_jobreq = JobspecV1.from_command(
     ["sleep","60"], num_tasks=1, cores_per_task=1
     )
-    sleep_future = executor.submit(sleep_jobreq)
-    done, not_done = concurrent.futures.wait(
-      [sleep_future], return_when=concurrent.futures.FIRST_COMPLETED
-      )
+  sleep_future = executor.submit(sleep_jobreq)
+  done, not_done = concurrent.futures.wait(
+    [sleep_future], return_when=concurrent.futures.FIRST_COMPLETED
+    )
 ```
 As you'll see in the [exercises](/flux/exercise6) the `FluxExecutor` would generally be used to submit many jobs and store their futures in a list for `concurrent.futures` methods to manage.
 
