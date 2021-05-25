@@ -1,7 +1,7 @@
 ---
 layout: tutorial_page
 title: "Launching and tracking job steps"
-release_number:
+release_number: LLNL-WEB-822959
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
@@ -104,5 +104,5 @@ sh-4.2$
 ```
 
 ---
-[Section 1](/flux/section1) | Section 2 | [Exercise 2](/flux/exercise2) | [Section 3](/flux/section3)  
+[Section 1](/flux/section1) | Section 2 | [Exercise 2](/flux/exercises/exercise2) | [Section 3](/flux/section3)  
 Back to [index](/flux/index)

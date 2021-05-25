@@ -1,7 +1,7 @@
 ---
 layout: tutorial_page
 title: "Exercise 2: Launching and tracking job steps"
-release_number:
+release_number: LLNL-WEB-822959
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
@@ -12,7 +12,7 @@ author: Ryan Day, Lawrence Livermore National Laboratory
 5. Cancel the running job step. Confirm that the other job step is running and attach to it to monitor its progress.
 
 ### Notes / Solutions
-1. See [Exercise 1](/flux/exercise1).
+1. See [Exercise 1](/flux/exercises/exercise1).
 2. On LC systems, mpicc should be in your default path. If it is not, you can run `module load intel` and `module load mvapich2` to get the default mpicc on most LC systems.
 3. See 'Submit blocking job steps' in [Section2](/flux/section2).
 4. See 'Submit non-blocking job steps' in [Section2](/flux/section2).

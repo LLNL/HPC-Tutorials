@@ -1,7 +1,7 @@
 ---
 layout: tutorial_page
 title: "Exercise 1: Starting Flux and getting an allocation"
-release_number:
+release_number: LLNL-WEB-822959
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 

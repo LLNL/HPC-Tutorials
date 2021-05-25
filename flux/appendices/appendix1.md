@@ -1,7 +1,7 @@
 ---
 layout: tutorial_page
 title: "Getting Flux"
-release_number:
+release_number: LLNL-WEB-822959
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
@@ -18,5 +18,5 @@ $ make -j 8
 You may then check on your build with `make check` and install it in whatever directory you specified with `--prefix` by running `make install`.
 
 ---
-[Section 6](/flux/section6) | Appendix 1 | [Appendix 2](/flux/appendix2)  
+[Section 6](/flux/section6) | Appendix 1 | [Appendix 2](/flux/appendices/appendix2)  
 Back to [index](/flux/index)

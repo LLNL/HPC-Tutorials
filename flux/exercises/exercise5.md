@@ -1,7 +1,7 @@
 ---
 layout: tutorial_page
 title: "Exercise 5: Hierarchical job submission"
-release_number:
+release_number: LLNL-WEB-822959
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
