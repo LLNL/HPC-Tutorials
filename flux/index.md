@@ -25,7 +25,7 @@ author: Ryan Day, Lawrence Livermore National Laboratory
  -- [Exercise 6](exercises/exercise6) --
 
 #### Appendices
-1. [Appendix 1: Getting Flux](apendices/appendix1)
+1. [Appendix 1: Getting Flux](appendices/appendix1)
 2. [Appendix 2: Flux tutorials and documentation](appendices/appendix2)
 3. [Appendix 3: Workflow management software](appendices/appendix3)
 
