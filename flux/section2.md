@@ -1,15 +1,15 @@
 ---
 layout: tutorial_page
-title: "Launching and tracking job steps"
+title: "Launching and tracking Flux jobs"
 release_number: LLNL-WEB-822959
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
-In the previous section, we learned how to find flux, get an allocation, and query the compute resources in that allocation. Now, we are ready to launch work on those compute resources and get some work done. When you launch work in Flux, that work can be either blocking or non-blocking. Blocking steps will run to completion before more work can be submitted, whereas non-blocking steps are enqueued, allowing you to immediately submit more work in the allocation.
+In the previous section, we learned how to find flux, get an allocation, and query the compute resources in that allocation. Now, we are ready to launch work on those compute resources and get some work done. When you launch work in Flux, that work takes the form of jobs that can be either blocking or non-blocking. Blocking jobs will run to completion before more work can be submitted, whereas non-blocking jobs are enqueued, allowing you to immediately submit more work in the allocation.
 
-Before we get into submitting and managing job steps, we should also discuss Flux's jobids as they're a bit different than what you'll find in other resource management software. In the introduction to this tutorial, we mentioned that Flux is fully hierarchical. That is, users can launch full flux instances within allocations, then launch more job steps or flux instances within those instances. While this has has many benefits for taking advantage of modern HPC hardware and allowing complex workflows, it also means that the sequential numeric jobids used in traditional resource managers do not match Flux's job model. Flux instead combines the submit time, an id, and sequence number to create effectively unique identifiers for each job and job step. There are options to display these identifiers in a number of ways, but the default is an 8 character string prepended by an `f`, e.g. `fBsFXaow5` for the job submitted in the example below. For more details on Flux's identifiers, see the [FLUID documentation](https://flux-framework.readthedocs.io/projects/flux-rfc/en/latest/spec_19.html).
-### Submit blocking job steps with `flux mini run`
-If you want your work to block until it completes, the `flux mini run` command will submit a job step and then wait until the step is complete before returning. For example, in a two node allocation, we can launch an mpi program with 4 tasks:
+Before we get into submitting and managing Flux jobs, we should also discuss Flux's jobids as they're a bit different than what you'll find in other resource management software. In the introduction to this tutorial, we mentioned that Flux is fully hierarchical. That is, users can launch full flux instances within a parent Flux instance, then launch more jobs or flux instances within those instances. While this has has many benefits for taking advantage of modern HPC hardware and allowing complex workflows, it also means that the sequential numeric jobids used in traditional resource managers do not match Flux's job model. Flux instead combines the submit time, an id, and sequence number to create effectively unique identifiers for each job and job step. There are options to display these identifiers in a number of ways, but the default is an 8 character string prepended by an `f`, e.g. `fBsFXaow5` for the job submitted in the example below. For more details on Flux's identifiers, see the [FLUID documentation](https://flux-framework.readthedocs.io/projects/flux-rfc/en/latest/spec_19.html).
+### Submit blocking Flux jobs with `flux mini run`
+If you want your work to block until it completes, the `flux mini run` command will submit a job and then wait until it is complete before returning. For example, in a two node allocation, we can launch an mpi program with 4 tasks:
 ```
 sh-4.2$ flux mini run -n4 ./mpi_hellosleep
 task 2 on rzalastor6 going to sleep
@@ -23,8 +23,8 @@ task 3 on rzalastor6 woke up
 task 1 on rzalastor5 woke up
 sh-4.2$
 ```
-### Submit non-blocking job steps with `flux mini submit`
-If you just want to queue up work in a Flux allocation, the `flux mini submit` command will submit the job step and return immediately. As in the example above, here we will submit a 4 task mpi program in our two node allocation:
+### Submit non-blocking Flux jobs with `flux mini submit`
+If you just want to queue up work in a Flux instance, the `flux mini submit` command will submit the job and return immediately. As in the example above, here we will submit a 4 task mpi program in our two node allocation:
 ```
 sh-4.2$ flux mini submit -n4 --output=job_{{id}}.out ./mpi_hellosleep
 fBsFXaow5
@@ -41,8 +41,8 @@ task 3 on rzalastor6 woke up
 ^C
 sh-4.2$
 ```
-### Managing job steps with `flux jobs` and `flux job`
-If you have multiple job steps running and queued you can list those jobs with the `flux jobs` command, and manage them with `flux job`. For example, in two node allocation with 20 cores per node, we can see the states of the job steps that we've submitted as:
+### Managing Flux jobs with `flux jobs` and `flux job`
+If you have multiple Flux jobs running and queued you can list those jobs with the `flux jobs` command, and manage them with `flux job`. For example, in two node instance with 20 cores per node, we can see the states of the job steps that we've submitted as:
 ```
 sh-4.2$ flux mini submit -N1 -n10 ./mpi_hellosleep
 f7AC3114K
@@ -72,7 +72,7 @@ sh-4.2$ flux jobs
    f7AC3114K day36    mpi_hellos  R     10      1    51.8s rzalastor4
 sh-4.2$
 ```
-We can also see any output from a given job step with `flux job attach` and kill a given job step with `flux job cancel`:
+We can also see any output from a given job with `flux job attach` and kill a given job with `flux job cancel`:
 ```
 sh-4.2$ flux job attach f7XUqnpcF
 task 9 on rzalastor5 going to sleep

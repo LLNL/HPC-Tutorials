@@ -5,7 +5,7 @@ release_number: LLNL-WEB-822959
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
-Regardless of what resource management software a cluster is running, the first step in running in a multi-user environment is to get an allocation of hardware resources. Once you have an allocation, you can use Flux to manage your workload on those resources. This section will tell you where to find Flux and how to start it in an allocation even if it is not the main resource manager on the cluster that you are running on.
+Regardless of what resource management software a cluster is running, the first step in running in a multi-user environment is to get an allocation of hardware resources. In Flux, your allocation will take the form of a Flux instance where you can use Flux commands to manage your workload on those resources. This section will tell you where to find Flux and how to start it in an allocation even if it is not the main resource manager on the cluster that you are running on.
 ### Finding Flux
 Flux is included in the TOSS operating system on LC systems, so should be available in your standard `PATH`. You can check on this with:
 ```console

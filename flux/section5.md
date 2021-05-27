@@ -125,7 +125,7 @@ task 2 on rzalastor6 going to sleep
      fGcqSBh day36    mpi_hellos  R      4      1   2.871s rzalastor6
 sh-4.2$
 ```
-While this is an admittedly contrived example, it begins to show how Flux's hierarchical model allows fine grained control of the hardware resources in a job allocation. This is key to the more complex workflows that are enabled by Flux. It is also worth pointing out the difference between the behavior of Flux and what would happen if you were to run a similar set of commands under a traditional RJMS such as Slurm or LSF. If you run a batch commands (e.g. `sbatch` or `bsub`) in Slurm or LSF, that command will cause a new job to be enqueued. No immediate work will be performed and it is unlikely that the job will end up running on the same hardware resources as the allocation that you were in when you ran the command.
+While this is an admittedly contrived example, it begins to show how Flux's hierarchical model allows fine grained control of the hardware resources in a job allocation. This is key to the more complex workflows that are enabled by Flux. It is also worth pointing out the difference between the behavior of Flux and what would happen if you were to run a similar set of commands under a traditional resource manager such as Slurm or LSF. If you run a batch command (e.g. `sbatch` or `bsub`) in a Slurm or LSF job script, that command will cause a new job to be enqueued. No immediate work will be performed and it is unlikely that the job will end up running on the same hardware resources as the allocation that you were in when you ran the command.
 
 ---
 [Section 4](/flux/section4) | Section 5 | [Exercise 5](/flux/exercises/exercise5) | [Section 6](/flux/section6)  
