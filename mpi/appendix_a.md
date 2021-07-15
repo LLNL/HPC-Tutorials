@@ -660,3 +660,4 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 Test:
 [mpi_helloBsend.c](examples/mpi_helloBsend.c)
 [MPI_Abort](MPI_appendix/MPI_Abort.txt)
+<a href='MPI_appendix/MPI_Errhandler_free.txt'>MPI_Errhandler_free</a>
