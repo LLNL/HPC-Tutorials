@@ -661,3 +661,8 @@ Test:
 [mpi_helloBsend.c](examples/mpi_helloBsend.c)
 [MPI_Abort](MPI_appendix/MPI_Abort.txt)
 <a href='MPI_appendix/MPI_Errhandler_free.txt'>MPI_Errhandler_free</a>
+
+<a href='/mpi/MPI_appendix/MPI_Errhandler_free.txt'>MPI_Errhandler_free</a>
+
+<a href='/HPC-Tutorials/mpi/MPI_appendix/MPI_Errhandler_free.txt'>MPI_Errhandler_free</a>
+<a href='mpi/MPI_appendix/MPI_Errhandler_free.txt'>MPI_Errhandler_free</a>
