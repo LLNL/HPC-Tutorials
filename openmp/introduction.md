@@ -76,8 +76,8 @@ Led by the OpenMP Architecture Review Board (ARB). Original ARB members and cont
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-c3ow"><span style="background-color:#98ABCE">APR Members</th>
-    <th class="tg-c3ow"><span style="background-color:#98ABCE">Endorsing Application Developers</th>
+    <th class="tg-xq0d"><span style="background-color:#98ABCE">APR Members</th>
+    <th class="tg-xq0d"><span style="background-color:#98ABCE">Endorsing Application Developers</th>
     <th class="tg-xq0d"><span style="background-color:#98ABCE">Endorsing Software Vendors </th>
   </tr>
 </thead>
