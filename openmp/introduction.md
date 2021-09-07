@@ -73,15 +73,15 @@ Led by the OpenMP Architecture Review Board (ARB). Original ARB members and cont
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-xq0d{background-color:#98ABCE;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-c3ow{background-color:#98ABCE;font-weight:bold;text-align:center;vertical-align:top}
 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
 </style>
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-xq0d"><span style="background-color:#98ABCE">APR Members</th>
-    <th class="tg-xq0d"><span style="background-color:#98ABCE">Endorsing Application Developers</th>
-    <th class="tg-xq0d"><span style="background-color:#98ABCE">Endorsing Software Vendors </th>
+    <th class="tg-c3ow"><span style="background-color:#98ABCE">APR Members</th>
+    <th class="tg-c3ow"><span style="background-color:#98ABCE">Endorsing Application Developers</th>
+    <th class="tg-c3ow"><span style="background-color:#98ABCE">Endorsing Software Vendors </th>
   </tr>
 </thead>
 <tbody>
