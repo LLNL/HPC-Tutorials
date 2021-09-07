@@ -64,13 +64,16 @@ The OpenMP standard specification started in the spring of 1997, taking over whe
 
 Led by the OpenMP Architecture Review Board (ARB). Original ARB members and contributors are shown below. (Disclaimer: all partner names derived from the [OpenMP web site](https://www.openmp.org/))
 
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+
+
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-xq0d{background-color:#98ABCE;font-weight:bold;text-align:center;vertical-align:top}
 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
 </style>
 <table class="tg">
