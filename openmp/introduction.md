@@ -64,11 +64,6 @@ The OpenMP standard specification started in the spring of 1997, taking over whe
 
 Led by the OpenMP Architecture Review Board (ARB). Original ARB members and contributors are shown below. (Disclaimer: all partner names derived from the [OpenMP web site](https://www.openmp.org/))
 
-|   APR Members     |     Endorsing Application Developers      |     Endorsing Software Vendors    |
-|:--------------------:|:----------------------------------:|:-----------------------------------------:|
-| Compaq / Digital <br>Hewlett-Packard Company <br>Intel Corporation <br>International Business Machines (IBM)  <br>Kuck & Associates, Inc. (KAI) <br>Silicon Graphics, Inc. <br>Sun Microsystems, Inc. <br>U.S. Department of Energy ASCI program  | ADINA R&D, Inc. <br>ANSYS, Inc. <br>Dash Associates <br>Fluent, Inc. <br>ILOG CPLEX Division <br>Livermore Software Technology Corporation (LSTC) <br>MECALOG SARL <br>Oxford Molecular Group PLC <br>The Numerical Algorithms Group Ltd.(NAG)  | Absoft Corporation <br>Edinburgh Portable Compilers <br>GENIAS Software GmBH <br>Myrias Computer Technologies, Inc.  <br>The Portland Group, Inc. (PGI)<br> <br> <br> |
-
-
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -94,4 +89,87 @@ Led by the OpenMP Architecture Review Board (ARB). Original ARB members and cont
   </tr>
 </tbody>
 </table>
+
+For more news and membership information about the OpenMP ARB, visit: [openmp.org/wp/about-openmp](https://openmp.org/wp/about-openmp/).
+
+**Release History**
+
+OpenMP continues to evolve, with new constructs and features being added over time.
+
+Initially, the API specifications were released separately for C and Fortran. Since 2005, they have been released together.
+
+The table below chronicles the OpenMP API release history:
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-xq0d{background-color:#98ABCE;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-xq0d"><span style="background-color:#98ABCE">Month/Year</span></th>
+    <th class="tg-xq0d"><span style="background-color:#98ABCE">Version</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax">Oct 1997</td>
+    <td class="tg-0lax">Fortran 1.0</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Oct 1998</td>
+    <td class="tg-0lax">C/C++ 1.0</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Nov 1999</td>
+    <td class="tg-0lax">Fortran 1.1</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Nov 2000</td>
+    <td class="tg-0lax">Fortran 2.0</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Mar 2002</td>
+    <td class="tg-0lax">C/C++ 2.0</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">May 2005</td>
+    <td class="tg-0lax">OpenMP 2.5</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">May 2008</td>
+    <td class="tg-0lax">OpenMP 3.0</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Jul 2011</td>
+    <td class="tg-0lax">OpenMP 3.1</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Jul 2013</td>
+    <td class="tg-0lax">OpenMP 4.0</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Nov 2018</td>
+    <td class="tg-0lax">OpenMP 5.0</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">Nov 2020</td>
+    <td class="tg-0lax">OpenMP 5.1</td>
+  </tr>
+</tbody>
+</table>
+
+**Note**: The remainder of this tutorial, unless otherwise indicated, refers to OpenMP version 3.1. Syntax and features new with OpenMP 4.0 are not currently covered.
+
+**References:**
+
+* OpenMP website: [openmp.org](https://openmp.org) 
+	API specifications, FAQ, presentations, discussions, media releases, calendar, membership application and more...
+* Wikipedia: en.wikipedia.org/wiki/OpenMP
+
 
