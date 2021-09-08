@@ -13,6 +13,9 @@ tutorial: "OpenMP"
 3. [OpenMP Programming Model](programming_model)
 4. [OpenMP API Overview](api_overview)
 
-
+[Compiling OpenMP Programs](compiling)
+[Environment Variables](env_vars)
+[Run-Time Library Routines](run_time_routines)
+[Appendix A: Run-Time Library Routines](appendix_a)
 
 Once you have finished the tutorial, please complete our [evaluation form](https://hpc.llnl.gov/training/tutorials/evaluation-form)!
