@@ -59,7 +59,7 @@ Note that for C/C++, you usually need to include the `<omp.h>` header file.
 
 Fortran routines are not case sensitive, but C/C++ routines are.
 
-The run-time library routines are briefly discussed as an overview in the [Run-Time Library Routines](run-time-routines) section, and in more detail in [Appendix A](appendix-a). 
+The run-time library routines are briefly discussed as an overview in the [Run-Time Library Routines](run_time_routines) section, and in more detail in [Appendix A](appendix_a). 
 
 ## Environment Variables:
 
