@@ -53,7 +53,7 @@ ser_array
 srun -n8 -ppReserved mpi_array
 ```
 
-**Note**: The `srun` command is covered in detail in the "Starting Jobs" section of the Linux Clusters Overview tutorial, located at: computing.llnl.gov/tutorials/linux_clusters/index.html#Starting. There is also a man page.
+**Note**: The `srun` command is covered in detail in the "Starting Jobs" section of the Linux Clusters Overview tutorial, located [here](https://hpc.llnl.gov/training/tutorials/livermore-computing-linux-commodity-clusters-overview-part-two#Starting). There is also a man page.
 
 #### 5. Compare other serial codes to their parallel version
 If we had more time, you might even be able to start with a serial code or two and create your own parallel version. Feel free to try if you'd like.
