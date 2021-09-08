@@ -64,31 +64,28 @@ The OpenMP standard specification started in the spring of 1997, taking over whe
 
 Led by the OpenMP Architecture Review Board (ARB). Original ARB members and contributors are shown below. (Disclaimer: all partner names derived from the [OpenMP web site](https://www.openmp.org/))
 
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-
-
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{background-color:#98ABCE;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-5iie{background-color:#98ABCE;border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
 .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
 </style>
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-c3ow"><span style="background-color:#98ABCE">APR Members</th>
-    <th class="tg-c3ow"><span style="background-color:#98ABCE">Endorsing Application Developers</th>
-    <th class="tg-c3ow"><span style="background-color:#98ABCE">Endorsing Software Vendors </th>
+    <th class="tg-5iie"><span style="background-color:#98ABCE">APR Members</span></th>
+    <th class="tg-5iie"><span style="background-color:#98ABCE">Endorsing Application Developers</span></th>
+    <th class="tg-5iie"><span style="background-color:#98ABCE">Endorsing Software Vendors</span></th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td class="tg-0pky">Compaq / Digital <br>Hewlett-Packard Company<br>Intel Corporation<br>International Business Machines (IBM) <br>Kuck &amp; Associates, Inc. (KAI)<br>Silicon Graphics, Inc.<br>Sun Microsystems, Inc.<br>U.S. Department of Energy ASCI program </td>
     <td class="tg-0pky">ADINA R&amp;D, Inc.<br>ANSYS, Inc.<br>Dash Associates<br>Fluent, Inc.<br>ILOG CPLEX Division<br>Livermore Software Technology Corporation (LSTC)<br>MECALOG SARL<br>Oxford Molecular Group PLC<br>The Numerical Algorithms Group Ltd.(NAG) </td>
-    <td class="tg-0pky">Absoft Corporation<br>Edinburgh Portable Compilers<br>GENIAS Software GmBH<br>Myrias Computer Technologies, Inc. <br>The Portland Group, Inc. (PGI)<br> <br> <br></td>
+    <td class="tg-0pky">Absoft Corporation<br>Edinburgh Portable Compilers<br>GENIAS Software GmBH<br>Myrias Computer Technologies, Inc. <br>The Portland Group, Inc. (PGI)<br><br></td>
   </tr>
 </tbody>
 </table>
