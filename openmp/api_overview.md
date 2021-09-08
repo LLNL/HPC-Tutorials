@@ -59,7 +59,7 @@ Note that for C/C++, you usually need to include the `<omp.h>` header file.
 
 Fortran routines are not case sensitive, but C/C++ routines are.
 
-The run-time library routines are briefly discussed as an overview in the [Run-Time Library Routines](run_time_routines) section, and in more detail in [Appendix A](appendix_a). 
+The run-time library routines are briefly discussed as an overview in the [Run-Time Library Routines](run_time_routines.md) section, and in more detail in [Appendix A](appendix_a.md). 
 
 ## Environment Variables:
 
@@ -78,7 +78,7 @@ Setting OpenMP environment variables is done the same way you set any other envi
 
 # TABLE
 
-OpenMP environment variables are discussed in the [Environment Variables](env_vars) section later. 
+OpenMP environment variables are discussed in the [Environment Variables](env_vars.md) section later. 
 
 ## Example OpenMP Code Structure:
 
