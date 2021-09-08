@@ -33,9 +33,9 @@ Or as complex as inserting subroutines to set multiple levels of parallelism, lo
 
 ## Fork - Join Model:
 
-![fork-join](images/fork_join.gif)
+OpenMP uses the fork-join model of parallel execution: 
 
-OpenMP uses the fork-join model of parallel execution: Fork - Join Model
+![fork-join](images/fork_join.gif)
 
 All OpenMP programs begin as a single process: the **master thread**. The master thread executes sequentially until the first **parallel region** construct is encountered.
 
