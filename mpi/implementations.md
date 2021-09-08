@@ -221,7 +221,7 @@ The `srun` command is discussed in detail in the Running Jobs section of the Lin
 
 Open MPI is a thread-safe, open source MPI implementation developed and supported by a consortium of academic, research, and industry partners.
 
-Available on all LC Linux clusters. However, you'll need to load the desired [module](https://computing.llnl.gov/tutorials/lc_resources/#Modules) first. For example:
+Available on all LC Linux clusters. However, you'll need to load the desired [module](https://hpc.llnl.gov/training/tutorials/livermore-computing-resources-and-environment#modules) first. For example:
 
 ```sh
 module avail                 (list available modules)
