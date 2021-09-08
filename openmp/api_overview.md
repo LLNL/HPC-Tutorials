@@ -19,7 +19,7 @@ Implementations differ in their support of all API components. For example, an i
 
 ## Compiler Directives:
 
-Compiler directives appear as comments in your source code and are ignored by compilers unless you tell them otherwise - usually by specifying the appropriate compiler flag, as discussed in the Compiling section later.
+Compiler directives appear as comments in your source code and are ignored by compilers unless you tell them otherwise - usually by specifying the appropriate compiler flag, as discussed in the [Compiling](compiling.md) section later.
 
 OpenMP compiler directives are used for various purposes:
 * Spawning a parallel region
