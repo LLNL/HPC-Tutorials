@@ -10,9 +10,7 @@ tutorial: "OpenMP"
 
 OpenMP is designed for multi-processor/core, shared memory machines. The underlying architecture can be shared memory UMA or NUMA. 
 
-![uma-numa](images/uma.gif)
-
-![uma-numa](images/numa.gif)
+![uma](images/uma.gif) ![numa](images/numa.gif)
 
 ## Thread Based Parallelism:
 
