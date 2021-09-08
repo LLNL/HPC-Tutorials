@@ -11,7 +11,7 @@ tutorial: "OpenMP"
 ![logo](images/openmp_logo.gif)
 
 
-**OpenMP is:**
+## OpenMP is:
 * An Application Program Interface (API) that may be used to explicitly direct ***multi-threaded, shared memory parallelism***
 * Comprised of three primary API components:
     * Compiler Directives
@@ -21,7 +21,7 @@ tutorial: "OpenMP"
     * Short version: **Open Multi-Processing**
     * Long version: **Open** specifications for **Multi-Processing** via collaborative work between interested parties from the hardware and software industry, government and academia.
 
-**OpenMP is not:**
+## OpenMP is not:
 
 * Meant for distributed memory parallel systems (by itself)
 * Necessarily implemented identically by all vendors
@@ -31,7 +31,7 @@ tutorial: "OpenMP"
 * Meant to cover compiler-generated automatic parallelization and directives to the compiler to assist such parallelization
 * Designed to guarantee that input or output to the same file is synchronous when executed in parallel. The programmer is responsible for synchronizing input and output.
 
-**Goals of OpenMP:**
+## Goals of OpenMP:
 
 * **Standardization**:
     * Provide a standard among a variety of shared memory architectures/platforms
@@ -48,7 +48,7 @@ tutorial: "OpenMP"
 	* Public forum for API and membership
 	* Most major platforms have been implemented including Unix/Linux platforms and Windows
 
-**History:**
+## History:
 
 In the early 90's, vendors of shared-memory machines supplied similar, directive-based, Fortran programming extensions:
     * The user would augment a serial Fortran program with directives specifying which loops were to be parallelized
@@ -92,7 +92,7 @@ Led by the OpenMP Architecture Review Board (ARB). Original ARB members and cont
 
 For more news and membership information about the OpenMP ARB, visit: [openmp.org/wp/about-openmp](https://openmp.org/wp/about-openmp/).
 
-**Release History**
+## Release History
 
 OpenMP continues to evolve, with new constructs and features being added over time.
 
@@ -166,7 +166,7 @@ The table below chronicles the OpenMP API release history:
 
 **Note**: The remainder of this tutorial, unless otherwise indicated, refers to OpenMP version 3.1. Syntax and features new with OpenMP 4.0 are not currently covered.
 
-**References:**
+## References:
 
 * OpenMP website: [openmp.org](https://openmp.org) 
 	API specifications, FAQ, presentations, discussions, media releases, calendar, membership application and more...
