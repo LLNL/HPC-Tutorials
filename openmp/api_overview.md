@@ -34,7 +34,29 @@ Compiler directives have the following syntax:
 
 For example:
 
-# TABLE
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-xq0d{background-color:#98ABCE;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-xq0d"><span style="background-color:#98ABCE">Fortran</span></th>
+    <th class="tg-1wig">!$OMP PARALLEL DEFAULT(SHARED) PRIVATE(BETA,PI) </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-xq0d"><span style="background-color:#98ABCE">C/C++</span></td>
+    <td class="tg-1wig">#pragma omp parallel default(shared) private(beta,pi)</td>
+  </tr>
+</tbody>
+</table>
 
 Compiler directives are covered in detail later. 
 
@@ -53,7 +75,29 @@ These routines are used for a variety of purposes:
 
 For C/C++, all of the run-time library routines are actual subroutines. For Fortran, some are actually functions, and some are subroutines. For example:
 
-# TABLE
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-xq0d{background-color:#98ABCE;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-xq0d"><span style="background-color:#98ABCE">Fortran</span></th>
+    <th class="tg-1wig">INTEGER FUNCTION OMP_GET_NUM_THREADS() </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-xq0d"><span style="background-color:#98ABCE">C/C++</span></td>
+    <td class="tg-1wig">#include &lt;omp.h&gt; <br>int omp_get_num_threads(void)</td>
+  </tr>
+</tbody>
+</table>
 
 Note that for C/C++, you usually need to include the `<omp.h>` header file.
 
@@ -76,7 +120,29 @@ These environment variables can be used to control such things as:
 
 Setting OpenMP environment variables is done the same way you set any other environment variables, and depends upon which shell you use. For example:
 
-# TABLE
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-xq0d{background-color:#98ABCE;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-xq0d"><span style="background-color:#98ABCE">csh/tcsh</span></th>
+    <th class="tg-1wig">setenv OMP_NUM_THREADS 8 </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-xq0d"><span style="background-color:#98ABCE">sh/bash</span></td>
+    <td class="tg-1wig">export OMP_NUM_THREADS=8</td>
+  </tr>
+</tbody>
+</table>
 
 OpenMP environment variables are discussed in the [Environment Variables](env_vars.md) section later. 
 
