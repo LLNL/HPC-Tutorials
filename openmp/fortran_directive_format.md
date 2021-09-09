@@ -27,7 +27,7 @@ tutorial: "OpenMP"
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0lax">All Fortran OpenMP directives must begin with a sentinel. The accepted sentinels depend upon the type of Fortran source. Possible sentinels are:<br><span style="font-weight:bold">    !$OMP  </span><br><span style="font-weight:bold">    C$OMP     </span><br><span style="font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;*$OMP </span></td>
+    <td class="tg-0lax">All Fortran OpenMP directives must begin with a sentinel. The accepted sentinels depend upon the type of Fortran source. Possible sentinels are:<br><span style="font-weight:bold">    !$OMP  </span><br><span style="font-weight:bold">    C$OMP     </span><br><span style="font-weight:bold">    *$OMP </span></td>
     <td class="tg-0lax">A valid OpenMP directive must appear after the sentinel and before any clauses.</td>
     <td class="tg-0lax">Optional. Clauses can be in any order, and repeated as necessary unless otherwise restricted.</td>
   </tr>
