@@ -12,8 +12,13 @@ tutorial: "OpenMP"
 2. [Introduction](introduction)
 3. [OpenMP Programming Model](programming_model)
 4. [OpenMP API Overview](api_overview)
+5. [Compiling OpenMP Programs](compiling)
+6. OpenMP Directives
+    A. [Fortran Directive Format](fortran_directive_format.md)
+    B. [C/C++ Directive Format](c_directive_format.md)
+    C. [Directive Scoping](directive_scoping.md)
 
-[Compiling OpenMP Programs](compiling)
+
 [Environment Variables](env_vars)
 [Run-Time Library Routines](run_time_routines)
 [Appendix A: Run-Time Library Routines](appendix_a)
