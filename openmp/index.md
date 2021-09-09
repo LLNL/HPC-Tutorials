@@ -14,9 +14,9 @@ tutorial: "OpenMP"
 4. [OpenMP API Overview](api_overview)
 5. [Compiling OpenMP Programs](compiling)
 6. OpenMP Directives
-    A. [Fortran Directive Format](fortran_directive_format.md)
-    B. [C/C++ Directive Format](c_directive_format.md)
-    C. [Directive Scoping](directive_scoping.md)
+    1. [Fortran Directive Format](fortran_directive_format.md)
+    2. [C/C++ Directive Format](c_directive_format.md)
+    3. [Directive Scoping](directive_scoping.md)
 
 
 [Environment Variables](env_vars)
