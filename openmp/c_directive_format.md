@@ -56,7 +56,7 @@ tutorial: "OpenMP"
 * Long directive lines can be "continued" on succeeding lines by escaping the newline character with a backslash ("\") at the end of a directive line.
 
 ```
-#pragma omp directive
+#pragma omp <directive>
 
     [ structured block of code ]
 ```
