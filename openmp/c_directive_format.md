@@ -54,3 +54,9 @@ tutorial: "OpenMP"
 * Each directive applies to at most one succeeding statement, which must be a structured block.
 
 * Long directive lines can be "continued" on succeeding lines by escaping the newline character with a backslash ("\") at the end of a directive line.
+
+```
+#pragma omp directive
+
+    [ structured block of code ]
+```
