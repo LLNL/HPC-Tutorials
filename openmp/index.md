@@ -22,5 +22,5 @@ tutorial: "OpenMP"
 [Environment Variables](env_vars)
 [Run-Time Library Routines](run_time_routines)
 [Appendix A: Run-Time Library Routines](appendix_a)
-
+[Directive Binding and Nesting Rules](directive_binding_and_nesting)
 Once you have finished the tutorial, please complete our [evaluation form](https://hpc.llnl.gov/training/tutorials/evaluation-form)!
