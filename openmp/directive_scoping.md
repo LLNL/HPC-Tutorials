@@ -39,17 +39,17 @@ The dynamic extent of a directive includes both its static (lexical) extent and 
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-b6y0">     PROGRAM TEST       <br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP PARALLEL       <br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP DO       <br>&nbsp;&nbsp;&nbsp;&nbsp;DO I=...       <br>&nbsp;&nbsp;&nbsp;&nbsp;...       <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CALL SUB1       <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...       <br>    &nbsp;&nbsp;&nbsp;&nbsp;ENDDO       <br>&nbsp;&nbsp;&nbsp;&nbsp;...       <br>&nbsp;&nbsp;&nbsp;&nbsp;CALL SUB2       <br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP END PARALLEL </th>
+    <th class="tg-b6y0">     PROGRAM TEST       <br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP PARALLEL       <br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP DO       <br>&nbsp;&nbsp;&nbsp;&nbsp;DO I=...       <br>&nbsp;&nbsp;&nbsp;&nbsp;...       <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CALL SUB1       <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...       <br>    &nbsp;&nbsp;&nbsp;&nbsp;ENDDO       <br>&nbsp;&nbsp;&nbsp;&nbsp;...       <br>&nbsp;&nbsp;&nbsp;&nbsp;CALL SUB2       <br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP END PARALLEL </th>
     <th class="tg-liws">&nbsp;&nbsp;&nbsp;&nbsp;SUBROUTINE SUB1<br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP CRITICAL<br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP END CRITICAL<br>&nbsp;&nbsp;&nbsp;&nbsp;END<br><br>&nbsp;&nbsp;&nbsp;&nbsp;SUBROUTINE SUB2<br>  &nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP SECTIONS<br> &nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP END SECTIONS<br> &nbsp;&nbsp;&nbsp;&nbsp;... <br>&nbsp;&nbsp;&nbsp;&nbsp;END <br></th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-dydl"><span style="font-weight:bold;font-style:normal">STATIC EXTENT</span> <br>The DO directive occurs within an enclosing parallel region</td>
-    <td class="tg-dydl"><span style="font-weight:bold;font-style:normal">ORPHANED DIRECTIVES</span> <br>The CRITICAL and SECTIONS directives occur outside an enclosing parallel region</td>
+    <td class="tg-dydl"><span style="font-weight:bold;font-style:normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATIC EXTENT</span> <br>The DO directive occurs within an enclosing parallel region</td>
+    <td class="tg-dydl"><span style="font-weight:bold;font-style:normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ORPHANED DIRECTIVES</span> <br>The CRITICAL and SECTIONS directives occur outside an enclosing parallel region</td>
   </tr>
   <tr>
-    <td class="tg-dydl" colspan="2"><span style="font-weight:bold;font-style:normal">DYNAMIC EXTENT</span> <br>The CRITICAL and SECTIONS directives occur within the dynamic extent of the DO and PARALLEL directives.</td>
+    <td class="tg-dydl" colspan="2"><span style="font-weight:bold;font-style:normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DYNAMIC EXTENT</span> <br>The CRITICAL and SECTIONS directives occur within the dynamic extent of the DO and PARALLEL directives.</td>
   </tr>
 </tbody>
 </table>
