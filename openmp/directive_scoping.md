@@ -32,9 +32,9 @@ The dynamic extent of a directive includes both its static (lexical) extent and 
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-dydl{background-color:#DDD;font-weight:bold;text-align:left;vertical-align:top}
-.tg .tg-liws{background-color:#F0F5FE;text-align:left;vertical-align:top}
-.tg .tg-b6y0{background-color:#F0F5FE;color:#000000;text-align:left;vertical-align:top}
+.tg .tg-dydl{background-color:#DDD;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-liws{background-color:#F0F5FE;text-align:center;vertical-align:top}
+.tg .tg-b6y0{background-color:#F0F5FE;color:#000000;text-align:center;vertical-align:top}
 </style>
 <table class="tg">
 <thead>
