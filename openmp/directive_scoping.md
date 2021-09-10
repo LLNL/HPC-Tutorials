@@ -39,8 +39,8 @@ The dynamic extent of a directive includes both its static (lexical) extent and 
 <table class="tg">
 <thead>
   <tr>
-    <th class="tg-b6y0">     PROGRAM TEST       <br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP PARALLEL       <br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP DO       <br>    DO I=...       <br>        ...       <br>        CALL SUB1       <br>        ...       <br>    ENDDO       <br>&nbsp;&nbsp;&nbsp;&nbsp;...       <br>    CALL SUB2       <br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP END PARALLEL </th>
-    <th class="tg-liws">      SUBROUTINE SUB1<br>       ... <br>!$OMP CRITICAL<br>       ... <br>!$OMP END CRITICAL<br>       END<br><br>       SUBROUTINE SUB2<br>       ... <br>!$OMP SECTIONS<br>       ... <br>!$OMP END SECTIONS<br>       ... <br>      END <br></th>
+    <th class="tg-b6y0">     PROGRAM TEST       <br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP PARALLEL       <br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP DO       <br>&nbsp;&nbsp;&nbsp;&nbsp;DO I=...       <br>&nbsp;&nbsp;&nbsp;&nbsp;...       <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CALL SUB1       <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...       <br>    &nbsp;&nbsp;&nbsp;&nbsp;ENDDO       <br>&nbsp;&nbsp;&nbsp;&nbsp;...       <br>&nbsp;&nbsp;&nbsp;&nbsp;CALL SUB2       <br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP END PARALLEL </th>
+    <th class="tg-liws">&nbsp;&nbsp;&nbsp;&nbsp;SUBROUTINE SUB1<br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP CRITICAL<br>&nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP END CRITICAL<br>&nbsp;&nbsp;&nbsp;&nbsp;END<br><br>&nbsp;&nbsp;&nbsp;&nbsp;SUBROUTINE SUB2<br>  &nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP SECTIONS<br> &nbsp;&nbsp;&nbsp;&nbsp;... <br>!$OMP END SECTIONS<br> &nbsp;&nbsp;&nbsp;&nbsp;... <br>&nbsp;&nbsp;&nbsp;&nbsp;END <br></th>
   </tr>
 </thead>
 <tbody>
