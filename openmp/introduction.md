@@ -164,7 +164,7 @@ The table below chronicles the OpenMP API release history:
 </tbody>
 </table>
 
-**Note**: The remainder of this tutorial, unless otherwise indicated, refers to OpenMP version 3.1. Syntax and features new with OpenMP 4.0 are not currently covered.
+**Note**: The remainder of this tutorial, unless otherwise indicated, refers to OpenMP version 3.1. Syntax and features new with OpenMP 4.x and OpenMP 5.x are not currently covered.
 
 ## References:
 
