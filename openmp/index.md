@@ -18,7 +18,7 @@ tutorial: "OpenMP"
     2. [C/C++ Directive Format](c_directive_format)
     3. [Directive Scoping](directive_scoping)
     4. [Parallel Construct](parallel_construct)
-
+    5. [Exercise 1](exercise1)
 
 [Data Scope Attribute Clauses](data_scope)
 [Environment Variables](env_vars)
