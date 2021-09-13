@@ -22,14 +22,15 @@ Workshops differ in how this is done. The instructor will go over this beforehan
 
 ## 2. Copy the example files
 
-1. In your home directory, create a subdirectory for the example codes and then cd to it.
+In your home directory, create a subdirectory for the example codes and then cd to it.
 
 ```
 mkdir openMP
 cd  openMP 
 ```
 
-2. Then, copy either the Fortran or the C version of the parallel OpenMP exercise files to your openMP subdirectory:
+Then, copy either the Fortran or the C version of the parallel OpenMP exercise files to your openMP subdirectory:
+
 **C:**
 ```	
 cp  /usr/global/docs/training/blaise/openMP/C/*  ~/openMP
