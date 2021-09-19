@@ -45,6 +45,7 @@ cp  /usr/global/docs/training/blaise/openMP/Fortran/*  ~/openMP
 You should notice the following files. ***Note:*** Most of these are simple example files. Their primary purpose is to demonstrate the basics of how to parallelize a code with OpenMP. Most execute in a second or two.
 
 # TABLE
+Test: [ompbug1.f](code_examples/Fortran/ompbug1.f)
 
 ## 4. Compilers - What's Available?
 
