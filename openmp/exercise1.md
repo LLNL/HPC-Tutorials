@@ -64,43 +64,43 @@ You should notice the following files. ***Note:*** Most of these are simple exam
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_hello.c"&gt;omp_hello.c&lt;/a&gt;</span></td>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_hello.f"&gt;omp_hello.f&lt;/a&gt;</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_hello.c"&>omp_hello.c</a&></span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_hello.f"&>omp_hello.f</a&></span></td>
     <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Hello world</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_workshare1.c"&gt;omp_workshare1.c&lt;/a&gt;</span></td>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_workshare1.f"&gt;omp_workshare1.f&lt;/a&gt;</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_workshare1.c"&>omp_workshare1.c</a&></span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_workshare1.f"&>omp_workshare1.f</a&></span></td>
     <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Loop work-sharing</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_workshare2.c"&gt;omp_workshare2.c&lt;/a&gt;</span></td>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_workshare2.f"&gt;omp_workshare2.f&lt;/a&gt;</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_workshare2.c"&>omp_workshare2.c</a&></span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_workshare2.f"&>omp_workshare2.f</a&></span></td>
     <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Sections work-sharing</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_reduction.c"&gt;omp_reduction.c&lt;/a&gt;</span></td>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_reduction.f"&gt;omp_reduction.f&lt;/a&gt;</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_reduction.c"&>omp_reduction.c</a&></span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_reduction.f"&>omp_reduction.f</a&></span></td>
     <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Combined parallel loop reduction</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_orphan.c"&gt;omp_orphan.c&lt;/a&gt;</span></td>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_orphan.f"&gt;omp_orphan.f&lt;/a&gt;</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_orphan.c"&>omp_orphan.c</a&></span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_orphan.f"&>omp_orphan.f</a&></span></td>
     <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Orphaned parallel loop reduction</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_mm.c"&gt;omp_mm.c&lt;/a&gt;</span></td>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_mm.f"&gt;omp_mm.f&lt;/a&gt;</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_mm.c"&>omp_mm.c</a&></span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_mm.f"&>omp_mm.f</a&></span></td>
     <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Matrix multiply</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_getEnvInfo.c"&gt;omp_getEnvInfo.c&lt;/a&gt;</span></td>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href=“openmp/code_examples/Fortran/omp_getEnvInfo.f"&gt;omp_getEnvInfo.f&lt;/a&gt;</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_getEnvInfo.c"&>omp_getEnvInfo.c</a&></span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href=“openmp/code_examples/Fortran/omp_getEnvInfo.f"&>omp_getEnvInfo.f</a&></span></td>
     <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Get and print environment information</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug1.c"&gt;omp_bug1.c &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug1fix.c"&gt;omp_bug1fix.c &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug2.c"&gt;omp_bug2.c &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug3.c"&gt;omp_bug3.c &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug4.c"&gt;omp_bug4.c &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug4fix"&gt;omp_bug4fix &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug5.c"&gt;omp_bug5.c &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug5fix.c"&gt;omp_bug5fix.c &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug6.c"&gt;omp_bug6.c&lt;/a&gt;</span></td>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug1.f"&gt;omp_bug1.f &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug1fix.f"&gt;omp_bug1fix.f &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug2.f"&gt;omp_bug2.f &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug3.f"&gt;omp_bug3.f &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug4.f"&gt;omp_bug4.f &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug4fix"&gt;omp_bug4fix &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug5.f"&gt;omp_bug5.f &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug5fix.f"&gt;omp_bug5fix.f &lt;/a&gt;</span><br><span style="font-weight:normal;font-style:normal;color:#000">&lt;a href="openmp/code_examples/Fortran/omp_bug6.f"&gt;omp_bug6.f&lt;/a&gt;</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug1.c"&>omp_bug1.c </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug1fix.c"&>omp_bug1fix.c </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug2.c"&>omp_bug2.c </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug3.c"&>omp_bug3.c </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug4.c"&>omp_bug4.c </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug4fix"&>omp_bug4fix </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug5.c"&>omp_bug5.c </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug5fix.c"&>omp_bug5fix.c </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug6.c"&>omp_bug6.c</a&></span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug1.f"&>omp_bug1.f </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug1fix.f"&>omp_bug1fix.f </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug2.f"&>omp_bug2.f </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug3.f"&>omp_bug3.f </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug4.f"&>omp_bug4.f </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug4fix"&>omp_bug4fix </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug5.f"&>omp_bug5.f </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug5fix.f"&>omp_bug5fix.f </a&></span><br><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_bug6.f"&>omp_bug6.f</a&></span></td>
     <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Programs with bugs</span></td>
   </tr>
 </tbody>
