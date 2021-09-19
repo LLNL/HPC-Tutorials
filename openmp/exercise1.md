@@ -163,13 +163,13 @@ You should notice the following files. ***Note:*** Most of these are simple exam
 </table>
 {% endraw %}
 
-<a href="openmp/code_examples/Fortran/omp_mm.f">omp_mm.f</a>
+<a href="/openmp/code_examples/Fortran/omp_mm.f">omp_mm.f</a>
 
-<a href="openmp/code_examples/C/omp_mm.c">omp_mm.c</a>
+<a href="/openmp/code_examples/C/omp_mm.c">omp_mm.c</a>
 
-<a href="code_examples/Fortran/omp_mm.f">omp_mm.f</a>
+<a href="/code_examples/Fortran/omp_mm.f">omp_mm.f</a>
 
-<a href="code_examples/C/omp_mm.c">omp_mm.c</a>
+<a href="/code_examples/C/omp_mm.c">omp_mm.c</a>
 
 ## 4. Compilers - What's Available?
 
