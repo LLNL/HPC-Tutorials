@@ -65,7 +65,7 @@ Create a simple OpenMP program that does the following:
 * Has each thread in the parallel region obtain its thread id
 * Has each thread print "Hello World" along with its unique thread id
 * Has the master thread only, obtain and then print the total number of threads
-* If you need help, see the provided []() or []() file.
+* If you need help, see the provided [omp_hello.c](code_examples/C/omp_hello.c) or [omp_hello.f](code_examples/Fortran/omp_hello.f) file.
 
 Using your choice of compiler (see above section 4), compile your hello world OpenMP program. This may take several attempts if there are any code errors. For example:
 
