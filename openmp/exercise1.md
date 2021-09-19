@@ -44,6 +44,8 @@ cp  /usr/global/docs/training/blaise/openMP/Fortran/*  ~/openMP
 
 You should notice the following files. ***Note:*** Most of these are simple example files. Their primary purpose is to demonstrate the basics of how to parallelize a code with OpenMP. Most execute in a second or two.
 
+{% raw %}
+
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -104,6 +106,8 @@ You should notice the following files. ***Note:*** Most of these are simple exam
   </tr>
 </tbody>
 </table>
+
+{% endraw %}
 
 ## 4. Compilers - What's Available?
 
