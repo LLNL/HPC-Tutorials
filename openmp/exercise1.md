@@ -96,7 +96,7 @@ You should notice the following files. ***Note:*** Most of these are simple exam
   </tr>
   <tr>
     <td class="tg-0lax"><a href="openmp/code_examples/C/omp_getEnvInfo.c">omp_getEnvInfo.c</a></td>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href=“openmp/code_examples/Fortran/omp_getEnvInfo.f">omp_getEnvInfo.f</a></span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href="openmp/code_examples/Fortran/omp_getEnvInfo.f">omp_getEnvInfo.f</a></span></td>
     <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Get and print environment information</span></td>
   </tr>
   <tr>
@@ -109,59 +109,6 @@ You should notice the following files. ***Note:*** Most of these are simple exam
 
 {% endraw %}
 
-{% raw %}
-<table>
-<thead>
-  <tr>
-    <th>C Files</th>
-    <th>Fortran Files</th>
-    <th colspan="2">Description</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td><a href="openmp/code_examples/C/omp_hello.c">omp_hello.c</a></td>
-    <td><a href="openmp/code_examples/Fortran/omp_hello.f">omp_hello.f</a></td>
-    <td colspan="2">Hello world</td>
-  </tr>
-  <tr>
-    <td><a href="openmp/code_examples/C/omp_workshare1.c">omp_workshare1.c</a></td>
-    <td><a href="openmp/code_examples/Fortran/omp_workshare1.f">omp_workshare1.f</a></td>
-    <td colspan="2">Loop work-sharing</td>
-  </tr>
-  <tr>
-    <td><a href="openmp/code_examples/C/omp_workshare2.c">omp_workshare2.c</a></td>
-    <td><a href="openmp/code_examples/Fortran/omp_workshare2.f">omp_workshare2.f</a></td>
-    <td colspan="2">Sections work-sharing</td>
-  </tr>
-  <tr>
-    <td><a href="openmp/code_examples/C/omp_reduction.c">omp_reduction.c</a></td>
-    <td><a href="openmp/code_examples/Fortran/omp_reduction.f">omp_reduction.f</a></td>
-    <td colspan="2">Combined parallel loop reduction</td>
-  </tr>
-  <tr>
-    <td><a href="openmp/code_examples/C/omp_orphan.c">omp_orphan.c</a></td>
-    <td><a href="openmp/code_examples/Fortran/omp_orphan.f">omp_orphan.f</a></td>
-    <td colspan="2">Orphaned parallel loop reduction</td>
-  </tr>
-  <tr>
-    <td><a href="openmp/code_examples/C/omp_mm.c">omp_mm.c</a></td>
-    <td><a href="openmp/code_examples/Fortran/omp_mm.f">omp_mm.f</a></td>
-    <td colspan="2">Matrix multiply</td>
-  </tr>
-  <tr>
-    <td><a href="openmp/code_examples/C/omp_getEnvInfo.c">omp_getEnvInfo.c</a></td>
-    <td><a href=“openmp/code_examples/Fortran/omp_getEnvInfo.f">omp_getEnvInfo.f</a></td>
-    <td colspan="2">Get and print environment information</td>
-  </tr>
-  <tr>
-    <td><a href="openmp/code_examples/C/omp_bug1.c">omp_bug1.c </a><br><a href="openmp/code_examples/C/omp_bug1fix.c">omp_bug1fix.c </a><br><a href="openmp/code_examples/C/omp_bug2.c">omp_bug2.c </a><br><a href="openmp/code_examples/C/omp_bug3.c">omp_bug3.c </a><br><a href="openmp/code_examples/C/omp_bug4.c">omp_bug4.c </a><br><a href="openmp/code_examples/C/omp_bug4fix">omp_bug4fix </a><br><a href="openmp/code_examples/C/omp_bug5.c">omp_bug5.c </a><br><a href="openmp/code_examples/C/omp_bug5fix.c">omp_bug5fix.c </a><br><a href="openmp/code_examples/C/omp_bug6.c">omp_bug6.c</a></td>
-    <td><a href="openmp/code_examples/Fortran/omp_bug1.f">omp_bug1.f </a><br><a href="openmp/code_examples/Fortran/omp_bug1fix.f">omp_bug1fix.f </a><br><a href="openmp/code_examples/Fortran/omp_bug2.f">omp_bug2.f </a><br><a href="openmp/code_examples/Fortran/omp_bug3.f">omp_bug3.f </a><br><a href="openmp/code_examples/Fortran/omp_bug4.f">omp_bug4.f </a><br><a href="openmp/code_examples/Fortran/omp_bug4fix">omp_bug4fix </a><br><a href="openmp/code_examples/Fortran/omp_bug5.f">omp_bug5.f </a><br><a href="openmp/code_examples/Fortran/omp_bug5fix.f">omp_bug5fix.f </a><br><a href="openmp/code_examples/Fortran/omp_bug6.f">omp_bug6.f</a></td>
-    <td colspan="2">Programs with bugs</td>
-  </tr>
-</tbody>
-</table>
-{% endraw %}
 
 <a href="/openmp/code_examples/Fortran/omp_mm.f">omp_mm.f</a>
 
