@@ -44,8 +44,66 @@ cp  /usr/global/docs/training/blaise/openMP/Fortran/*  ~/openMP
 
 You should notice the following files. ***Note:*** Most of these are simple example files. Their primary purpose is to demonstrate the basics of how to parallelize a code with OpenMP. Most execute in a second or two.
 
-# TABLE
-Test: [omp_bug1.f](code_examples/Fortran/omp_bug1.f)
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-oqcz{background-color:#869AC3;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-oqcz">C Files</th>
+    <th class="tg-oqcz">Fortran Files</th>
+    <th class="tg-oqcz" colspan="2">Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_hello.c](code_examples/Fortran/omp_hello.c)</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_hello.f](code_examples/Fortran/omp_hello.f)</span></td>
+    <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Hello world</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_workshare1.c](code_examples/Fortran/omp_workshare1.c)</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_workshare1.f](code_examples/Fortran/omp_workshare1.f)</span></td>
+    <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Loop work-sharing</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_workshare2.c](code_examples/Fortran/omp_workshare2.c)</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_workshare2.f](code_examples/Fortran/omp_workshare2.f)</span></td>
+    <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Sections work-sharing</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_reduction.c](code_examples/Fortran/omp_reduction.c)</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_reduction.f](code_examples/Fortran/omp_reduction.f)</span></td>
+    <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Combined parallel loop reduction</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_orphan.c](code_examples/Fortran/omp_orphan.c)</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_orphan.f](code_examples/Fortran/omp_orphan.f)</span></td>
+    <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Orphaned parallel loop reduction</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_mm.c](code_examples/Fortran/omp_mm.c)</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_mm.f](code_examples/Fortran/omp_mm.f)</span></td>
+    <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Matrix multiply</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_getEnvInfo.c](code_examples/Fortran/omp_getEnvInfo.c)</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_getEnvInfo.f](code_examples/Fortran/omp_getEnvInfo.f)</span></td>
+    <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Get and print environment information</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug1.c ](code_examples/Fortran/omp_bug1.c )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug1fix.c ](code_examples/Fortran/omp_bug1fix.c )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug2.c ](code_examples/Fortran/omp_bug2.c )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug3.c ](code_examples/Fortran/omp_bug3.c )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug4.c ](code_examples/Fortran/omp_bug4.c )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug4fix ](code_examples/Fortran/omp_bug4fix )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug5.c ](code_examples/Fortran/omp_bug5.c )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug5fix.c ](code_examples/Fortran/omp_bug5fix.c )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug6.c](code_examples/Fortran/omp_bug6.c)</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug1.f ](code_examples/Fortran/omp_bug1.f )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug1fix.f ](code_examples/Fortran/omp_bug1fix.f )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug2.f ](code_examples/Fortran/omp_bug2.f )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug3.f ](code_examples/Fortran/omp_bug3.f )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug4.f ](code_examples/Fortran/omp_bug4.f )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug4fix ](code_examples/Fortran/omp_bug4fix )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug5.f ](code_examples/Fortran/omp_bug5.f )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug5fix.f ](code_examples/Fortran/omp_bug5fix.f )</span><br><span style="font-weight:normal;font-style:normal;color:#000">[omp_bug6.f](code_examples/Fortran/omp_bug6.f)</span></td>
+    <td class="tg-0lax" colspan="2"><span style="font-weight:normal;font-style:normal;color:#000">Programs with bugs</span></td>
+  </tr>
+</tbody>
+</table>
 
 ## 4. Compilers - What's Available?
 
