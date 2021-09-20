@@ -50,6 +50,44 @@ setenv OMP_NUM_THREADS 4
 
 8. Reflect on possible performance differences between dynamic and static scheduling.
 
-## 3.
+## 3. Review / Compile / Run the matrix multiply example code
 
-## 4. 
+This example performs a matrix multiple by distributing the iterations of the operation between available threads.
+
+1. After reviewing the source code, compile and run the program. For example:
+#### C:	
+```
+	icc -openmp omp_mm.c -o matmult 
+	matmult
+```
+####Fortran:
+```
+	ifort -openmp omp_mm.f -o matmult
+	matmult
+```
+
+2. Review the output. It shows which thread did each iteration and the final result matrix.
+
+3. Run the program again, however this time sort the output to clearly see which threads execute which iterations:
+
+```
+matmult | sort | grep Thread
+```
+
+Do the loop iterations match the SCHEDULE(STATIC,CHUNK) directive for the matrix multiple loop in the code?
+
+## 4. Review / Compile / Run the workshare2 example code
+
+This example demonstrates use of the OpenMP SECTIONS work-sharing construct Note how the PARALLEL region is divided into separate sections, each of which will be executed by one thread.
+
+1. As before, compile and execute the program after reviewing it. For example:
+
+C:	icc -openmp omp_workshare2.c -o workshare2 
+workshare2
+
+Fortran:	ifort -openmp omp_workshare2.f -o workshare2
+workshare2
+
+2. Run the program several times and observe any differences in output. Because there are only two sections, you should notice that some threads do not do any work. You may/may not notice that the threads doing work can vary. For example, the first time thread 0 and thread 1 may do the work, and the next time it may be thread 0 and thread 3. It is even possible for one thread to do all of the work. Which thread does work is non-deterministic in this case.
+
+
