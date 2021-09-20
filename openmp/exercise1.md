@@ -30,7 +30,6 @@ Workshops differ in how this is done. The instructor will go over this beforehan
 ```
 
 2. Then, copy either the Fortran or the C version of the parallel OpenMP exercise files to your openMP subdirectory:
-
 #### C:
 ```	
     cp  /usr/global/docs/training/blaise/openMP/C/*  ~/openMP
@@ -131,7 +130,6 @@ You should notice the following files. ***Note:*** Most of these are simple exam
 * If you need help, see the provided [omp_hello.c](code_examples/C/omp_hello.c) or [omp_hello.f](code_examples/Fortran/omp_hello.f) file.
 
 3. Using your choice of compiler (see above section 4), compile your hello world OpenMP program. This may take several attempts if there are any code errors. For example:
-
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
