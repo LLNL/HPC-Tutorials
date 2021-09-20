@@ -32,7 +32,7 @@ Also see the most recent OpenMP specs for details.
 ## Format:
 
 ### Fortran
-<pre>	
+<pre>
 !$OMP FLUSH  <i>(list)</i>
 </pre>
 
