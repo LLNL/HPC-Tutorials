@@ -119,16 +119,16 @@ You should notice the following files. ***Note:*** Most of these are simple exam
 	* Answer: Use the `dpkg-defaults` command and look for the asterisk.
 
 ## 5. Create, compile and run an OpenMP "Hello world" program
-1. Using your favorite text editor (vi/vim, emacs, nedit, gedit, nano...) open a new file - call it whatever you'd like.
+1\. Using your favorite text editor (vi/vim, emacs, nedit, gedit, nano...) open a new file - call it whatever you'd like.
 
-2. Create a simple OpenMP program that does the following:
-* Creates a parallel region
-* Has each thread in the parallel region obtain its thread id
-* Has each thread print "Hello World" along with its unique thread id
-* Has the master thread only, obtain and then print the total number of threads
-* If you need help, see the provided [omp_hello.c](code_examples/C/omp_hello.c) or [omp_hello.f](code_examples/Fortran/omp_hello.f) file.
+2\. Create a simple OpenMP program that does the following:
+    * Creates a parallel region
+    * Has each thread in the parallel region obtain its thread id
+    * Has each thread print "Hello World" along with its unique thread id
+    * Has the master thread only, obtain and then print the total number of threads
+    * If you need help, see the provided [omp_hello.c](code_examples/C/omp_hello.c) or [omp_hello.f](code_examples/Fortran/omp_hello.f) file.
 
-3. Using your choice of compiler (see above section 4), compile your hello world OpenMP program. This may take several attempts if there are any code errors. For example:
+3\. Using your choice of compiler (see above section 4), compile your hello world OpenMP program. This may take several attempts if there are any code errors. For example:
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -153,7 +153,9 @@ You should notice the following files. ***Note:*** Most of these are simple exam
 </tbody>
 </table>
 
-<!---->
+
+
+
 4\. When you get a clean compile, proceed.
 
 5\. Run your hello executable and notice its output.
