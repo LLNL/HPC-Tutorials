@@ -22,7 +22,7 @@ When a BARRIER directive is reached, a thread will wait at that point until all 
 ###C/C++	
 <pre>
 #pragma omp barrier  <i>newline</i>
-<pre>
+</pre>
 
 ## Restrictions:
 
