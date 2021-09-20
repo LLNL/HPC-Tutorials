@@ -22,22 +22,22 @@ Workshops differ in how this is done. The instructor will go over this beforehan
 
 ## 2. Copy the example files
 
-In your home directory, create a subdirectory for the example codes and then cd to it.
+1. In your home directory, create a subdirectory for the example codes and then cd to it.
 
 ```
-mkdir openMP
-cd  openMP 
+    mkdir openMP
+    cd  openMP 
 ```
 
-Then, copy either the Fortran or the C version of the parallel OpenMP exercise files to your openMP subdirectory:
+2. Then, copy either the Fortran or the C version of the parallel OpenMP exercise files to your openMP subdirectory:
 
-**C:**
+#### C:
 ```	
-cp  /usr/global/docs/training/blaise/openMP/C/*  ~/openMP
+    cp  /usr/global/docs/training/blaise/openMP/C/*  ~/openMP
 ```
-**Fortran:**
+#### Fortran:
 ```
-cp  /usr/global/docs/training/blaise/openMP/Fortran/*  ~/openMP
+    cp  /usr/global/docs/training/blaise/openMP/Fortran/*  ~/openMP
 ```
 
 ## 3. List the contents of your OpenMP subdirectory
@@ -112,25 +112,25 @@ You should notice the following files. ***Note:*** Most of these are simple exam
 
 ## 4. Compilers - What's Available?
 
-Visit the [Compilers at LC webpage](https://hpc.llnl.gov/software/development-environment-software/compilers).
+1. Visit the [Compilers at LC webpage](https://hpc.llnl.gov/software/development-environment-software/compilers).
 
-You can also view the available compilers in the [Compilers section](https://hpc.llnl.gov/training/tutorials/livermore-computing-linux-commodity-clusters-overview-part-one#Compilers) of the Linux Clusters Overview tutorial.
+2. You can also view the available compilers in the [Compilers section](https://hpc.llnl.gov/training/tutorials/livermore-computing-linux-commodity-clusters-overview-part-one#Compilers) of the Linux Clusters Overview tutorial.
 
-Now, in your cluster login window, try the `use -l compilers` command to display available compilers. You should see GNU, Intel and PGI compilers - several versions of each.
+3. Now, in your cluster login window, try the `use -l compilers` command to display available compilers. You should see GNU, Intel and PGI compilers - several versions of each.
 	* Question: Which version is the default version?
 	* Answer: Use the `dpkg-defaults` command and look for the asterisk.
 
 ## 5. Create, compile and run an OpenMP "Hello world" program
-Using your favorite text editor (vi/vim, emacs, nedit, gedit, nano...) open a new file - call it whatever you'd like.
+1. Using your favorite text editor (vi/vim, emacs, nedit, gedit, nano...) open a new file - call it whatever you'd like.
 
-Create a simple OpenMP program that does the following:
+2. Create a simple OpenMP program that does the following:
 * Creates a parallel region
 * Has each thread in the parallel region obtain its thread id
 * Has each thread print "Hello World" along with its unique thread id
 * Has the master thread only, obtain and then print the total number of threads
 * If you need help, see the provided [omp_hello.c](code_examples/C/omp_hello.c) or [omp_hello.f](code_examples/Fortran/omp_hello.f) file.
 
-Using your choice of compiler (see above section 4), compile your hello world OpenMP program. This may take several attempts if there are any code errors. For example:
+3. Using your choice of compiler (see above section 4), compile your hello world OpenMP program. This may take several attempts if there are any code errors. For example:
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -156,9 +156,9 @@ Using your choice of compiler (see above section 4), compile your hello world Op
 </tbody>
 </table>
 
-When you get a clean compile, proceed.
+4. When you get a clean compile, proceed.
 
-Run your hello executable and notice its output.
+5. Run your hello executable and notice its output.
 	* Is it what you expected? As a comparison, you can compile and run the provided omp_hello.c or omp_hello.f example program.
 	* How many threads were created? By default, the Intel and GNU compilers will create 1 thread for each core. The PGI compiler will create only 1 thread total.
 Notes:
