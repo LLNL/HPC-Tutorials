@@ -14,29 +14,28 @@ Consider a simple example where two threads on two different processors are both
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
 .tg .tg-6t3r{font-style:italic;font-weight:bold;text-align:left;vertical-align:top}
-.tg .tg-8zwo{font-style:italic;text-align:left;vertical-align:top}
+.tg .tg-amwm{font-weight:bold;text-align:center;vertical-align:top}
 .tg .tg-0lax{text-align:left;vertical-align:top}
 </style>
 <table class="tg">
 <thead>
   <tr>
     <th class="tg-6t3r"></th>
-    <th class="tg-1wig">THREAD 1:</th>
-    <th class="tg-1wig">THREAD 2:</th>
+    <th class="tg-amwm">THREAD 1:</th>
+    <th class="tg-amwm">THREAD 2:</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-8zwo">High level code</td>
+    <td class="tg-6t3r">High level code</td>
     <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;text-decoration:none">increment(x)</span><br><span style="font-weight:normal;font-style:normal;text-decoration:none">{</span><br><span style="font-weight:normal;font-style:normal;text-decoration:none">    x = x + 1;</span><br><span style="font-weight:normal;font-style:normal;text-decoration:none">}</span></td>
     <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;text-decoration:none">increment(x)</span><br><span style="font-weight:normal;font-style:normal;text-decoration:none">{</span><br><span style="font-weight:normal;font-style:normal;text-decoration:none">    x = x + 1;</span><br><span style="font-weight:normal;font-style:normal;text-decoration:none">}</span></td>
   </tr>
   <tr>
-    <td class="tg-8zwo">Assembly</td>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;text-decoration:none">10  LOAD A, (x address)</span><br><span style="font-weight:normal;font-style:normal;text-decoration:none">20  ADD A, 1</span><br><span style="font-weight:normal;font-style:normal;text-decoration:none">30  STORE A, (x address)</span></td>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;text-decoration:none">10  LOAD A, (x address)</span><br><span style="font-weight:normal;font-style:normal;text-decoration:none">20  ADD A, 1</span><br><span style="font-weight:normal;font-style:normal;text-decoration:none">30  STORE A, (x address)</span></td>
+    <td class="tg-6t3r">Assembly</td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;text-decoration:none">10   LOAD A, (x address)</span><br><span style="font-weight:normal;font-style:normal;text-decoration:none">20   ADD A, 1</span><br><span style="font-weight:normal;font-style:normal;text-decoration:none">30   STORE A, (x address)</span></td>
+    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;text-decoration:none">10   LOAD A, (x address)</span><br><span style="font-weight:normal;font-style:normal;text-decoration:none">20   ADD A, 1</span><br><span style="font-weight:normal;font-style:normal;text-decoration:none">30   STORE A, (x address)</span></td>
   </tr>
 </tbody>
 </table>
