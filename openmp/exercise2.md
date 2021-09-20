@@ -27,13 +27,11 @@ This example demonstrates use of the OpenMP loop work-sharing construct. Notice 
 
 
 2. After reviewing the source code, use your preferred compiler to compile and run the executable. For example:
-
 #### C:
 ```
     icc -openmp omp_workshare1.c -o workshare1 
     workshare1 | sort
 ```
-
 #### Fortran:
 ```
     ifort -openmp omp_workshare1.f -o workshare1
