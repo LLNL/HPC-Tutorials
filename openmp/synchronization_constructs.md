@@ -9,6 +9,7 @@ tutorial: "OpenMP"
 <br>
 
 Consider a simple example where two threads on two different processors are both trying to increment a variable x at the same time (assume x is initially 0):
+
 <br>
 
 <style type="text/css">
@@ -43,7 +44,7 @@ Consider a simple example where two threads on two different processors are both
 </tbody>
 </table>
 
-<br><br>
+<br>
 
 One possible execution sequence:
 1. Thread 1 loads the value of x into register A.
