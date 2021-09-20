@@ -13,11 +13,11 @@ The CRITICAL directive specifies a region of code that must be executed by only 
 
 ### Fortran	
 <pre>
-!$OMP CRITICAL [ name ]
+!$OMP CRITICAL <i>[ name ]</i>
 
    <i>block</i>
 
-!$OMP END CRITICAL [ name ]
+!$OMP END CRITICAL <i>[ name ]</i>
 </pre>
 
 ### C/C++	
