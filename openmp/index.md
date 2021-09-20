@@ -27,6 +27,15 @@ tutorial: "OpenMP"
     7. [Combined Parallel Work-Sharing Constructs](combined-parallel-work-sharing)
     8. [TASK Construct](task_construct)
     9. [Exercise 2](exercise2)
+    10. [Synchronization Constructs](synchronization_constructs)
+        1. [MASTER Directive](master_directive)
+        1. [CRITICAL Directive](critical_directive)
+        1. [BARRIER Directive](barrier_directive)
+        1. [TASKWAIT Directive](taskwait_directive)
+        1. [ATOMIC Directive](atomic_directive)
+        1. [FLUSH Directive](flush_directive)
+        1. [ORDERED Directive](ordered_directive)
+
 
 [Data Scope Attribute Clauses](data_scope)
 [Environment Variables](env_vars)
