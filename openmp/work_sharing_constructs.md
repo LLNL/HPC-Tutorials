@@ -18,19 +18,19 @@ There is no implied barrier upon entry to a work-sharing construct, however ther
 
 ### DO / for
 
-**DO / for** - shares iterations of a loop across the team. Represents a type of "data parallelism".	
+**DO / for** shares iterations of a loop across the team. Represents a type of "data parallelism".	
 
 ![work_share1](images/work_share1.gif)
 
 ### SECTIONS
 
-**SECTIONS** - breaks work into separate, discrete sections. Each section is executed by a thread. Can be used to implement a type of "functional parallelism".	
+**SECTIONS** breaks work into separate, discrete sections. Each section is executed by a thread. Can be used to implement a type of "functional parallelism".	
 
 ![work_share2](images/work_share2.gif)
 
 ### SINGLE
 
-**SINGLE** - serializes a section of code
+**SINGLE** serializes a section of code
 
 ![work_share3](images/work_share3.gif)
 
