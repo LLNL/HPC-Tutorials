@@ -122,11 +122,12 @@ You should notice the following files. ***Note:*** Most of these are simple exam
 1\. Using your favorite text editor (vi/vim, emacs, nedit, gedit, nano...) open a new file - call it whatever you'd like.
 
 2\. Create a simple OpenMP program that does the following:
-    * Creates a parallel region
-    * Has each thread in the parallel region obtain its thread id
-    * Has each thread print "Hello World" along with its unique thread id
-    * Has the master thread only, obtain and then print the total number of threads
-    * If you need help, see the provided [omp_hello.c](code_examples/C/omp_hello.c) or [omp_hello.f](code_examples/Fortran/omp_hello.f) file.
+* Creates a parallel region
+* Has each thread in the parallel region obtain its thread id
+* Has each thread print "Hello World" along with its unique thread id
+* Has the master thread only, obtain and then print the total number of threads
+
+If you need help, see the provided [omp_hello.c](code_examples/C/omp_hello.c) or [omp_hello.f](code_examples/Fortran/omp_hello.f) file.
 
 3\. Using your choice of compiler (see above section 4), compile your hello world OpenMP program. This may take several attempts if there are any code errors. For example:
 <style type="text/css">
@@ -155,17 +156,16 @@ You should notice the following files. ***Note:*** Most of these are simple exam
 
 
 
+When you get a clean compile, proceed.
 
-4\. When you get a clean compile, proceed.
+4\. Run your hello executable and notice its output.
+* Is it what you expected? As a comparison, you can compile and run the provided omp_hello.c or omp_hello.f example program.
+* How many threads were created? By default, the Intel and GNU compilers will create 1 thread for each core. The PGI compiler will create only 1 thread total.
 
-5\. Run your hello executable and notice its output.
-	* Is it what you expected? As a comparison, you can compile and run the provided omp_hello.c or omp_hello.f example program.
-	* How many threads were created? By default, the Intel and GNU compilers will create 1 thread for each core. The PGI compiler will create only 1 thread total.
-Notes:
-	* For the remainder of this exercise, you can use the compiler command of your choice unless indicated otherwise.
-	* Compilers will differ in which warnings they issue, but all can be ignored for this exercise. Errors are different, of course.
+5\. Notes:
+* For the remainder of this exercise, you can use the compiler command of your choice unless indicated otherwise.
+* Compilers will differ in which warnings they issue, but all can be ignored for this exercise. Errors are different, of course.
 
-test
 
 ## 6. Vary the number of threads and re-run Hello World
 
