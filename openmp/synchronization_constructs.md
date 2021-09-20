@@ -9,6 +9,7 @@ tutorial: "OpenMP"
 <br>
 
 Consider a simple example where two threads on two different processors are both trying to increment a variable x at the same time (assume x is initially 0):
+<br>
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
