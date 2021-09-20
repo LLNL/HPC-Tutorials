@@ -23,7 +23,6 @@ Workshops differ in how this is done. The instructor will go over this beforehan
 ## 2. Copy the example files
 
 1. In your home directory, create a subdirectory for the example codes and then cd to it.
-
 ```
     mkdir openMP
     cd  openMP 
@@ -154,6 +153,7 @@ You should notice the following files. ***Note:*** Most of these are simple exam
 </tbody>
 </table>
 
+<!---->
 4. When you get a clean compile, proceed.
 
 5. Run your hello executable and notice its output.
