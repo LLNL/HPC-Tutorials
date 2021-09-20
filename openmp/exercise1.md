@@ -132,7 +132,29 @@ Create a simple OpenMP program that does the following:
 
 Using your choice of compiler (see above section 4), compile your hello world OpenMP program. This may take several attempts if there are any code errors. For example:
 
-# TABLE
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-oqcz{background-color:#869AC3;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-oqcz">C:</th>
+    <th class="tg-oqcz">Fortran:</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:bold">icc -openmp omp_hello.c -o hello</span><br><span style="font-weight:bold">pgcc -mp omp_hello.c -o hello</span><br><span style="font-weight:bold">gcc -fopenmp omp_hello.c -o hello</span><br></td>
+    <td class="tg-0lax"><span style="font-weight:bold">ifort -openmp omp_hello.f -o hello</span><br><span style="font-weight:bold">pgf90 -mp omp_hello.f -o hello</span><br><span style="font-weight:bold">gfortran -fopenmp omp_hello.f -o hello</span><br></td>
+  </tr>
+</tbody>
+</table>
 
 When you get a clean compile, proceed.
 
