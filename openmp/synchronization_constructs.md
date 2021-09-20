@@ -6,6 +6,8 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 tutorial: "OpenMP"
 ---
 
+<br>
+
 Consider a simple example where two threads on two different processors are both trying to increment a variable x at the same time (assume x is initially 0):
 
 <style type="text/css">
@@ -39,6 +41,8 @@ Consider a simple example where two threads on two different processors are both
   </tr>
 </tbody>
 </table>
+
+<br><br>
 
 One possible execution sequence:
 1. Thread 1 loads the value of x into register A.
