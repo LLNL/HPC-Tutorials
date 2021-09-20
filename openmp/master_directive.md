@@ -16,28 +16,20 @@ There is no implied barrier associated with this directive
 
 ### Fortran
 
-```	
-!$OMP MASTER
-
-   block
-
-!$OMP END MASTER
-```
-
 <pre>
 !$OMP MASTER
 
    <i>block</i>
 
 !$OMP END MASTER
-</pre>>
+</pre>
 
 ### C/C++	
-```
-#pragma omp master  newline
+<pre>
+#pragma omp master <i> newline </i>
 
-   structured_block
-```
+ <i>  structured_block </i>
+</pre>
 
 ## Restrictions:
 
