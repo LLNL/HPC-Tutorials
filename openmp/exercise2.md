@@ -62,7 +62,7 @@ This example performs a matrix multiple by distributing the iterations of the op
 	icc -openmp omp_mm.c -o matmult 
 	matmult
 ```
-####Fortran:
+#### Fortran:
 ```
 	ifort -openmp omp_mm.f -o matmult
 	matmult
@@ -71,11 +71,9 @@ This example performs a matrix multiple by distributing the iterations of the op
 2. Review the output. It shows which thread did each iteration and the final result matrix.
 
 3. Run the program again, however this time sort the output to clearly see which threads execute which iterations:
-
 ```
 matmult | sort | grep Thread
 ```
-
 Do the loop iterations match the SCHEDULE(STATIC,CHUNK) directive for the matrix multiple loop in the code?
 
 ## 4. Review / Compile / Run the workshare2 example code
@@ -83,13 +81,11 @@ Do the loop iterations match the SCHEDULE(STATIC,CHUNK) directive for the matrix
 This example demonstrates use of the OpenMP SECTIONS work-sharing construct Note how the PARALLEL region is divided into separate sections, each of which will be executed by one thread.
 
 1. As before, compile and execute the program after reviewing it. For example:
-
 #### C:	
 ```
     icc -openmp omp_workshare2.c -o workshare2 
     workshare2
 ```
-
 #### Fortran:
 ```
     ifort -openmp omp_workshare2.f -o workshare2
