@@ -26,6 +26,7 @@ tutorial: "OpenMP"
         4. [SINGLE Directive](single_directive)
     7. [Combined Parallel Work-Sharing Constructs](combined-parallel-work-sharing)
     8. [TASK Construct](task_construct)
+    9. [Exercise 2](exercise2)
 
 [Data Scope Attribute Clauses](data_scope)
 [Environment Variables](env_vars)
