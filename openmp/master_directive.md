@@ -6,7 +6,7 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 tutorial: "OpenMP"
 ---
 
-##Purpose:
+## Purpose:
 
 The MASTER directive specifies a region that is to be executed only by the master thread of the team. All other threads on the team skip this section of code
 
@@ -23,6 +23,14 @@ There is no implied barrier associated with this directive
 
 !$OMP END MASTER
 ```
+
+<pre>
+!$OMP MASTER
+
+   <i>block</i>
+
+!$OMP END MASTER
+</pre>>
 
 ### C/C++	
 ```
