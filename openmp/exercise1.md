@@ -154,14 +154,16 @@ You should notice the following files. ***Note:*** Most of these are simple exam
 </table>
 
 <!---->
-4. When you get a clean compile, proceed.
+4\. When you get a clean compile, proceed.
 
-5. Run your hello executable and notice its output.
+5\. Run your hello executable and notice its output.
 	* Is it what you expected? As a comparison, you can compile and run the provided omp_hello.c or omp_hello.f example program.
 	* How many threads were created? By default, the Intel and GNU compilers will create 1 thread for each core. The PGI compiler will create only 1 thread total.
 Notes:
 	* For the remainder of this exercise, you can use the compiler command of your choice unless indicated otherwise.
 	* Compilers will differ in which warnings they issue, but all can be ignored for this exercise. Errors are different, of course.
+
+test
 
 ## 6. Vary the number of threads and re-run Hello World
 
