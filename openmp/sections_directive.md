@@ -1,0 +1,166 @@
+---
+layout: tutorial_page
+title: "OpenMP Directives: Work-Sharing Constructs: SECTIONS Directive"
+release_number: UCRL-MI-133316
+author: Blaise Barney, Lawrence Livermore National Laboratory
+tutorial: "OpenMP"
+---
+
+## Purpose:
+
+The SECTIONS directive is a non-iterative work-sharing construct. It specifies that the enclosed section(s) of code are to be divided among the threads in the team.
+
+Independent SECTION directives are nested within a SECTIONS directive. Each SECTION is executed once by a thread in the team. Different sections may be executed by different threads. It is possible for a thread to execute more than one section if it is quick enough and the implementation permits such.
+
+## Format:
+
+### Fortran:
+
+```
+!$OMP SECTIONS [clause ...] 
+               PRIVATE (list) 
+               FIRSTPRIVATE (list) 
+               LASTPRIVATE (list) 
+               REDUCTION (operator | intrinsic : list) 
+
+!$OMP  SECTION 
+
+   block
+
+!$OMP  SECTION 
+
+    block 
+
+!$OMP END SECTIONS  [ NOWAIT ]
+```
+
+### C/C++:
+
+```
+#pragma omp sections [clause ...]  newline 
+                     private (list) 
+                     firstprivate (list) 
+                     lastprivate (list) 
+                     reduction (operator: list) 
+                     nowait
+  {
+
+  #pragma omp section   newline 
+
+     structured_block
+
+  #pragma omp section   newline 
+
+     structured_block
+
+  }
+```
+
+## Clauses:
+
+There is an implied barrier at the end of a SECTIONS directive, unless the NOWAIT/nowait clause is used.
+Clauses are described in detail later, in the [Data Scope Attribute Clauses section](data_scope.md).
+
+## Questions:
+
+<details>
+  <summary>	What happens if the number of threads and the number of SECTIONs are different? More threads than SECTIONs? Less threads than SECTIONs?</summary>
+  
+#### ANSWER: 
+
+If there are more threads than sections, some threads will not execute a section and some will.  If there are more sections than threads, the implementation defines how the extra sections are executed.
+</details>
+
+ <details>
+  <summary>	Which thread executes which SECTION? </summary>
+  
+#### ANSWER: 
+
+It is up to the implementation to decide which threads will execute a section and which threads will not, and it can vary from execution to execution.
+</details>
+
+## Restrictions:
+
+It is illegal to branch (goto) into or out of section blocks.
+
+SECTION directives must occur within the lexical extent of an enclosing SECTIONS directive (no orphan SECTIONs).
+
+## Example: SECTIONS Directive
+
+Simple program demonstrating that different blocks of work will be done by different threads.
+
+### Fortran - SECTIONS Directive Example
+
+```
+      PROGRAM VEC_ADD_SECTIONS
+
+      INTEGER N, I
+      PARAMETER (N=1000)
+      REAL A(N), B(N), C(N), D(N)
+
+!     Some initializations
+      DO I = 1, N
+        A(I) = I * 1.5
+        B(I) = I + 22.35
+      ENDDO
+
+!$OMP PARALLEL SHARED(A,B,C,D), PRIVATE(I)
+
+!$OMP SECTIONS
+
+!$OMP SECTION
+      DO I = 1, N
+         C(I) = A(I) + B(I)
+      ENDDO
+
+!$OMP SECTION
+      DO I = 1, N
+         D(I) = A(I) * B(I)
+      ENDDO
+
+!$OMP END SECTIONS NOWAIT
+
+!$OMP END PARALLEL
+
+      END
+```
+
+### C/C++ - sections Directive Example
+
+```
+#include <omp.h>
+#define N     1000
+
+main ()
+{
+
+int i;
+float a[N], b[N], c[N], d[N];
+
+/* Some initializations */
+for (i=0; i < N; i++) {
+  a[i] = i * 1.5;
+  b[i] = i + 22.35;
+  }
+
+#pragma omp parallel shared(a,b,c,d) private(i)
+  {
+
+  #pragma omp sections nowait
+    {
+
+    #pragma omp section
+    for (i=0; i < N; i++)
+      c[i] = a[i] + b[i];
+
+    #pragma omp section
+    for (i=0; i < N; i++)
+      d[i] = a[i] * b[i];
+
+    }  /* end of sections */
+
+  }  /* end of parallel section */
+
+}
+```
+
