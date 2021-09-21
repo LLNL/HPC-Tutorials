@@ -30,7 +30,7 @@ OpenMP compiler directives are used for various purposes:
 
 Compiler directives have the following syntax:
 
-`sentinel       directive-name      [clause, ...]`
+<pre><i>sentinel       directive-name      [clause, ...]</i></pre>
 
 For example:
 
@@ -150,73 +150,73 @@ OpenMP environment variables are discussed in the [Environment Variables](env_va
 
 ### Fortran - General Code Structure
 
-```
+<pre>
        PROGRAM HELLO
 
        INTEGER VAR1, VAR2, VAR3
 
-       Serial code 
+<i>       Serial code 
              .
              .
              .
 
        Beginning of parallel section. Fork a team of threads. 
-       Specify variable scoping 
+       Specify variable scoping</i> 
 
-!$OMP PARALLEL PRIVATE(VAR1, VAR2) SHARED(VAR3)
+<b>!$OMP PARALLEL PRIVATE(VAR1, VAR2) SHARED(VAR3)
 
-       Parallel section executed by all threads 
+       <i>Parallel section executed by all threads 
                  .
        Other OpenMP directives
                  .
        Run-time Library calls
                  .
-       All threads join master thread and disband 
+       All threads join master thread and disband </i>
 
-!$OMP END PARALLEL
-
+!$OMP END PARALLEL</b>
+<i>
        Resume serial code 
              .
              .
              .
-
+</i>
        END
-```
+</pre>
 
 ### C / C++ - General Code Structure
 
-```
-#include <omp.h>
+<pre>
+<b>#include <omp.h> </b>
 
 main ()  {
 
 int var1, var2, var3;
 
-Serial code 
+<i>Serial code 
       .
       .
       .
 
 Beginning of parallel section. Fork a team of threads.
-Specify variable scoping 
+Specify variable scoping</i> 
 
-#pragma omp parallel private(var1, var2) shared(var3)
+<b>#pragma omp parallel private(var1, var2) shared(var3)
 {
 
-Parallel section executed by all threads 
+<i>Parallel section executed by all threads 
                  .
 Other OpenMP directives
                  .
 Run-time Library calls
                  .
-All threads join master thread and disband 
+All threads join master thread and disband</i></b>
 
  }  
 
-Resume serial code 
+<i>Resume serial code 
       .
       .
       .
-
+</i>
  }
 ```
