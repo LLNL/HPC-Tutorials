@@ -14,38 +14,38 @@ The DO / for directive specifies that the iterations of the loop immediately fol
 
 ### Fortran:
 
-```
-!$OMP DO [clause ...] 
-         SCHEDULE (type [,chunk]) 
+<pre>
+!$OMP DO <i>[clause ...] </i>
+         SCHEDULE <i>(type [,chunk]) </i>
          ORDERED 
-         PRIVATE (list) 
-         FIRSTPRIVATE (list) 
-         LASTPRIVATE (list) 
-         SHARED (list) 
-         REDUCTION (operator | intrinsic : list) 
-         COLLAPSE (n) 
+         PRIVATE <i>(list) </i>
+         FIRSTPRIVATE <i>(list) </i>
+         LASTPRIVATE <i>(list) </i>
+         SHARED <i>(list) </i>
+         REDUCTION <i>(operator | intrinsic : list) </i>
+         COLLAPSE <i>(n) 
 
-   do_loop
+   do_loop</i>
 
 !$OMP END DO  [ NOWAIT ]
-```
+</pre>
 
 ### C/C++:
 
-```
-#pragma omp for [clause ...]  newline 
-                schedule (type [,chunk]) 
+<pre>
+#pragma omp for <i>[clause ...]  newline </i>
+                schedule <i>(type [,chunk]) </i>
                 ordered
-                private (list) 
-                firstprivate (list) 
-                lastprivate (list) 
-                shared (list) 
-                reduction (operator: list) 
-                collapse (n) 
+                private <i>(list) </i>
+                firstprivate <i>(list) </i>
+                lastprivate <i>(list) </i>
+                shared <i>(list) </i>
+                reduction <i>(operator: list)</i> 
+                collapse <i>(n) </i>
                 nowait 
 
-   for_loop
-```
+   <i>for_loop</i>
+</pre>
 
 ## Clauses:
 
@@ -116,7 +116,7 @@ Simple vector-add program
 
 ### Fortran - DO Directive Example
 
-```
+<pre>
       PROGRAM VEC_ADD_DO
 
       INTEGER N, CHUNKSIZE, CHUNK, I
@@ -131,23 +131,23 @@ Simple vector-add program
       ENDDO
       CHUNK = CHUNKSIZE
         
-!$OMP PARALLEL SHARED(A,B,C,CHUNK) PRIVATE(I)
+<b>!$OMP PARALLEL SHARED(A,B,C,CHUNK) PRIVATE(I)</b>
 
-!$OMP DO SCHEDULE(DYNAMIC,CHUNK)
+<b>!$OMP DO SCHEDULE(DYNAMIC,CHUNK)</b>
       DO I = 1, N
          C(I) = A(I) + B(I)
       ENDDO
-!$OMP END DO NOWAIT
+<b>!$OMP END DO NOWAIT</b>
 
-!$OMP END PARALLEL
+<b>!$OMP END PARALLEL</b>
 
       END
-```
+</pre>
 
 ### C/C++ - for Directive Example
 
-```
-#include <omp.h>
+<pre>
+<b>#include &lt;omp.h&gt;</b>
 #define CHUNKSIZE 100
 #define N     1000
 
@@ -162,14 +162,14 @@ for (i=0; i < N; i++)
   a[i] = b[i] = i * 1.0;
 chunk = CHUNKSIZE;
 
-#pragma omp parallel shared(a,b,c,chunk) private(i)
+<b>#pragma omp parallel shared(a,b,c,chunk) private(i)</b>
   {
 
-  #pragma omp for schedule(dynamic,chunk) nowait
+<b>  #pragma omp for schedule(dynamic,chunk) nowait</b>
   for (i=0; i < N; i++)
     c[i] = a[i] + b[i];
 
   }  /* end of parallel section */
 
 }
-```
+</pre>
