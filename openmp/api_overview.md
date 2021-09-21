@@ -185,8 +185,7 @@ OpenMP environment variables are discussed in the [Environment Variables](env_va
 
 ### C / C++ - General Code Structure
 
-<pre>
-<b>#include &lt;omp.h&gt;</b>
+<pre><b>#include &lt;omp.h&gt;</b>
 
 main ()  {
 
