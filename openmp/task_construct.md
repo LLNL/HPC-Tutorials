@@ -20,37 +20,37 @@ Also see the OpenMP 3.1 documentation for the associated taskyield and taskwait 
 
 ### Fortran:
 
-```
-!$OMP TASK [clause ...] 
-             IF (scalar logical expression) 
-             FINAL (scalar logical expression) 
+<pre>
+!$OMP TASK <i>[clause ...] </i>
+             IF <i>(scalar logical expression)</i> 
+             FINAL <i>(scalar logical expression) </i>
              UNTIED
              DEFAULT (PRIVATE | FIRSTPRIVATE | SHARED | NONE)
              MERGEABLE
-             PRIVATE (list) 
-             FIRSTPRIVATE (list) 
-             SHARED (list) 
+             PRIVATE <i>(list)</i> 
+             FIRSTPRIVATE <i>(list)</i> 
+             SHARED <i>(list)</i> 
 
-   block
+   <i>block</i>
 
 !$OMP END TASK
-```
+</pre>
 
 ### C/C++:
 
-```
-#pragma omp task [clause ...]  newline 
-                   if (scalar expression) 
-                   final (scalar expression) 
+<pre>
+#pragma omp task <i>[clause ...]  newline </i>
+                   if <i>(scalar expression) </i>
+                   final <i>(scalar expression) </i>
                    untied
                    default (shared | none)
                    mergeable
-                   private (list) 
-                   firstprivate (list) 
-                   shared (list) 
+                   private <i>(list) </i>
+                   firstprivate <i>(list) </i>
+                   shared <i>(list) 
 
-     structured_block
-```
+     structured_block</i>
+</pre>
 
 ## Clauses and Restrictions:
 
