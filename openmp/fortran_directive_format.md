@@ -71,10 +71,10 @@ tutorial: "OpenMP"
 
 * Several Fortran OpenMP directives come in pairs and have the form shown below. The "end" directive is optional but advised for readability.
 
-```
-!$OMP  <directive> 
+<pre>
+!$OMP  <i> &lt;directive &gt; 
 
-    [ structured block of code ]
+    [ structured block of code ]</i> 
 
-!$OMP end  <directive>
-```
+!$OMP end  <i> &lt;directive &gt; </i>
+</pre>
