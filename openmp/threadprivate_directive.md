@@ -13,9 +13,7 @@ The THREADPRIVATE directive is used to make global file scope variables (C/C++) 
 ## Format:
 
 ### Fortran
-<pre>	
-!$OMP THREADPRIVATE (/cb/, ...) <i> cb is the name of a common block </i>
-</pre>
+<pre>!$OMP THREADPRIVATE (/cb/, ...) <i> cb is the name of a common block </i></pre>
 
 ### C/C++	
 <pre>
@@ -42,30 +40,23 @@ C     Explicitly turn off dynamic threads
       CALL OMP_SET_DYNAMIC(.FALSE.)
  
       PRINT *, '1st Parallel Region:'
-<b>      
-!$OMP PARALLEL PRIVATE(B, TID) 
-</b>
+<b>!$OMP PARALLEL PRIVATE(B, TID) </b>
       TID = OMP_GET_THREAD_NUM()
       A = TID
       B = TID
       X = 1.1 * TID + 1.0
       PRINT *, 'Thread',TID,':   A,B,X=',A,B,X
-<b>
-!$OMP END PARALLEL 
-</b>
+<b>!$OMP END PARALLEL </b>
  
       PRINT *, '************************************'
       PRINT *, 'Master thread doing serial work here'
       PRINT *, '************************************'
  
       PRINT *, '2nd Parallel Region: '
-<b>
-!$OMP PARALLEL PRIVATE(TID) 
-</b>
+<b>!$OMP PARALLEL PRIVATE(TID) </b>
       TID = OMP_GET_THREAD_NUM()
       PRINT *, 'Thread',TID,':   A,B,X=',A,B,X
-<b>!$OMP END PARALLEL 
-</b>
+<b>!$OMP END PARALLEL </b>
  
       END
 </pre>
@@ -103,8 +94,7 @@ float x;
 main ()  {
  
 /* Explicitly turn off dynamic threads */
-<b>
-  omp_set_dynamic(0);</b> 
+<b>  omp_set_dynamic(0);</b> 
 
   printf("1st Parallel Region:\n");
 <b>#pragma omp parallel private(b,tid)</b>
