@@ -14,39 +14,39 @@ A parallel region is a block of code that will be executed by multiple threads. 
 
 ### Fortran
 
-```
-!$OMP PARALLEL [clause ...] 
-               IF (scalar_logical_expression) 
-               PRIVATE (list) 
-               SHARED (list) 
+<pre>
+!$OMP PARALLEL <i>[clause ...] </i>
+               IF <i>(scalar_logical_expression) </i>
+               PRIVATE <i>(list) </i>
+               SHARED <i>(list) </i>
                DEFAULT (PRIVATE | FIRSTPRIVATE | SHARED | NONE) 
-               FIRSTPRIVATE (list) 
-               REDUCTION (operator: list) 
-               COPYIN (list) 
-               NUM_THREADS (scalar-integer-expression)
+               FIRSTPRIVATE <i>(list) </i>
+               REDUCTION <i>(operator: list) </i>
+               COPYIN <i>(list) </i>
+               NUM_THREADS <i>(scalar-integer-expression)</i>
 
-   block
+   <i>block</i>
 
 !$OMP END PARALLEL
-```
+</pre>
 
 ### C/C++
 
 
-```
-#pragma omp parallel [clause ...]  newline 
-                     if (scalar_expression) 
-                     private (list) 
-                     shared (list) 
+<pre>
+#pragma omp parallel <i>[clause ...]  newline </i>
+                     if <i>(scalar_expression) </i>
+                     private <i>(list)</i>
+                     shared <i>(list) </i>
                      default (shared | none) 
-                     firstprivate (list) 
-                     reduction (operator: list) 
-                     copyin (list) 
-                     num_threads (integer-expression)
+                     firstprivate <i>(list)</i> 
+                     reduction <i>(operator: list) </i>
+                     copyin <i>(list) </i>
+                     num_threads <i>(integer-expression)</i>
 
  
-   structured_block
-```
+   structured_block</i>
+</pre>
 
 ## Notes
 
@@ -103,58 +103,58 @@ The remaining clauses are described in detail later, in the [Data Scope Attribut
 
 ### Fortran
 
-```
+<pre>
        PROGRAM HELLO
 
-       INTEGER NTHREADS, TID, OMP_GET_NUM_THREADS, OMP_GET_THREAD_NUM
+       INTEGER NTHREADS, TID, <b>OMP_GET_NUM_THREADS, OMP_GET_THREAD_NUM</b>
 
       # Fork a team of threads with each thread having a private TID variable
-!$OMP PARALLEL PRIVATE(TID)
+<b>!$OMP PARALLEL PRIVATE(TID)</b>
 
       # Obtain and print thread id
-      TID = OMP_GET_THREAD_NUM()
+      TID = <b>OMP_GET_THREAD_NUM()</b>
       PRINT *, 'Hello World from thread = ', TID
 
       # Only master thread does this
       IF (TID .EQ. 0) THEN
-        NTHREADS = OMP_GET_NUM_THREADS()
+        NTHREADS = <b>OMP_GET_NUM_THREADS()</b>
         PRINT *, 'Number of threads = ', NTHREADS
       END IF
 
       # All threads join master thread and disband
-!$OMP END PARALLEL
+<b>!$OMP END PARALLEL</b>
 
        END
-```
+</pre>
 
 ### C/C++
 
-```
-#include <omp.h>
+<pre>
+<b>#include &lt;omp.h&gt;</b>
 
 main ()  {
 
 int nthreads, tid;
 
 /* Fork a team of threads with each thread having a private tid variable */
-#pragma omp parallel private(tid)
+<b>#pragma omp parallel private(tid)</b>
   {
 
   /* Obtain and print thread id */
-  tid = omp_get_thread_num();
+  tid = <b>omp_get_thread_num();</b>
   printf("Hello World from thread = %d\n", tid);
 
   /* Only master thread does this */
   if (tid == 0) 
     {
-    nthreads = omp_get_num_threads();
+    nthreads = <b>omp_get_num_threads();</b>
     printf("Number of threads = %d\n", nthreads);
     }
 
   }  /* All threads join master thread and terminate */
 
 }
-```
+</pre>
 
 
 
