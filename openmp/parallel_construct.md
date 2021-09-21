@@ -42,7 +42,7 @@ A parallel region is a block of code that will be executed by multiple threads. 
                      firstprivate <i>(list)</i> 
                      reduction <i>(operator: list) </i>
                      copyin <i>(list) </i>
-                     num_threads <i>(integer-expression)</i>
+                     num_threads <i>(integer-expression)
 
  
    structured_block</i>
