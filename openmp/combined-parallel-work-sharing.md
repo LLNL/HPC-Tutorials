@@ -19,7 +19,7 @@ An example using the PARALLEL DO / parallel for combined directive is shown belo
 
 ## Fortran - PARALLEL DO Directive Example
 
-```
+<pre>
       PROGRAM VECTOR_ADD
 
       INTEGER N, I, CHUNKSIZE, CHUNK
@@ -34,23 +34,23 @@ An example using the PARALLEL DO / parallel for combined directive is shown belo
       ENDDO
       CHUNK = CHUNKSIZE
              
-!$OMP PARALLEL DO
+<b>!$OMP PARALLEL DO
 !$OMP& SHARED(A,B,C,CHUNK) PRIVATE(I) 
-!$OMP& SCHEDULE(STATIC,CHUNK)
+!$OMP& SCHEDULE(STATIC,CHUNK)</b>
 
       DO I = 1, N
          C(I) = A(I) + B(I)
       ENDDO
 
-!$OMP END PARALLEL DO
+<b>!$OMP END PARALLEL DO</b>
 
       END
-```
+</pre>
 
 ## C/C++ - parallel for Directive Example
 
-```
-#include <omp.h>
+<pre>
+<b>#include &lt;omp.h&gt;</b>
 #define N       1000
 #define CHUNKSIZE   100
 
@@ -64,10 +64,10 @@ for (i=0; i < N; i++)
   a[i] = b[i] = i * 1.0;
 chunk = CHUNKSIZE;
 
-#pragma omp parallel for \
+<b>#pragma omp parallel for \
    shared(a,b,c,chunk) private(i) \
-   schedule(static,chunk)
+   schedule(static,chunk)</b>
   for (i=0; i < n; i++)
     c[i] = a[i] + b[i];
 }
-```
+</pre>
