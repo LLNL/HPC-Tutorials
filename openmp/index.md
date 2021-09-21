@@ -35,6 +35,7 @@ tutorial: "OpenMP"
         1. [ATOMIC Directive](atomic_directive)
         1. [FLUSH Directive](flush_directive)
         1. [ORDERED Directive](ordered_directive)
+    11. [THREADPRIVATE Directive](threadprivate_directive)
 
 
 [Data Scope Attribute Clauses](data_scope)
