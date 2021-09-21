@@ -27,13 +27,13 @@ See the OpenMP API documentation for additional information, particularly for wh
 
 ### Fortran:
 
-```
+<pre>
 !$OMP WORKSHARE
 
-   structured block
+   <i>structured block</i>
 
 !$OMP END WORKSHARE [ NOWAIT ]
-```
+</pre>
 
 ## Restrictions:
 
@@ -47,7 +47,7 @@ Simple array and scalar assigments shared by the team of threads. A unit of work
 
 ### Fortran:
 
-```
+<pre>
       PROGRAM WORKSHARE
  
       INTEGER N, I, J
@@ -61,17 +61,16 @@ Simple array and scalar assigments shared by the team of threads. A unit of work
           BB(J,I) = J + 1.0
         ENDDO
       ENDDO
- 
-!$OMP PARALLEL SHARED(AA,BB,CC,DD,FIRST,LAST)
+ <b>!$OMP PARALLEL SHARED(AA,BB,CC,DD,FIRST,LAST)
 
-!$OMP WORKSHARE
+!$OMP WORKSHARE</b>
       CC = AA * BB
       DD = AA + BB
       FIRST = CC(1,1) + DD(1,1)
       LAST = CC(N,N) + DD(N,N)
-!$OMP END WORKSHARE NOWAIT
+<b>!$OMP END WORKSHARE NOWAIT
 
-!$OMP END PARALLEL
+!$OMP END PARALLEL</b>
  
       END
-```
+</pre>
