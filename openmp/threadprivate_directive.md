@@ -82,9 +82,9 @@ C     Explicitly turn off dynamic threads
 ### C/C++ - threadprivate Directive Example
 
 <pre>
-<b>
+
 #include <omp.h> 
-</b> 
+ 
 int  a, b, i, tid;
 float x;
 
