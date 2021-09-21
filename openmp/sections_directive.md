@@ -16,45 +16,45 @@ Independent SECTION directives are nested within a SECTIONS directive. Each SECT
 
 ### Fortran:
 
-```
-!$OMP SECTIONS [clause ...] 
-               PRIVATE (list) 
-               FIRSTPRIVATE (list) 
-               LASTPRIVATE (list) 
-               REDUCTION (operator | intrinsic : list) 
+<pre>
+!$OMP SECTIONS <i>[clause ...] </i>
+               PRIVATE <i>(list) </i>
+               FIRSTPRIVATE <i>(list)</i> 
+               LASTPRIVATE <i>(list)</i> 
+               REDUCTION <i>(operator | intrinsic : list)</i> 
 
 !$OMP  SECTION 
 
-   block
+   <i>block</i>
 
 !$OMP  SECTION 
 
-    block 
+    <i>block</i> 
 
 !$OMP END SECTIONS  [ NOWAIT ]
-```
+</pre>
 
 ### C/C++:
 
-```
-#pragma omp sections [clause ...]  newline 
-                     private (list) 
-                     firstprivate (list) 
-                     lastprivate (list) 
-                     reduction (operator: list) 
+<pre>
+#pragma omp sections <i>[clause ...]  newline </i>
+                     private <i>(list) </i>
+                     firstprivate <i>(list)</i> 
+                     lastprivate <i>(list) </i>
+                     reduction <i>(operator: list)</i> 
                      nowait
   {
 
-  #pragma omp section   newline 
+  #pragma omp section   <i>newline 
 
-     structured_block
+     structured_block</i>
 
-  #pragma omp section   newline 
+  #pragma omp section   <i>newline 
 
-     structured_block
+     structured_block</i>
 
   }
-```
+</pre>
 
 ## Clauses:
 
@@ -91,7 +91,7 @@ Simple program demonstrating that different blocks of work will be done by diffe
 
 ### Fortran - SECTIONS Directive Example
 
-```
+<pre>
       PROGRAM VEC_ADD_SECTIONS
 
       INTEGER N, I
@@ -104,31 +104,31 @@ Simple program demonstrating that different blocks of work will be done by diffe
         B(I) = I + 22.35
       ENDDO
 
-!$OMP PARALLEL SHARED(A,B,C,D), PRIVATE(I)
+<b>!$OMP PARALLEL SHARED(A,B,C,D), PRIVATE(I)
 
 !$OMP SECTIONS
 
-!$OMP SECTION
+!$OMP SECTION</b>
       DO I = 1, N
          C(I) = A(I) + B(I)
       ENDDO
 
-!$OMP SECTION
+<b>!$OMP SECTION</b>
       DO I = 1, N
          D(I) = A(I) * B(I)
       ENDDO
 
-!$OMP END SECTIONS NOWAIT
+<b>!$OMP END SECTIONS NOWAIT
 
-!$OMP END PARALLEL
+!$OMP END PARALLEL</b>
 
       END
-```
+</pre>
 
 ### C/C++ - sections Directive Example
 
-```
-#include <omp.h>
+<pre>
+<b>#include &lt;omp.h&gt;</b>
 #define N     1000
 
 main ()
@@ -143,17 +143,17 @@ for (i=0; i < N; i++) {
   b[i] = i + 22.35;
   }
 
-#pragma omp parallel shared(a,b,c,d) private(i)
+<b>#pragma omp parallel shared(a,b,c,d) private(i)</b>
   {
 
-  #pragma omp sections nowait
+  <b>#pragma omp sections nowait</b>
     {
 
-    #pragma omp section
+<b>    #pragma omp section</b>
     for (i=0; i < N; i++)
       c[i] = a[i] + b[i];
 
-    #pragma omp section
+<b>    #pragma omp section</b>
     for (i=0; i < N; i++)
       d[i] = a[i] * b[i];
 
@@ -162,5 +162,5 @@ for (i=0; i < N; i++) {
   }  /* end of parallel section */
 
 }
-```
+</pre>
 
