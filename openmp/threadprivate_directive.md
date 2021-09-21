@@ -83,13 +83,12 @@ C     Explicitly turn off dynamic threads
 
 <pre>
 
-#include <omp.h> 
+<b>#include &lt;omp.h&gt;</b>
  
 int  a, b, i, tid;
 float x;
 
-<b> 
-#pragma omp threadprivate(a, x)
+<b> #pragma omp threadprivate(a, x)
 </b> 
 main ()  {
  
