@@ -16,26 +16,26 @@ May be useful when dealing with sections of code that are not thread safe (such 
 
 ### Fortran:
 
-```
-!$OMP SINGLE [clause ...] 
-             PRIVATE (list) 
-             FIRSTPRIVATE (list) 
+<pre>
+!$OMP SINGLE <i>[clause ...]</i> 
+             PRIVATE <i>(list)</i> 
+             FIRSTPRIVATE <i>(list) 
 
-   block
+   block</i>
 
 !$OMP END SINGLE [ NOWAIT ]
-```
+</pre>
 
 ### C/C++:
 
-```
-#pragma omp single [clause ...]  newline 
-                   private (list) 
-                   firstprivate (list) 
+<pre>
+#pragma omp single <i>[clause ...]  newline </i>
+                   private <i>(list) </i>
+                   firstprivate <i>(list)</i> 
                    nowait
 
-     structured_block
-```
+     <i>structured_block</i>
+</pre>
 
 ## Clauses:
 
