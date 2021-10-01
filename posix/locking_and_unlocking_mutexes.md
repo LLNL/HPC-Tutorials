@@ -23,7 +23,7 @@ The `pthread_mutex_lock()` routine is used by a thread to acquire a lock on the 
 * If the mutex was already unlocked
 * If the mutex is owned by another thread
 
-There is nothing "magical" about mutexes...in fact they are akin to a "gentlemen's agreement" between participating threads. It is up to the code writer to insure that the necessary threads all make the the mutex lock and unlock calls correctly. The following scenario demonstrates a logical error:
+There is nothing "magical" about mutexes...in fact they are akin to a "gentlemen's agreement" between participating threads. It is up to the code writer to ensure that the necessary threads all make the the mutex lock and unlock calls correctly. The following scenario demonstrates a logical error:
 
 <br></br>
 
