@@ -49,7 +49,7 @@ All threads have access to the same global, shared memory.
 
 Threads also have their own private data.
 
-Programmers are responsible for synchronizing access (protecting) globally shared data.
+Programmers are responsible for synchronizing (and protecting) access to globally shared data.
 
 ![sharedMemoryModel](images/sharedMemoryModel.gif)
 
