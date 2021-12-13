@@ -134,3 +134,11 @@ Thread 3:   a,b,x= 3 0 4.300000
 Thread 1:   a,b,x= 1 0 2.100000
 Thread 2:   a,b,x= 2 0 3.200000
 ```
+
+## Restrictions:
+
+* Data in THREADPRIVATE objects is guaranteed to persist only if the dynamic threads mechanism is "turned off" and the number of threads in different parallel regions remains constant. The default setting of dynamic threads is undefined.
+
+* The THREADPRIVATE directive must appear after every declaration of a thread private variable/common block.
+
+* Fortran: only named common blocks can be made THREADPRIVATE.
