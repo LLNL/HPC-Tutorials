@@ -36,9 +36,9 @@ tutorial: "OpenMP"
         1. [FLUSH Directive](flush_directive)
         1. [ORDERED Directive](ordered_directive)
     11. [THREADPRIVATE Directive](threadprivate_directive)
+    12. [Data Scope Attribute Clauses](data_scope)
 
 
-[Data Scope Attribute Clauses](data_scope)
 [Environment Variables](env_vars)
 [Run-Time Library Routines](run_time_routines)
 [Appendix A: Run-Time Library Routines](appendix_a)
