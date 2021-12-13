@@ -24,12 +24,12 @@ private (list)
 
 ## Notes:
 
-PRIVATE variables behave as follows:
+* PRIVATE variables behave as follows:
     * A new object of the same type is declared once for each thread in the team
     * All references to the original object are replaced with references to the new object
     * Variables declared PRIVATE should be assumed to be uninitialized for each thread
 
-Comparison between PRIVATE and THREADPRIVATE:
+* Comparison between PRIVATE and THREADPRIVATE:
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
