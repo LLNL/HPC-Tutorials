@@ -38,6 +38,8 @@ tutorial: "OpenMP"
     11. [THREADPRIVATE Directive](threadprivate_directive)
     12. [Data Scope Attribute Clauses](data_scope)
         1. [PRIVATE Clause](private_clause)
+        2. [SHARED Clause](shared_clause)
+        3. [DEFAULT Clause](default_clause)
 
 [Clauses/Directives Summary](clauses_directives_summary)
 [Environment Variables](env_vars)
