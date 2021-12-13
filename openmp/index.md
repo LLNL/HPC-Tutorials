@@ -40,6 +40,8 @@ tutorial: "OpenMP"
         1. [PRIVATE Clause](private_clause)
         2. [SHARED Clause](shared_clause)
         3. [DEFAULT Clause](default_clause)
+        4. [FIRSTPRIVATE Clause](firstprivate_clause)
+        5. [LASTPRIVATE Clause](lastprivate_clause)
 
 [Clauses/Directives Summary](clauses_directives_summary)
 [Environment Variables](env_vars)
