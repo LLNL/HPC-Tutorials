@@ -123,7 +123,7 @@ The REDUCTION clause is intended to be used on a region or work-sharing construc
 </thead>
 <tbody>
   <tr>
-    <td class="tg-4erg"><br>x = x operator expr <br>x = expr operator x (except subtraction) <br>x = intrinsic(x, expr) <br>x = intrinsic(expr, x)</td>
+    <td class="tg-4erg"><b><br>x = x operator expr <br>x = expr operator x <b>(except subtraction) <br>x = intrinsic(x, expr) <br>x = intrinsic(expr, x)</td>
     <td class="tg-4erg"><br>x = x op expr <br>x = expr op x (except subtraction) <br>x binop = expr <br>x++ <br>++x <br>x-- <br>--x</td>
   </tr>
   <tr>
