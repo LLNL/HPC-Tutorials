@@ -42,6 +42,7 @@ tutorial: "OpenMP"
         3. [DEFAULT Clause](default_clause)
         4. [FIRSTPRIVATE Clause](firstprivate_clause)
         5. [LASTPRIVATE Clause](lastprivate_clause)
+        6. [COPYIN Clause](copyin_clause)
 
 [Clauses/Directives Summary](clauses_directives_summary)
 [Environment Variables](env_vars)
