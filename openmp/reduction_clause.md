@@ -111,8 +111,8 @@ The REDUCTION clause is intended to be used on a region or work-sharing construc
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-4erg{border-color:inherit;font-style:italic;font-weight:bold;text-align:left;vertical-align:top}
-.tg .tg-vi1i{background-color:#98ABCE;border-color:inherit;font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-4erg{border-color:inherit;font-style:italic;text-align:left;vertical-align:top}
+.tg .tg-vi1i{background-color:#98ABCE;border-color:inherit;text-align:center;vertical-align:middle}
 </style>
 <table class="tg">
 <thead>
