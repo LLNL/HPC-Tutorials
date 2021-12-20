@@ -13,14 +13,14 @@ The FIRSTPRIVATE clause combines the behavior of the PRIVATE clause with automat
 ## Format:
 
 ### Fortran	
-```
-FIRSTPRIVATE (list)
-```
+<pre>
+FIRSTPRIVATE <i>(list)</i>
+</pre>
 
 ### C/C++	
-```
-firstprivate (list)
-```
+<pre>
+firstprivate <i>(list)</i>
+</pre>
 
 ## Notes:
 
