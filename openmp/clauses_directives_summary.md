@@ -14,12 +14,12 @@ The table below summarizes which clauses are accepted by which OpenMP directives
   overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-yaw4{font-size:24px;text-align:left;vertical-align:middle}
 .tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-hjji{font-size:24px;text-align:center;vertical-align:top}
 .tg .tg-fdm5{background-color:#98ABCE;font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-ygmq{font-size:24px;text-align:center;vertical-align:middle}
 .tg .tg-zffl{font-size:100%;font-weight:bold;text-align:left;vertical-align:top}
 .tg .tg-xq0d{background-color:#98ABCE;font-weight:bold;text-align:center;vertical-align:top}
-.tg .tg-84g4{font-size:24px;text-align:left;vertical-align:top}
 </style>
 <table class="tg">
 <thead>
@@ -39,111 +39,111 @@ The table below summarizes which clauses are accepted by which OpenMP directives
 <tbody>
   <tr>
     <td class="tg-1wig">IF</td>
-    <td class="tg-84g4"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-84g4"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
-    <td class="tg-84g4"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
+    <td class="tg-hjji"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-hjji"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
+    <td class="tg-hjji"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
   </tr>
   <tr>
     <td class="tg-1wig">PRIVATE</td>
-    <td class="tg-84g4"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
-    <td class="tg-84g4"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
-    <td class="tg-84g4"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
-    <td class="tg-84g4"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
-    <td class="tg-84g4"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
-    <td class="tg-84g4"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
+    <td class="tg-hjji"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
+    <td class="tg-hjji"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
+    <td class="tg-hjji"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
+    <td class="tg-hjji"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
+    <td class="tg-hjji"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
+    <td class="tg-hjji"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
   </tr>
   <tr>
     <td class="tg-zffl">SHARED</td>
-    <td class="tg-84g4"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-84g4">♦</td>
+    <td class="tg-hjji"><span style="font-weight:normal;font-style:normal;text-decoration:none">♦</span></td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-hjji">♦</td>
   </tr>
   <tr>
     <td class="tg-zffl">DEFAULT</td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-84g4">♦</td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-hjji">♦</td>
   </tr>
   <tr>
     <td class="tg-zffl">FIRSTPRIVATE</td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-84g4">♦</td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-hjji">♦</td>
   </tr>
   <tr>
     <td class="tg-zffl">LASTPRIVATE</td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-84g4">♦</td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-hjji">♦</td>
   </tr>
   <tr>
     <td class="tg-zffl">REDUCTION</td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-84g4">♦</td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-hjji">♦</td>
   </tr>
   <tr>
     <td class="tg-zffl">COPYIN</td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-84g4">♦</td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-hjji">♦</td>
   </tr>
   <tr>
     <td class="tg-zffl">COPYPRIVATE</td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-yaw4"> </td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-ygmq"> </td>
   </tr>
   <tr>
     <td class="tg-zffl">SCHEDULE</td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-yaw4"> </td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-ygmq"> </td>
   </tr>
   <tr>
     <td class="tg-zffl">ORDERED</td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-yaw4"> </td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-ygmq"> </td>
   </tr>
   <tr>
     <td class="tg-zffl">NOWAIT</td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-84g4">♦</td>
-    <td class="tg-yaw4"> </td>
-    <td class="tg-yaw4"> </td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-hjji">♦</td>
+    <td class="tg-ygmq"> </td>
+    <td class="tg-ygmq"> </td>
   </tr>
 </tbody>
 </table>
