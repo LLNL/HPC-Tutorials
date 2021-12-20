@@ -66,7 +66,7 @@ At the end of the parallel loop construct, all threads will add their values of 
 ### C / C++ - reduction clause example
 
 <pre>
-#include <omp.h>
+#include &ltomp.h&gt
 
 main ()  {
 
@@ -97,7 +97,6 @@ printf("Final result= %f\n",result);
 
 }
 
-</pre>
 </pre>
 
 ## Restrictions:
