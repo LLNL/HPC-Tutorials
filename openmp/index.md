@@ -46,10 +46,13 @@ tutorial: "OpenMP"
         7. [COPYPRIVATE Clause](copyprivate_clause)
         8. [REDUCTION Clause](reduction_clause)
     13. [Clauses/Directives Summary](clauses_directives_summary)
+    14. [Directive Binding and Nesting Rules](directive_binding_and_nesting)
+7. [Run-Time Library Routines](run_time_routines)
+8. [Environment Variables](env_vars)
+9. []()
+10. []()
+11. []()
+12. []()
+13. [Appendix A: Run-Time Library Routines](appendix_a)
 
-
-[Environment Variables](env_vars)
-[Run-Time Library Routines](run_time_routines)
-[Appendix A: Run-Time Library Routines](appendix_a)
-[Directive Binding and Nesting Rules](directive_binding_and_nesting)
 Once you have finished the tutorial, please complete our [evaluation form](https://hpc.llnl.gov/training/tutorials/evaluation-form)!
