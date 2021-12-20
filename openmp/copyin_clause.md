@@ -12,14 +12,14 @@ The COPYIN clause provides a means for assigning the same value to THREADPRIVATE
 ## Format:
 
 ### Fortran	
-```
-COPYIN (list)
-```
+<pre>
+COPYIN <i>(list)</i>
+</pre>
 
 ### C/C++	
-```
-copyin  (list)
-```
+<pre>
+copyin  <i>(list)</i>
+</pre>
 
 ## Notes:
 
