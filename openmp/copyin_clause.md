@@ -5,3 +5,23 @@ release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
 tutorial: "OpenMP"
 ---
+
+## Purpose:
+The COPYIN clause provides a means for assigning the same value to THREADPRIVATE variables for all threads in the team.
+
+## Format:
+
+### Fortran	
+```
+COPYIN (list)
+```
+
+### C/C++	
+```
+copyin  (list)
+```
+
+## Notes:
+
+List contains the names of variables to copy. In Fortran, the list can contain both the names of common blocks and named variables.
+The master thread variable is used as the copy source. The team threads are initialized with its value upon entry into the parallel construct.
