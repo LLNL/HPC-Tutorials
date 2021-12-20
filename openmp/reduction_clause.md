@@ -96,3 +96,39 @@ printf("Final result= %f\n",result);
 
 }
 </pre>
+
+## Restrictions:
+
+Variables in the list must be named scalar variables. They can not be array or structure type variables. They must also be declared SHARED in the enclosing context.
+
+Reduction operations may not be associative for real numbers.
+
+The REDUCTION clause is intended to be used on a region or work-sharing construct in which the reduction variable is used only in statements which have one of following forms:
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-4erg{border-color:inherit;font-style:italic;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-vi1i{background-color:#98ABCE;border-color:inherit;font-weight:bold;text-align:center;vertical-align:middle}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-vi1i"><span style="background-color:#98ABCE">Fortran</span></th>
+    <th class="tg-vi1i"><span style="background-color:#98ABCE">C / C++</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-4erg"><br>x = x operator expr <br>x = expr operator x (except subtraction) <br>x = intrinsic(x, expr) <br>x = intrinsic(expr, x)</td>
+    <td class="tg-4erg"><br>x = x op expr <br>x = expr op x (except subtraction) <br>x binop = expr <br>x++ <br>++x <br>x-- <br>--x</td>
+  </tr>
+  <tr>
+    <td class="tg-4erg">x is a scalar variable in the list <br>expr is a scalar expression that does not reference x <br>intrinsic is one of MAX, MIN, IAND, IOR, IEOR <br>operator is one of +, *, -, .AND., .OR., .EQV., .NEQV.</td>
+    <td class="tg-4erg">x is a scalar variable in the list <br>expr is a scalar expression that does not reference x <br>op is not overloaded, and is one of +, *, -, /, &amp;, ^, |, &amp;&amp;, || <br>binop is not overloaded, and is one of +, *, -, /, &amp;, ^, |</td>
+  </tr>
+</tbody>
+</table>
