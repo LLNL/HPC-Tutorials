@@ -13,14 +13,14 @@ The SHARED clause declares variables in its list to be shared among all threads 
 ## Format:
 
 ### Fortran	
-```
-SHARED (list)
-```
+<pre>
+SHARED <i>(list)</i>
+</pre>
 
 ### C/C++	
-```
-shared (list)
-```
+<pre>
+shared <i>(list)</i>
+</pre>
 
 ## Notes:
 
