@@ -13,14 +13,14 @@ The PRIVATE clause declares variables in its list to be private to each thread.
 ## Format:
 
 ### Fortran	
-```
-PRIVATE (list)
-```
+<pre>
+PRIVATE <i>(list)</i>
+</pre>
 
 ### C/C++	
-```
-private (list)
-```
+<pre>
+private <i>(list)</i>
+</pre>
 
 ## Notes:
 
