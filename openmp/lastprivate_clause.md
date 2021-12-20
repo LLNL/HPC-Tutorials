@@ -13,14 +13,14 @@ The LASTPRIVATE clause combines the behavior of the PRIVATE clause with a copy f
 ## Format:
 
 ### Fortran	
-```
-LASTPRIVATE (list)
-```
+<pre>
+LASTPRIVATE <i>(list)</i>
+</pre>
 
 ### C/C++	
-```
-lastprivate (list)
-```
+<pre>
+lastprivate <i>(list)</i>
+</pre>
 
 ## Notes:
 
