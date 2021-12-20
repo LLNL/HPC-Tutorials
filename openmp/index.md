@@ -43,8 +43,11 @@ tutorial: "OpenMP"
         4. [FIRSTPRIVATE Clause](firstprivate_clause)
         5. [LASTPRIVATE Clause](lastprivate_clause)
         6. [COPYIN Clause](copyin_clause)
+        7. [COPYPRIVATE Clause](copyprivate_clause)
+        8. [REDUCTION Clause](reduction_clause)
+    13. [Clauses/Directives Summary](clauses_directives_summary)
 
-[Clauses/Directives Summary](clauses_directives_summary)
+
 [Environment Variables](env_vars)
 [Run-Time Library Routines](run_time_routines)
 [Appendix A: Run-Time Library Routines](appendix_a)
