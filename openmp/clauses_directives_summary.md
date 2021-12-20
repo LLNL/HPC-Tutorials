@@ -6,7 +6,11 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 tutorial: "OpenMP"
 ---
 
+
+
 The table below summarizes which clauses are accepted by which OpenMP directives.
+
+
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -147,6 +151,8 @@ The table below summarizes which clauses are accepted by which OpenMP directives
   </tr>
 </tbody>
 </table>
+
+<br>
 
 The following OpenMP directives do not accept clauses:
 * MASTER
