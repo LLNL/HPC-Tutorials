@@ -15,10 +15,10 @@ tutorial: "OpenMP"
 ## Format:
 
 ### Fortran	
-```
-COPYPRIVATE (list)
-```
+<pre>
+COPYPRIVATE <i>(list)</i>
+</pre>
 ### C/C++	
-```
-copyprivate  (list)
-```
+<pre>
+copyprivate  <i>(list)</i>
+</pre>
