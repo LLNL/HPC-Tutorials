@@ -29,7 +29,7 @@ Iterations of the parallel loop will be distributed in equal sized blocks to eac
 
 At the end of the parallel loop construct, all threads will add their values of "result" to update the master thread's global copy.
 
-### Fortran - REDUCTION Clause Example
+### Fortran - REDUCTION clause example
 <pre>
        PROGRAM DOT_PRODUCT
 
@@ -63,7 +63,8 @@ At the end of the parallel loop construct, all threads will add their values of 
        END
 </pre>
 
-### C / C++ - reduction Clause Example
+### C / C++ - reduction clause example
+
 <pre>
 #include <omp.h>
 
@@ -95,6 +96,8 @@ for (i=0; i < n; i++)
 printf("Final result= %f\n",result);
 
 }
+
+</pre>
 </pre>
 
 ## Restrictions:
