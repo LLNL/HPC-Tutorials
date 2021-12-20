@@ -124,11 +124,11 @@ The REDUCTION clause is intended to be used on a region or work-sharing construc
 <tbody>
   <tr>
     <td class="tg-4erg"><b><br>x = x operator expr <br>x = expr operator x </b>(except subtraction) <b><br>x = intrinsic(x, expr) <br>x = intrinsic(expr, x)</b></td>
-    <td class="tg-4erg"><br><b>x = x op expr <br>x = expr op x (except subtraction) <br>x binop = expr <br>x++ <br>++x <br>x-- <br>--x</b></td>
+    <td class="tg-4erg"><br><b>x = x op expr <br>x = expr op x </b>(except subtraction) <br><b>x binop = expr <br>x++ <br>++x <br>x-- <br>--x</b></td>
   </tr>
   <tr>
-    <td class="tg-4erg"><b>x</b> is a scalar variable in the list <br>expr is a scalar expression that does not reference x <br>intrinsic is one of MAX, MIN, IAND, IOR, IEOR <br>operator is one of +, *, -, .AND., .OR., .EQV., .NEQV.</td>
-    <td class="tg-4erg">x is a scalar variable in the list <br>expr is a scalar expression that does not reference x <br>op is not overloaded, and is one of +, *, -, /, &amp;, ^, |, &amp;&amp;, || <br>binop is not overloaded, and is one of +, *, -, /, &amp;, ^, |</td>
+    <td class="tg-4erg"><b>x</b> is a scalar variable in the list <br><b>expr</b> is a scalar expression that does not reference x <br><b>intrinsic</b> is one of MAX, MIN, IAND, IOR, IEOR <br><b>operator</b> is one of +, *, -, .AND., .OR., .EQV., .NEQV.</td>
+    <td class="tg-4erg"><b>x</b> is a scalar variable in the list <br><b>expr</b> is a scalar expression that does not reference x <br><b>op</b> is not overloaded, and is one of +, *, -, /, &amp;, ^, |, &amp;&amp;, || <br><b>binop</b> is not overloaded, and is one of +, *, -, /, &amp;, ^, |</td>
   </tr>
 </tbody>
 </table>
