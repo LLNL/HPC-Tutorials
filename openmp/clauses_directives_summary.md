@@ -1,6 +1,12 @@
+---
+layout: tutorial_page
+title: "OpenMP Directives: Clauses/Directives Summary"
+release_number: UCRL-MI-133316
+author: Blaise Barney, Lawrence Livermore National Laboratory
+tutorial: "OpenMP"
+---
 
-
-
+The table below summarizes which clauses are accepted by which OpenMP directives.
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -141,3 +147,14 @@
   </tr>
 </tbody>
 </table>
+
+The following OpenMP directives do not accept clauses:
+* MASTER
+* CRITICAL
+* BARRIER
+* ATOMIC
+* FLUSH
+* ORDERED
+* THREADPRIVATE
+
+Implementations may (and do) differ from the standard in which clauses are supported by each directive.
