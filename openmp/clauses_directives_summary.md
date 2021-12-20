@@ -7,9 +7,9 @@ tutorial: "OpenMP"
 ---
 
 
-
+<br>
 The table below summarizes which clauses are accepted by which OpenMP directives.
-
+<br>
 
 
 <style type="text/css">
