@@ -9,3 +9,4 @@ tutorial: "OpenMP"
 * [OMP_SET_NUM_THREADS](omp_set_num_threads.md)
 * [OMP_GET_NUM_THREADS](omp_get_num_threads.md)
 * [OMP_GET_MAX_THREADS](omp_get_max_threads.md)
+* [OMP_GET_THREAD_NUM](omp_get_thread_num.md)
