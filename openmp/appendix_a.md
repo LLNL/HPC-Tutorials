@@ -27,7 +27,7 @@ tutorial: "OpenMP"
 * [OMP_GET_ACTIVE_LEVEL](omp_get_active_level.md)
 * [OMP_IN_FINAL](omp_in_final.md)(review here)
 * [OMP_INIT*_LOCK ](omp_init_lock.md)
-* [OMP_DESTROY*_LOCK]()
+* [OMP_DESTROY*_LOCK](omp_destroy_lock.md)
 * [OMP_SET*_LOCK]()
 * [OMP_UNSET*_LOCK]()
 * [OMP_TEST*_LOCK]()
