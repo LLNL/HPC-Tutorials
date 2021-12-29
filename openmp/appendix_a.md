@@ -28,7 +28,7 @@ tutorial: "OpenMP"
 * [OMP_IN_FINAL](omp_in_final.md)(review here)
 * [OMP_INIT*_LOCK ](omp_init_lock.md)
 * [OMP_DESTROY*_LOCK](omp_destroy_lock.md)
-* [OMP_SET*_LOCK]()
+* [OMP_SET*_LOCK](omp_set_lock.md)
 * [OMP_UNSET*_LOCK]()
 * [OMP_TEST*_LOCK]()
 * [OMP_GET_WTIME]()
