@@ -21,7 +21,7 @@ tutorial: "OpenMP"
 * [OMP_GET_SCHEDULE](omp_get_schedule.md)
 * [OMP_SET_MAX_ACTIVE_LEVELS](omp_set_max_active_levels.md)
 * [OMP_GET_MAX_ACTIVE_LEVELS](omp_get_max_active_levels.md)
-* [OMP_GET_LEVEL]()
+* [OMP_GET_LEVEL](omp_get_level.md)
 * [OMP_GET_ANCESTOR_THREAD_NUM]()
 * [OMP_GET_TEAM_SIZE]()
 * [OMP_GET_ACTIVE_LEVEL]()
