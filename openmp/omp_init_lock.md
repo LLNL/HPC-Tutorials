@@ -22,4 +22,4 @@ void omp_init_nest_lock(omp_nest_lock_t *lock)
 
 * The initial state is unlocked.
 
-* For Fortran, var must be an integer large enough to hold an address, such as INTEGER*8 on 64-bit systems.
+* For Fortran, ***var*** must be an integer large enough to hold an address, such as INTEGER*8 on 64-bit systems.
