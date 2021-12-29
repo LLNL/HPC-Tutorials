@@ -13,7 +13,7 @@ tutorial: "OpenMP"
 * [OMP_GET_THREAD_LIMIT](omp_get_thread_limit.md)
 * [OMP_GET_NUM_PROCS](omp_get_num_procs.md)
 * [OMP_IN_PARALLEL](omp_in_parallel.md)
-* [OMP_SET_DYNAMIC]()
+* [OMP_SET_DYNAMIC](omp_set_dynamic.md)
 * [OMP_GET_DYNAMIC]()
 * [OMP_SET_NESTED]()
 * [OMP_GET_NESTED]()
