@@ -6,7 +6,7 @@ May be called to determine if the section of code which is executing is parallel
 
 ## Format:
 
-###Fortran	
+### Fortran	
 ```
 LOGICAL FUNCTION OMP_IN_PARALLEL()
 ```
