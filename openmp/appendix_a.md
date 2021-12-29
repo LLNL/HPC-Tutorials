@@ -29,7 +29,7 @@ tutorial: "OpenMP"
 * [OMP_INIT*_LOCK ](omp_init_lock.md)
 * [OMP_DESTROY*_LOCK](omp_destroy_lock.md)
 * [OMP_SET*_LOCK](omp_set_lock.md)
-* [OMP_UNSET*_LOCK]()
+* [OMP_UNSET*_LOCK](omp_unset_lock.md)
 * [OMP_TEST*_LOCK]()
 * [OMP_GET_WTIME]()
 * [OMP_GET_WTICK]()
