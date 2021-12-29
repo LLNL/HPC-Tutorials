@@ -24,4 +24,4 @@ void omp_unset_nest__lock(omp_nest_lock_t *lock)
 
 * It is illegal to call this routine with a lock variable that is not initialized.
 
-* For Fortran, var must be an integer large enough to hold an address, such as INTEGER*8 on 64-bit systems.
+* For Fortran, ***var*** must be an integer large enough to hold an address, such as INTEGER*8 on 64-bit systems.
