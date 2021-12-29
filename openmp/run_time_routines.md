@@ -1,4 +1,10 @@
-
+---
+layout: tutorial_page
+title: "Run-Time Library Routines"
+release_number: UCRL-MI-133316
+author: Blaise Barney, Lawrence Livermore National Laboratory
+tutorial: "OpenMP"
+---
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
