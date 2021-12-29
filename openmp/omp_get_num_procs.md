@@ -1,11 +1,18 @@
-OMP_GET_NUM_PROCS
+# OMP_GET_NUM_PROCS
 
- Purpose:
+## Purpose:
+
 Returns the number of processors that are available to the program.
- Format:
 
-Fortran	
+## Format:
+
+### Fortran	
+```
 INTEGER FUNCTION OMP_GET_NUM_PROCS()
-C/C++	
+```
+
+### C/C++	
+```
 #include <omp.h>
 int omp_get_num_procs(void)
+```
