@@ -22,7 +22,7 @@ tutorial: "OpenMP"
 * [OMP_SET_MAX_ACTIVE_LEVELS](omp_set_max_active_levels.md)
 * [OMP_GET_MAX_ACTIVE_LEVELS](omp_get_max_active_levels.md)
 * [OMP_GET_LEVEL](omp_get_level.md)
-* [OMP_GET_ANCESTOR_THREAD_NUM]()
+* [OMP_GET_ANCESTOR_THREAD_NUM](omp_get_ancestor_thread_num.md)
 * [OMP_GET_TEAM_SIZE]()
 * [OMP_GET_ACTIVE_LEVEL]()
 * [OMP_IN_FINAL]()
