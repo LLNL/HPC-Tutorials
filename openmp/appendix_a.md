@@ -10,3 +10,5 @@ tutorial: "OpenMP"
 * [OMP_GET_NUM_THREADS](omp_get_num_threads.md)
 * [OMP_GET_MAX_THREADS](omp_get_max_threads.md)
 * [OMP_GET_THREAD_NUM](omp_get_thread_num.md)
+* [OMP_GET_THREAD_LIMIT](omp_get_thread_limit.md)
+* [OMP_GET_NUM_PROCS](omp_get_num_procs.md)
