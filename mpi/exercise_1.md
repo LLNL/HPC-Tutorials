@@ -60,7 +60,7 @@ Note: These are example files, and as such, are intended to demonstrate the basi
 
 <table class="table table-striped table-bordered">
         <thead><tr><th>C Files</th><th>Fortran Files</th><th>Description</th></tr></thead>
-        <tbody><tr><td><a href="/mpi/examples/mpi_hello.c">mpi_hello.c</a></td><td><a href="/mpi/examples/mpi_hello.f">mpi_hello.f</a></td><td></a>Hello World</td></tr>
+        <tbody><tr><td><a href="/mpi/examples/mpi_hello.c">mpi_hello.c</a></td><td><a href="/mpi/examples/mpi_hello.f">mpi_hello.f</a></td><td>Hello World</td></tr>
         <tr><td ><a href="/mpi/examples/mpi_helloBsend.c">mpi_helloBsend.c</a></td><td><a href="/mpi/examples/mpi_helloBsend.f">mpi_helloBsend.f</a></td><td><a href="/mpi/examples/..."></a>Hello World modified to include blocking send/receive routines</td></tr>
         <tr><td ><a href="/mpi/examples/mpi_helloNBsend.c">mpi_helloNBsend.c</a></td><td ><a href="/mpi/examples/mpi_helloNBsend.f">mpi_helloNBsend.f</a></td><td>Hello World modified to include nonblocking send/receive routines</td></tr>
         <tr><td><a href="/mpi/examples/mpi_array.f">mpi_array.f</a><br><a href="/mpi/examples/ser_array.c">ser_array.c</a></td><td><a href="/mpi/examples/mpi_array.f">mpi_array.f</a><br><a href="/mpi/examples/ser_array.f">ser_array.f</a></td><td>Array Decomposition</td></tr>
@@ -89,7 +89,7 @@ Note: These are example files, and as such, are intended to demonstrate the basi
         <a href="/mpi/examples/Makefile.Ser.f">Makefile.Ser.f</a></td>
         <td><a href="/mpi/examples/..."></a>Makefiles</td></tr><tr>
           <td><a href="/mpi/examples/batchscript.c">batchscript.c/</a></td>
-          <td><a href="/mpi/examples/batchscript.f">batchscript.f</a></td><td></a>Batch job scripts</td></tr><tr>
+          <td><a href="/mpi/examples/batchscript.f">batchscript.f</a></td><td>Batch job scripts</td></tr><tr>
             <td><p><a href="/mpi/examples/mpi_bug1.c">mpi_bug1.c</a><br>
               <a href="/mpi/examples/mpi_bug2.c">mpi_bug2.c</a><br>
               <a href="/mpi/examples/mpi_bug3.c">mpi_bug3.c</a><br>
