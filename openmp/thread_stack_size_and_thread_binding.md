@@ -79,16 +79,17 @@ Otherwise, at LC, you should be able to use the method below for Linux clusters.
 <thead>
   <tr>
     <th class="tg-fdm5"><span style="background-color:#98ABCE">csh/tcsh</span></th>
-    <th class="tg-0lax"> setenv KMP_STACKSIZE 12000000 limit stacksize unlimited </th>
+    <th class="tg-0lax">setenv KMP_STACKSIZE 12000000 <br>limit stacksize unlimited </th>
   </tr>
 </thead>
 <tbody>
   <tr>
     <td class="tg-fdm5"><span style="background-color:#98ABCE">ksh/sh/bash</span></td>
-    <td class="tg-0lax"> export KMP_STACKSIZE=12000000 ulimit -s unlimited </td>
+    <td class="tg-0lax">export KMP_STACKSIZE=12000000 <br>ulimit -s unlimited </td>
   </tr>
 </tbody>
 </table>
+
 
 ## Thread Binding:
 
