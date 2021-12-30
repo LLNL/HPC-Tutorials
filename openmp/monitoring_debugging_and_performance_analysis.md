@@ -23,7 +23,7 @@ tutorial: "OpenMP"
 
 * See the [TotalView Debugger tutorial](https://hpc.llnl.gov/training/tutorials/totalview-tutorial) for details.
 
-* The Linux `ps` command provides several flags for viewing thread information. Some examples are shown below. See the man page for details.
+* The Linux `ps` command provides several flags for viewing thread information. Some examples are shown below. See the [man page](https://www.freebsd.org/cgi/man.cgi?query=ps&manpath=FreeBSD+13.0-RELEASE+and+Ports) for details.
 
 <pre>
 % <b>ps -Lf </b>
