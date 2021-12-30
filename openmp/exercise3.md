@@ -25,12 +25,12 @@ This example computes a dot product in parallel, however it differs from previou
 
 1. After reviewing the source code, compile and run the program. For example:
 
-### C:	
+**C:**	
 ```
 icc -openmp omp_orphan.c -o orphan 
 orphan | sort
 ```
-### Fortran:	
+**Fortran:**	
 ```
 ifort -openmp omp_orphan.f -o orphan
 orphan | sort
@@ -50,7 +50,7 @@ orphan | sort
   * If dynamic threads are enabled
   * If nested parallelism is supported
   
-  NOTE: Some compilers (IBM, GNU) implement some of the necessary Fortran functions as integer instead of logical as the standard specifies.
+NOTE: Some compilers (IBM, GNU) implement some of the necessary Fortran functions as integer instead of logical as the standard specifies.
 
 3. If you need help, you can consult the [omp_getEnvInfo.c](code_examples/C/omp_getEnvInfo.c) or [omp_getEnvInfo.f](code_examples/Fortran/omp_getEnvInfo.f) example file.
 
