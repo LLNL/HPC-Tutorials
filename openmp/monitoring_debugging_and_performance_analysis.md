@@ -66,8 +66,13 @@ LC's Linux clusters also provide the `top` command to monitor processes on a nod
 * These tools vary significantly in their complexity, functionality and learning curve. Covering them in detail is beyond the scope of this tutorial.
 
 * Some tools worth investigating, specifically for OpenMP codes, include:
+ 
   * Open|SpeedShop
+
   * TAU
+ 
   * PAPI
+  
   * Intel VTune Amplifier
+  
   * ThreadSpotter
