@@ -25,15 +25,15 @@ tutorial: "OpenMP"
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href=‘/openmp/omp_set_num_threads.md’>OMP_SET_NUM_THREADS</a></span></td>
+    <td class="tg-0lax"><a href="https://hpc-tutorials.llnl.gov/openmp/omp_set_num_threads/">OMP_SET_NUM_THREADS</a></td>
     <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">Sets the number of threads that will be used in the next parallel region</span></td>
   </tr>
   <tr>
-    <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000"><a href=‘/openmp/omp_get_num_threads.md’>OMP_GET_NUM_THREADS</a></span></td>
+    <td class="tg-0lax"><a href="https://hpc-tutorials.llnl.gov/openmp/omp_get_num_threads/" target="_blank" rel="noopener noreferrer">OMP_GET_NUM_THREADS</a></td>
     <td class="tg-0lax"><span style="font-weight:normal;font-style:normal;color:#000">Returns the number of threads that are currently in the team executing the parallel region from which it is called</span></td>
   </tr>
 </tbody>
 </table>
 {% endraw %}
 
-test meow
+test meowz
