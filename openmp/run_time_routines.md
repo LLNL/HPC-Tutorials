@@ -6,8 +6,7 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 tutorial: "OpenMP"
 ---
 
-{% raw %}
-<style type="text/css">
+{% raw %}<style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
   overflow:hidden;padding:10px 5px;word-break:normal;}
@@ -34,7 +33,7 @@ tutorial: "OpenMP"
     <td class="tg-0lax">Returns the number of threads that are currently in the team executing the parallel region from which it is called</td>
   </tr>
   <tr>
-    <td class="tg-875e"><a href="https://hpc.llnl.gov/tuts/openMP/#OMP_GET_MAX_THREADS"><span style="text-decoration:underline;color:#339">OMP_GET_MAX_THREADS</span></a></td>
+    <td class="tg-875e"><a href="https://hpc-tutorials.llnl.gov/openmp/omp_get_max_threads/" target="_blank" rel="noopener noreferrer">OMP_GET_MAX_THREADS</a></td>
     <td class="tg-0lax">Returns the maximum value that can be returned by a call to the OMP_GET_NUM_THREADS function</td>
   </tr>
   <tr>
@@ -157,4 +156,4 @@ tutorial: "OpenMP"
 </table>
 {% endraw %}
 
-test meow
+get max threads
