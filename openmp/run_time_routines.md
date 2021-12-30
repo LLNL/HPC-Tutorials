@@ -162,7 +162,9 @@ tutorial: "OpenMP"
 </table>
 {% endraw %}
 
+
 * For C/C++, all of the run-time library routines are actual subroutines. For Fortran, some are actually functions, and some are subroutines. For example:
+
 **Fortran**
 ```
 INTEGER FUNCTION OMP_GET_NUM_THREADS()
@@ -187,4 +189,4 @@ int omp_get_num_threads(void)
   * Implementations may or may not support all OpenMP API features. For example, if nested parallelism is supported, it may be only nominal, in that a nested parallel region may only have one thread.
   * Consult your implementation's documentation for details - or experiment and find out for yourself if you can't find it in the documentation.
 
-* The run-time library routines are discussed in more detail in [Appendix A](appendix_a).
+* The run-time library routines are discussed in more detail in [Appendix A](appendix_a.md).
