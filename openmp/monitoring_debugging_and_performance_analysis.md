@@ -54,7 +54,7 @@ blaise   22529 28240 22533 99    5 11:31 pts/53   00:01:24 a.out
 
 LC's Linux clusters also provide the `top` command to monitor processes on a node. If used with the `-H` flag, the threads contained within a process will be visible. An example of the `top -H` command is shown below. The parent process is PID 18010 which spawned three threads, shown as PIDs 18012, 18013 and 18014.
 
-# IMAGE missing
+![terminal window screenshot](/posix/images/topH.gif)
 
 
 ## Performance Analysis Tools:
