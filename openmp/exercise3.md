@@ -58,8 +58,17 @@ orphan | sort
 
 There are many things that can go wrong when developing OpenMP programs. The `omp_bugX.X` series of programs demonstrate just a few. See if you can figure out what the problem is with each case and then fix it.
 
+**Note:** Please use the Intel (icc, ifort) compile commands for these exercises.
+
 The buggy behavior will differ for each example. Some hints are provided below.
 
-**Note:** Please use the Intel (icc, ifort) compile commands for these exercises.
+<details>
+  <summary> Hints (Click to expand!)</summary>
+	
+
+</details>
+
+*If you're just finishing the tutorial and haven't filled out our [evaluation form](https://hpc.llnl.gov/training/tutorials/evaluation-form) yet, please do!*
+
 
 	
