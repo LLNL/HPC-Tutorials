@@ -50,7 +50,7 @@ tutorial: "OpenMP"
 7. [Run-Time Library Routines](run_time_routines)
 8. [Environment Variables](env_vars)
 9. [Thread Stack Size and Thread Binding](thread_stack_size_and_thread_binding)
-10. [Monitoring, Debugging and Performance Analysis Tools for OpenMP](monitoring_debugging_and_performance_analysis.md)
+10. [Monitoring, Debugging and Performance Analysis Tools for OpenMP](monitoring_debugging_and_performance_analysis)
 11. [Exercise 3]()
 12. [References and More Information]()
 13. [Appendix A: Run-Time Library Routines](appendix_a)
