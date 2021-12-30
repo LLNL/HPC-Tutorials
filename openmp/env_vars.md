@@ -41,6 +41,7 @@ setenv OMP_PROC_BIND TRUE
 
 Implementation notes:
 * Your implementation may or may not support this feature.
+
 ## OMP_NESTED
 Enables or disables nested parallelism. Valid values are TRUE or FALSE. For example:
 ```
@@ -84,6 +85,7 @@ setenv OMP_MAX_ACTIVE_LEVELS 2
 
 Implementation notes:
 * Your implementation may or may not support this feature.
+ 
 ## OMP_THREAD_LIMIT
 Sets the number of OpenMP threads to use for the whole OpenMP program. The value of this environment variable must be a positive integer. The behavior of the program is implementation defined if the requested value of OMP_THREAD_LIMIT is greater than the number of threads an implementation can support, or if the value is not a positive integer. Example:
 ```
