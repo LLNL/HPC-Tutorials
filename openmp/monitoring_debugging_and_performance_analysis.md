@@ -20,3 +20,35 @@ tutorial: "OpenMP"
   7. Threads Pane showing all threads plus selected thread
 
 ![Totalview_image](images/totalview.gif)
+
+* See the [TotalView Debugger tutorial](https://hpc.llnl.gov/training/tutorials/totalview-tutorial) for details.
+
+* The Linux `ps` command provides several flags for viewing thread information. Some examples are shown below. See the man page for details.
+
+<pre>
+% <b>ps -Lf </b>
+UID        PID  PPID   LWP  C NLWP STIME TTY          TIME CMD
+blaise   22529 28240 22529  0    5 11:31 pts/53   00:00:00 a.out
+blaise   22529 28240 22530 99    5 11:31 pts/53   00:01:24 a.out
+blaise   22529 28240 22531 99    5 11:31 pts/53   00:01:24 a.out
+blaise   22529 28240 22532 99    5 11:31 pts/53   00:01:24 a.out
+blaise   22529 28240 22533 99    5 11:31 pts/53   00:01:24 a.out
+
+% <b>ps -T </b>
+  PID  SPID TTY          TIME CMD
+22529 22529 pts/53   00:00:00 a.out
+22529 22530 pts/53   00:01:49 a.out
+22529 22531 pts/53   00:01:49 a.out
+22529 22532 pts/53   00:01:49 a.out
+22529 22533 pts/53   00:01:49 a.out
+
+% <b>ps -Lm</b> 
+  PID   LWP TTY          TIME CMD
+22529     - pts/53   00:18:56 a.out
+    - 22529 -        00:00:00 -
+    - 22530 -        00:04:44 -
+    - 22531 -        00:04:44 -
+    - 22532 -        00:04:44 -
+    - 22533 -        00:04:44 -
+</pre>
+
