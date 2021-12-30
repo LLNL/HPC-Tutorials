@@ -163,7 +163,7 @@ tutorial: "OpenMP"
 {% endraw %}
 
 
-* For C/C++, all of the run-time library routines are actual subroutines. For Fortran, some are actually functions, and some are subroutines. For example:
+For C/C++, all of the run-time library routines are actual subroutines. For Fortran, some are actually functions, and some are subroutines. For example:
 
 **Fortran**
 ```
@@ -176,7 +176,7 @@ INTEGER FUNCTION OMP_GET_NUM_THREADS()
 int omp_get_num_threads(void)
 ```
 
-* Note that for C/C++, you usually need to include the **<omp.h>** header file.
+* Note that for C/C++, you usually need to include the `<omp.h>` header file.
 
 * Fortran routines are not case sensitive, but C/C++ routines are.
 
