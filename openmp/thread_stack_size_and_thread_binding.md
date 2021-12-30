@@ -5,10 +5,11 @@ release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
 tutorial: "OpenMP"
 ---
+## Thread Stack Size:
 
-The OpenMP standard does not specify how much stack space a thread should have. Consequently, implementations will differ in the default thread stack size.
+* The OpenMP standard does not specify how much stack space a thread should have. Consequently, implementations will differ in the default thread stack size.
 
-Default thread stack size can be easy to exhaust. It can also be non-portable between compilers. Using past versions of LC compilers as an example:
+* Default thread stack size can be easy to exhaust. It can also be non-portable between compilers. Using past versions of LC compilers as an example:
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -46,13 +47,13 @@ Default thread stack size can be easy to exhaust. It can also be non-portable be
 </tbody>
 </table>
 
-Threads that exceed their stack allocation may or may not seg fault. An application may continue to run while data is being corrupted.
+* Threads that exceed their stack allocation may or may not seg fault. An application may continue to run while data is being corrupted.
 
-Statically linked codes may be subject to further stack restrictions.
+* Statically linked codes may be subject to further stack restrictions.
 
-A user's login shell may also restrict stack size
+* A user's login shell may also restrict stack size.
 
-If your OpenMP environment supports the OpenMP 3.0 OMP_STACKSIZE environment variable (covered in previous section), you can use it to set the thread stack size prior to program execution. For example:
+* If your OpenMP environment supports the OpenMP 3.0 OMP_STACKSIZE environment variable (covered in previous section), you can use it to set the thread stack size prior to program execution. For example:
 
 ```
 setenv OMP_STACKSIZE 2000500B
@@ -64,7 +65,7 @@ setenv OMP_STACKSIZE " 1G"
 setenv OMP_STACKSIZE 20000
 ```
 
-Otherwise, at LC, you should be able to use the method below for Linux clusters. The example shows setting the thread stack size to 12 MB, and as a precaution, setting the shell stack size to unlimited.
+* Otherwise, at LC, you should be able to use the method below for Linux clusters. The example shows setting the thread stack size to 12 MB, and as a precaution, setting the shell stack size to unlimited.
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -93,24 +94,24 @@ Otherwise, at LC, you should be able to use the method below for Linux clusters.
 
 ## Thread Binding:
 
-In some cases, a program will perform better if its threads are bound to processors/cores.
+* In some cases, a program will perform better if its threads are bound to processors/cores.
 
-"Binding" a thread to a processor means that a thread will be scheduled by the operating system to always run on a the same processor. 
+* "Binding" a thread to a processor means that a thread will be scheduled by the operating system to always run on a the same processor. 
 
-Otherwise, threads can be scheduled to execute on any processor and "bounce" back and forth between processors with each time slice.
+* Otherwise, threads can be scheduled to execute on any processor and "bounce" back and forth between processors with each time slice.
 
-Also called "thread affinity" or "processor affinity"
+* Also called "thread affinity" or "processor affinity"
 
-Binding threads to processors can result in better cache utilization, thereby reducing costly memory accesses. This is the primary motivation for binding threads to processors.
+* Binding threads to processors can result in better cache utilization, thereby reducing costly memory accesses. This is the primary motivation for binding threads to processors.
 
-Depending upon your platform, operating system, compiler and OpenMP implementation, binding threads to processors can be done several different ways.
+* Depending upon your platform, operating system, compiler and OpenMP implementation, binding threads to processors can be done several different ways.
 
-The OpenMP version 3.1 API provides an environment variable to turn processor binding "on" or "off". For example:
+* The OpenMP version 3.1 API provides an environment variable to turn processor binding "on" or "off". For example:
 ```
 setenv OMP_PROC_BIND  TRUE
 setenv OMP_PROC_BIND  FALSE
 ```
 
-At a higher level, processes can also be bound to processors.
+* At a higher level, processes can also be bound to processors.
 
-Detailed information about process and thread binding to processors on LC Linux clusters can be found [HERE](ProcessThreadAffinity.pdf).
+* Detailed information about process and thread binding to processors on LC Linux clusters can be found [HERE](ProcessThreadAffinity.pdf).
