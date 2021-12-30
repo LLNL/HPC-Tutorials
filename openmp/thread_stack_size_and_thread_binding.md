@@ -112,4 +112,4 @@ setenv OMP_PROC_BIND  FALSE
 
 At a higher level, processes can also be bound to processors.
 
-Detailed information about process and thread binding to processors on LC Linux clusters can be found HERE.
+Detailed information about process and thread binding to processors on LC Linux clusters can be found [HERE](ProcessThreadAffinity.pdf).
