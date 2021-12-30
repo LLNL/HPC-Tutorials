@@ -162,7 +162,8 @@ tutorial: "OpenMP"
 </table>
 {% endraw %}
 
-
+\
+\
 For C/C++, all of the run-time library routines are actual subroutines. For Fortran, some are actually functions, and some are subroutines. For example:
 
 **Fortran**
