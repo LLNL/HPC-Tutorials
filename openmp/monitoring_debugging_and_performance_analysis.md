@@ -67,7 +67,7 @@ LC's Linux clusters also provide the `top` command to monitor processes on a nod
 
 * Some tools worth investigating, specifically for OpenMP codes, include:
  
-  * Open|SpeedShop
+  * Open\|SpeedShop
 
   * TAU
  
