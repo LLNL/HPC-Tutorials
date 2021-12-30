@@ -49,7 +49,7 @@ tutorial: "OpenMP"
     14. [Directive Binding and Nesting Rules](directive_binding_and_nesting)
 7. [Run-Time Library Routines](run_time_routines)
 8. [Environment Variables](env_vars)
-9. []()
+9. [Thread Stack Size and Thread Binding](thread_stack_size_and_thread_binding)
 10. []()
 11. []()
 12. []()
