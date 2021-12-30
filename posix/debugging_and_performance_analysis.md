@@ -54,7 +54,7 @@ LC's Linux clusters also provide the top command to monitor processes on a node.
 ## Performance Analysis Tools:
 
 - There are a variety of performance analysis tools that can be used with threaded programs. Searching the web will turn up a wealth of information.
-- At LC, the list of supported computing tools can be found at: hpc.llnl.gov/software.
+- At LC, the list of supported computing tools can be found at: https://hpc.llnl.gov/software.
 - These tools vary significantly in their complexity, functionality and learning curve. Covering them in detail is beyond the scope of this tutorial.
 - Some tools worth investigating, specifically for threaded codes, include:
     - Open\|SpeedShop
