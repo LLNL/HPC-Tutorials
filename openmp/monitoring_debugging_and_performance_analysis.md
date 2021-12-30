@@ -52,3 +52,22 @@ blaise   22529 28240 22533 99    5 11:31 pts/53   00:01:24 a.out
     - 22533 -        00:04:44 -
 </pre>
 
+LC's Linux clusters also provide the `top` command to monitor processes on a node. If used with the `-H` flag, the threads contained within a process will be visible. An example of the `top -H` command is shown below. The parent process is PID 18010 which spawned three threads, shown as PIDs 18012, 18013 and 18014.
+
+# IMAGE missing
+
+
+## Performance Analysis Tools:
+
+* There are a variety of performance analysis tools that can be used with OpenMP programs. Searching the web will turn up a wealth of information.
+
+* At LC, a list of some of the computing tools we support can be found at: https://hpc.llnl.gov/software/development-environment-software.
+
+* These tools vary significantly in their complexity, functionality and learning curve. Covering them in detail is beyond the scope of this tutorial.
+
+* Some tools worth investigating, specifically for OpenMP codes, include:
+  * Open|SpeedShop
+  * TAU
+  * PAPI
+  * Intel VTune Amplifier
+  * ThreadSpotter
