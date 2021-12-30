@@ -8,7 +8,7 @@ tutorial: "OpenMP"
 
 * Author: Blaise Barney, Livermore Computing.
 
-* For questions: HPC Tutorials Contact <hpc-tutorials@llnl.gov>
+* HPC Tutorials Contact: <hpc-tutorials@llnl.gov>
 
 * The OpenMP web site, which includes the C/C++ and Fortran Application Program Interface documents. 
 www.openmp.org
