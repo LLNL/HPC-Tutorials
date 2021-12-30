@@ -61,7 +61,7 @@ LC's Linux clusters also provide the `top` command to monitor processes on a nod
 
 * There are a variety of performance analysis tools that can be used with OpenMP programs. Searching the web will turn up a wealth of information.
 
-* At LC, a list of some of the computing tools we support can be found at: https://hpc.llnl.gov/software/development-environment-software.
+* At LC, the list of supported computing tools can be found at: https://hpc.llnl.gov/software.
 
 * These tools vary significantly in their complexity, functionality and learning curve. Covering them in detail is beyond the scope of this tutorial.
 
