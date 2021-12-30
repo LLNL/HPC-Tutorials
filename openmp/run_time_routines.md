@@ -6,6 +6,12 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 tutorial: "OpenMP"
 ---
 
+## Overview:
+
+* The OpenMP API includes an ever-growing number of run-time library routines.
+
+* These routines are used for a variety of purposes as shown in the table below:
+
 {% raw %}<style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -156,4 +162,29 @@ tutorial: "OpenMP"
 </table>
 {% endraw %}
 
-get max threads
+* For C/C++, all of the run-time library routines are actual subroutines. For Fortran, some are actually functions, and some are subroutines. For example:
+**Fortran**
+```
+INTEGER FUNCTION OMP_GET_NUM_THREADS()
+```
+
+**C/C++**
+```
+#include <omp.h>
+int omp_get_num_threads(void)
+```
+
+* Note that for C/C++, you usually need to include the **<omp.h>** header file.
+
+* Fortran routines are not case sensitive, but C/C++ routines are.
+
+* For the Lock routines/functions:
+  * The lock variable must be accessed only through the locking routines
+  * For Fortran, the lock variable should be of type integer and of a kind large enough to hold an address.
+  * For C/C++, the lock variable must have type `omp_lock_t` or type `omp_nest_lock_t`, depending on the function being used.
+
+* Implementation notes:
+  * Implementations may or may not support all OpenMP API features. For example, if nested parallelism is supported, it may be only nominal, in that a nested parallel region may only have one thread.
+  * Consult your implementation's documentation for details - or experiment and find out for yourself if you can't find it in the documentation.
+
+* The run-time library routines are discussed in more detail in [Appendix A](appendix_a).
