@@ -18,3 +18,5 @@ tutorial: "OpenMP"
   5. Worker thread Stack Frame Pane
   6. Root Window showing all threads
   7. Threads Pane showing all threads plus selected thread
+
+![Totalview_image](images/totalview.gif)
