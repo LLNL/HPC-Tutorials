@@ -52,7 +52,7 @@ tutorial: "OpenMP"
 9. [Thread Stack Size and Thread Binding](thread_stack_size_and_thread_binding)
 10. [Monitoring, Debugging and Performance Analysis Tools for OpenMP](monitoring_debugging_and_performance_analysis)
 11. [Exercise 3]()
-12. [References and More Information]()
+12. [References and More Information](references)
 13. [Appendix A: Run-Time Library Routines](appendix_a)
 
 Once you have finished the tutorial, please complete our [evaluation form](https://hpc.llnl.gov/training/tutorials/evaluation-form)!
