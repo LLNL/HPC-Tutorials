@@ -83,4 +83,4 @@ MPI has resulted from the efforts of numerous individuals and groups that began 
 
 ## Documentation
 
-Documentation for all versions of the MPI standard is available at: http://www.mpi-forum.org/docs/
+Documentation for all versions of the MPI standard is available at: [http://www.mpi-forum.org/docs/](http://www.mpi-forum.org/docs/)
