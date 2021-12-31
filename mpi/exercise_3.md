@@ -18,7 +18,7 @@ If so, then continue to the next step. If not, then login as you did previously 
 
 #### 2. Review the array decomposition example code.
 
-First, review the serial version of this example code, either [ser_array.c](examples/ser_array.c) or [ser_array.f](examples/ser_array.c).
+First, review the serial version of this example code, either [ser_array.c](examples/ser_array.c) or [ser_array.f](examples/ser_array.f).
 
 After you understand what's going on, review the parallel MPI version, either [mpi_array.c](examples/mpi_array.c) or [mpi_array.f](examples/mpi_array.f). The comments explain how MPI is used to implement a parallel data decomposition on an array.
 
