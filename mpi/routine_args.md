@@ -11,7 +11,7 @@ MPI point-to-point communication routines generally have an argument list that t
 
 ### Buffer
 
-Program (application) address space that references the data that is to be sent or received. In most cases, this is simply the variable name that is be sent/received. For C programs, this argument is passed by reference and usually must be prepended with an ampersand: &var1
+Program (application) address space that references the data that is to be sent or received. In most cases, this is simply the variable name that is be sent/received. For C programs, this argument is passed by reference and usually must be prepended with an ampersand: `&var1`
 
 ### Data Count
 
@@ -25,7 +25,7 @@ For reasons of portability, MPI predefines its elementary data types. The table 
 
 **Notes:**
 
-* Programmers may also create their own data types (see [Derived Data Types](derived_data_types)).
+* Programmers may also create their own data types (see [Derived Data Types](derived_data_type)).
 * MPI_BYTE and MPI_PACKED do not correspond to standard C or Fortran types.
 * Types shown in <FONT color="gray">GRAY FONT</FONT> are recommended if possible.
 * Some implementations may include additional elementary data types (MPI_LOGICAL2, MPI_COMPLEX32, etc.). Check the MPI header file.
