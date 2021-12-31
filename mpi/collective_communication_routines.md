@@ -15,7 +15,7 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 #### Scope:
 
-Collective communication routines must involve all processes within the scope of a communicator. All processes are by default, members in the communicator MPI_COMM_WORLD. Additional communicators can be defined by the programmer. See the [Group and Communicator Management Routines](management_routines) section for details.
+Collective communication routines must involve all processes within the scope of a communicator. All processes are by default, members in the communicator MPI_COMM_WORLD. Additional communicators can be defined by the programmer. See the [Group and Communicator Management Routines](management_routines.md) section for details.
 
 Unexpected behavior, including program failure, can occur if even one task in the communicator doesn't participate.
 
@@ -25,9 +25,9 @@ It is the programmer's responsibility to ensure that all processes within a comm
 
 Collective communication routines do not take message tag arguments.
 
-Collective operations within subsets of processes are accomplished by first partitioning the subsets into new groups and then attaching the new groups to new communicators (discussed in the [Group and Communicator Management Routines](management_routines) section).
+Collective operations within subsets of processes are accomplished by first partitioning the subsets into new groups and then attaching the new groups to new communicators (discussed in the [Group and Communicator Management Routines](management_routines.md) section).
 
-Can only be used with MPI predefined datatypes - not with MPI [Derived Data Types](derived_data_types).
+Can only be used with MPI predefined datatypes - not with MPI [Derived Data Types](derived_data_type.md).
 
 MPI-2 extended most collective operations to allow data movement between intercommunicators (not covered here).
 
