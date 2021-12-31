@@ -25,7 +25,7 @@ For reasons of portability, MPI predefines its elementary data types. The table 
 
 **Notes:**
 
-* Programmers may also create their own data types (see [Derived Data Types](derived_data_type)).
+* Programmers may also create their own data types (see [Derived Data Types](derived_data_type.md)).
 * MPI_BYTE and MPI_PACKED do not correspond to standard C or Fortran types.
 * Types shown in <FONT color="gray">GRAY FONT</FONT> are recommended if possible.
 * Some implementations may include additional elementary data types (MPI_LOGICAL2, MPI_COMPLEX32, etc.). Check the MPI header file.
