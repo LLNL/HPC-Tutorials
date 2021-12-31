@@ -96,7 +96,7 @@ Note: These are example files, and as such, are intended to demonstrate the basi
               <a href="/mpi/examples/mpi_bug4.c">mpi_bug4.c</a><br>
               <a href="/mpi/examples/mpi_bug5.c">mpi_bug5.c <br>
               </a><a href="/mpi/examples/mpi_bug6.c">mpi_bug6.c</a><br>
-              <a href="/examples/mpi_bug7.c">mpi_bug7.c</a></p></td>
+              <a href="/mpi/examples/mpi_bug7.c">mpi_bug7.c</a></p></td>
             <td><a href="/mpi/examples/mpi_bug1.f">mpi_bug1.f</a><br>
             <a href="/mpi/examples/mpi_bug2.f">mpi_bug2.f</a><br>
             <a href="/mpi/examples/mpi_bug3.f">mpi_bug3.f</a><br>
