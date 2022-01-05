@@ -1,0 +1,23 @@
+MPI_File_f2c(3)                      MPI-2                     MPI_File_f2c(3)
+
+
+
+NAME
+       MPI_File_f2c -  Translates a Fortran file handle to a C file handle
+
+SYNOPSIS
+       MPI_File MPI_File_f2c(MPI_Fint fh)
+
+INPUT PARAMETERS
+       fh     - Fortran file handle (integer)
+
+
+RETURN VALUE
+       C file handle (handle)
+
+LOCATION
+       file_f2c.c
+
+
+
+                                   10/4/2004                   MPI_File_f2c(3)

@@ -1,0 +1,24 @@
+MPI_Info_c2f(3)                      MPI-2                     MPI_Info_c2f(3)
+
+
+
+NAME
+       MPI_Info_c2f -  Translates a C info handle to a Fortran info handle
+
+SYNOPSIS
+       #include "mpi.h"
+       MPI_Fint MPI_Info_c2f(MPI_Info info)
+
+INPUT PARAMETERS
+       info   - C info handle (integer)
+
+
+RETURN VALUE
+       Fortran info handle (handle)
+
+LOCATION
+       info_c2f.c
+
+
+
+                                   8/30/1999                   MPI_Info_c2f(3)

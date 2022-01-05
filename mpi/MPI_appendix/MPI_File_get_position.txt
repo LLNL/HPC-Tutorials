@@ -1,0 +1,35 @@
+MPI_File_get_position(3)             MPI-2            MPI_File_get_position(3)
+
+
+
+NAME
+       MPI_File_get_position  -  Returns the current position of the  individ-
+       ual file pointer in etype units relative to the current view
+
+SYNOPSIS
+       int MPI_File_get_position(MPI_File mpi_fh, MPI_Offset *offset)
+
+INPUT PARAMETERS
+       fh     - file handle (handle)
+
+
+OUTPUT PARAMETERS
+       offset - offset of individual file pointer (nonnegative integer)
+
+
+NOTES FOR FORTRAN
+       All MPI routines in Fortran (except for MPI_WTIME and MPI_WTICK )  have
+       an  additional  argument ierr at the end of the argument list.  ierr is
+       an integer and has the same meaning as the return value of the  routine
+       in  C.   In Fortran, MPI routines are subroutines, and are invoked with
+       the call statement.
+
+       All MPI objects (e.g., MPI_Datatype , MPI_Comm ) are of type INTEGER in
+       Fortran.
+
+LOCATION
+       get_posn.c
+
+
+
+                                   5/23/2005          MPI_File_get_position(3)

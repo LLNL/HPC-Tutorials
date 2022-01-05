@@ -65,7 +65,7 @@ ERRORS
        handler is called.  By default, this error handler aborts the MPI  job.
        The  error  handler  may  be  changed  with  MPI_Errhandler_set  ;  the
        predefined error handler MPI_ERRORS_RETURN may be used to  cause  error
-       values  to  be  returned.  Note that MPI does not guarantee that an MPI
+       values  to  be  returned.  Note that MPI does not guarentee that an MPI
        program can continue past an error.
 
        MPI_ERR_COMM

@@ -1,0 +1,44 @@
+MPI_Int2handle(3)                     MPI                    MPI_Int2handle(3)
+
+
+
+NAME
+       MPI_Int2handle -  Convert an integer (Fortran) MPI handle to a C handle
+
+SYNOPSIS
+       #include "mpi.h"
+       MPI_Handle_type MPI_Int2handle( f_handle, handle_kind )
+       MPI_Fint        f_handle;
+       MPI_Handle_enum handle_kind;
+
+INPUT PARAMETERS
+       f_handle
+              - Fortran integer handle
+       handle_kind
+              - Type of handle
+
+
+RETURN VALUE
+       c_handle
+              - C version of handle; should be cast to the correct type.
+
+
+NOTES
+       The returned handle should be cast to the correct type by the user.
+
+
+NOTES FOR FORTRAN USERS
+       There is no Fortran version of this routine.
+
+
+NOTE ON STANDARD
+       This function is part of the MPI-2 draft,  and  may  change  while  the
+       draft  undergoes revision.  It is provided as an aid to programmers who
+       wish to experiment with some MPI2 features.
+
+LOCATION
+       int2handle.c
+
+
+
+                                   8/30/1999                 MPI_Int2handle(3)

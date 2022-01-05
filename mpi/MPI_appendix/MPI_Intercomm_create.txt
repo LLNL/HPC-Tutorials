@@ -35,7 +35,7 @@ OUTPUT PARAMETER
 
 NOTES
        The MPI 1.1 Standard contains two mutually exclusive  comments  on  the
-       input intracommunicators. One says that their respective groups must be
+       input intracommunicators.  One says that their repective groups must be
        disjoint; the other that the leaders can be the  same  process.   After
        some  discussion  by the MPI Forum, it has been decided that the groups
        must be disjoint.  Note that the reason given for this in the  standard
@@ -90,7 +90,7 @@ ERRORS
        handler is called.  By default, this error handler aborts the MPI  job.
        The  error  handler may be changed with MPI_Errhandler_set ; the prede-
        fined error handler MPI_ERRORS_RETURN may be used to cause error values
-       to  be  returned.  Note that MPI does not guarantee that an MPI program
+       to  be  returned.  Note that MPI does not guarentee that an MPI program
        can continue past an error.
 
        MPI_SUCCESS

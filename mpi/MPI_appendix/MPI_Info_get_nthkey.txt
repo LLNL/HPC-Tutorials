@@ -1,0 +1,38 @@
+MPI_Info_get_nthkey(3)               MPI-2              MPI_Info_get_nthkey(3)
+
+
+
+NAME
+       MPI_Info_get_nthkey -  Returns the nth defined key in info
+
+SYNOPSIS
+       #include "mpi.h"
+       int MPI_Info_get_nthkey(MPI_Info info, int n, char *key)
+
+INPUT PARAMETERS
+       info   - info object (handle)
+       n      - key number (integer)
+
+
+OUTPUT PARAMETERS
+       keys   -   key   (string).    The   maximum  number  of  characters  is
+              MPI_MAX_INFO_KEY .
+
+
+
+NOTES FOR FORTRAN
+       All MPI routines in Fortran (except for MPI_WTIME and MPI_WTICK )  have
+       an  additional  argument ierr at the end of the argument list.  ierr is
+       an integer and has the same meaning as the return value of the  routine
+       in  C.   In Fortran, MPI routines are subroutines, and are invoked with
+       the call statement.
+
+       All MPI objects (e.g., MPI_Datatype , MPI_Comm ) are of type INTEGER in
+       Fortran.
+
+LOCATION
+       info_getnth.c
+
+
+
+                                   3/2/2003             MPI_Info_get_nthkey(3)

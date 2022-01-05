@@ -1,0 +1,36 @@
+MPI_File_write_at_all_end(3)         MPI-2        MPI_File_write_at_all_end(3)
+
+
+
+NAME
+       MPI_File_write_at_all_end  -   Complete  a split collective write using
+       explict offset
+
+SYNOPSIS
+       int MPI_File_write_at_all_end(MPI_File mpi_fh, void *buf, MPI_Status *status)
+
+INPUT PARAMETERS
+       fh     - file handle (handle)
+       buf    - initial address of buffer (choice)
+
+
+OUTPUT PARAMETERS
+       status - status object (Status)
+
+
+NOTES FOR FORTRAN
+       All MPI routines in Fortran (except for MPI_WTIME and MPI_WTICK )  have
+       an  additional  argument ierr at the end of the argument list.  ierr is
+       an integer and has the same meaning as the return value of the  routine
+       in  C.   In Fortran, MPI routines are subroutines, and are invoked with
+       the call statement.
+
+       All MPI objects (e.g., MPI_Datatype , MPI_Comm ) are of type INTEGER in
+       Fortran.
+
+LOCATION
+       wr_atalle.c
+
+
+
+                                   10/4/2004      MPI_File_write_at_all_end(3)

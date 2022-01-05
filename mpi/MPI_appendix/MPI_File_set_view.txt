@@ -1,0 +1,38 @@
+MPI_File_set_view(3)                 MPI-2                MPI_File_set_view(3)
+
+
+
+NAME
+       MPI_File_set_view -  Sets the file view
+
+SYNOPSIS
+       int MPI_File_set_view(MPI_File mpi_fh, MPI_Offset disp, MPI_Datatype etype,
+                            MPI_Datatype filetype, char *datarep, MPI_Info info)
+
+INPUT PARAMETERS
+       fh     - file handle (handle)
+       disp   - displacement (nonnegative integer)
+       etype  - elementary datatype (handle)
+       filetype
+              - filetype (handle)
+       datarep
+              - data representation (string)
+       info   - info object (handle)
+
+
+NOTES FOR FORTRAN
+       All  MPI routines in Fortran (except for MPI_WTIME and MPI_WTICK ) have
+       an additional argument ierr at the end of the argument list.   ierr  is
+       an  integer and has the same meaning as the return value of the routine
+       in C.  In Fortran, MPI routines are subroutines, and are  invoked  with
+       the call statement.
+
+       All MPI objects (e.g., MPI_Datatype , MPI_Comm ) are of type INTEGER in
+       Fortran.
+
+LOCATION
+       set_view.c
+
+
+
+                                   2/17/2005              MPI_File_set_view(3)

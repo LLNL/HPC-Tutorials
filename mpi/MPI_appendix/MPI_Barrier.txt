@@ -22,8 +22,8 @@ NOTES
 
 ALGORITHM
        If the underlying device cannot do better, a tree-like or combine algo-
-       rithm is used to  broadcast a message to all members of the  communica-
-       tor.   We  can  modify  this  to  use  "blocks"  at  a later time  (see
+       rithm is used to broadcast a message wto all members of the  communica-
+       tor.   We  can  modifiy  this  to  use  "blocks"  at  a later time (see
        MPI_Bcast ).
 
 
@@ -45,7 +45,7 @@ ERRORS
        handler is called.  By default, this error handler aborts the MPI  job.
        The  error  handler may be changed with MPI_Errhandler_set ; the prede-
        fined error handler MPI_ERRORS_RETURN may be used to cause error values
-       to  be  returned.  Note that MPI does not guarantee that an MPI program
+       to  be  returned.  Note that MPI does not guarentee that an MPI program
        can continue past an error.
 
        MPI_SUCCESS

@@ -13,7 +13,7 @@ INPUT PARAMETERS
        comm   - communicator (handle)
        color  - control of subset assignment (nonnegative integer).  Processes
               with the same color are in the same new communicator
-       key    - control of rank assignment (integer)
+       key    - control of rank assigment (integer)
 
 
 OUTPUT PARAMETER
@@ -68,7 +68,7 @@ ERRORS
        handler  is called.  By default, this error handler aborts the MPI job.
        The error handler may be changed with MPI_Errhandler_set ;  the  prede-
        fined error handler MPI_ERRORS_RETURN may be used to cause error values
-       to be returned.  Note that MPI does not guarantee that an  MPI  program
+       to be returned.  Note that MPI does not guarentee that an  MPI  program
        can continue past an error.
 
        MPI_SUCCESS

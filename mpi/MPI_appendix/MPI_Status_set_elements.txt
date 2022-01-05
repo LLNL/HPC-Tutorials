@@ -1,0 +1,26 @@
+MPI_Status_set_elements(3)           MPI-2          MPI_Status_set_elements(3)
+
+
+
+NAME
+       MPI_Status_set_elements -  Set the opaque part of an MPI_Status so that
+       MPI_Get_elements will return count.
+
+SYNOPSIS
+       #include "mpi.h"
+       int MPI_Status_set_elements( MPI_Status *status, MPI_Datatype datatype,
+                                  int count )
+
+INPUT PARAMETERS
+       status - Status to associate count with (Status)
+       datatype
+              - datatype associated with count (handle)
+       count  - number of elements to associate with status (integer)
+
+
+LOCATION
+       statuselm.c
+
+
+
+                                  11/14/2001        MPI_Status_set_elements(3)

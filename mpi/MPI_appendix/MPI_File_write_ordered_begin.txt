@@ -1,0 +1,39 @@
+MPI_File_write_ordered_begin(3)      MPI-2     MPI_File_write_ordered_begin(3)
+
+
+
+NAME
+       MPI_File_write_ordered_begin  -   Begin  a split collective write using
+       shared file pointer
+
+SYNOPSIS
+       int MPI_File_write_ordered_begin(MPI_File mpi_fh, void *buf, int count,
+                                     MPI_Datatype datatype)
+
+INPUT PARAMETERS
+       fh     - file handle (handle)
+       count  - number of elements in buffer (nonnegative integer)
+       datatype
+              - datatype of each buffer element (handle)
+
+
+OUTPUT PARAMETERS
+       buf    - initial address of buffer (choice)
+
+
+NOTES FOR FORTRAN
+       All MPI routines in Fortran (except for MPI_WTIME and MPI_WTICK )  have
+       an  additional  argument ierr at the end of the argument list.  ierr is
+       an integer and has the same meaning as the return value of the  routine
+       in  C.   In Fortran, MPI routines are subroutines, and are invoked with
+       the call statement.
+
+       All MPI objects (e.g., MPI_Datatype , MPI_Comm ) are of type INTEGER in
+       Fortran.
+
+LOCATION
+       write_ordb.c
+
+
+
+                                   2/17/2005   MPI_File_write_ordered_begin(3)

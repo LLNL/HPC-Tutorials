@@ -48,7 +48,7 @@ ERRORS
        handler is called.  By default, this error handler aborts the MPI  job.
        The  error  handler may be changed with MPI_Errhandler_set ; the prede-
        fined error handler MPI_ERRORS_RETURN may be used to cause error values
-       to  be  returned.  Note that MPI does not guarantee that an MPI program
+       to  be  returned.  Note that MPI does not guarentee that an MPI program
        can continue past an error.
 
        MPI_SUCCESS
@@ -62,7 +62,7 @@ ERRORS
               MPI_SUM ).  *N/ /*N MPI_ERR_PERM_KEY
        MPI_ERR_ARG
               -  Invalid  argument;  the error code associated with this error
-              indicates an attempt to free or change an MPI  permanent  keyval
+              indicates an attempt to free or chnage an MPI  permanent  keyval
               (e.g., MPI_TAG_UB ).  *N/ /*N MPI_ERR_UNKNOWN
        MPI_ERR_UNKNOWN
               -  Unknown error.  You should never see this.  If you do, report

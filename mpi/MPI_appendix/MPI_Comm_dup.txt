@@ -39,7 +39,7 @@ NOTES
        argument to MPI_Keyval_create .  This is particularly  useful  for  (a)
        attributes that describe some property of the group associated with the
        communicator, such as its interconnection topology and  (b)  communica-
-       tors  that  are given back to the user; the attributes in this case can
+       tors  that  are  given back to the user; the attibutes in this case can
        track subsequent MPI_Comm_dup operations on this communicator.
 
 
@@ -61,7 +61,7 @@ ERRORS
        handler is called.  By default, this error handler aborts the MPI  job.
        The  error  handler may be changed with MPI_Errhandler_set ; the prede-
        fined error handler MPI_ERRORS_RETURN may be used to cause error values
-       to  be  returned.  Note that MPI does not guarantee that an MPI program
+       to  be  returned.  Note that MPI does not guarentee that an MPI program
        can continue past an error.
 
        MPI_SUCCESS
