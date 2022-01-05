@@ -353,7 +353,7 @@ MPI libraries vary in their level of thread support:
 - **MPI_THREAD_SERIALIZED** - Level 2: The process may be multi-threaded, and multiple threads may make MPI calls, but only one at a time. That is, calls are not made concurrently from two distinct threads as all MPI calls are serialized.
 - **MPI_THREAD_MULTIPLE** - Level 3: Multiple threads may call MPI with no restrictions.
 
-Consult the [MPI_Init_thread() man page](https://computing.llnl.gov/tutorials/mpi/man/MPI_Init_thread.txt) for details.
+Consult the [MPI_Init_thread() man page](MPI_appendix/MPI_Init_thread.txt) for details.
 
 A simple C language example for determining thread level support is shown below.
 
