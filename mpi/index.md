@@ -21,7 +21,7 @@ tutorial: "Message Passing Interface (MPI)"
     * [Non-blocking Message Passing Routines](non_blocking)
 8. [Exercise 2](exercise_2)
 9. [Collective Communication Routines](collective_communication_routines)
-10. [Derived Data Types](derived_data_types)
+10. [Derived Data Types](derived_data_type)
 11. [Group and Communicator Management Routines](management_routines)
 12. [Virtual Topologies](virtual_topologies)
 13. [A Brief Word on MPI-2 and MPI-3](mpi2_mpi3)
