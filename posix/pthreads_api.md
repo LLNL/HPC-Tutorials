@@ -28,4 +28,4 @@ For portability, the `pthread.h` header file should be included in each source f
 
 The current POSIX standard is defined only for the C language. Fortran programmers can use wrappers around C function calls. Some Fortran compilers may provide a Fortran pthreads API.
 
-A number of excellent books about Pthreads are available. Several of these are listed in the [References](references) section of this tutorial.
+A number of excellent books about Pthreads are available. Several of these are listed in the [References](https://hpc-tutorials.llnl.gov/posix/AppendixA/) section of this tutorial.
