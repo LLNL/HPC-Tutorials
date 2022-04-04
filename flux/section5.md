@@ -7,10 +7,13 @@ author: Ryan Day, Lawrence Livermore National Laboratory
 
 One of the key innovations of Flux is the ability to easily start flux instances within a parent Flux instances. This allows users to create separate allocations on different subsets of their allocated resources and assign different portions of their workflow to those resources. The basic command line interface for Flux has two commands that create new Flux instances, and you've already been using one of them. The `flux mini batch` command described in [section 3](/flux/section3) is actually creating a flux instance that the `flux mini run` commands are running in. Similarly, `flux mini alloc` can be used to create a new instance, but blocks until its work is complete.
 ### Creating allocations inside of an allocation
-We can use the `flux hwloc info` and `flux jobs` commands discussed in [section 1](/flux/section1) and [section 2](/flux/section2) to demonstrate the differences between running in an allocation (`flux mini run` or `flux mini submit`) and creating a new allocation (`flux mini batch` or `flux mini alloc`). We will start with a two node allocation:
+We can use the `flux resource list` and `flux jobs` commands discussed in [section 1](/flux/section1) and [section 2](/flux/section2) to demonstrate the differences between running in an allocation (`flux mini run` or `flux mini submit`) and creating a new allocation (`flux mini batch` or `flux mini alloc`). We will start with a two node allocation:
 ```
-sh-4.2$ flux hwloc info
-2 Machines, 40 Cores, 40 PUs
+sh-4.2$ flux resource list
+     STATE NNODES   NCORES    NGPUS NODELIST
+      free      2       40        0 rzalastor[6-7]
+ allocated      0        0        0
+      down      0        0        0
 sh-4.2$
 ```
 We can submit work directly to this allocation as discussed previously and see that work with `flux jobs`. Note that the two `sleep` processes ended up on different nodes in the allocation:
@@ -37,7 +40,7 @@ flux mini batch \
     #!/bin/sh
 
     date
-    flux hwloc info
+    flux resource list
     flux mini run -n4 ./mpi_hellosleep &
     flux mini run -n4 ./mpi_hellosleep &
     sleep 3
@@ -60,7 +63,7 @@ flux mini batch \
     #!/bin/sh
 
     date
-    flux hwloc info
+    flux resource list
     flux mini run -n4 ./mpi_hellosleep &
     flux mini run -n4 ./mpi_hellosleep &
     sleep 3
@@ -89,7 +92,10 @@ In order to get information about the work submitted in `script1.sh` and `script
 ```
 sh-4.2$ cat flux-f4SLQ6Hbu.out
 Mon Mar 29 15:55:33 PDT 2021
-2 Machines, 8 Cores, 8 PUs
+     STATE NNODES   NCORES    NGPUS NODELIST
+      free      2        8        0 rzalastor[6-7]
+ allocated      0        0        0
+      down      0        0        0
 MASTER: Number of MPI tasks is: 4
 task 0 on rzalastor6 going to sleep
 task 2 on rzalastor7 going to sleep
@@ -109,7 +115,10 @@ Looking at the job log for the allocation created by `script2.sh`, we can see th
 ```
 sh-4.2$ cat flux-f4TgsWGkX.out
 Mon Mar 29 15:55:35 PDT 2021
-1 Machine, 8 Cores, 8 PUs
+     STATE NNODES   NCORES    NGPUS NODELIST
+      free      1        8        0 rzalastor6
+ allocated      0        0        0
+      down      0        0        0
 task 3 on rzalastor6 going to sleep
 task 2 on rzalastor6 going to sleep
 task 1 on rzalastor6 going to sleep
