@@ -160,7 +160,11 @@ The table below chronicles the OpenMP API release history:
   <tr>
     <td class="tg-0lax">Nov 2020</td>
     <td class="tg-0lax">OpenMP 5.1</td>
+  </tr><tr>
+    <td class="tg-0lax">Nov 2021</td>
+    <td class="tg-0lax">OpenMP 5.2</td>
   </tr>
+
 </tbody>
 </table>
 
