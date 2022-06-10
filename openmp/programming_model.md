@@ -5,13 +5,13 @@ release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
 tutorial: "OpenMP"
 ---
-
+## Openmp has - Memory Model, Execution Model:
 ## Shared Memory Model:
 
 OpenMP is designed for multi-processor/core, shared memory machines. The underlying architecture can be shared memory UMA or NUMA. 
 
 ![uma](images/uma.gif) ![numa](images/numa.gif)
-
+## Openmp Execution  Model:
 ## Thread Based Parallelism:
 
 
@@ -71,10 +71,9 @@ If every thread conducts I/O to a different file, the issues are not as signific
 
 It is entirely up to the programmer to ensure that I/O is conducted correctly within the context of a multi-threaded program. 
 
-## Memory Model: FLUSH Often?
+## Exection Model and Memory Model Interactions: 
 
 OpenMP provides a "relaxed-consistency" and "temporary" view of thread memory (in their words). In other words, threads can "cache" their data and are not required to maintain exact consistency with real memory all of the time.
 
 When it is critical that all threads view a shared variable identically, the programmer is responsible for insuring that the variable is FLUSHed by all threads as needed.
 
-More on this later... 
