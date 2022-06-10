@@ -8,7 +8,7 @@ tutorial: "OpenMP"
 
 ## LC OpenMP Implementations:
 
-As of June 2015, the documentation for LC's default compilers claims the following OpenMP support:
+As of June 2022, the documentation for LC's default compilers claims the following OpenMP support:
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -30,33 +30,33 @@ As of June 2015, the documentation for LC's default compilers claims the followi
 <tbody>
   <tr>
     <td class="tg-0pky">Intel C/C++, Fortran</td>
-    <td class="tg-0pky">14.0.3</td>
-    <td class="tg-0pky">OpenMP 3.1</td>
+    <td class="tg-0pky">intel/19.0.4 </td>
+    <td class="tg-0pky">OpenMP 5.0</td>
   </tr>
   <tr>
     <td class="tg-0pky">GNU C/C++, Fortran</td>
-    <td class="tg-0pky">4.4.7</td>
-    <td class="tg-0pky">OpenMP 3.0</td>
+    <td class="tg-0pky">4.9</td>
+    <td class="tg-0pky">OpenMP 4.5</td>
   </tr>
   <tr>
     <td class="tg-0pky">PGI C/C++, Fortran</td>
-    <td class="tg-0pky">8.0.1</td>
-    <td class="tg-0pky">OpenMP 3.0</td>
+    <td class="tg-0pky">pgi/22.1</td>
+    <td class="tg-0pky">OpenMP 5.0</td>
   </tr>
   <tr>
-    <td class="tg-0pky">IBM Blue Gene C/C++</td>
-    <td class="tg-0pky">12.1</td>
-    <td class="tg-0pky">OpenMP 3.1</td>
+    <td class="tg-0pky">IBM Coral Systems C/C++</td>
+    <td class="tg-0pky">xl/2021.09.22</td>
+    <td class="tg-0pky">OpenMP 4.5</td>
   </tr>
   <tr>
-    <td class="tg-0pky">IBM Blue Gene Fortran</td>
-    <td class="tg-0pky">14.1</td>
-    <td class="tg-0pky">OpenMP 3.1</td>
+    <td class="tg-0pky">IBM Coral Systems Fortran</td>
+    <td class="tg-0pky">xl/2021.09.22</td>
+    <td class="tg-0pky">OpenMP 4.5</td>
   </tr>
   <tr>
-    <td class="tg-0pky">IBM Blue Gene GNU C/C++, Fortran</td>
-    <td class="tg-0pky">4.4.6</td>
-    <td class="tg-0pky">OpenMP 3.0</td>
+    <td class="tg-0pky">IBM Coral Systems  GNU C/C++, Fortran</td>
+    <td class="tg-0pky">xl/2021.09.22</td>
+    <td class="tg-0pky">OpenMP 4.5</td>
   </tr>
 </tbody>
 </table>
