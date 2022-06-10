@@ -119,9 +119,9 @@ You should notice the following files. ***Note:*** Most of these are simple exam
 
 2. You can also view the available compilers in the [Compilers section](https://hpc.llnl.gov/training/tutorials/livermore-computing-linux-commodity-clusters-overview-part-one#Compilers) of the Linux Clusters Overview tutorial.
 
-3. Now, in your cluster login window, try the `use -l compilers` command to display available compilers. You should see GNU, Intel and PGI compilers - several versions of each.
+3. Now, in your cluster login window, try the `module avail` command to display available compilers. You should see GNU, Intel and PGI compilers - several versions of each.
 	* Question: Which version is the default version?
-	* Answer: Use the `dpkg-defaults` command and look for the asterisk.
+	* Answer: Look for the "(D)".
 
 ## 5. Create, compile and run an OpenMP "Hello world" program
 1\. Using your favorite text editor (vi/vim, emacs, nedit, gedit, nano...) open a new file - call it whatever you'd like.
