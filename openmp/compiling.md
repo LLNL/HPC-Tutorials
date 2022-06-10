@@ -97,7 +97,7 @@ All of LC's compilers require you to use the appropriate compiler flag to "turn 
   <tr>
     <td class="tg-0lax">Intel<br>Linux Opteron/Xeon</td>
     <td class="tg-0lax">icc<br>icpc<br>ifort</td>
-    <td class="tg-0lax">-openmp</td>
+    <td class="tg-0lax">-qopenmp</td>
   </tr>
   <tr>
     <td class="tg-0lax">PGI<br>Linux Opteron/Xeon</td>
@@ -110,7 +110,7 @@ All of LC's compilers require you to use the appropriate compiler flag to "turn 
     <td class="tg-0lax">-fopenmp</td>
   </tr>
   <tr>
-    <td class="tg-0lax">IBM<br>Blue Gene </td>
+    <td class="tg-0lax">IBM<br>Coral Systems </td>
     <td class="tg-0lax">bgxlc_r, bgcc_r bgxlC_r, bgxlc++_r bgxlc89_r bgxlc99_r bgxlf_r bgxlf90_r bgxlf95_r bgxlf2003_r *Be sure to use a thread-safe compiler - its name ends with _r</td>
     <td class="tg-0lax">-qsmp=omp</td>
   </tr>
@@ -119,7 +119,7 @@ All of LC's compilers require you to use the appropriate compiler flag to "turn 
 
 ### Compiler Documentation:
 
-* IBM BlueGene: https://www.ibm.com/support/pages/xl-fortran-blue-geneq-documentation-library https://www.ibm.com/support/pages/xl-cc-blue-geneq-documentation-library
+* IBM Coral Systems: https://hpc.llnl.gov/documentation/tutorials/using-lc-s-sierra-systems
 * Intel: www.intel.com/software/products/compilers/
 * PGI: www.pgroup.com
 * GNU: www.gnu.org
