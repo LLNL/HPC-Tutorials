@@ -67,7 +67,7 @@ According to vendor documentation, OpenMP 4.0 is supported beginning with the fo
 * GNU: 4.9 for C/C++ and 4.9.1 for Fortran
 * Intel: 14.0 has "some" support; 15.0 supports "most features"
 * PGI: not currently available
-* IBM BG/Q: not currently available
+* IBM Coral Systems: 4.0, 4.5 - depending upon compiler
 
 Use the command `use -l compilers` to view compiler packages by version.
 You can also view compiler version information at: https://computing.llnl.gov/code/compilers.html
