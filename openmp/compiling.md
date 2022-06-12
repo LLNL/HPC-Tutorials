@@ -111,7 +111,7 @@ All of LC's compilers require you to use the appropriate compiler flag to "turn 
   </tr>
   <tr>
     <td class="tg-0lax">IBM<br>Coral Systems </td>
-    <td class="tg-0lax">bgxlc_r, bgcc_r bgxlC_r, bgxlc++_r bgxlc89_r bgxlc99_r bgxlf_r bgxlf90_r bgxlf95_r bgxlf2003_r *Be sure to use a thread-safe compiler - its name ends with _r</td>
+    <td class="tg-0lax">xlc_r, cc_r xlC_r, xlc++_r xlc89_r xlc99_r xlf_r xlf90_r xlf95_r xlf2003_r *Be sure to use a thread-safe compiler - its name ends with _r</td>
     <td class="tg-0lax">-qsmp=omp</td>
   </tr>
 </tbody>
