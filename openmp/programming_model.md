@@ -73,9 +73,9 @@ It is entirely up to the programmer to ensure that I/O is conducted correctly wi
 
 ## Execution Model and Memory Model Interactions: 
 
-Single-Program-Multiple-Data (SPMD) is underlying programming paradigm - all threads have potential to  execute the same prgoram code, however, each thread may access modify different data and traverse different execution paths.
+Single-Program-Multiple-Data (SPMD) is underlying programming paradigm - all threads have potential to  execute the same program code, however, each thread may access modify different data and traverse different execution paths.
 
-OpenMP provides a "relaxed-consistency" and "temporary" view of thread memory (in their words). In other words, threads have equal access to shared memory where variables can be retrievd/stored. Each thread also has its own temporary copies of variables that may be modified independent from variables in memory.
+OpenMP provides a "relaxed-consistency" and "temporary" view of thread memory - threads have equal access to shared memory where variables can be retrieved/stored. Each thread also has its own temporary copies of variables that may be modified independent from variables in memory.
 
-When it is critical that all threads have a consistent view of a shared variable, the programmer (or compiler) is responsible for insuring that the variable is updated by all threads as needed, via an explict action - ie., FLUSH, or implicitly (via compiler recognition of program flow exiting parallel regions).
+When it is critical that all threads have a consistent view of a shared variable, the programmer (or compiler) is responsible for insuring that the variable is updated by all threads as needed, via an explict action - ie., FLUSH, or implicitly (via compiler recognition of program flow leaving a parallel regions).
 
