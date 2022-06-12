@@ -71,9 +71,11 @@ If every thread conducts I/O to a different file, the issues are not as signific
 
 It is entirely up to the programmer to ensure that I/O is conducted correctly within the context of a multi-threaded program. 
 
-## Exection Model and Memory Model Interactions: 
+## Execution Model and Memory Model Interactions: 
 
-OpenMP provides a "relaxed-consistency" and "temporary" view of thread memory (in their words). In other words, threads can "cache" their data and are not required to maintain exact consistency with real memory all of the time.
+Single-Program-Multiple-Data (SPMD) is underlying programming paradigm - all threads have potential to  execute the same prgoram code, however, each thread may access modify different data and traverse different execution paths.
 
-When it is critical that all threads view a shared variable identically, the programmer is responsible for insuring that the variable is FLUSHed by all threads as needed.
+OpenMP provides a "relaxed-consistency" and "temporary" view of thread memory (in their words). In other words, threads have equal access to shared memory where variables can be retrievd/stored. Each thread also has its own temporary copies of variables that may be modified independent from variables in memory.
+
+When it is critical that all threads have a consistent view of a shared variable, the programmer (or compiler) is responsible for insuring that the variable is updated by all threads as needed, via an explict action - ie., FLUSH, or implicitly (via compiler recognition of program flow exiting parallel regions).
 
