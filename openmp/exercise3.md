@@ -26,12 +26,12 @@ This example computes a dot product in parallel, however it differs from previou
 1. After reviewing the source code, compile and run the program. For example:
 #### C:	
 ```
-icc -openmp omp_orphan.c -o orphan 
+icc -qopenmp omp_orphan.c -o orphan 
 orphan | sort
 ```
 #### Fortran:	
 ```
-ifort -openmp omp_orphan.f -o orphan
+ifort -qopenmp omp_orphan.f -o orphan
 orphan | sort
 ```
 
