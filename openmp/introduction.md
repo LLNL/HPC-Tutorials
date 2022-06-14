@@ -23,12 +23,10 @@ tutorial: "OpenMP"
 
 ## OpenMP is not:
 
-* Meant for distributed memory parallel systems (by itself)
 * Necessarily implemented identically by all vendors
 * Guaranteed to make the most efficient use of shared memory
 * Required to check for data dependencies, data conflicts, race conditions, or deadlocks
 * Required to check for code sequences that cause a program to be classified as non-conforming
-* Meant to cover compiler-generated automatic parallelization and directives to the compiler to assist such parallelization
 * Designed to guarantee that input or output to the same file is synchronous when executed in parallel. The programmer is responsible for synchronizing input and output.
 
 ## Goals of OpenMP:
