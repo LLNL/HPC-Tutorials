@@ -47,10 +47,8 @@ The `--mpibind=off` flag affects an LC-specific plugin, and should not be used o
 
 If you're on a cluster that is running a multi-user Flux instance, getting an allocation with `flux-broker` processes running is even easier. You can just use the `flux mini alloc` command to get an interactive allocation or any of the batch commands described in [Section 3](/flux/section3).
 ### Showing the resources in your Flux instance
-Flux uses [hwloc](http://manpages.org/hwloc/7) to build an internal model of the hardware available in a Flux instance. You can query this model with `flux hwloc`, or see a view of what resources are allocated and available with `flux resource list`. For example, in the Flux instance started in the previous section, we have two nodes with 20 cores each:
+When started as a job in another resource manager, Flux uses [hwloc](http://manpages.org/hwloc/7) to build an internal model of the hardware available in a Flux instance. You can see a view of what resources are allocated and available with `flux resource list`. For example, in the Flux instance started in the previous section, we have two nodes with 20 cores each:
 ```
-sh-4.2$ flux hwloc info   
-2 Machines, 40 Cores, 40 PUs
 sh-4.2$ flux resource list
      STATE NNODES   NCORES    NGPUS NODELIST
       free      2       40        0 rzalastor[5-6]
