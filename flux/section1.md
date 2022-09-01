@@ -20,8 +20,9 @@ build-options:		+hwloc==2.8.0+zmq==4.3.4
 ```
 LC clusters running TOSS 4 are tracking Flux releases closely, but on TOSS 3 or non-LC clusters you may want a newer version. You can install a local build of Flux using `spack` or build it from source. See [Appendix I](/flux/appendices/appendixI) for more details on those options.
 ### Starting Flux
-If you're on an LC cluster such as corona or tioga where Flux is running as the system level scheduler, you can skip this step. Getting an allocation with `flux-broker` processes running is even easier. You can just use the `flux mini alloc` command to get an interactive allocation or any of the batch commands described in [Section 3](/flux/section3).  
-If you are on a cluster that is running another resource manager, such as Slurm or LSF, you can still use Flux to run your workload.  You will need to get an allocation, then start Flux on all of the nodes in that allocation with the `flux start` command. This will start `flux-broker` processes on all of the nodes that will gather information about the hardware resources available and communicate between each other to assign your workload to those resources. On a cluster running Slurm, this will look like:
+If you're on an LC cluster such as corona or tioga where Flux is running as the system level scheduler, you can skip this step. You can just use the `flux mini alloc` command to get an interactive allocation or any of the batch commands described in [Section 3](/flux/section3).
+
+If you are on a cluster that is running another resource manager, such as Slurm or LSF, you can still use Flux to run your workload.  You will need to get an allocation using the native resource managers commands (e.g. `salloc`), then start Flux on all of the nodes in that allocation with the `flux start` command. This will start `flux-broker` processes on all of the nodes that will gather information about the hardware resources available and communicate between each other to assign your workload to those resources. On a cluster running Slurm, this will look like:
 ```console
 [day36@rzalastor2:~]$ salloc -N2 --exclusive
 salloc: Granted job allocation 234174

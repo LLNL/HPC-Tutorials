@@ -55,7 +55,7 @@ If you want to submit a Flux job that won't start until another job has complete
   `--dependency=begin-time:TIMESTAMP`  
   &emsp;job will not start until TIMESTAMP  
 
-These dependency conditions can be used with `flux mini run`, `flux mini submit`, and the `flux mini batch` and `flux mini alloc` commands described in the next section.
+These dependency conditions can be used with `flux mini run`, `flux mini submit`, and the `flux mini batch` and `flux mini alloc` commands described in the [Section 3](/flux/section3).
 
 ### Managing Flux jobs with `flux jobs` and `flux job`
 If you have multiple Flux jobs running and queued you can list those jobs with the `flux jobs` command, and manage them with `flux job`. For example, in two node instance with 20 cores per node, we can see the states of the job steps that we've submitted as:
