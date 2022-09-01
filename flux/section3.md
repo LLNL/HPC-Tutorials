@@ -38,7 +38,7 @@ job complete
 sh-4.2$
 ```
 ### Making your job script submission self documenting
-Many resource managers allow you to put batch submission scripts in your script as comments. For example, in a Slurm sbatch script, you can use `#SBATCH -N 2` in your script to request two nodes in your allocation. Flux does not have directly analogous functionality. If you want to include your job submission flags in your script, you can use a [heredoc](https://en.wikipedia.org/wiki/Here_document) to include the `flux mini batch` command in your script and run it directly.
+Many resource managers allow you to put batch submission scripts in your script as comments. For example, in a Slurm sbatch script, you can use `#SBATCH -N 2` in your script to request two nodes in your allocation. Flux does not yet have directly analogous functionality. If you want to include your job submission flags in your script, you can use a [heredoc](https://en.wikipedia.org/wiki/Here_document) to include the `flux mini batch` command in your script and run it directly.
 ```
 sh-4.2$ cat simplescript.sh
 #!/bin/sh
@@ -71,8 +71,55 @@ job complete
 ^C
 sh-4.2$
 ```
+### Starting an interactive Flux instance with `flux mini alloc`
+When you submit a job script with `flux mini batch`, you are actually starting a new Flux instance with its own resources and running your script in that instance. The `flux mini alloc` command will create a new Flux instance and start an interactive shell in it.  
+```
+[day36@corona211:~]$ flux mini alloc -N2 -n2 -t 1h
+[day36@corona177:~]$ flux resource list
+     STATE NNODES   NCORES    NGPUS NODELIST
+      free      2       96       16 corona[177-178]
+ allocated      0        0        0
+      down      0        0        0
+[day36@corona177:~]$ flux mini run -N2 -n2 hostname
+corona177
+corona178
+[day36@corona177:~]$
+```
+Alternatively, you can supply `flux mini alloc` with a command or script and it will run that in a new Flux instance. Unlike `flux mini batch`, `flux mini alloc` will block until the command or script returns and send the standard output and error to the terminal.
+```
+[day36@corona211:flux_test]$ cat test_batch.sh
+#!/bin/bash
+
+echo "resources"
+flux resource list
+
+echo "hosts"
+flux mini run -N 2 -n 2 hostname
+[day36@corona211:flux_test]$ flux mini alloc -N2 -n2 ./test_batch.sh
+resources
+     STATE NNODES   NCORES    NGPUS NODELIST
+      free      2       96       16 corona[177-178]
+ allocated      0        0        0
+      down      0        0        0
+hosts
+corona177
+corona178
+[detached: session exiting]
+[day36@corona211:flux_test]
+```
+### Submitting jobs to an existing instance with `flux proxy`
+Some user workflows involve getting an allocation (Flux instance) and submitting work to it from outside of that allocation. Flux can accomodate these types of workflows using the `flux proxy` command. You could, for example, create a two node Flux instance with `flux mini alloc -N2 -n96 -t 1d sleep 1d`, then use a `flux proxy` command to submit work in that instance:
+```
+[day36@corona212:~]$ flux jobs
+       JOBID USER     NAME       ST NTASKS NNODES  RUNTIME NODELIST
+ ƒ8RmSm8mYW3 day36    flux        R      2      2   53.01s corona[177-178]
+[day36@corona212:~]$ flux proxy ƒ8RmSm8mYW3 flux mini run -N2 -n2 hostname
+corona177
+corona178
+[day36@corona212:~]$
+```
 ### More user facing batch options
-There are a bunch of things like job dependencies, queues, qos, modifying jobs, holding jobs, etc that aren't in flux yet, but will be described here once they are.
+There are a number of things like job queues, qos, modifying jobs, holding jobs, etc that aren't in flux yet, but will be described here once they are.
 
 ---
 [Section 2](/flux/section2) | Section 3 | [Exercise 3](/flux/exercises/exercise3) | [Section 4](/flux/section4)  

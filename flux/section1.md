@@ -9,31 +9,19 @@ Regardless of what resource management software a cluster is running, the first 
 ### Finding Flux
 Flux is included in the TOSS operating system on LC systems, so should be available in your standard `PATH`. You can check on this with:
 ```console
-[day36@rzalastor1:~]$ which flux
+[day36@corona211:~]$ which flux
 /usr/bin/flux
-[day36@rzalastor1:~]$ flux --version
-commands:    		0.26.0
-libflux-core:		0.26.0
-libflux-security:	0.4.0
-build-options:		+hwloc==1.11.0
-[day36@rzalastor1:~]$
+[day36@corona211:~]$ flux --version
+commands:    		0.42.0
+libflux-core:		0.42.0
+libflux-security:	0.7.0
+build-options:		+hwloc==2.8.0+zmq==4.3.4
+[day36@corona211:~]$
 ```
-Flux is under heavy development. At times you may want a version that is newer than the TOSS version, or just ensure that you stay on a consistent version. Builds of Flux are also installed in `/usr/global/tools/flux/` on LC clusters. You can use one of these versions by adding it to your PATH:
-```console
-[day36@rzalastor2:~]$ export PATH=/usr/global/tools/flux/$SYS_TYPE/default/bin:$PATH
-[day36@rzalastor2:~]$ which flux
-/usr/global/tools/flux/toss_3_x86_64_ib/default/bin/flux
-[day36@rzalastor2:~]$ flux --version
-commands:    		0.18.0
-libflux-core:		0.18.0
-build-options:		+hwloc==1.11.0
-[day36@rzalastor2:~]$
-```
-Note that the `default` and `new` links can change as new versions of Flux are released.
-
-If you are not on an LC cluster, and flux is not already installed, or if you're just into that sort of thing, you can also install Flux using `spack` or build it from source. See [Appendix I](/flux/appendices/appendixI) for more details on those options.
+LC clusters running TOSS 4 are tracking Flux releases closely, but on TOSS 3 or non-LC clusters you may want a newer version. You can install a local build of Flux using `spack` or build it from source. See [Appendix I](/flux/appendices/appendixI) for more details on those options.
 ### Starting Flux
-Even if you are on a cluster that is running another resource manager, such as Slurm or LSF, you can still use Flux to run your workload. You will need to get an allocation, then start Flux on all of the nodes in that allocation with the `flux start` command. This will start `flux-broker` processes on all of the nodes that will gather information about the hardware resources available and communicate between each other to assign your workload to those resources. On a cluster running Slurm, this will look like:
+If you're on an LC cluster such as corona or tioga where Flux is running as the system level scheduler, you can skip this step. Getting an allocation with `flux-broker` processes running is even easier. You can just use the `flux mini alloc` command to get an interactive allocation or any of the batch commands described in [Section 3](/flux/section3).  
+If you are on a cluster that is running another resource manager, such as Slurm or LSF, you can still use Flux to run your workload.  You will need to get an allocation, then start Flux on all of the nodes in that allocation with the `flux start` command. This will start `flux-broker` processes on all of the nodes that will gather information about the hardware resources available and communicate between each other to assign your workload to those resources. On a cluster running Slurm, this will look like:
 ```console
 [day36@rzalastor2:~]$ salloc -N2 --exclusive
 salloc: Granted job allocation 234174
@@ -45,7 +33,6 @@ sh-4.2$
 ```
 The `--mpibind=off` flag affects an LC-specific plugin, and should not be used on non-LC clusters.
 
-If you're on a cluster that is running a multi-user Flux instance, getting an allocation with `flux-broker` processes running is even easier. You can just use the `flux mini alloc` command to get an interactive allocation or any of the batch commands described in [Section 3](/flux/section3).
 ### Showing the resources in your Flux instance
 When started as a job in another resource manager, Flux uses [hwloc](http://manpages.org/hwloc/7) to build an internal model of the hardware available in a Flux instance. You can see a view of what resources are allocated and available with `flux resource list`. For example, in the Flux instance started in the previous section, we have two nodes with 20 cores each:
 ```

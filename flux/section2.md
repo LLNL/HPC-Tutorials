@@ -41,6 +41,22 @@ task 3 on rzalastor6 woke up
 ^C
 sh-4.2$
 ```
+### Submit dependent jobs with `--dependency=`
+If you want to submit a Flux job that won't start until another job has completed or reached some other state, you can add a `--dependency=` flag to any `flux mini` command. Flux currently supports five dependency conditions:
+
+  `--dependency=after:JOBID`  
+  &emsp;job will not start until JOBID has started  
+  `--dependency=afterany:JOBID`  
+  &emsp;job will not start until JOBID has completed  
+  `--dependency=afterok:JOBID`  
+  &emsp;job will not start until JOBID has completed successfully  
+  `--dependency=afternotok:JOBID`  
+  &emsp;job will not start until JOBID has completed unsuccessfully  
+  `--dependency=begin-time:TIMESTAMP`  
+  &emsp;job will not start until TIMESTAMP  
+
+These dependency conditions can be used with `flux mini run`, `flux mini submit`, and the `flux mini batch` and `flux mini alloc` commands described in the next section.
+
 ### Managing Flux jobs with `flux jobs` and `flux job`
 If you have multiple Flux jobs running and queued you can list those jobs with the `flux jobs` command, and manage them with `flux job`. For example, in two node instance with 20 cores per node, we can see the states of the job steps that we've submitted as:
 ```
