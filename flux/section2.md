@@ -7,7 +7,7 @@ author: Ryan Day, Lawrence Livermore National Laboratory
 
 In the previous section, we learned how to find flux, get an allocation, and query the compute resources in that allocation. Now, we are ready to launch work on those compute resources and get some work done. When you launch work in Flux, that work takes the form of jobs that can be either blocking or non-blocking. Blocking jobs will run to completion before more work can be submitted, whereas non-blocking jobs are enqueued, allowing you to immediately submit more work in the allocation.
 
-Before we get into submitting and managing Flux jobs, we should also discuss Flux's jobids as they're a bit different than what you'll find in other resource management software. In the introduction to this tutorial, we mentioned that Flux is fully hierarchical. That is, users can launch full flux instances within a parent Flux instance, then launch more jobs or flux instances within those instances. While this has has many benefits for taking advantage of modern HPC hardware and allowing complex workflows, it also means that the sequential numeric jobids used in traditional resource managers do not match Flux's job model. Flux instead combines the submit time, an id, and sequence number to create effectively unique identifiers for each job and job step. There are options to display these identifiers in a number of ways, but the default is an 8 character string prepended by an `f`, e.g. `fBsFXaow5` for the job submitted in the example below. For more details on Flux's identifiers, see the [FLUID documentation](https://flux-framework.readthedocs.io/projects/flux-rfc/en/latest/spec_19.html).
+Before we get into submitting and managing Flux jobs, we should also discuss Flux's jobids as they're a bit different than what you'll find in other resource management software. Remember that an allocation in Flux is a fully featured Flux instance. Rather than create sequential numeric ids within each instance, Flux combines the submit time, an id, and sequence number to create identifiers that are unique for each job in a Flux instance. This avoids requiring a central allocator for jobids which improves the scalability of job submission within instances. There are options to display these identifiers in a number of ways, but the default is an 8 character string prepended by an `f`, e.g. `fBsFXaow5` for the job submitted in the example below. For more details on Flux's identifiers, see the [FLUID documentation](https://flux-framework.readthedocs.io/projects/flux-rfc/en/latest/spec_19.html).
 ### Submit blocking Flux jobs with `flux mini run`
 If you want your work to block until it completes, the `flux mini run` command will submit a job and then wait until it is complete before returning. For example, in a two node allocation, we can launch an mpi program with 4 tasks:
 ```
@@ -41,6 +41,22 @@ task 3 on rzalastor6 woke up
 ^C
 sh-4.2$
 ```
+### Submit dependent jobs with `--dependency=`
+If you want to submit a Flux job that won't start until another job has completed or reached some other state, you can add a `--dependency=` flag to any `flux mini` command. Flux currently supports five dependency conditions:
+
+  `--dependency=after:JOBID`  
+  &emsp;job will not start until JOBID has started  
+  `--dependency=afterany:JOBID`  
+  &emsp;job will not start until JOBID has completed  
+  `--dependency=afterok:JOBID`  
+  &emsp;job will not start until JOBID has completed successfully  
+  `--dependency=afternotok:JOBID`  
+  &emsp;job will not start until JOBID has completed unsuccessfully  
+  `--dependency=begin-time:TIMESTAMP`  
+  &emsp;job will not start until TIMESTAMP  
+
+These dependency conditions can be used with `flux mini run`, `flux mini submit`, and the `flux mini batch` and `flux mini alloc` commands described in the [Section 3](/flux/section3).
+
 ### Managing Flux jobs with `flux jobs` and `flux job`
 If you have multiple Flux jobs running and queued you can list those jobs with the `flux jobs` command, and manage them with `flux job`. For example, in two node instance with 20 cores per node, we can see the states of the job steps that we've submitted as:
 ```
