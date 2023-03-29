@@ -114,6 +114,37 @@ corona177
 corona178
 [day36@corona212:~]$
 ```
+### Running commands in the system instance with `flux --parent`
+Since each Flux job is a fully featured Flux instance, running a Flux command inside of a job will run that command inside of that instance. For example, if you run `flux resource list` on a corona login node, it will list all of the resources in that cluster:
+```
+[day36@corona82:~]$ flux resource list
+     STATE NNODES   NCORES    NGPUS NODELIST
+      free     45     2160      360 corona[173,194,238,253-259,261-283,285-296]
+ allocated     68     3264      544 corona[171,174-193,196-201,203-207,213-216,218-237,239-247,250-252]
+      down      8      384       64 corona[172,195,202,217,248-249,260,284]
+[day36@corona82:~]$
+```
+If, however, you get an interactive allocation with `flux alloc` and run `flux resource list` in that, you will only see the resources allocated to your job:
+```
+[day36@corona82:~]$ flux alloc -N1
+flux-job: fpyF8fye25m started                                                                                                                                                                     00:00:06
+[day36@corona189:~]$ flux resource list
+     STATE NNODES   NCORES    NGPUS NODELIST
+      free      1       48        8 corona189
+ allocated      0        0        0
+      down      0        0        0
+[day36@corona189:~]$
+```
+If you want to know information about the resources available in the main system instance (the parent instance), you can add a `--parent` flag to your `flux` command:
+```
+[day36@corona189:~]$ flux --parent resource list
+     STATE NNODES   NCORES    NGPUS NODELIST
+      free     48     2304      384 corona[194,198,204,206,238,250,253-259,261-283,285-296]
+ allocated     65     3120      520 corona[171,173-193,196-197,199-201,203,205,207,213-216,218-237,239-247,251-252]
+      down      8      384       64 corona[172,195,202,217,248-249,260,284]
+[day36@corona189:~]$
+```
+This becomes particularly important if, for example, you want to include a command in your batch script that will submit the next job in a series of jobs. As we will discuss further in [Section 5](/flux/section5), if you put a `flux batch myscript` command in your batch script, that command will get run as a subjob of the current job. If you want that batch job to submitted to the main system queue, you will need to use `flux --parent batch myscript`.
 ### More user facing batch options
 The Flux job submission commands have many more options for doing things like running on specific nodes or queues, modifying your job environment, specifying task mappings, and more. See, for example, `man flux-run` for details on all of the options available. We have also put together a [table of equivalent resource manager flags](https://hpc.llnl.gov/banks-jobs/running-jobs/batch-system-cross-reference-guides).
 
