@@ -5,9 +5,9 @@ release_number: LLNL-WEB-822959
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
-One of the key innovations of Flux is the ability to easily start flux instances within a parent Flux instances. This allows users to create separate allocations on different subsets of their allocated resources and assign different portions of their workflow to those resources. The basic command line interface for Flux has two commands that create new Flux instances, and you've already been using one of them. The `flux mini batch` command described in [section 3](/flux/section3) is actually creating a flux instance that the `flux mini run` commands are running in. Similarly, `flux mini alloc` can be used to create a new instance, but blocks until its work is complete.
+One of the key innovations of Flux is the ability to easily start flux instances within a parent Flux instances. This allows users to create separate allocations on different subsets of their allocated resources and assign different portions of their workflow to those resources. The basic command line interface for Flux has two commands that create new Flux instances, and you've already been using one of them. The `flux batch` command described in [section 3](/flux/section3) is actually creating a flux instance that the `flux run` commands are running in. Similarly, `flux alloc` can be used to create a new instance, but blocks until its work is complete.
 ### Creating allocations inside of an allocation
-We can use the `flux resource list` and `flux jobs` commands discussed in [section 1](/flux/section1) and [section 2](/flux/section2) to demonstrate the differences between running in an allocation (`flux mini run` or `flux mini submit`) and creating a new allocation (`flux mini batch` or `flux mini alloc`). We will start with a two node allocation:
+We can use the `flux resource list` and `flux jobs` commands discussed in [section 1](/flux/section1) and [section 2](/flux/section2) to demonstrate the differences between running in an allocation (`flux run` or `flux submit`) and creating a new allocation (`flux batch` or `flux alloc`). We will start with a two node allocation:
 ```
 sh-4.2$ flux resource list
      STATE NNODES   NCORES    NGPUS NODELIST
@@ -18,9 +18,9 @@ sh-4.2$
 ```
 We can submit work directly to this allocation as discussed previously and see that work with `flux jobs`. Note that the two `sleep` processes ended up on different nodes in the allocation:
 ```
-sh-4.2$ flux mini submit -n1 sleep 10m
+sh-4.2$ flux submit -n1 sleep 10m
 f4M6c3TKd
-sh-4.2$ flux mini submit -n1 sleep 10m
+sh-4.2$ flux submit -n1 sleep 10m
 f4NGSibEo
 sh-4.2$ flux jobs
        JOBID USER     NAME       ST NTASKS NNODES  RUNTIME NODELIST
@@ -28,12 +28,12 @@ sh-4.2$ flux jobs
    f4M6c3TKd day36    sleep       R      1      1   7.261s rzalastor6
 sh-4.2$
 ```
-We can also submit batch scripts with `flux mini batch`. These will create new flux instances with different hardware resources available. We will demonstrate this with two batch scripts. `script1.sh` creates an allocation with eight tasks spread across the two nodes of the parent allocation:
+We can also submit batch scripts with `flux batch`. These will create new flux instances with different hardware resources available. We will demonstrate this with two batch scripts. `script1.sh` creates an allocation with eight tasks spread across the two nodes of the parent allocation:
 ```
 sh-4.2$ cat script1.sh
 #!/bin/sh
 
-flux mini batch \
+flux batch \
 -N 2 \
 -n 8 \
 <<- 'END_OF_SCRIPT'
@@ -41,8 +41,8 @@ flux mini batch \
 
     date
     flux resource list
-    flux mini run -n4 ./mpi_hellosleep &
-    flux mini run -n4 ./mpi_hellosleep &
+    flux run -n4 ./mpi_hellosleep &
+    flux run -n4 ./mpi_hellosleep &
     sleep 3
     flux jobs
     wait
@@ -51,12 +51,12 @@ flux mini batch \
 END_OF_SCRIPT
 sh-4.2$
 ```
-In this script, the four tasks of each `flux mini run` will be spread across both nodes. In contrast, `script2.sh` creates an allocation with eight tasks on just one of the nodes of the parent allocation, so all of the tasks from both `flux mini run` commands will be on the same node:
+In this script, the four tasks of each `flux run` will be spread across both nodes. In contrast, `script2.sh` creates an allocation with eight tasks on just one of the nodes of the parent allocation, so all of the tasks from both `flux run` commands will be on the same node:
 ```
 sh-4.2$ cat script2.sh
 #!/bin/sh
 
-flux mini batch \
+flux batch \
 -N 1 \
 -n 8 \
 <<- 'END_OF_SCRIPT'
@@ -64,8 +64,8 @@ flux mini batch \
 
     date
     flux resource list
-    flux mini run -n4 ./mpi_hellosleep &
-    flux mini run -n4 ./mpi_hellosleep &
+    flux run -n4 ./mpi_hellosleep &
+    flux run -n4 ./mpi_hellosleep &
     sleep 3
     flux jobs
     wait

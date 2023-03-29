@@ -9,7 +9,7 @@ The top level Flux system instance on LC systems is configured to store informat
 ### Viewing completed jobs with `flux jobs -a`
 By default, the `flux jobs` command only lists your running and pending jobs. You can see all of your jobs, including completed jobs, by adding a `-a` flag. You can also show more information about any jobs with a `-o "FORMAT"` flag. See `man flux-jobs` for a detailed description of how to construct a `"FORMAT"` string and what information may be included in it.
 ### Submitting jobs to a non-default bank
-Some LC clusters have Flux's accounting modules enabled. This allows us to use a mutli-factor priority system that includes a hierarchical fairshare algorithm. Users of these systems may have access to multiple banks. One bank will be set as your default bank, but you can choose to submit jobs using an alternate bank by adding `-o setattr=system.bank=BANK` to your `flux mini` command.  
+Some LC clusters have Flux's accounting modules enabled. This allows us to use a mutli-factor priority system that includes a hierarchical fairshare algorithm. Users of these systems may have access to multiple banks. One bank will be set as your default bank, but you can choose to submit jobs using an alternate bank by adding `-o setattr=system.bank=BANK` to your `flux run|submit|alloc|batch` command.  
 
 ##### *More on accounting and usage coming soon*
 
