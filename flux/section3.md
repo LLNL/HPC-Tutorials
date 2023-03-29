@@ -47,7 +47,7 @@ sh-4.2$ cat simplescript.sh
 #flux: -n 4
 
 date
-flux mini run -n4 ./mpi_hellosleep
+flux run -n4 ./mpi_hellosleep
 echo 'job complete'
 
 sh-4.2$ flux batch ./simplescript.sh
@@ -115,7 +115,7 @@ corona178
 [day36@corona212:~]$
 ```
 ### More user facing batch options
-The Flux job submission commands have many more options for doing things like running on specific nodes or queues, modifying your job environment, specifying task mappings, and more. See, for example, `man flux-run` for details on all of the options available.
+The Flux job submission commands have many more options for doing things like running on specific nodes or queues, modifying your job environment, specifying task mappings, and more. See, for example, `man flux-run` for details on all of the options available. We have also put together a [table of equivalent resource manager flags](https://hpc.llnl.gov/banks-jobs/running-jobs/batch-system-cross-reference-guides).
 
 ---
 [Section 2](/flux/section2) | Section 3 | [Exercise 3](/flux/exercises/exercise3) | [Section 4](/flux/section4)  
