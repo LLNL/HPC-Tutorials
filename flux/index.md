@@ -9,7 +9,7 @@ author: Ryan Day, Lawrence Livermore National Laboratory
 
 [Introduction](intro)
 #### Part I: Simple job submission and interacting with Flux
-- [Section 1: Starting Flux and getting an allocation](section1)  
+- [Section 1: Starting Flux](section1)  
  -- [Exercise 1](exercises/exercise1) --
 - [Section 2: Launching and tracking Flux jobs](section2)  
  -- [Exercise 2](exercises/exercise2) --

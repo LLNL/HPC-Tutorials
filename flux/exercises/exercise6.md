@@ -5,7 +5,7 @@ release_number: LLNL-WEB-822959
 author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
-1. Clone the workflow examples from the [flux github](https://github.com/flux-framework/flux-workflow-examples.git):
+1. Clone the workflow examples from the [Flux github](https://github.com/flux-framework/flux-workflow-examples.git):
 ```
 $ git clone https://github.com/flux-framework/flux-workflow-examples.git
 $ cd flux-workflow-examples/job-submit-api
@@ -14,7 +14,7 @@ $ cd flux-workflow-examples/job-submit-api
 3. Run the [Python Job Submit/Wait](https://flux-framework.readthedocs.io/projects/flux-workflow-examples/en/latest/job-submit-wait/README.html), [Python Asynchronous Bulk Job Submission](https://flux-framework.readthedocs.io/projects/flux-workflow-examples/en/latest/async-bulk-job-submit/README.html), and [Using Flux job status and control API](https://flux-framework.readthedocs.io/projects/flux-workflow-examples/en/latest/job-status-control/README.html) work examples. Review the scripts included in those examples to see how the `FluxExecutor` and `concurrent.futures` are being used.
 
 ### Notes / Solutions
-2. Most of the examples explicitly include instructions for getting a Slurm allocation and starting flux. See [Section 1](/flux/section1) for general instructions on getting an allocation in flux or starting flux under Slurm.
+2. Most of the examples explicitly include instructions for getting a Slurm allocation and starting Flux. See [Section 1](/flux/section1) for general instructions on getting an allocation in Flux or starting Flux under Slurm.
 3. See note 2.
 
 ---
