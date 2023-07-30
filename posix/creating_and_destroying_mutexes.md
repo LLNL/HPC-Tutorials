@@ -23,6 +23,13 @@ Mutex variables must be declared with type `pthread_mutex_t`, and must be initia
 
     `pthread_mutex_t mymutex = PTHREAD_MUTEX_INITIALIZER;`
 
+2. Dinamically, using `pthread_mutex_init()`. For example:
+
+    ```C
+    pthread_mutex_t mymutex;
+    pthread_mutex_init(&mymutex, NULL);
+    ```
+
 The mutex is initially unlocked.
 
 The `attr` object is used to establish properties for the mutex object, and must be of `type pthread_mutexattr_t` if used (may be specified as NULL to accept defaults). The Pthreads standard defines three optional mutex attributes:

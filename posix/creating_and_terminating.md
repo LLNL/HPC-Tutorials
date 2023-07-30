@@ -30,7 +30,9 @@ Initially, your `main()` program comprises a single, default thread. All other t
 
 The maximum number of threads that may be created by a process is implementation dependent. Programs that attempt to exceed the limit can fail or produce wrong results.
 
-Querying and setting your implementation's thread limit - Linux example shown. Demonstrates querying the default (soft) limits and then setting the maximum number of processes (including threads) to the hard limit. Then verifying that the limit has been overridden.
+### Thread limits
+
+The next examples show how to query and set your implementation's thread limit on Linux. First we query the default (soft) limits and then set the maximum number of processes (including threads) to the hard limit. Then we verify that the limit has been overridden.
 
 #### bash / ksh / sh example
 
@@ -161,7 +163,7 @@ There are several ways in which a thread may be terminated:
 
 The `pthread_exit()` routine allows the programmer to specify an optional termination status parameter. This optional parameter is typically returned to threads "joining" the terminated thread (covered later).
 
-In subroutines that execute to completion normally, you can often dispense with calling `pthread_exit()` - unless, of course, you want to pass the optional status code back.
+In subroutines that execute to completion normally, you can often dispense with calling `pthread_exit()` - unless, of course, you want to get the routine's return value.
 
 Cleanup: the `pthread_exit()` routine does not close files; any files opened inside the thread will remain open after the thread is terminated.
 
@@ -173,7 +175,7 @@ Discussion on calling `pthread_exit()` from `main()`:
 
 ### Example: Pthread Creation and Termination
 
-This simple example code creates 5 threads with the `pthread_create()` routine. Each thread prints a "Hello World!" message, and then terminates with a call to `pthread_exit()`.
+This simple example code creates 5 threads with the `pthread_create()` routine. Each thread prints a "Hello World!" message. Then, it terminates with a call to `pthread_exit()`.
 
 ```C
 #include <pthread.h>

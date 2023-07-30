@@ -25,7 +25,7 @@ The `pthread_join()` subroutine blocks the calling thread until the specified `t
 
 The programmer is able to obtain the target thread's termination `status` if it was specified in the target thread's call to `pthread_exit()`.
 
-A joining thread can match one `pthread_join()` call. It is a logical error to attempt multiple joins on the same thread.
+A thread can only be joined once. It is a logical error to attempt multiple joins on the same thread.
 
 Two other synchronization methods, mutexes and condition variables, will be discussed later.
 
@@ -52,9 +52,9 @@ There is no converse routine.
 
 If a thread requires joining, consider explicitly creating it as joinable. This provides portability as not all implementations may create threads as joinable by default.
 
-If you know in advance that a thread will never need to join with another thread, consider creating it in a detached state. Some system resources may be able to be freed.
+If you know in advance that a thread will never need to join with another thread, consider creating it in a detached state, as this may reduce overhead.
 
-### Pthread Joining Example
+### Pthreads Joining Example
 
 ```C
 #include <pthread.h>

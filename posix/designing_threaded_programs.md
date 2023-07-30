@@ -11,7 +11,8 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 On modern, multi-core machines, pthreads are ideally suited for parallel programming, and whatever applies to parallel programming in general, applies to parallel pthreads programs.
 
 There are many considerations for designing parallel programs, such as:
-* What type of parallel programming model to use?
+
+* Parallel programming model
 * Problem partitioning
 * Load balancing
 * Communications
@@ -24,13 +25,12 @@ There are many considerations for designing parallel programs, such as:
 
 Covering these topics is beyond the scope of this tutorial, however interested readers can obtain a quick overview in the [Introduction to Parallel Computing](https://hpc.llnl.gov/training/tutorials/introduction-parallel-computing-tutorial) tutorial.
 
-In general though, in order for a program to take advantage of Pthreads, it must be able to be organized into discrete, independent tasks which can execute concurrently. For example, if routine1 and routine2 can be interchanged, interleaved and/or overlapped in real time, they are candidates for threading.
+In general though, in order for a program to take advantage of Pthreads, it must be able to be organized into discrete, independent tasks which can execute concurrently. For example, if two routines can be interchanged, interleaved and/or overlapped in real time, they are candidates for threading.
 
 ![concurrent](images/concurrent.gif)
 
 Programs having the following characteristics may be well suited for pthreads:
 
-* Work that can be executed, or data that can be operated on, by multiple tasks simultaneously:
 * Block for potentially long I/O waits
 * Use many CPU cycles in some places but not others
 * Must respond to asynchronous events
@@ -38,8 +38,8 @@ Programs having the following characteristics may be well suited for pthreads:
 
 Several common models for threaded programs exist:
 
-* **Manager/worker**: a single thread, the manager assigns work to other threads, the workers. Typically, the manager handles all input and parcels out work to the other tasks. At least two forms of the manager/worker model are common: static worker pool and dynamic worker pool.
-* **Pipeline**: a task is broken into a series of suboperations, each of which is handled in series, but concurrently, by a different thread. An automobile assembly line best describes this model.
+* **Manager/worker**: a single-threaded manager assigns work to other threads, the workers. Typically, the manager handles all input and parcels out work to the other tasks. At least two forms of the manager/worker model are common: static worker pool and dynamic worker pool.
+* **Pipeline**: a task is broken into a series of suboperations, each of which is handled in sequence, but concurrently, by a different thread. An automobile assembly line best describes this model.
 * **Peer**: similar to the manager/worker model, but after the main thread creates other threads, it participates in the work.
 
 ### Shared Memory Model

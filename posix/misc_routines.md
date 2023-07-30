@@ -17,7 +17,7 @@ Note that for both of these routines, the thread identifier objects are opaque a
 
 [`pthread_once(once_control, init_routine)`](man/pthread_once.txt)
 
-`pthread_once` executes the `init_routine` exactly once in a process. The first call to this routine by any thread in the process executes the given `init_routine`, without parameters. Any subsequent call will have no effect.
+`pthread_once` executes the `init_routine` exactly once in a process. The first call to this routine by any thread in the process executes the given `init_routine`, without parameters. Any subsequent calls will have no effect.
 
 The `init_routine` routine is typically an initialization routine.
 

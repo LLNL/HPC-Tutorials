@@ -15,7 +15,7 @@ Mutexes can be used to prevent "race" conditions. An example of a race condition
 
 In the above example, a mutex should be used to lock the "Balance" while a thread is using this shared data resource.
 
-Very often the action performed by a thread owning a mutex is the updating of global variables. This is a safe way to ensure that when several threads update the same variable, the final value is the same as what it would be if only one thread performed the update. The variables being updated belong to a "critical section".
+Mutex are usually used when updating global variables. This is a safe way to ensure that when several threads update the same variable, the final value is the same as what it would be if only one thread performed the update. The variables being updated belong to a _critical section_.
 
 A typical sequence in the use of a mutex is as follows:
 
@@ -27,6 +27,6 @@ A typical sequence in the use of a mutex is as follows:
 * Another thread acquires the mutex and repeats the process
 * Finally the mutex is destroyed
 
-When several threads compete for a mutex, the losers block at that call - an unblocking call is available with "trylock" instead of the "lock" call.
+When several threads compete for a mutex, the losers block at that call - a non-blocking call is available with "trylock" instead of the "lock" call.
 
 When protecting shared data, it is the programmer's responsibility to make sure every thread that needs to use a mutex does so. For example, if 4 threads are updating the same data, but only one uses a mutex, the data can still be corrupted.

@@ -5,7 +5,7 @@ release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
 ---
 
-The `pthread_create()` routine permits the programmer to pass one argument to the thread start routine. For cases where multiple arguments must be passed, this limitation is easily overcome by creating a structure which contains all of the arguments, and then passing a pointer to that structure in the `pthread_create()` routine.
+The `pthread_create()` routine allows the programmer to pass one argument to the thread start routine. For cases where multiple arguments must be passed, this limitation is easily overcome by creating a structure containing all of the arguments, then passing a pointer to that structure in the `pthread_create()` routine.
 
 All arguments must be passed by reference and cast to `(void *)`.
 
@@ -14,13 +14,13 @@ Question: Given their non-deterministic start-up and scheduling, how can you saf
 <detail>
   <summary>Answer (Click to view.)</summary>
 
-  *Make sure that all passed data is thread safe - that it can not be changed by other threads.  The three examples that follow demonstrate what not and what to do.*
+  *Make sure that all passed data is thread safe - that it can not be changed by other threads.  The three examples that follow demonstrate dos and don'ts.*
 
 </detail>
 
 ####  Example 1 - Thread Argument Passing
 
-This code fragment demonstrates how to pass a simple integer to each thread. The calling thread uses a unique data structure for each thread, insuring that each thread's argument remains intact throughout the program.
+This code fragment demonstrates how to pass a simple integer to each thread. The calling thread uses a unique data structure for each thread, ensuring that each thread's argument remains intact throughout the program.
 
 ```C
 long taskids[NUM_THREADS];

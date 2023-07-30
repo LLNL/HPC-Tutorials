@@ -5,7 +5,7 @@ release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
 ---
 
-* This example program illustrates the use of mutex variables in a threads program that performs a dot product.
+* This example program illustrates the use of mutex variables in a Pthreads program that performs a dot product.
 
 * The main data is made available to all threads through a globally accessible structure.
 
