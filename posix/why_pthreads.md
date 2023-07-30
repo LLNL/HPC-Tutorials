@@ -6,7 +6,7 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 ---
 ## Pthreads Overview: Why Pthreads?
 
-### Light Weight:
+### Lightweight:
 When compared to the cost of creating and managing a process, a thread can be created with much less operating system overhead. Managing threads requires fewer system resources than managing processes.
 
 For example, the following table compares timing results for the `fork()` subroutine and the `pthread_create()` subroutine. Timings reflect 50,000 process/thread creations, were performed with the `time` utility, and units are in seconds, no optimization flags.

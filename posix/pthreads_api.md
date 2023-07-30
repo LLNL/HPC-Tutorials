@@ -1,5 +1,5 @@
 ---
-layout: tutorial_page 
+layout: tutorial_page
 title: "The Pthreads API"
 release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory

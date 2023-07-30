@@ -1,5 +1,5 @@
 ---
-layout: tutorial_page 
+layout: tutorial_page
 title: "Mutex Variables Overview"
 release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
@@ -18,6 +18,7 @@ In the above example, a mutex should be used to lock the "Balance" while a threa
 Very often the action performed by a thread owning a mutex is the updating of global variables. This is a safe way to ensure that when several threads update the same variable, the final value is the same as what it would be if only one thread performed the update. The variables being updated belong to a "critical section".
 
 A typical sequence in the use of a mutex is as follows:
+
 * Create and initialize a mutex variable
 * Several threads attempt to lock the mutex
 * Only one succeeds and that thread owns the mutex

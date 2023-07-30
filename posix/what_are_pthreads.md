@@ -1,5 +1,5 @@
 ---
-layout: tutorial_page 
+layout: tutorial_page
 title: "What are Pthreads?"
 release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory

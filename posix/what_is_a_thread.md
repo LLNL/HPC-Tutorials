@@ -1,5 +1,5 @@
 ---
-layout: tutorial_page 
+layout: tutorial_page
 title: "What is a Thread?"
 release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
@@ -42,7 +42,7 @@ This independent flow of control is accomplished because a thread maintains its 
 * Registers
 * Scheduling properties (such as policy or priority)
 * Set of pending and blocked signals
-* Thread specific data.
+* Thread-specific data
 
 So, in summary, in the UNIX environment a thread:
 * Exists within a process and uses the process resources
@@ -53,6 +53,6 @@ So, in summary, in the UNIX environment a thread:
 * Is "lightweight" because most of the overhead has already been accomplished through the creation of its process.
 
 Because threads within the same process share resources:
-* Changes made by one thread to shared system resources (such as closing a file) will be seen by all other threads.
-* Two pointers having the same value point to the same data.
-* Reading and writing to the same memory locations is possible, and therefore requires explicit synchronization by the programmer.
+* Changes made by one thread to shared system resources (such as closing a file) will be seen by all other threads
+* Two pointers having the same value point to the same data
+* Reading and writing to the same memory locations is possible, and therefore requires explicit synchronization by the programmer
