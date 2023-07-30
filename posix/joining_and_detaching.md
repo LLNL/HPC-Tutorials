@@ -12,7 +12,7 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 [pthread_attr_setdetachstate](man/pthread_attr_setdetachstate.txt) (attr,detachstate)
 
-[pthread_attr_getdetachstate](man/pthread_attr_getdetachstate.txt) (attr,detachstate)
+[pthread_attr_getdetachstate](man/pthread_attr_getdetachstate.txt) (attr)
 
 ### Joining:
 

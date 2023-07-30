@@ -8,7 +8,7 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 ### Routines:
 [pthread_attr_getstacksize](man/pthread_attr_getstacksize.txt) (attr, stacksize)
 
-[pthread_attr_setstacksize](man/pthread_attr_setstacksize.txt) (attr, stacksize)
+[pthread_attr_setstacksize](man/pthread_attr_setstacksize.txt) (attr, addr, stacksize)
 
 [pthread_attr_getstackaddr](man/pthread_attr_getstackaddr.txt) (attr, stackaddr)
 
