@@ -1,5 +1,5 @@
 ---
-layout: tutorial_homepage 
+layout: tutorial_homepage
 title: "POSIX Threads Programming"
 release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory

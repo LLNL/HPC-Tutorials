@@ -1,18 +1,19 @@
 ---
-layout: tutorial_page 
+layout: tutorial_page
 title: "Stack Management"
 release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
 ---
 
 ### Routines:
-[pthread_attr_getstacksize](man/pthread_attr_getstacksize.txt) (attr, stacksize)
 
-[pthread_attr_setstacksize](man/pthread_attr_setstacksize.txt) (attr, stacksize)
+[`pthread_attr_getstacksize(attr, stacksize)`](man/pthread_attr_getstacksize.txt)
 
-[pthread_attr_getstackaddr](man/pthread_attr_getstackaddr.txt) (attr, stackaddr)
+[pthread_attr_setstacksize](man/pthread_attr_setstacksize.txt) (attr, addr, stacksize)
 
-[pthread_attr_setstackaddr](man/pthread_attr_setstackaddr.txt) (attr, stackaddr)
+[`pthread_attr_getstackaddr(attr, stackaddr)`](man/pthread_attr_getstackaddr.txt)
+
+[`pthread_attr_setstackaddr(attr, stackaddr)`](man/pthread_attr_setstackaddr.txt)
 
 ### Preventing Stack Problems:
 
@@ -36,53 +37,58 @@ Both past and present architectures are shown to demonstrate the wide variation 
 
 This example demonstrates how to query and set a thread's stack size.
 
-```
- #include <pthread.h>
- #include <stdio.h>
- #define NTHREADS 4
- #define N 1000
- #define MEGEXTRA 1000000
- 
- pthread_attr_t attr;
- 
- void *dowork(void *threadid)
- {
-    double A[N][N];
-    int i,j;
-    long tid;
-    size_t mystacksize;
+```C
+#include <pthread.h>
+#include <stdio.h>
 
-    tid = (long)threadid;
-    pthread_attr_getstacksize (&attr, &mystacksize);
-    printf("Thread %ld: stack size = %li bytes \n", tid, mystacksize);
-    for (i=0; i<N; i++)
-      for (j=0; j<N; j++)
-       A[i][j] = ((i*j)/3.452) + (N-i);
-    pthread_exit(NULL);
- }
- 
- int main(int argc, char *argv[])
- {
-    pthread_t threads[NTHREADS];
-    size_t stacksize;
-    int rc;
-    long t;
- 
-    pthread_attr_init(&attr);
-    pthread_attr_getstacksize (&attr, &stacksize);
-    printf("Default stack size = %li\n", stacksize);
-    stacksize = sizeof(double)*N*N+MEGEXTRA;
-    printf("Amount of stack needed per thread = %li\n",stacksize);
-    pthread_attr_setstacksize (&attr, stacksize);
-    printf("Creating threads with stack size = %li bytes\n",stacksize);
-    for(t=0; t<NTHREADS; t++){
-       rc = pthread_create(&threads[t], &attr, dowork, (void *)t);
-       if (rc){
-          printf("ERROR; return code from pthread_create() is %d\n", rc);
-          exit(-1);
-       }
-    }
-    printf("Created %ld threads.\n", t);
-    pthread_exit(NULL);
- }
+#define NTHREADS 4
+#define N 1000
+#define MEGEXTRA 1000000
+
+pthread_attr_t attr;
+
+void *dowork(void *threadid)
+{
+   double A[N][N];
+   int i, j;
+   long tid;
+   size_t mystacksize;
+
+   tid = (long)threadid;
+   pthread_attr_getstacksize(&attr, &mystacksize);
+   printf("Thread %ld: stack size = %li bytes \n", tid, mystacksize);
+   for (i = 0; i < N; i++) {
+      for (j = 0; j < N; j++) {
+         A[i][j] = ((i * j) / 3.452) + (N - i);
+      }
+   }
+   pthread_exit(NULL);
+}
+
+int main(int argc, char *argv[])
+{
+   pthread_t threads[NTHREADS];
+   size_t stacksize;
+   int rc;
+   long t;
+
+   pthread_attr_init(&attr);
+   pthread_attr_getstacksize(&attr, &stacksize);
+   printf("Default stack size = %li\n", stacksize);
+
+   stacksize = sizeof(double)*N*N+MEGEXTRA;
+   printf("Amount of stack needed per thread = %li\n", stacksize);
+   pthread_attr_setstacksize (&attr, stacksize);
+
+   printf("Creating threads with stack size = %li bytes\n", stacksize);
+   for(t=0; t<NTHREADS; t++){
+      rc = pthread_create(&threads[t], &attr, dowork, (void *)t);
+      if (rc){
+         printf("ERROR; return code from pthread_create() is %d\n", rc);
+         exit(-1);
+      }
+   }
+   printf("Created %ld threads.\n", t);
+   pthread_exit(NULL);
+}
 ```

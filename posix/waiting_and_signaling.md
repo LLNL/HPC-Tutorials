@@ -1,15 +1,16 @@
 ---
-layout: tutorial_page 
+layout: tutorial_page
 title: "Waiting and Signaling on Condition Variables"
 release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
 ---
 ## Routines:
-    [pthread_cond_wait](man/pthread_cond_wait.txt) (condition,mutex)
-    
-    [pthread_cond_signal](man/pthread_cond_signal.txt) (condition)
-    
-    [pthread_cond_broadcast](man/pthread_cond_broadcast.txt) (condition)
+
+[`pthread_cond_wait(condition,mutex)`](man/pthread_cond_wait.txt)
+
+[`pthread_cond_signal(condition)`](man/pthread_cond_signal.txt)
+
+[`pthread_cond_broadcast(condition)`](man/pthread_cond_broadcast.txt)
 
 ## Usage:
 

@@ -1,5 +1,5 @@
 ---
-layout: tutorial_page 
+layout: tutorial_page
 title: "Creating and Terminating Threads"
 release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
@@ -8,33 +8,35 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 ### Routines:
 
-<a href='/posix/man/pthread_create.txt'>pthread_create</a>(thread,attr,start_routine,arg)
+[`pthread_create(thread, attr, start_routine, arg)`](man/pthread_create.txt)
 
-<a href='/posix/man/pthread_exit.txt'>pthread_exit</a>(status)
+[`pthread_exit(status)`](man/pthread_exit.txt)
 
-<a href='/posix/man/pthread_cancel.txt'>pthread_cancel</a>(thread)
+[`pthread_cancel(thread)`](man/pthread_cancel.txt)
 
-<a href='/posix/man/pthread_attr_init.txt'>pthread_attr_init</a>(attr)
+[`pthread_attr_init(attr)`](man/pthread_attr_init.txt)
 
-<a href='/posix/man/pthread_attr_destroy.txt'>pthread_attr_destroy</a>(attr)
+[`pthread_attr_destroy(attr)`](man/pthread_attr_destroy.txt)
 
 ### Creating Threads:
 
-Initially, your `main()` program comprises a single, default thread. All other threads must be explicitly created by the programmer.
-`pthread_create` creates a new thread and makes it executable. This routine can be called any number of times from anywhere within your code.
+Initially, your `main()` program comprises a single, default thread. All other threads must be explicitly created by the programmer. `pthread_create` creates a new thread and makes it executable. This routine can be called any number of times from anywhere within your code.
 
 `pthread_create` arguments:
-* **thread**: An opaque, unique identifier for the new thread returned by the subroutine.
-* **attr**: An opaque attribute object that may be used to set thread attributes. You can specify a thread attributes object, or NULL for the default values.
-* **start_routine**: the C routine that the thread will execute once it is created.
-* **arg**: A single argument that may be passed to start_routine. It must be passed by reference as a pointer cast of type void. NULL may be used if no argument is to be passed.
+* `thread`: An opaque, unique identifier for the new thread returned by the subroutine.
+* `attr`:  An opaque attribute object that may be used to set thread attributes. You can specify a thread attributes object, or NULL for the default values.
+* `start_routine`: the C routine that the thread will execute once it is created.
+* `arg`: A single argument that may be passed to start_routine. It must be passed by reference as `(void *)`. `NULL` may be used if no argument is to be passed.
 
 The maximum number of threads that may be created by a process is implementation dependent. Programs that attempt to exceed the limit can fail or produce wrong results.
 
-Querying and setting your implementation's thread limit - Linux example shown. Demonstrates querying the default (soft) limits and then setting the maximum number of processes (including threads) to the hard limit. Then verifying that the limit has been overridden.
+### Thread limits
+
+The next examples show how to query and set your implementation's thread limit on Linux. First we query the default (soft) limits and then set the maximum number of processes (including threads) to the hard limit. Then we verify that the limit has been overridden.
 
 #### bash / ksh / sh example
-```
+
+```sh
 $ ulimit -a
 core file size          (blocks, -c) 16
 data seg size           (kbytes, -d) unlimited
@@ -79,8 +81,8 @@ file locks                      (-x) unlimited
 
 #### tcsh/csh example
 
-```
-% limit 
+```sh
+% limit
 cputime      unlimited
 filesize     unlimited
 datasize     unlimited
@@ -88,7 +90,7 @@ stacksize    unlimited
 coredumpsize 16 kbytes
 memoryuse    unlimited
 vmemoryuse   unlimited
-descriptors  1024 
+descriptors  1024
 memorylocked 64 kbytes
 maxproc      1024
 
@@ -102,7 +104,7 @@ stacksize    unlimited
 coredumpsize 16 kbytes
 memoryuse    unlimited
 vmemoryuse   unlimited
-descriptors  1024 
+descriptors  1024
 memorylocked 64 kbytes
 maxproc      7168
 ```
@@ -118,6 +120,7 @@ By default, a thread is created with certain attributes. Some of these attribute
 `pthread_attr_init` and `pthread_attr_destroy` are used to initialize/destroy the thread attribute object.
 
 Other routines are then used to query/set specific attributes in the thread attribute object. Attributes include:
+
 * Detached or joinable state
 * Scheduling inheritance
 * Scheduling policy
@@ -130,13 +133,13 @@ Other routines are then used to query/set specific attributes in the thread attr
 
 ### Thread Binding and Scheduling:
 
-Question: After a thread has been created, how do you know a) when it will be scheduled to run by the operating system, and b) which processor/core it will run on? 
+Question: After a thread has been created, how do you know a) when it will be scheduled to run by the operating system, and b) which processor/core it will run on?
 
 <details>
   <summary>Click for answer</summary>
 
 
-*Unless you are using the Pthreads scheduling mechanism, it is up to the implementation and/or operating system to decide where and when threads will execute.  Robust programs should not depend upon threads executing in a specific order or on a specific processor/core.*
+*Unless you are using the Pthreads scheduling mechanism, it is up to the implementation and/or operating system to decide where and when threads will execute. Robust programs should not depend upon threads executing in a specific order or on a specific processor/core.*
 
 </details>
 
@@ -151,6 +154,7 @@ Also, the local operating system may provide a way to do this. For example, Linu
 ### Terminating Threads & `pthread_exit()`
 
 There are several ways in which a thread may be terminated:
+
 * The thread returns normally from its starting routine. Its work is done.
 * The thread makes a call to the `pthread_exit` subroutine - whether its work is done or not.
 * The thread is canceled by another thread via the `pthread_cancel` routine.
@@ -159,7 +163,7 @@ There are several ways in which a thread may be terminated:
 
 The `pthread_exit()` routine allows the programmer to specify an optional termination status parameter. This optional parameter is typically returned to threads "joining" the terminated thread (covered later).
 
-In subroutines that execute to completion normally, you can often dispense with calling `pthread_exit()` - unless, of course, you want to pass the optional status code back.
+In subroutines that execute to completion normally, you can often dispense with calling `pthread_exit()` - unless, of course, you want to get the routine's return value.
 
 Cleanup: the `pthread_exit()` routine does not close files; any files opened inside the thread will remain open after the thread is terminated.
 
@@ -171,43 +175,43 @@ Discussion on calling `pthread_exit()` from `main()`:
 
 ### Example: Pthread Creation and Termination
 
-This simple example code creates 5 threads with the `pthread_create()` routine. Each thread prints a "Hello World!" message, and then terminates with a call to `pthread_exit()`.
+This simple example code creates 5 threads with the `pthread_create()` routine. Each thread prints a "Hello World!" message. Then, it terminates with a call to `pthread_exit()`.
 
-```
+```C
 #include <pthread.h>
- #include <stdio.h>
- #define NUM_THREADS     5
+#include <stdio.h>
+#define NUM_THREADS     5
 
- void *PrintHello(void *threadid)
- {
-    long tid;
-    tid = (long)threadid;
-    printf("Hello World! It's me, thread #%ld!\n", tid);
-    pthread_exit(NULL);
- }
+void *PrintHello(void *threadid)
+{
+   long tid;
+   tid = (long)threadid;
+   printf("Hello World! It's me, thread #%ld!\n", tid);
+   pthread_exit(NULL);
+}
 
- int main (int argc, char *argv[])
- {
-    pthread_t threads[NUM_THREADS];
-    int rc;
-    long t;
-    for(t=0; t<NUM_THREADS; t++){
-       printf("In main: creating thread %ld\n", t);
-       rc = pthread_create(&threads[t], NULL, PrintHello, (void *)t);
-       if (rc){
-          printf("ERROR; return code from pthread_create() is %d\n", rc);
-          exit(-1);
-       }
-    }
+int main (int argc, char *argv[])
+{
+   pthread_t threads[NUM_THREADS];
+   int rc;
+   long t;
+   for(t = 0; t < NUM_THREADS; t++) {
+      printf("In main: creating thread %ld\n", t);
+      rc = pthread_create(&threads[t], NULL, PrintHello, (void *)t);
+      if (rc) {
+         printf("ERROR; return code from pthread_create() is %d\n", rc);
+         exit(-1);
+      }
+   }
 
-    /* Last thing that main() should do */
-    pthread_exit(NULL);
- }
+   /* Last thing that main() should do */
+   pthread_exit(NULL);
+}
 ```
 
 Output:
 
-```
+```raw
 In main: creating thread 0
 In main: creating thread 1
 Hello World! It's me, thread #0!

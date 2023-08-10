@@ -1,5 +1,5 @@
 ---
-layout: tutorial_page 
+layout: tutorial_page
 title: "The Pthreads API"
 release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
@@ -12,7 +12,7 @@ Copies of the standard can be purchased from IEEE or downloaded for free from ot
 
 The subroutines which comprise the Pthreads API can be informally grouped into four major groups:
 * **Thread management**: Routines that work directly on threads - creating, detaching, joining, etc. They also include functions to set/query thread attributes (joinable, scheduling etc.)
-* **Mutexes**: Routines that deal with synchronization, called a "mutex", which is an abbreviation for "mutual exclusion". Mutex functions provide for creating, destroying, locking and unlocking mutexes. These are supplemented by mutex attribute functions that set or modify attributes associated with mutexes.
+* **Mutexes**: Routines that deal with the mutex (short for _mutual exclusion_) synchronization primitive. Those functions allow creating, destroying, locking and unlocking mutexes. They are supplemented by attribute functions that set or modify attributes associated with mutexes.
 * **Condition variables**: Routines that address communications between threads that share a mutex. Based upon programmer specified conditions. This group includes functions to create, destroy, wait and signal based upon specified variable values. Functions to set/query condition variable attributes are also included.
 * **Synchronization**: Routines that manage read/write locks and barriers.
 

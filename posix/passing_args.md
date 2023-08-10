@@ -5,40 +5,39 @@ release_number: UCRL-MI-133316
 author: Blaise Barney, Lawrence Livermore National Laboratory
 ---
 
-The `pthread_create()` routine permits the programmer to pass one argument to the thread start routine. For cases where multiple arguments must be passed, this limitation is easily overcome by creating a structure which contains all of the arguments, and then passing a pointer to that structure in the `pthread_create()` routine.
+The `pthread_create()` routine allows the programmer to pass one argument to the thread start routine. For cases where multiple arguments must be passed, this limitation is easily overcome by creating a structure containing all of the arguments, then passing a pointer to that structure in the `pthread_create()` routine.
 
-All arguments must be passed by reference and cast to (void *).
+All arguments must be passed by reference and cast to `(void *)`.
 
-Question: How can you safely pass data to newly created threads, given their non-deterministic start-up and scheduling? 
-
+Question: Given their non-deterministic start-up and scheduling, how can you safely pass data to newly created threads? 
 
 <detail>
   <summary>Answer (Click to view.)</summary>
-  
-  *Make sure that all passed data is thread safe - that it can not be changed by other threads.  The three examples that follow demonstrate what not and what to do.*
-  
+
+  *Make sure that all passed data is thread safe - that it can not be changed by other threads.  The three examples that follow demonstrate dos and don'ts.*
+
 </detail>
 
 ####  Example 1 - Thread Argument Passing
 
-This code fragment demonstrates how to pass a simple integer to each thread. The calling thread uses a unique data structure for each thread, insuring that each thread's argument remains intact throughout the program.
+This code fragment demonstrates how to pass a simple integer to each thread. The calling thread uses a unique data structure for each thread, ensuring that each thread's argument remains intact throughout the program.
 
-```
+```C
 long taskids[NUM_THREADS];
 
-for(t=0; t<NUM_THREADS; t++)
+for(t = 0; t < NUM_THREADS; t++)
 {
    taskids[t] = t;
    printf("Creating thread %ld\n", t);
    rc = pthread_create(&threads[t], NULL, PrintHello, (void *) taskids[t]);
-   ...
+   /* ... */
 }
 ```
 See the [source code](example_code/hello_arg1.c).
 
 Output:
 
-```
+```raw
 Creating thread 0
 Creating thread 1
 Creating thread 2
@@ -87,7 +86,7 @@ int main (int argc, char *argv[])
    thread_data_array[t].thread_id = t;
    thread_data_array[t].sum = sum;
    thread_data_array[t].message = messages[t];
-   rc = pthread_create(&threads[t], NULL, PrintHello, 
+   rc = pthread_create(&threads[t], NULL, PrintHello,
         (void *) &thread_data_array[t]);
    ...
 }
@@ -124,7 +123,7 @@ This example performs argument passing incorrectly. It passes the address of var
 int rc;
 long t;
 
-for(t=0; t<NUM_THREADS; t++) 
+for(t=0; t<NUM_THREADS; t++)
 {
    printf("Creating thread %ld\n", t);
    rc = pthread_create(&threads[t], NULL, PrintHello, (void *) &t);
