@@ -9,9 +9,9 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 **M P I** = **M**essage **P**assing **I**nterface
 
-MPI is a specification for the developers and users of message passing libraries. By itself, it is NOT a library - but rather the specification of what such a library should be.
+MPI is a specification for the developers and users of message passing libraries. 
 
-MPI primarily *addresses the message-passing parallel programming model*: data is moved from the address space of one process to that of another process through cooperative operations on each process.
+MPI  *addresses the message-passing parallel programming model*: data is moved from the address space of one process to that of another process through cooperative operations on each process.
 
 Simply stated, the goal of the Message Passing Interface is to provide a widely used standard for writing message passing programs. The interface attempts to be:
 
