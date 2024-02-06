@@ -20,7 +20,7 @@ Simply stated, the goal of the Message Passing Interface is to provide a widely 
 - Efficient
 - Flexible
 
-The MPI standard has gone through a number of revisions, with the most recent version being MPI-3.x
+The MPI standard has gone through a number of revisions, with the most recent version being MPI-4.x (
 
 Interface specifications have been defined for C and Fortran90 language bindings:
 
