@@ -101,7 +101,7 @@ MPI_FINALIZE (ierr)
 
 #### C Language - Environment Management Routines
 
-```
+```c
 // required MPI include file
 #include "mpi.h"
 #include <stdio.h>
@@ -134,7 +134,7 @@ MPI_Finalize();
 
 #### Fortran - Environment Management Routines
 
-```
+```fortran
 program simple
 
 ! required MPI include file
