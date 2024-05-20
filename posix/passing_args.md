@@ -11,12 +11,11 @@ All arguments must be passed by reference and cast to `(void *)`.
 
 Question: Given their non-deterministic start-up and scheduling, how can you safely pass data to newly created threads? 
 
-<detail>
+<details>
   <summary>Answer (Click to view.)</summary>
 
   *Make sure that all passed data is thread safe - that it can not be changed by other threads.  The three examples that follow demonstrate dos and don'ts.*
-
-</detail>
+</details>
 
 ####  Example 1 - Thread Argument Passing
 
