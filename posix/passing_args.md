@@ -51,7 +51,7 @@ Thread 1: French: Bonjour, le monde!
 Thread 2: Spanish: Hola al mundo
 Thread 3: Klingon: Nuq neH!
 Thread 4: German: Guten Tag, Welt!
-Thread 5: Russian: Zdravstvytye, mir!
+Thread 5: Russian: Zdravstvuy, mir!
 Thread 6: Japan: Sekai e konnichiwa!
 Thread 7: Latin: Orbis, te saluto!
 ```
@@ -110,7 +110,7 @@ Thread 1: French: Bonjour, le monde!  Sum=1
 Thread 2: Spanish: Hola al mundo  Sum=3
 Thread 3: Klingon: Nuq neH!  Sum=6
 Thread 4: German: Guten Tag, Welt!  Sum=10
-Thread 5: Russian: Zdravstvytye, mir!  Sum=15
+Thread 5: Russian: Zdravstvuy, mir!  Sum=15
 Thread 6: Japan: Sekai e konnichiwa!  Sum=21
 Thread 7: Latin: Orbis, te saluto!  Sum=28
 ```
