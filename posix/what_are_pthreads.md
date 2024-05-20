@@ -18,6 +18,6 @@ The POSIX standard has continued to evolve and undergo revisions, including the 
 
 Some useful links:
 * [standards.ieee.org/ieee/1003.1/7101/](https://standards.ieee.org/ieee/1003.1/7101/)
-* [www.opengroup.org/austin/papers/posix_faq.html)(http://www.opengroup.org/austin/papers/posix_faq.html)
+* [www.opengroup.org/austin/papers/posix_faq.html](http://www.opengroup.org/austin/papers/posix_faq.html)
 
 Pthreads are defined as a set of C language programming types and procedure calls, implemented with a `pthread.h` header/include file and a thread library - though this library may be part of another library, such as `libc`, in some implementations.
