@@ -9,7 +9,7 @@ author: Blaise Barney, Lawrence Livermore National Laboratory
 
 [`pthread_attr_getstacksize(attr, stacksize)`](man/pthread_attr_getstacksize.txt)
 
-[pthread_attr_setstacksize](man/pthread_attr_setstacksize.txt) (attr, addr, stacksize)
+[`pthread_attr_setstacksize(attr, addr, stacksize)`](man/pthread_attr_setstacksize.txt)
 
 [`pthread_attr_getstackaddr(attr, stackaddr)`](man/pthread_attr_getstackaddr.txt)
 

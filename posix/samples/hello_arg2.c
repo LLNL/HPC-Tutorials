@@ -50,7 +50,7 @@ messages[1] = "French: Bonjour, le monde!";
 messages[2] = "Spanish: Hola al mundo";
 messages[3] = "Klingon: Nuq neH!";
 messages[4] = "German: Guten Tag, Welt!"; 
-messages[5] = "Russian: Zdravstvytye, mir!";
+messages[5] = "Russian: Zdravstvuy, mir!";
 messages[6] = "Japan: Sekai e konnichiwa!";
 messages[7] = "Latin: Orbis, te saluto!";
 

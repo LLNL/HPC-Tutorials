@@ -11,12 +11,11 @@ All arguments must be passed by reference and cast to `(void *)`.
 
 Question: Given their non-deterministic start-up and scheduling, how can you safely pass data to newly created threads? 
 
-<detail>
+<details>
   <summary>Answer (Click to view.)</summary>
 
   *Make sure that all passed data is thread safe - that it can not be changed by other threads.  The three examples that follow demonstrate dos and don'ts.*
-
-</detail>
+</details>
 
 ####  Example 1 - Thread Argument Passing
 
@@ -51,7 +50,7 @@ Thread 1: French: Bonjour, le monde!
 Thread 2: Spanish: Hola al mundo
 Thread 3: Klingon: Nuq neH!
 Thread 4: German: Guten Tag, Welt!
-Thread 5: Russian: Zdravstvytye, mir!
+Thread 5: Russian: Zdravstvuy, mir!
 Thread 6: Japan: Sekai e konnichiwa!
 Thread 7: Latin: Orbis, te saluto!
 ```
@@ -110,7 +109,7 @@ Thread 1: French: Bonjour, le monde!  Sum=1
 Thread 2: Spanish: Hola al mundo  Sum=3
 Thread 3: Klingon: Nuq neH!  Sum=6
 Thread 4: German: Guten Tag, Welt!  Sum=10
-Thread 5: Russian: Zdravstvytye, mir!  Sum=15
+Thread 5: Russian: Zdravstvuy, mir!  Sum=15
 Thread 6: Japan: Sekai e konnichiwa!  Sum=21
 Thread 7: Latin: Orbis, te saluto!  Sum=28
 ```
