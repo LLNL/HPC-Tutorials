@@ -13,14 +13,14 @@ MPI is a specification for the developers and users of message passing libraries
 
 MPI  *addresses the message-passing parallel programming model*: data is moved from the address space of one process to that of another process through cooperative operations on each process.
 
-Simply stated, the goal of the Message Passing Interface is to provide a widely used standard for writing message passing programs. The interface attempts to be:
+The goal of the Message Passing Interface is to provide a widely used standard for writing message passing programs. The interface attempts to be:
 
 - Practical
 - Portable
 - Efficient
 - Flexible
 
-The MPI standard has gone through a number of revisions, with the most recent version being MPI-4.x (
+The MPI standard has gone through a number of revisions, with the most recent version being MPI-5.0 (This tutorial will be focused on MPI 4.2, the version widely available on LC systems)
 
 Interface specifications have been defined for C and Fortran90 language bindings:
 
@@ -53,10 +53,10 @@ All parallelism is explicit: the programmer is responsible for correctly identif
 
 ## Reasons for Using MPI
 
-- **Standardization** - MPI is the only message passing library that can be considered a standard. It is supported on virtually all HPC platforms. Practically, it has replaced all previous message passing libraries.
-- **Portability** - There is little or no need to modify your source code when you port your application to a different platform that supports (and is compliant with) the MPI standard.
-- **Performance Opportunities** - Vendor implementations should be able to exploit native hardware features to optimize performance. Any implementation is free to develop optimized algorithms.
-- **Functionality** - There are over 430 routines defined in MPI-3, which includes the majority of those in MPI-2 and MPI-1.
+- **Standardization** - MPI is the only message passing library that can be considered "standard" for HPC. It is supported on virtually all HPC platforms. 
+- **Portability** - There should be little or no need to modify your source code when you port your application to a different platform that supports (and is compliant with) the MPI standard.
+- **Performance Opportunities** - Vendor implementations should be able to exploit native hardware features to optimize performance for venodr-specific hardware, such as interconnects, RMA, etc. Any implementation is free to develop optimized algorithms.
+- **Functionality** - There are over 430 routines defined in MPI-4.
     - NOTE: Most MPI programs can be written using a dozen or less routines
 - **Availability** - A variety of implementations are available, both vendor and public domain.
 
@@ -77,7 +77,9 @@ MPI has resulted from the efforts of numerous individuals and groups that began 
     - MPI-2.2 (Sep 2009)
 - **Sep 2012**: The MPI-3.0 standard was approved.
     - MPI-3.1 (Jun 2015)
-- **Current**: The MPI-4.0 standard is under development.
+- **Sep 2023**: The MPI-4.0 standard was approved.
+    - MPI-4.1 (Nov 2023)
+- **Current**: The MPI-5.0 standard is under development.
 
 ![MPI Evolution](images/MPIevolution.gif)
 
