@@ -63,7 +63,7 @@ Typically, there are multiple versions of MPI libraries and compilers on each cl
 
 Modules are used to select a specific MPI library or compiler: More info HERE.
 
-For example, using modules:
+For example, using modules (June 2024):
 
 - List which modules are currently loaded
 - Show all available modules
@@ -122,15 +122,17 @@ MVAPICH2
 
 - Default MPI implementation
 - Multiple versions available
-- MPI-2 and MPI-3 implementations based on MPICH MPI library from Argonne National Laboratory. Versions 1.9 and later implement MPI-3 according to the developer's documentation.
+- MPI-2 and MPI-3 implementations based on MPICH MPI library from Argonne National Laboratory. Versions 1.9 and later implement MPI-3 according to the developer's documentation. Version 2.3.7 - integrated and ABI compatible with MPICH-3.2.1. Complete user information available at:
+  https://mvapich.cse.ohio-state.edu/static/media/mvapich/mvapich2-userguide.html
 - Thread-safe
 
 To see what versions are available, and/or to select an alternate version, use Modules commands. For example:
 
 ```sh
 module avail mvapich         (list available modules)
-module load mvapich2/2.3     (use the module of interest)
+module load mvapich2/2.3.7     (use the module of interest)
 ```
+This ensures that LC's MPI wrapper scripts point to the desired version of MVAPICH.
 
 ### Compiling
 
@@ -150,6 +152,7 @@ The `srun` command is discussed in detail in the Running Jobs section of the Lin
 
 - MVAPICH home page: mvapich.cse.ohio-state.edu/
 - MVAPICH2 User Guides: http://mvapich.cse.ohio-state.edu/userguide/
+- MVAPICH 2.3.7 User Guide - https://mvapich.cse.ohio-state.edu/static/media/mvapich/mvapich2-userguide.html
 
 ## Open MPI
 
@@ -161,7 +164,7 @@ Available on all LC Linux clusters. However, you'll need to load the desired [mo
 
 ```sh
 module avail                 (list available modules)
-module load openmpi/3.0.1    (use the module of interest)
+module load openmpi/4.1.2    (use the module of interest)
 ```
 
 This ensures that LC's MPI wrapper scripts point to the desired version of Open MPI.
@@ -193,13 +196,15 @@ Open MPI home page: http://www.open-mpi.org/
 - Thread-safe
 - Compiling and running Intel MPI programs: see the LC documentation at: https://lc.llnl.gov/confluence/pages/viewpage.action?pageId=137725526
 
-## CORAL Early Access and Sierra Clusters:
+## CORAL 1 Early Access and Sierra Clusters:
 
 - The IBM Spectrum MPI library is the only supported implementation on these clusters.
 - Based on Open MPI. Includes MPI-3 functionality.
 - Thread-safe
 - NVIDIA GPU support
 - Compiling and running IBM Spectrum MPI programs: see the Sierra Tutorial at https://hpc.llnl.gov/training/tutorials/using-lcs-sierra-system
+
+## CORAL 2 Early Access and El Capitan Clusters:
 
 ### MPI Build Scripts
 
