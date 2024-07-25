@@ -16,6 +16,7 @@ You can then create a handle for the currently running Flux instance with:
 ```
 f = flux.Flux()
 ```
+Note that, in order to `import flux` you need to have the Flux python bindings in your `PYTHONPATH`. If you are in a Flux allocation, this will have been done automatically, but if you're not already in an allocation, you may need to add an appropriate path to your `PYTHONPATH` (e.g. `PYTHONPATH=/usr/lib64/flux/python3.6:$PYTHONPATH`). Alternatively, you can call the Python that Flux was built against with `#!/bin/flux python`.
 ### Using the Flux API to submit a simple job
 Once you've imported Flux and the Jobspec and created a Flux handle, you can construct a job request using the Jobspec class and submit it using the `flux.job.submit` function. For example, to submit a `sleep 60` command:
 ```
