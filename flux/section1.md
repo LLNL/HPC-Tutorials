@@ -19,8 +19,9 @@ build-options:		+ascii-only+hwloc==2.8.0+zmq==4.3.4
 [day36@corona211:~]$
 ```
 LC clusters running TOSS 4 are tracking Flux releases closely, but on TOSS 3 or non-LC clusters you may want a newer version. You can install a local build of Flux using `spack` or build it from source. See [Appendix I](/flux/appendices/appendixI) for more details on those options.
+
 ### Starting Flux
-If you're on an LC cluster such as corona or tioga where Flux is running as the system level scheduler, you can skip this step. You can just use the `flux alloc` command to get an interactive allocation or any of the batch commands described in [Section 3](/flux/section3).
+If you're on an LC cluster such as elcap or tuolumne where Flux is running as the system level scheduler, you can skip this step. You can just use the `flux alloc` command to get an interactive allocation or any of the batch commands described in [Section 3](/flux/section3).
 
 If you are on a cluster that is running another resource manager, such as Slurm or LSF, you can still use Flux to run your workload.  You will need to get an allocation using the native resource managers commands (e.g. `salloc`), then start Flux on all of the nodes in that allocation with the `flux start` command. This will start `flux-broker` processes on all of the nodes that will gather information about the hardware resources available and communicate between each other to assign your workload to those resources. On a cluster running Slurm, this will look like:
 ```console
@@ -49,6 +50,7 @@ sh-4.2$ flux resource list -v
       down      0        0        0
 sh-4.2$
 ```
+
 ### Getting help
 Most Flux commands will give you a brief summary of their options if you add a `--help` flag. For more detailed help, you can easily access the man page for a given command with `flux help COMMAND` or `man flux-COMMAND`.
 
