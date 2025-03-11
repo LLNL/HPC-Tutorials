@@ -6,6 +6,7 @@ author: Ryan Day, Lawrence Livermore National Laboratory
 ---
 
 The reality of computing on shared resources is that nodes are rarely available when you're in front of the keyboard and you need to put your work into a script that can be run by the scheduler when resources become available. Your batch script may mix basic shell commands and functions that will be run serially on the first compute node in your allocation with parallel programs that are run as jobs as described in [Section 2](/flux/section2).
+
 ### Submitting a basic job script with `flux batch`
 The `flux  batch` command allows you to submit batch scripts to a queue for later execution once resources are available. In the `simplescript.sh` example below, we mix shell commands to log when the job starts and that it has completed with a `flux run` command to launch an MPI program.
 ```
@@ -37,6 +38,7 @@ job complete
 ^C
 sh-4.2$
 ```
+
 ### Adding job submission directives to your batch script
 Many resource managers allow you to put batch submission flags in your script as comments. In Flux, you can do this by prepending the flags with `#flux:` in your script. For example, the job script below will run 4 tasks on two nodes.
 ```
@@ -67,6 +69,7 @@ job complete
 ^C
 sh-4.2$
 ```
+
 ### Starting an interactive Flux instance with `flux alloc`
 When you submit a job script with `flux batch`, you are actually starting a new Flux instance with its own resources and running your script in that instance. The `flux alloc` command will create a new Flux instance and start an interactive shell in it.  
 ```
@@ -103,6 +106,7 @@ corona178
 [detached: session exiting]
 [day36@corona211:flux_test]
 ```
+
 ### Submitting jobs to an existing instance with `flux proxy`
 Some user workflows involve getting an allocation (Flux instance) and submitting work to it from outside of that allocation. Flux can accomodate these types of workflows using the `flux proxy` command. You could, for example, create a two node Flux instance with `flux alloc -N2 -n96 -t 1d --bg`, then use a `flux proxy` command to submit work in that instance:
 ```
@@ -114,6 +118,7 @@ corona177
 corona178
 [day36@corona212:~]$
 ```
+
 ### Running commands in the system instance with `flux --parent`
 Since each Flux job is a fully featured Flux instance, running a Flux command inside of a job will run that command inside of that instance. For example, if you run `flux resource list` on a corona login node, it will list all of the resources in that cluster:
 ```
@@ -145,8 +150,32 @@ If you want to know information about the resources available in the main system
 [day36@corona189:~]$
 ```
 This becomes particularly important if, for example, you want to include a command in your batch script that will submit the next job in a series of jobs. As we will discuss further in [Section 5](/flux/section5), if you put a `flux batch myscript` command in your batch script, that command will get run as a subjob of the current job. If you want that batch job to submitted to the main system queue, you will need to use `flux --parent batch myscript`.
+
+### Queues
+Flux supports dividing compute resources into separate queues. A `-q QUEUENAME` argument to your `flux alloc|batch|run|submit` command will direct your job to a specific queue.
+
+You can list the queues on a system, their status, and limits with the `flux queue list` command. E.g.
+```
+[day36@corona211:~]$ flux queue list
+QUEUE    EN ST TDEFAULT   TLIMIT     NNODES     NCORES      NGPUS
+pbatch*   ✔  ✔      30m       1d      0-inf      0-inf      0-inf
+pdebug    ✔  ✔      30m       1h      0-inf      0-inf      0-inf
+pnvmeof   ✔  ✔      30m       1d      0-inf      0-inf      0-inf
+[day36@corona211:~]$
+```
+The `*` next to the queue name indicates which queue is the default queue for the system. `EN` is short for `enabled` and indicates whether or not users can submit jobs to the queue. `ST` is short for `started` and indicates whether or not jobs from a queue will be started by the scheduler. For example, a long timelimit queue may be accepting jobs (`enabled`) at all times, but administrators might only `start` the queue off hours or for a specific DAT.
+
+You can also see how many nodes there are in a given queue and their status with `flux resource list -q QUEUENAME`. This command will display detailed information about how many and which nodes in a given queue are `free`, `allocated`, and `down`. Nodes listed as `free` may still be reserved for the high priority job in the queue. That job will be identifiable by the `eta: TIME` listed in the `INFO` column of `flux jobs -A -q QUEUENAME`.
+
 ### More user facing batch options
 The Flux job submission commands have many more options for doing things like running on specific nodes or queues, modifying your job environment, specifying task mappings, and more. See, for example, `man flux-run` for details on all of the options available. We have also put together a [table of equivalent resource manager flags](https://hpc.llnl.gov/banks-jobs/running-jobs/batch-system-cross-reference-guides).
+
+### Modifying submitted jobs
+You can currently modify the duration, queue, and urgency of a submitted job. If you want to shorten the expected duration of your job to try to get it start via backfill (or any other reason), you can do so with `flux update JOBID duration=TIME` where `TIME` is a Flux Standard Duration (e.g. `6h`). Similarly, you can change the queue that a job is submitted to with `flux update JOBID queue=QUEUENAME`.
+
+Modifying a job's `urgency` will hold or release the job. `flux job urgency JOBID hold` will set `JOBID`'s urgency to `0` and prevent it from being considered for scheduling. `flux job urgency JOBID default` will return the job's urgency to `16` and allow it to be started.
+
+Privileged users (i.e. Hotline and other LC staff) can also use these commands to extend a job's duration beyond the configured queue limits or move a job to the top of the queue (`flux job urgency JOBID expedite`).
 
 ---
 [Section 2](/flux/section2) | Section 3 | [Exercise 3](/flux/exercises/exercise3) | [Section 4](/flux/section4)  

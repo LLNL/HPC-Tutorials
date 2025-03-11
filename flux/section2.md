@@ -8,6 +8,7 @@ author: Ryan Day, Lawrence Livermore National Laboratory
 In the previous section, we learned how to find Flux, get an allocation, and query the compute resources in that allocation. Now, we are ready to launch work on those compute resources and get some work done. When you launch work in Flux, that work takes the form of jobs that can be either blocking or non-blocking. Blocking jobs will run to completion before control is returned to the terminal, whereas non-blocking jobs are enqueued, allowing you to immediately submit more work in the allocation.
 
 Before we get into submitting and managing Flux jobs, we should also discuss Flux's jobids as they're a bit different than what you'll find in other resource management software. Remember that an allocation in Flux is a fully featured Flux instance. Rather than create sequential numeric ids within each instance, Flux combines the submit time, an instance id, and sequence number to create identifiers that are unique for each job in a Flux instance. This avoids requiring a central allocator for jobids which improves the scalability of job submission within instances. There are options to display these identifiers in a number of ways, but the default is an 8 character string prepended by an `f`, e.g. `fBsFXaow5` for the job submitted in the example below. For more details on Flux's identifiers, see the [FLUID documentation](https://flux-framework.readthedocs.io/projects/flux-rfc/en/latest/spec_19.html).
+
 ### Submit blocking Flux jobs with `flux run`
 If you want your work to block until it completes, the `flux run` command will submit a job and then wait until it is complete before returning. For example, in a two node allocation, we can launch an mpi program with 4 tasks:
 ```
@@ -23,6 +24,7 @@ task 3 on rzalastor6 woke up
 task 1 on rzalastor5 woke up
 sh-4.2$
 ```
+
 ### Submit non-blocking Flux jobs with `flux submit`
 If you just want to queue up work in a Flux instance, the `flux submit` command will submit the job and return immediately. As in the example above, here we will submit a 4 task mpi program in our two node allocation:
 ```
@@ -41,6 +43,7 @@ task 3 on rzalastor6 woke up
 ^C
 sh-4.2$
 ```
+
 ### Submit dependent jobs with `--dependency=`
 If you want to submit a Flux job that won't start until another job has completed or reached some other state, you can add a `--dependency=` flag to any `flux run` or other job submission command. Flux currently supports five dependency conditions:
 
