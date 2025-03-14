@@ -61,7 +61,7 @@ LC also provides default compilers for each cluster.
 
 Typically, there are multiple versions of MPI libraries and compilers on each cluster.
 
-Modules are used to select a specific MPI library or compiler: More info HERE.
+Modules are used to select a specific MPI library or compiler: More info [HERE](https://hpc.llnl.gov/software/modules-and-software-packaging).
 
 For example, using modules (June 2024):
 
@@ -118,7 +118,7 @@ MVAPICH MPI is developed and supported by the Network-Based Computing Lab at Ohi
 
 Available on all of LC's Linux clusters.
 
-MVAPICH2
+MVAPICH
 
 - Default MPI implementation
 - Multiple versions available
@@ -228,7 +228,7 @@ The table below lists the primary MPI compiler wrapper scripts for LC's Linux cl
     <th>Underlying Compiler</th>
 </tr>
 <tr>
-    <td rowspan="5"><b>MVAPCH2</b></td>
+    <td rowspan="5"><b>MVAPICH2</b></td>
     <td><b>C</b></td>
     <td><tt><b>mpicc</b></tt></td>
     <td>C compiler for loaded compiler package</td>
